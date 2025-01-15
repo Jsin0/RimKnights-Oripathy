@@ -1,0 +1,6 @@
+D:\SteamLibrary\steamapps\common\RimWorld\Mods\Oripathy\Source\Oripathy\obj\Debug\Oripathy.csproj.AssemblyReference.cache
+D:\SteamLibrary\steamapps\common\RimWorld\Mods\Oripathy\Source\Oripathy\obj\Debug\Oripathy.csproj.CoreCompileInputs.cache
+G:\Other computers\My Computer\Mods\Oripathy\Source\Oripathy\obj\Debug\Oripathy.csproj.AssemblyReference.cache
+G:\Other computers\My Computer\Mods\Oripathy\Source\Oripathy\obj\Debug\Oripathy.csproj.CoreCompileInputs.cache
+G:\Other computers\My Computer\Mods\Oripathy\Assemblies\Oripathy.dll
+G:\Other computers\My Computer\Mods\Oripathy\Source\Oripathy\obj\Debug\Oripathy.dll

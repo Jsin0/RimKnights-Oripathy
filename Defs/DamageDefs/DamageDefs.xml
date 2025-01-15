@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<DamageDef ParentName="Bite">
+    <defName>OriBite</defName>
+    <label>infected bite</label>
+    <additionalHediffs>
+      <li>
+        <hediff>Oripathy</hediff>
+        <severityPerDamageDealt>0.015</severityPerDamageDealt>
+        <victimSeverityScaling>ToxicResistance</victimSeverityScaling>
+        <inverseStatScaling>true</inverseStatScaling>
+        <victimSeverityScalingByInvBodySize>true</victimSeverityScalingByInvBodySize>
+      </li>
+    </additionalHediffs>
+    <applyAdditionalHediffsIfHuntingForFood>false</applyAdditionalHediffsIfHuntingForFood>
+    <impactSoundType>Toxic</impactSoundType>
+    <damageEffecter>Impact_Toxic</damageEffecter>
+	</DamageDef>
+  
+	<DamageDef Name="Bullet">
+		<defName>OriBullet</defName>
+		<label>bullet</label>
+		<workerClass>DamageWorker_AddInjury</workerClass>
+		<externalViolence>true</externalViolence>
+		<deathMessage>{0} has been shot to death.</deathMessage>
+		<hediff>Gunshot</hediff>
+		<harmAllLayersUntilOutside>true</harmAllLayersUntilOutside>
+		<impactSoundType>Bullet</impactSoundType>
+		<armorCategory>Sharp</armorCategory>
+		<overkillPctToDestroyPart>0~0.7</overkillPctToDestroyPart>
+		<isRanged>true</isRanged>
+		<makesAnimalsFlee>true</makesAnimalsFlee>
+		<additionalHediffs>
+		  <li>
+			<hediff>Oripathy</hediff>
+			<severityPerDamageDealt>0.0001</severityPerDamageDealt>
+			<victimSeverityScalingByInvBodySize>true</victimSeverityScalingByInvBodySize>
+		  </li>
+		</additionalHediffs>
+	</DamageDef>
+</Defs>

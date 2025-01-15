@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ModMetaData>
+	<packageId>Jsin.Oripathy</packageId>
+	<name>Oripathy</name>
+	<author>Jsin0</author>
+	<description>Oripathy from Arknights.</description>
+	<supportedVersions>
+  		<li>1.4</li>
+  		<li>1.5</li>
+	</supportedVersions>
+</ModMetaData>
