@@ -7,11 +7,11 @@
       "RelativeMoniker": "D:0:0:{E29E61F4-4FFC-4FE5-BFEA-C85CA58E9A2C}|Oripathy.csproj|solutionrelative:oripathiccorpse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E29E61F4-4FFC-4FE5-BFEA-C85CA58E9A2C}|Oripathy.csproj|d:\\steamlibrary\\steamapps\\common\\rimworld\\mods\\oripathy\\source\\oripathy\\hediffcomp_explodeafterdeath.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{E29E61F4-4FFC-4FE5-BFEA-C85CA58E9A2C}|Oripathy.csproj|D:\\SteamLibrary\\steamapps\\common\\RimWorld\\Mods\\Oripathy\\Source\\Oripathy\\hediffcomp_explodeafterdeath.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E29E61F4-4FFC-4FE5-BFEA-C85CA58E9A2C}|Oripathy.csproj|solutionrelative:hediffcomp_explodeafterdeath.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E29E61F4-4FFC-4FE5-BFEA-C85CA58E9A2C}|Oripathy.csproj|d:\\steamlibrary\\steamapps\\common\\rimworld\\mods\\oripathy\\source\\oripathy\\startup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{E29E61F4-4FFC-4FE5-BFEA-C85CA58E9A2C}|Oripathy.csproj|D:\\SteamLibrary\\steamapps\\common\\RimWorld\\Mods\\Oripathy\\Source\\Oripathy\\startup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E29E61F4-4FFC-4FE5-BFEA-C85CA58E9A2C}|Oripathy.csproj|solutionrelative:startup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -32,7 +32,7 @@
               "RelativeDocumentMoniker": "OripathicCorpse.cs",
               "ToolTip": "D:\\SteamLibrary\\steamapps\\common\\RimWorld\\Mods\\Oripathy\\Source\\Oripathy\\OripathicCorpse.cs",
               "RelativeToolTip": "OripathicCorpse.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAiAAAAAAAAAA==",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAUwBoAAAAcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-01-15T09:32:57.918Z",
               "EditorCaption": ""
@@ -45,7 +45,7 @@
               "RelativeDocumentMoniker": "HediffComp_ExplodeAfterDeath.cs",
               "ToolTip": "D:\\SteamLibrary\\steamapps\\common\\RimWorld\\Mods\\Oripathy\\Source\\Oripathy\\HediffComp_ExplodeAfterDeath.cs",
               "RelativeToolTip": "HediffComp_ExplodeAfterDeath.cs",
-              "ViewState": "AgIAACYAAAAAAAAAAAAkwDYAAAAKAAAAAAAAAA==",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAADMAAAAUAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-01-15T08:36:38.834Z",
               "EditorCaption": ""
@@ -60,8 +60,7 @@
               "RelativeToolTip": "Startup.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAsAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-15T08:43:28.461Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-15T08:43:28.461Z"
             }
           ]
         }

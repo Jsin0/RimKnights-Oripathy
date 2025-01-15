@@ -8,12 +8,34 @@ using RimWorld;
 
 namespace Oripathy
 {
-    internal class OripathicCorpse : Corpse
+    public class OripathicCorpse : Corpse
     {
-        public override void Tick()
+        public CompForbiddable Forbiddable
         {
-            base.Tick();
+            get
+            {
+                CompForbiddable compForbiddable;
+                if ((compForbiddable = this.compForbidInt) == null)
+                {
+                    compForbiddable = (this.compForbidInt = base.GetComp<CompForbiddable>());
+                }
+                return compForbiddable;
+            }
+        }
+        public override void PostMake()
+        {
+            base.PostMake();
+            this.Forbiddable.Forbidden = true;
+
+        }
+        public override void TickRare()
+        {
+            base.TickRare();
             //check if shattering?
         }
+
+        private CompForbiddable compForbidInt;
     }
+
+
 }

@@ -7,8 +7,6 @@ using System.Runtime.CompilerServices;
 using Verse;
 using RimWorld;
 using UnityEngine;
-using Verse.AI;
-using Verse.Sound;
 
 namespace Oripathy
 {
