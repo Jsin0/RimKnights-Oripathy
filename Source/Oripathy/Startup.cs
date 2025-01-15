@@ -3,17 +3,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using RimWorld;
 using Verse;
 
 namespace Oripathy
 {
-    public class HediffComp_DecayOnDeath : HediffWithComps
+    [StaticConstructorOnStartup]
+    public static class Startup
     {
-        public HediffComp_DecayOnDeath Props
+        static Startup()
         {
-            get
-            { return (HediffComp_DecayOnDeath)this.Props; }
+            Log.Message("Oripathy loaded.");
         }
-
     }
 }
