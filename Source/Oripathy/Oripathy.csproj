@@ -49,10 +49,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="HediffCompProperties_ExplodeAfterDeath.cs" />
-    <Compile Include="HediffComp_ExplodeAfterDeath.cs" />
+    <Compile Include="Hediff_Oripathy.cs" />
     <Compile Include="OripathicCorpse.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ShatterManager.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>

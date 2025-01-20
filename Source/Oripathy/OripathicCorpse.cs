@@ -31,6 +31,8 @@ namespace Oripathy
         public override void TickRare()
         {
             base.TickRare();
+            Hediff_Oripathy firstHediff = this.InnerPawn.health.hediffSet.GetFirstHediff<Hediff_Oripathy>();
+            firstHediff.TickRare();
             //check if shattering?
         }
 

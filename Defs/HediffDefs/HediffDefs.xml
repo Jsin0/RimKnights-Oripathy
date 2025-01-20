@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
+	<!--
 	<HediffDef ParentName="InfectionBase">
 		<defName>Oripathy</defName>
+		<hediffClass>Hediff_Oripathy</hediffClass>
 		<label>oripathy</label>
 		<description>An incurable disease due to the introduction of originium into the body.</description>
 		<lethalSeverity>1</lethalSeverity>
@@ -20,6 +22,7 @@
 			<li Class="HediffCompProperties_SurgeryInspectable">
 				<surgicalDetectionDesc>{PAWN_nameDef} is showing early signs of oripathy. While incurable, {PAWN_objective} can live an adequate life with regular care and monitoring.</surgicalDetectionDesc>
 			</li>
+		
 			<li Class="Oripathy.HediffCompProperties_ExplodeAfterDeath">
 				<destroyGear>False</destroyGear>
 				<destroyBody>True</destroyBody>
@@ -77,6 +80,15 @@
 			</li>
 		</stages>
 	</HediffDef>
+			-->
+	<HediffDef Name="Oripathy">
+    <defName>Oripathy</defName>
+    <label>oripathy</label>
+    <hediffClass>Oripathy.Hediff_Oripathy</hediffClass>
+    <description>This person is infused with a seed of nanoscale archotech machines that can recreate life. After they die, the archites will sustain their mind and, when they choose, rebuild their body. The flesh will rapidly reform, replacing missing organs and healing wounds. The process is not perfect and may cause scarring or other health complications. This can only be done a certain number of times.</description>
+    <isBad>true</isBad>
+  </HediffDef>
+
 	
 	<HediffDef ParentName="ChronicDiseaseBase">
     <defName>OripathyLesion</defName>
