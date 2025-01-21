@@ -31,6 +31,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="0Harmony, Version=2.2.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Assemblies\0Harmony.dll</HintPath>
+    </Reference>
     <Reference Include="Assembly-CSharp">
       <HintPath>..\..\..\..\RimWorldWin64_Data\Managed\Assembly-CSharp.dll</HintPath>
       <Private>False</Private>
@@ -49,6 +53,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CompTimedExplosion.cs" />
+    <Compile Include="Defs.cs" />
+    <Compile Include="Harmony_Patch.cs" />
     <Compile Include="Hediff_Oripathy.cs" />
     <Compile Include="OripathicCorpse.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

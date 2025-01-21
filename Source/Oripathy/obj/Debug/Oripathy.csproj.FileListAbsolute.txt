@@ -6,3 +6,4 @@ G:\Other computers\My Computer\Mods\Oripathy\Assemblies\Oripathy.dll
 G:\Other computers\My Computer\Mods\Oripathy\Source\Oripathy\obj\Debug\Oripathy.dll
 D:\SteamLibrary\steamapps\common\RimWorld\Mods\Oripathy\Source\Oripathy\obj\Debug\Oripathy.dll
 D:\SteamLibrary\steamapps\common\RimWorld\Mods\Oripathy\Assemblies\Oripathy.dll
+D:\SteamLibrary\steamapps\common\RimWorld\Mods\Oripathy\Source\Oripathy\obj\Debug\Oripathy.csproj.Up2Date

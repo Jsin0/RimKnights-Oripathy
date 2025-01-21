@@ -34,7 +34,7 @@ namespace Oripathy
 
         private void TryTriggerCountdownShatter(Corpse corpse)
         {
-            corpse.InnerPawn.health.hediffSet.HasHediff()
+            //corpse.InnerPawn.health.hediffSet.HasHediff(HediffDefOf)
         }
         private List<Corpse> oripathicCorpses = new List<Corpse>();
 
