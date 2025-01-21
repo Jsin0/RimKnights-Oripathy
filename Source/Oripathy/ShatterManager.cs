@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using RimWorld;
 using Verse;
 
 namespace Oripathy
@@ -12,13 +13,13 @@ namespace Oripathy
         public ShatterManager (Map map) : base(map)
         {
         }
-        public void Register( Hediff_Oripathy o)
+        public void Register( Corpse corpse)
         {
-            this.oripathicCorpses.Add(o);
+            this.oripathicCorpses.Add(corpse);
         }
-        public void Deregister(Hediff_Oripathy o)
+        public void Deregister(Corpse corpse)
         {
-            this.oripathicCorpses.Remove(o);
+            this.oripathicCorpses.Remove(corpse);
         }
         public override void MapComponentTick()
         {
@@ -26,10 +27,16 @@ namespace Oripathy
             {
                 for (int i = 0; i < this.oripathicCorpses.Count; i++)
                 {
-                    this.oripathicCorpses[i].tryShatterCorpse();
+                    TryTriggerCountdownShatter(this.oripathicCorpses[i]);
                 }
             }
-        private List<Hediff_Oripathy> oripathicCorpses = new List<Hediff_Oripathy>();
+        }
+
+        private void TryTriggerCountdownShatter(Corpse corpse)
+        {
+            corpse.InnerPawn.health.hediffSet.HasHediff()
+        }
+        private List<Corpse> oripathicCorpses = new List<Corpse>();
 
 
     }

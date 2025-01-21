@@ -54,7 +54,7 @@ namespace Oripathy
         private void tryShatterCorpse()
         {
             if (GenTicks.TicksGame > timer)
-            {
+            { 
             GenExplosion.DoExplosion(this.pawn.Position, this.pawn.Map, 3f, DamageDefOf.Flame, this.pawn, 1, -1f, null, null, null, null, null, 0f, 1, null, false, null, 0f, 1, 0f, false, null, null, null, true, 1f, 0f, true, null, 1f, null, null);
             
                 Log.Message("pawn is shattering");
@@ -72,7 +72,7 @@ namespace Oripathy
 
         public float timer;
         private static readonly float
-            shatterCountdownSeconds = 0.5f;
+            shatterCountdownSeconds = 10f;
 
         private bool shattering;
 
