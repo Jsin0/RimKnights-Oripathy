@@ -26,7 +26,7 @@ namespace Oripathy
             {
                 for (int i = 0; i < this.oripathicCorpses.Count; i++)
                 {
-                    this.oripathicCorpses[i].tryShatter();
+                    this.oripathicCorpses[i].tryShatterCorpse();
                 }
             }
         private List<Hediff_Oripathy> oripathicCorpses = new List<Hediff_Oripathy>();
