@@ -7,9 +7,9 @@ using Verse;
 
 namespace Oripathy
 {
-    public class HediffComp_ExplodeAfterDeath : HediffWithComps
+    public class HediffComp_ExplodeAfterDeath : HediffComp
     {
-        public HediffComp_ExplodeAfterDeath Props
+        public HediffCompProperties_ExplodeAfterDeath Props
         {
             get
             { 
