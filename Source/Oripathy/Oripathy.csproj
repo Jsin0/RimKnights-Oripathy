@@ -53,9 +53,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Defs.cs" />
-    <Compile Include="HediffCompProperties_ExplodeAfterDeath.cs" />
-    <Compile Include="HediffComp_ExplodeAfterDeath.cs" />
+    <Compile Include="DefOf.cs" />
     <Compile Include="Hediff_Oripathy.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />

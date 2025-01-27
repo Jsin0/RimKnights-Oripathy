@@ -7,6 +7,7 @@ using System.Runtime.CompilerServices;
 using Verse;
 using RimWorld;
 using UnityEngine;
+using Verse.Sound;
 
 namespace Oripathy
 {
@@ -26,58 +27,159 @@ namespace Oripathy
         public override void Notify_PawnDied(DamageInfo? dinfo, Hediff culprit = null)
         {
             base.Notify_PawnDied(dinfo, culprit);
-            this.TryTriggerCountdownShatter();
+            this.TryTriggerWarmupTimer();
         }
-
-        private void TryTriggerCountdownShatter()
+        private int GetFinalDelay()
         {
-            //this.shattering = false;
-            if (this.shattering)
+            int delay;
+            delay = (int)((0.3 / this.Severity) * this.ticksDelay);
+            //Log.Message(this.Severity);
+            //Log.Message("delay = " + delay);
+            if (delay > 180000) //3 days max
             {
-                Log.Message("Already shattering.");
-                return;
-            }
-            Log.Message("Shattering countdown started for " + this.pawn.Name);
-            this.shattering = true;
-            //this.timer = GenTicks.TicksGame + shatterCountdownSeconds.SecondsToTicks();
-            this.countdownTimer.Start(GenTicks.TicksGame, Hediff_Oripathy.shatterCountdownSeconds.SecondsToTicks(), new Action(this.tryShatterCorpse));
-        }
-
-        public void TickRare()
-        {
-            if (!this.countdownTimer.Finished)
-            {
-                Log.Message("Timer not done. Current tick: " + GenTicks.TicksGame);
-                this.countdownTimer.TickInterval();
+                return 180000;
             }
             else
             {
-                Log.Message("Timer done. Shattering");
+                return delay;
             }
         }
-        private void tryShatterCorpse()
+        private void TryTriggerWarmupTimer()
         {
+            if (this.shattering)
+            {
+                //Log.Message(this.pawn.Name + " is going to shatter soon.");
+                return;
+            }
+            else
+            {
+                this.warmupTimer.Start(GenTicks.TicksGame, this.GetFinalDelay(), new Action(this.TryShatter));
+                Log.Message("Oripathy: " + this.pawn.Name + " will soon shatter.");
+            }
+
+        }
+        private void TryShatter()
+        {
+            //this.shattering = false;
+            if (this.pawn.Corpse == null)
+            {
+                Log.Error("Oripathy: cannot shatter, corpse is null");
+                return;
+            }
+            if (this.shattering)
+            {
+                Log.Error("Oripathy: " + this.pawn.Name + " is already shattering.");
+                return;
+            }
+            Log.Message("Oripathy: Shattering started for " + this.pawn.Name);
+            this.shattering = true;
+
+            //this.timer = GenTicks.TicksGame + shatterDurationSeconds.SecondsToTicks();
+            this.shatterTimer.Start(GenTicks.TicksGame, Hediff_Oripathy.shatterDurationSeconds.SecondsToTicks(), new Action(this.DoShatterCorpse));
+            //TryTriggerShatterEffect();
+        }
+
+        private void TryTriggerShatterEffect()
+        {
+            
+        }
+        /*public override void Tick()
+        {
+            Corpse corpse;
+            if ((corpse = this.pawn.ParentHolder as Corpse) != null)
+            {
+                if (this.effecter == null)
+                {
+                    this.effecter = EffecterDefOf.ExtinguisherExplosion.Spawn(corpse, this.pawn.MapHeld, Vector3.zero);
+                    this.pawn.MapHeld.effecterMaintainer.AddEffecterToMaintain(this.effecter, corpse, 250);
+                }
+                if (this.shatterSustainer == null)
+                {
+                    SoundInfo soundInfo = SoundInfo.InMap(corpse, MaintenanceType.PerTickRare);
+                    this.shatterSustainer = SoundDefOf.Tunnel.TrySpawnSustainer(soundInfo);
+                }
+            }
+        
+        }*/
+        public void TickRare()
+        {
+            if (!this.warmupTimer.Finished)
+            {
+                //Log.Message("Warmup timer not done.");
+                this.warmupTimer.TickInterval();
+            }
+            else if (!this.shatterTimer.Finished)
+            {
+                //Log.Message("Shatter timer not done.");
+                this.shatterTimer.TickInterval();
+                if(this.shatterSustainer != null && !this.shatterSustainer.Ended)
+                {
+                    Sustainer sustainer = this.shatterSustainer;
+                    if (sustainer != null)
+                    {
+                        sustainer.Maintain();
+                    }
+                }
+                if(this.effecter != null)
+                {
+                    this.effecter.ticksLeft = (this.shatterTimer.Finished ? 0 : (this.effecter.ticksLeft + 250));
+                }
+            }
+            else
+            {
+                //Log.Message("Shattering.");
+            }
+        }
+        private void DoShatterCorpse()
+        {
+            //Log.Message("countdown timer done.");
             if (base.pawn.MapHeld != null)
             {
-                Log.Message(base.pawn.Name + " is shattering.");
-                GenExplosion.DoExplosion(base.pawn.Position, base.pawn.MapHeld, 3f, DamageDefOf.Flame, base.pawn, 0, -1f, null, null, null, null, null, 0f, 1, null, false, null, 0f, 1, 0f, false, null, null, null, true, 1f, 0f, true, null, 1f, null, null);
+                //Log.Message(base.pawn.Name + " is shattering.");
+                Sustainer sustainer = this.shatterSustainer;
+                if (sustainer != null)
+                {
+                    sustainer.End();
+                }
+                GenExplosion.DoExplosion(base.pawn.Position, base.pawn.MapHeld, 3f, DamageDefOf.OriginiumDust, base.pawn, 0, -1f, null, null, null, null, null, 0f, 1, null, false, null, 0f, 1, 0f, false, null, null, null, true, 1f, 0f, true, null, 1f, null, null);
             }
             else
             { 
-                Log.Message("corpse in null map, no explosion");
+                Log.Error("corpse in null map, no explosion");
             }
             
-            base.pawn.equipment.DestroyAllEquipment(DestroyMode.Vanish);
-            base.pawn.apparel.DestroyAll(DestroyMode.Vanish);
+            //base.pawn.equipment.DestroyAllEquipment(DestroyMode.Vanish);
+            //base.pawn.apparel.DestroyAll(DestroyMode.Vanish);
             base.pawn.Corpse.Destroy(DestroyMode.Vanish);
         }
 
-        private TickTimer countdownTimer = new TickTimer();
+        public override void Notify_PawnCorpseDestroyed()
+        {
+            Sustainer sustainer = this.shatterSustainer;
+            if (sustainer == null)
+            {
+                return;
+            }
+            sustainer.End();
+        }
+        
+
+        private TickTimer warmupTimer = new TickTimer();
+
+        private TickTimer shatterTimer = new TickTimer();
 
         private static readonly float
-            shatterCountdownSeconds = 10f;
+            shatterDurationSeconds = 10f;
 
         private bool shattering;
+
+        private int ticksDelay = 60000;
+
+        private Effecter effecter;
+
+        private Sustainer shatterSustainer;
+
+
 
     }
 }

@@ -3,7 +3,7 @@
 	
 	<HediffDef ParentName="InfectionBase">
 		<defName>Oripathy</defName>
-		<hediffClass>Hediff_Oripathy</hediffClass>
+		<hediffClass>Oripathy.Hediff_Oripathy</hediffClass>
 		<label>oripathy</label>
 		<description>An incurable disease due to the introduction of originium into the body.</description>
 		<lethalSeverity>1</lethalSeverity>
@@ -11,6 +11,7 @@
 		<everCurableByItem>false</everCurableByItem>
 		<taleOnVisible>ToxicityRevealed</taleOnVisible>
 		<scenarioCanAdd>true</scenarioCanAdd>
+		<explosionDamageDef>OriginiumDust</explosionDamageDef>
 		<comps>
 			<li Class="HediffCompProperties_SeverityPerDay">
 				<severityPerDay>.017</severityPerDay>
@@ -21,13 +22,6 @@
 			</li>
 			<li Class="HediffCompProperties_SurgeryInspectable">
 				<surgicalDetectionDesc>{PAWN_nameDef} is showing early signs of oripathy. While incurable, {PAWN_objective} can live an adequate life with regular care and monitoring.</surgicalDetectionDesc>
-			</li>
-		
-			<li Class="Oripathy.HediffCompProperties_ExplodeAfterDeath">
-				<destroyGear>False</destroyGear>
-				<destroyBody>True</destroyBody>
-				<explosionRadius>3</explosionRadius>
-				<damageDef>Flame</damageDef>
 			</li>
 		</comps>
 		<stages>
@@ -66,14 +60,14 @@
 				<label>extreme</label>
 				<lifeThreatening>true</lifeThreatening>
 				<painOffset>0.20</painOffset>
-				<deathMtbDays>30</deathMtbDays>
+				<deathMtbDays>60</deathMtbDays>
 				<mtbDeathDestroysBrain>true</mtbDeathDestroysBrain>
 				<capMods>
 				</capMods>
 				<hediffGivers>
 					<li Class="HediffGiver_Random">
 						<hediff>OripathyLesion</hediff>
-						<mtbDays>40</mtbDays>
+						<mtbDays>20</mtbDays>
 						<canAffectAnyLivePart>true</canAffectAnyLivePart>
 					</li>
 				</hediffGivers>

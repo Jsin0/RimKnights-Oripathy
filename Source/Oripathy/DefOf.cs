@@ -9,13 +9,12 @@ using Verse;
 namespace Oripathy
 {
     [DefOf]
-    public static class HediffDefOf
+    public static class DamageDefOf
     {
-        static HediffDefOf()
+        static DamageDefOf()
         {
-            DefOfHelper.EnsureInitializedInCtor(typeof(HediffDefOf));
+            DefOfHelper.EnsureInitializedInCtor(typeof(DamageDefOf));
         }
-
-        public static HediffDef Oripathy;
+    public static DamageDef OriginiumDust;
     }
 }
