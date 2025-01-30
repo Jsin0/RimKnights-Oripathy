@@ -30,6 +30,11 @@ namespace Oripathy.Utilities
             [HarmonyPostfix]
             public static void PostFix(Corpse __instance)
             {
+                if (__instance == null)
+                {
+                    //Log.Error("corpse no longer exists");
+                    return;
+                }
                 Hediff_Oripathy firstHediff = __instance.InnerPawn.health.hediffSet.GetFirstHediff<Hediff_Oripathy>();
                 if(firstHediff != null)
                 {

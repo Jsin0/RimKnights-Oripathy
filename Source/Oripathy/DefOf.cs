@@ -15,6 +15,7 @@ namespace Oripathy
         {
             DefOfHelper.EnsureInitializedInCtor(typeof(DamageDefOf));
         }
-    public static DamageDef OriginiumDust;
+
+        public static DamageDef OriginiumDust;
     }
 }
