@@ -29,7 +29,7 @@ namespace Oripathy
         private int GetFinalDelay()
         {
             int delay;
-            delay = (int)((0.3 / this.Severity) * this.ticksDelay);
+            delay = (int)((0.3 / this.Severity) * this.ticksDelay * Hediff_Oripathy.randDelayFactor.RandomInRange);
             if (delay > 180000) //3 days max
             {
                 return 180000;
@@ -43,7 +43,7 @@ namespace Oripathy
         {
             this.shattering = true;
             this.warmupTimer.Start(GenTicks.TicksGame, this.GetFinalDelay(), new Action(this.TryShatter));
-            Log.Message("Oripathy: " + this.pawn.Name + " will soon shatter soon");
+            //Log.Message("Oripathy: " + this.pawn.Name + " will soon shatter soon");
         }
         private void TryShatter()
         {
@@ -53,18 +53,18 @@ namespace Oripathy
                 return;
             }
 
-            Messages.Message(this.pawn.Name + "'s cropse will soon shatter.", MessageTypeDefOf.NegativeEvent);
-            Log.Message(this.pawn.Name);
-            this.shatterTimer.Start(GenTicks.TicksGame, Hediff_Oripathy.shatterDurationSeconds.SecondsToTicks(), new Action(this.DoShatterCorpse));
+            Messages.Message(this.pawn.Name + "'s corpse will soon shatter.", MessageTypeDefOf.NegativeEvent);
+            this.shatterTimer.Start(GenTicks.TicksGame, Hediff_Oripathy.shatterDurationSeconds.RandomInRange.SecondsToTicks(), new Action(this.DoShatterCorpse));
         }
 
         private void TryTriggerShatterEffect()
         {
             Corpse corpse;
-            if ((corpse = this.pawn.ParentHolder as Corpse) != null)
+            if ((corpse = this.pawn.ParentHolder as Corpse) != null && this.shattering)
             {
                 if (this.effecter == null)
                 {
+                    Log.Message("shatter effect");
                     this.effecter = EffecterDefOf.ExtinguisherExplosion.Spawn(corpse, this.pawn.MapHeld, Vector3.zero);
                     this.pawn.MapHeld.effecterMaintainer.AddEffecterToMaintain(this.effecter, corpse, 250);
                 }
@@ -73,10 +73,20 @@ namespace Oripathy
         public override void Tick()
         {
             Corpse corpse;
-            if ((corpse = this.pawn.ParentHolder as Corpse) != null && this.shatterSustainer == null)
+            if ((corpse = this.pawn.ParentHolder as Corpse) != null && this.shattering)
             {
-                SoundInfo soundInfo = SoundInfo.InMap(corpse, MaintenanceType.PerTickRare);
-                this.shatterSustainer = SoundDefOf.Tunnel.TrySpawnSustainer(soundInfo);
+                if (this.warmupTimer.Finished && this.effecter == null)
+                {
+                    Log.Message("cell pollustion spawned");
+                    this.effecter = EffecterDefOf.CellPollution.Spawn(corpse, this.pawn.MapHeld, Vector3.zero);
+                    this.pawn.MapHeld.effecterMaintainer.AddEffecterToMaintain(this.effecter, corpse, 250);
+                }
+                if (this.shatterSustainer == null)
+                {
+                    Log.Message("Sound sustainer");
+                    SoundInfo soundInfo = SoundInfo.InMap(corpse, MaintenanceType.PerTickRare);
+                    this.shatterSustainer = SoundDefOf.Tunnel.TrySpawnSustainer(soundInfo);
+                }
             }
         }
         public void TickRare()
@@ -119,7 +129,7 @@ namespace Oripathy
                 {
                     sustainer.End();
                 }
-                GenExplosion.DoExplosion(base.pawn.Position, base.pawn.MapHeld, 3f, DamageDefOf.OriginiumDust, base.pawn, 0, -1f, null, null, null, null, null, 0f, 1, null, false, null, 0f, 1, 0f, false, null, null, null, true, 1f, 0f, true, null, 1f, null, null);
+                GenExplosion.DoExplosion(base.pawn.Position, base.pawn.MapHeld, 3f, Oripathy.DamageDefOf.OriginiumDust, base.pawn, 1, -1f, null, null, null, null, null, 0f, 1, null, false, null, 0f, 1, 0f, false, null, null, null, true, 1f, 0f, true, null, 1f, null, null);
             }
             else
             { 
@@ -162,8 +172,8 @@ namespace Oripathy
 
         private TickTimer shatterTimer = new TickTimer();
 
-        private static readonly float
-            shatterDurationSeconds = 30f;
+        private static readonly FloatRange
+            shatterDurationSeconds = new FloatRange(30f, 60f);
 
         private bool shattering;
 
@@ -173,7 +183,8 @@ namespace Oripathy
 
         private Sustainer shatterSustainer;
 
-
+        private static readonly FloatRange
+            randDelayFactor = new FloatRange(0.5f, 1f);
 
     }
 }
