@@ -34,8 +34,7 @@
               "RelativeToolTip": "DefOf.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAASAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-27T07:06:01.811Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-27T07:06:01.811Z"
             },
             {
               "$type": "Document",
@@ -43,9 +42,9 @@
               "Title": "Hediff_Oripathy.cs",
               "DocumentMoniker": "D:\\SteamLibrary\\steamapps\\common\\RimWorld\\Mods\\Oripathy\\Source\\Oripathy\\Hediff_Oripathy.cs",
               "RelativeDocumentMoniker": "Hediff_Oripathy.cs",
-              "ToolTip": "D:\\SteamLibrary\\steamapps\\common\\RimWorld\\Mods\\Oripathy\\Source\\Oripathy\\Hediff_Oripathy.cs*",
-              "RelativeToolTip": "Hediff_Oripathy.cs*",
-              "ViewState": "AgIAAHQAAAAAAAAAAAAAwIMAAACEAAAAAAAAAA==",
+              "ToolTip": "D:\\SteamLibrary\\steamapps\\common\\RimWorld\\Mods\\Oripathy\\Source\\Oripathy\\Hediff_Oripathy.cs",
+              "RelativeToolTip": "Hediff_Oripathy.cs",
+              "ViewState": "AgIAAHQAAAAAAAAAAAAAwIMAAAA0AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-01-19T05:15:56.233Z",
               "EditorCaption": ""
@@ -60,8 +59,7 @@
               "RelativeToolTip": "Startup.cs",
               "ViewState": "AgIAABEAAAAAAAAAAAAAwCQAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-15T08:43:28.461Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-15T08:43:28.461Z"
             }
           ]
         }

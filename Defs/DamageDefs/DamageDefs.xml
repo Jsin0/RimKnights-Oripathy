@@ -43,6 +43,8 @@
 		<defName>OriginiumDust</defName>
 		<label>active originium dust</label>
 		<workerClass>DamageWorker_Extinguish</workerClass>
+		<harmsHealth>false</harmsHealth>
+		<defaultDamage>0</defaultDamage>
 		<canInterruptJobs>false</canInterruptJobs>
 		<makesBlood>false</makesBlood>
 		<explosionCellFleck>BlastExtinguisher</explosionCellFleck>
