@@ -23,6 +23,17 @@ namespace Oripathy
             base.CompPostPostAdd(dinfo);
             this.severityPerDay = this.Props.CalculateSeverityPerDay();
         }
+
+        public override void CompExposeData()
+        {
+            base.CompExposeData();
+            Scribe_Values.Look<float>(ref this.severityPerDay, "severityPerDay", 0f, false);
+            if (Scribe.mode == LoadSaveMode.PostLoadInit && this.severityPerDay == 0f && this.Props.severityPerDay != 0f && this.Props.severityPerDayRange == FloatRange.Zero)
+            {
+                this.severityPerDay = this.Props.CalculateSeverityPerDay();
+                Log.Warning("Hediff " + this.parent.Label + " had severityPerDay not matching parent.");
+            }
+        }
         public override float SeverityChangePerDay()
         {
             if (base.Pawn.ageTracker.AgeBiologicalYearsFloat < this.Props.minAge)
@@ -46,6 +57,7 @@ namespace Oripathy
 
             float num2 = num * ((curStage != null) ? curStage.severityGainFactor : 1f);
 
+            Log.Message("Severity per day: " + num);
             return num2;
         }
 

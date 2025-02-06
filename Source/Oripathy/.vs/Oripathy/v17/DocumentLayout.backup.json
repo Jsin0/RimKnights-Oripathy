@@ -34,9 +34,9 @@
               "Title": "HediffComp_HediffDependentSeverityPerDay.cs",
               "DocumentMoniker": "D:\\SteamLibrary\\steamapps\\common\\RimWorld\\Mods\\Oripathy\\Source\\Oripathy\\HediffComp_HediffDependentSeverityPerDay.cs",
               "RelativeDocumentMoniker": "HediffComp_HediffDependentSeverityPerDay.cs",
-              "ToolTip": "D:\\SteamLibrary\\steamapps\\common\\RimWorld\\Mods\\Oripathy\\Source\\Oripathy\\HediffComp_HediffDependentSeverityPerDay.cs",
-              "RelativeToolTip": "HediffComp_HediffDependentSeverityPerDay.cs",
-              "ViewState": "AgIAABgAAAAAAAAAAAAYwCUAAAAwAAAAAAAAAA==",
+              "ToolTip": "D:\\SteamLibrary\\steamapps\\common\\RimWorld\\Mods\\Oripathy\\Source\\Oripathy\\HediffComp_HediffDependentSeverityPerDay.cs*",
+              "RelativeToolTip": "HediffComp_HediffDependentSeverityPerDay.cs*",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAIwCIAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-05T17:40:23.225Z",
               "EditorCaption": ""
@@ -51,8 +51,7 @@
               "RelativeToolTip": "HediffCompProperties_HediffDependentSeverityPerDay.cs",
               "ViewState": "AgIAAAYAAAAAAAAAAAAAABYAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-05T17:44:36.314Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-05T17:44:36.314Z"
             },
             {
               "$type": "Document",
@@ -64,8 +63,7 @@
               "RelativeToolTip": "Hediff_Oripathy.cs",
               "ViewState": "AgIAAGcAAAAAAAAAAADwv3kAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-19T05:15:56.233Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-19T05:15:56.233Z"
             },
             {
               "$type": "Document",
