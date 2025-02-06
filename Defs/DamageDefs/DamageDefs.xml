@@ -44,6 +44,7 @@
 		<label>active originium dust</label>
 		<workerClass>DamageWorker_Extinguish</workerClass>
 		<harmsHealth>false</harmsHealth>
+		<hediff>OriginiumBuildup</hediff>
 		<defaultDamage>0</defaultDamage>
 		<canInterruptJobs>false</canInterruptJobs>
 		<makesBlood>false</makesBlood>

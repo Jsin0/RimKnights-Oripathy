@@ -18,4 +18,5 @@ namespace Oripathy
 
         public static DamageDef OriginiumDust;
     }
+
 }

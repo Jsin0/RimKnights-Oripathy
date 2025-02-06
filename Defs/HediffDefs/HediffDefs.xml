@@ -12,15 +12,26 @@
 		<taleOnVisible>ToxicityRevealed</taleOnVisible>
 		<scenarioCanAdd>true</scenarioCanAdd>
 		<comps>
+			<!--
 			<li Class="HediffCompProperties_SeverityPerDay">
 				<severityPerDay>.017</severityPerDay>
-			</li>
+			</li>-->
 			<li Class="HediffCompProperties_TendDuration">
 				<baseTendDurationHours>96</baseTendDurationHours>
 				<severityPerDayTended>-0.015</severityPerDayTended>
 			</li>
 			<li Class="HediffCompProperties_SurgeryInspectable">
 				<surgicalDetectionDesc>{PAWN_nameDef} is showing early signs of oripathy. While incurable, {PAWN_objective} can live an adequate life with regular care and monitoring.</surgicalDetectionDesc>
+			</li>
+			<li Class="Oripathy.HediffCompProperties_HediffDependentSeverityPerDay">
+				<severityPerDay>0.017</severityPerDay>
+				<hediff>OriginiumBuildup</hediff>
+				<hediffSeverityToSeverityGainCurve>
+					<points>
+						<li>(0, 0.017)</li>
+						<li>(1.00, 0.33)</li>
+					</points>
+				</hediffSeverityToSeverityGainCurve>
 			</li>
 		</comps>
 		<stages>
@@ -74,25 +85,29 @@
 		</stages>
 	</HediffDef>
 			
-	
+	<HediffDef>
 	<defName>OriginiumBuildup</defName>
 		<label>blood originium-crystal density</label>
 		<description>Originium crystals present in the bloodstream.
 	\nOriginium is always present in the blood stream at low levels but at higher levels, may lead to a condition known as Oripathy.</description>
 		<hediffClass>HediffWithComps</hediffClass>
 		<defaultLabelColor>(1.0, 0.5, 0.0)</defaultLabelColor>
-		<canApplyDodChanceForCapacityChanges>true</canApplyDodChanceForCapacityChanges>
-		<makesSickThought>true</makesSickThought>
 		<scenarioCanAdd>true</scenarioCanAdd>
 		<taleOnVisible>ToxicityRevealed</taleOnVisible>
+		<maxSeverity>1</maxSeverity>
+		<initialSeverity>0.1</initialSeverity>
 		<comps>
-		  <li Class="HediffCompProperties_Immunizable">
-			<compClass>HediffComp_ImmunizableToxic</compClass>
-			<severityPerDayNotImmune>-0.1</severityPerDayNotImmune>
-		  </li>
-		  <li Class="HediffCompProperties_SurgeryInspectable">
-			<surgicalDetectionDesc>{PAWN_nameDef} is showing early signs of active originium exposure. Keep {PAWN_objective} away from sources of active originium.</surgicalDetectionDesc>
-		  </li>
+			<li Class="HediffCompProperties_Immunizable">
+				<compClass>HediffComp_ImmunizableToxic</compClass>
+				<severityPerDayNotImmune>-0.1</severityPerDayNotImmune>
+			</li>
+			<li Class="HediffCompProperties_TendDuration">
+				<baseTendDurationHours>24</baseTendDurationHours>
+				<severityPerDayTended>-0.2</severityPerDayTended>
+			</li>
+			<li Class="HediffCompProperties_SurgeryInspectable">
+				<surgicalDetectionDesc>{PAWN_nameDef} is showing early signs of active originium exposure. Keep {PAWN_objective} away from sources of active originium.</surgicalDetectionDesc>
+			</li>
 		</comps>
 		<stages>
 		  <li>
@@ -110,7 +125,7 @@
 			</capMods>
 		  </li>
 		  <li>
-			<label>minor</label>
+			<label>low</label>
 			<minSeverity>0.2</minSeverity>
 			<capMods>
 			  <li>
@@ -151,6 +166,11 @@
 				<hediff>Oripathy</hediff>
 				<mtbDays>20</mtbDays>
 			  </li>
+			  <li Class="HediffGiver_Random">
+				<hediff>OripathyLesion</hediff>
+				<mtbDays>30</mtbDays>
+				<canAffectAnyLivePart>true</canAffectAnyLivePart>
+			  </li>
 			</hediffGivers>
 		  </li>
 		  <li>
@@ -159,17 +179,13 @@
 			<capMods>
 			  <li>
 				<capacity>Consciousness</capacity>
-				<setMax>0.10</setMax>
-			  </li>
-			  <li>
-				<capacity>Consciousness</capacity>
-				<offset>-0.25</offset>
+				<offset>-0.40</offset>
 			  </li>
 			</capMods>
 			<hediffGivers>
 			  <li Class="HediffGiver_Random">
 				<hediff>Oripathy</hediff>
-				<mtbDays>5</mtbDays>
+				<mtbDays>1</mtbDays>
 			  </li>
 			  <li Class="HediffGiver_Random">
 				<hediff>OripathyLesion</hediff>
