@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
-	
 	<HediffDef ParentName="InfectionBase">
 		<defName>Oripathy</defName>
 		<hediffClass>Oripathy.Hediff_Oripathy</hediffClass>
@@ -12,10 +11,6 @@
 		<taleOnVisible>ToxicityRevealed</taleOnVisible>
 		<scenarioCanAdd>true</scenarioCanAdd>
 		<comps>
-			<!--
-			<li Class="HediffCompProperties_SeverityPerDay">
-				<severityPerDay>.017</severityPerDay>
-			</li>-->
 			<li Class="HediffCompProperties_TendDuration">
 				<baseTendDurationHours>96</baseTendDurationHours>
 				<severityPerDayTended>-0.015</severityPerDayTended>
@@ -24,12 +19,11 @@
 				<surgicalDetectionDesc>{PAWN_nameDef} is showing early signs of oripathy. While incurable, {PAWN_objective} can live an adequate life with regular care and monitoring.</surgicalDetectionDesc>
 			</li>
 			<li Class="Oripathy.HediffCompProperties_HediffDependentSeverityPerDay">
-				<severityPerDay>0.017</severityPerDay>
 				<hediff>OriginiumBuildup</hediff>
 				<hediffSeverityToSeverityGainCurve>
 					<points>
 						<li>(0, 0.017)</li>
-						<li>(1.00, 0.33)</li>
+						<li>(1.00, 0.5)</li>
 					</points>
 				</hediffSeverityToSeverityGainCurve>
 			</li>
@@ -53,7 +47,7 @@
 			</li>
 			<li>
 				<minSeverity>0.35</minSeverity>
-				<label>major</label>
+				<label>moderate</label>
 				<painOffset>0.10</painOffset>
 				<hediffGivers>
 					<li Class="HediffGiver_Random">
@@ -62,18 +56,27 @@
 						<canAffectAnyLivePart>true</canAffectAnyLivePart>
 					</li>
 				</hediffGivers>
-				<capMods>
-				</capMods>
+			</li>
+			
+			<li>
+				<minSeverity>0.70</minSeverity>
+				<label>major</label>
+				<painOffset>0.15</painOffset>
+				<hediffGivers>
+					<li Class="HediffGiver_Random">
+						<hediff>OripathyLesion</hediff>
+						<mtbDays>100</mtbDays>
+						<canAffectAnyLivePart>true</canAffectAnyLivePart>
+					</li>
+				</hediffGivers>
 			</li>
 			<li>
 				<minSeverity>0.90</minSeverity>
 				<label>extreme</label>
 				<lifeThreatening>true</lifeThreatening>
 				<painOffset>0.20</painOffset>
-				<deathMtbDays>60</deathMtbDays>
+				<deathMtbDays>90</deathMtbDays>
 				<mtbDeathDestroysBrain>true</mtbDeathDestroysBrain>
-				<capMods>
-				</capMods>
 				<hediffGivers>
 					<li Class="HediffGiver_Random">
 						<hediff>OripathyLesion</hediff>
@@ -101,10 +104,6 @@
 				<compClass>HediffComp_ImmunizableToxic</compClass>
 				<severityPerDayNotImmune>-0.1</severityPerDayNotImmune>
 			</li>
-			<li Class="HediffCompProperties_TendDuration">
-				<baseTendDurationHours>24</baseTendDurationHours>
-				<severityPerDayTended>-0.2</severityPerDayTended>
-			</li>
 			<li Class="HediffCompProperties_SurgeryInspectable">
 				<surgicalDetectionDesc>{PAWN_nameDef} is showing early signs of active originium exposure. Keep {PAWN_objective} away from sources of active originium.</surgicalDetectionDesc>
 			</li>
@@ -117,31 +116,34 @@
 		  <li>
 			<label>initial</label>
 			<minSeverity>0.04</minSeverity>
+			<painOffset>0.05</painOffset>
 			<capMods>
 			  <li>
-				<capacity>Consciousness</capacity>
-				<offset>-0.05</offset>
+				<capacity>BloodFiltration</capacity>
+				<offset>-0.01</offset>
 			  </li>
 			</capMods>
 		  </li>
 		  <li>
 			<label>low</label>
 			<minSeverity>0.2</minSeverity>
+			<painOffset>0.10</painOffset>
 			<capMods>
 			  <li>
-				<capacity>Consciousness</capacity>
-				<offset>-0.10</offset>
+				<capacity>BloodFiltration</capacity>
+				<offset>-0.05</offset>
 			  </li>
 			</capMods>
 		  </li>
 		  <li>
 			<label>moderate</label>
 			<minSeverity>0.40</minSeverity>
+			<painOffset>0.15</painOffset>
 			<vomitMtbDays>5</vomitMtbDays>
 			<capMods>
 			  <li>
-				<capacity>Consciousness</capacity>
-				<offset>-0.15</offset>
+				<capacity>BloodFiltration</capacity>
+				<offset>-0.10</offset>
 			  </li>
 			</capMods>
 			<hediffGivers>
@@ -154,11 +156,12 @@
 		  <li>
 			<label>serious</label>
 			<minSeverity>0.60</minSeverity>
+			<painOffset>0.20</painOffset>
 			<vomitMtbDays>1</vomitMtbDays>
 			<capMods>
 			  <li>
-				<capacity>Consciousness</capacity>
-				<offset>-0.25</offset>
+				<capacity>BloodFiltration</capacity>
+				<offset>-0.15</offset>
 			  </li>
 			</capMods>
 			<hediffGivers>
@@ -166,31 +169,22 @@
 				<hediff>Oripathy</hediff>
 				<mtbDays>20</mtbDays>
 			  </li>
-			  <li Class="HediffGiver_Random">
-				<hediff>OripathyLesion</hediff>
-				<mtbDays>30</mtbDays>
-				<canAffectAnyLivePart>true</canAffectAnyLivePart>
-			  </li>
 			</hediffGivers>
 		  </li>
 		  <li>
 			<label>extreme</label>
-			<minSeverity>0.80</minSeverity>
+			<minSeverity>0.90</minSeverity>
+			<painOffset>0.25</painOffset>
 			<capMods>
 			  <li>
-				<capacity>Consciousness</capacity>
-				<offset>-0.40</offset>
+				<capacity>BloodFiltration</capacity>
+				<offset>-0.20</offset>
 			  </li>
 			</capMods>
 			<hediffGivers>
 			  <li Class="HediffGiver_Random">
 				<hediff>Oripathy</hediff>
 				<mtbDays>1</mtbDays>
-			  </li>
-			  <li Class="HediffGiver_Random">
-				<hediff>OripathyLesion</hediff>
-				<mtbDays>10</mtbDays>
-				<canAffectAnyLivePart>true</canAffectAnyLivePart>
 			  </li>
 			</hediffGivers>
 		  </li>
@@ -247,12 +241,18 @@
       </li>
     </stages>
     <comps>
-      <li Class="HediffCompProperties_TendDuration">
-        <baseTendDurationHours>96</baseTendDurationHours>
-        <severityPerDayTended>-0.001</severityPerDayTended>
-      </li>
-		<li Class="HediffCompProperties_SeverityPerDay">
-			<severityPerDay>.003</severityPerDay>
+		 <li Class="HediffCompProperties_TendDuration">
+			<baseTendDurationHours>96</baseTendDurationHours>
+			<severityPerDayTended>-0.001</severityPerDayTended>
+		 </li>
+		<li Class="Oripathy.HediffCompProperties_HediffDependentSeverityPerDay">
+			<hediff>OriginiumBuildup</hediff>
+			<hediffSeverityToSeverityGainCurve>
+				<points>
+					<li>(0, 0.003)</li>
+					<li>(1.00, 0.05)</li>
+				</points>
+			</hediffSeverityToSeverityGainCurve>
 		</li>
     </comps>
   </HediffDef>

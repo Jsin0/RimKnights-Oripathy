@@ -17,17 +17,12 @@ namespace Oripathy
 
         public float CalculateSeverityPerDay()
         {
-            float num = this.severityPerDay + this.severityPerDayRange.RandomInRange;
-
-            if (Rand.Chance(this.reverseSeverityChangeChance))
-            {
-                num *= -1f;
-            }
-
-            return num;
+            return this.hediffSeverityToSeverityGainCurve.Evaluate(0f);
         }
 
-        public float severityPerDay;
+        public bool showDaysToRecover;
+
+        public bool showHoursToRecover;
 
         public HediffDef hediff;
 
@@ -35,11 +30,7 @@ namespace Oripathy
 
         public float mechanitorFactor = 1f;
 
-        public float reverseSeverityChangeChance;
-
-        public FloatRange severityPerDayRange = FloatRange.Zero;
-
-        public float minAge;
+        public float minAge = 0f;
 
     }
 }

@@ -16,11 +16,15 @@ namespace Oripathy
         public override void PostAdd(DamageInfo? dinfo)
         {
             base.PostAdd(dinfo);
-            if (pawn.IsColonist)
-            {
-                Messages.Message(this.pawn.Name + " has contracted Oripathy!", MessageTypeDefOf.NegativeHealthEvent);
-            }
+            //this.pawn.story.traits.GainTrait(new Trait(Oripathy.TraitDefOf.Oripathic));
         }
+        /*
+        public override void PostRemoved()
+        {
+            base.PostRemoved();
+            this.pawn.story.traits.RemoveTrait(new Trait(Oripathy.TraitDefOf.Oripathic));
+        }*/
+        
         public override void Notify_PawnDied(DamageInfo? dinfo, Hediff culprit = null)
         {
             base.Notify_PawnDied(dinfo, culprit);

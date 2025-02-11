@@ -18,5 +18,13 @@ namespace Oripathy
 
         public static DamageDef OriginiumDust;
     }
+    public static class TraitDefOf
+    {
+        static TraitDefOf()
+        {
+            DefOfHelper.EnsureInitializedInCtor(typeof(TraitDefOf));
+        }
 
+        public static TraitDef Oripathic;
+    }
 }

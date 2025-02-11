@@ -28,9 +28,9 @@ namespace Oripathy
         {
             base.CompExposeData();
             Scribe_Values.Look<float>(ref this.severityPerDay, "severityPerDay", 0f, false);
-            if (Scribe.mode == LoadSaveMode.PostLoadInit && this.severityPerDay == 0f && this.Props.severityPerDay != 0f && this.Props.severityPerDayRange == FloatRange.Zero)
+            if (Scribe.mode == LoadSaveMode.PostLoadInit && this.severityPerDay == 0f)
             {
-                this.severityPerDay = this.Props.CalculateSeverityPerDay();
+                this.severityPerDay = this.RecalculateChangePerDay();
                 Log.Warning("Hediff " + this.parent.Label + " had severityPerDay not matching parent.");
             }
         }
@@ -40,25 +40,29 @@ namespace Oripathy
             {
                 return 0f;
             }
+
             float num = this.severityPerDay;
 
-            Hediff affectorHediff = this.Pawn.health.hediffSet.GetFirstHediffOfDef(this.Props.hediff);
-            
-            if(affectorHediff != null)
+            if (base.Pawn.IsHashIntervalTick(600))
             {
-                num = this.Props.hediffSeverityToSeverityGainCurve.Evaluate(affectorHediff.Severity);
+                this.severityPerDay = RecalculateChangePerDay();
             }
-            else
-            {
-                num = severityPerDay;
-            }
-            
+
             HediffStage curStage = this.parent.CurStage;
 
             float num2 = num * ((curStage != null) ? curStage.severityGainFactor : 1f);
 
-            Log.Message("Severity per day: " + num);
+            //Log.Message("Severity per day: " + num);
             return num2;
+        }
+
+        public float RecalculateChangePerDay()
+        {
+            Hediff affectorHediff = this.Pawn.health.hediffSet.GetFirstHediffOfDef(this.Props.hediff);
+
+            float severity = ((affectorHediff != null) ? affectorHediff.Severity : 0f);
+
+            return this.Props.hediffSeverityToSeverityGainCurve.Evaluate(severity);
         }
 
         public float severityPerDay;

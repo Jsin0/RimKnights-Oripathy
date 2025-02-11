@@ -53,12 +53,17 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ThoughtWorker_Oripathic_Solidarity.cs" />
     <Compile Include="DefOf.cs" />
     <Compile Include="HediffCompProperties_HediffDependentSeverityPerDay.cs" />
     <Compile Include="HediffComp_HediffDependentSeverityPerDay.cs" />
     <Compile Include="Hediff_Oripathy.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="ThoughtWorker_Precept_IsNotOripathic.cs" />
+    <Compile Include="ThoughtWorker_Precept_IsNotOripathic_Social.cs" />
+    <Compile Include="ThoughtWorker_Precept_IsOripathic.cs" />
+    <Compile Include="ThoughtWorker_Precept_IsOripathic_Social.cs" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
