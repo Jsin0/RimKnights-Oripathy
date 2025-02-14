@@ -60,7 +60,7 @@ namespace Oripathy
             {
                 num *= Mathf.Max(1f - p.GetStatValue(StatDefOf.ToxicEnvironmentResistance, true, -1), 0f);
             }
-            num *= extraFactor;
+            num *= damageMultiplier;
             if (num != 0f)
             {
                 float num2 = Mathf.Lerp(0.85f, 1.15f, Rand.ValueSeeded(p.thingIDNumber ^ 74374237));
@@ -96,9 +96,9 @@ namespace Oripathy
         {
             return false;
         }
-        public static float extraFactor = 1f;
+        public static float damageMultiplier = 1f;
 
-        private SkyColorSet OriginiumRainColors = new SkyColorSet(new ColorInt(94, 84, 10).ToColor, new ColorInt(143, 127, 11).ToColor, new Color(0.6f, 0.6f, 0.6f), 0.85f);
+        private SkyColorSet OriginiumRainColors = new SkyColorSet(new ColorInt(184, 165, 20).ToColor, new ColorInt(170, 207, 46).ToColor, new Color(0.6f, 0.6f, 0.6f), 0.85f);
 
         private List<SkyOverlay> overlays = new List<SkyOverlay>();
     }
