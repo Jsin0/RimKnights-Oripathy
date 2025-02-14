@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<GameConditionDef>
+		<defName>OriginiumRain</defName>
+		<conditionClass>Oripathy.GameCondition_OriginiumRain</conditionClass>
+		<label>contaminated rain</label>
+		<description>Rain contaminated with active originium falls from the sky. Anyone outside risks contracting oripathy and agitating their condition.</description>
+		<weatherDef>Rain</weatherDef>
+		<preventNeutralVisitors>true</preventNeutralVisitors>
+		<canBePermanent>true</canBePermanent>
+		<natural>true</natural>
+		<letterText>Drops of ichorous fluid have begun falling from the sky.\n\nAnyone exposed has an incrased risk of contracting oripathy or agitate a preexisting condition.</letterText>
+		<endMessage>The contaminated rain is ending.</endMessage>
+		<allowUnderground>false</allowUnderground>
+		<pennedAnimalsSeekShelter>true</pennedAnimalsSeekShelter>
+	</GameConditionDef>
+</Defs>

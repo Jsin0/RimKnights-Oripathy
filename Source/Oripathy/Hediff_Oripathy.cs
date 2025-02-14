@@ -32,16 +32,7 @@ namespace Oripathy
         }
         private int GetFinalDelay()
         {
-            int delay;
-            delay = (int)((0.3 / this.Severity) * this.ticksDelay * Hediff_Oripathy.randDelayFactor.RandomInRange);
-            if (delay > 180000) //3 days max
-            {
-                return 180000;
-            }
-            else
-            {
-                return delay;
-            }
+            return (int)((this.Severity * (-2.5) + 3 + Hediff_Oripathy.randDayDelay.RandomInRange) * 60000); //converts from days to ticks
         }
         private void TryTriggerWarmupTimer()
         {
@@ -57,7 +48,7 @@ namespace Oripathy
                 return;
             }
 
-            Messages.Message(this.pawn.Name + "'s corpse will soon shatter.", MessageTypeDefOf.NegativeEvent);
+            /*Messages.Message(this.pawn.Name + "'s corpse will soon shatter.", MessageTypeDefOf.NegativeEvent);*/
             this.shatterTimer.Start(GenTicks.TicksGame, Hediff_Oripathy.shatterDurationSeconds.RandomInRange.SecondsToTicks(), new Action(this.DoShatterCorpse));
         }
 
@@ -133,7 +124,7 @@ namespace Oripathy
                 {
                     sustainer.End();
                 }
-                GenExplosion.DoExplosion(base.pawn.Position, base.pawn.MapHeld, 3f, Oripathy.DamageDefOf.OriginiumDust, base.pawn, 1, -1f, null, null, null, null, null, 0f, 1, null, false, null, 0f, 1, 0f, false, null, null, null, true, 1f, 0f, true, null, 1f, null, null);
+                GenExplosion.DoExplosion(base.pawn.Position, base.pawn.MapHeld, base.pawn.BodySize * 2f, Oripathy.DamageDefOf.OriginiumDust, base.pawn, 1, -1f, null, null, null, null, null, 1f, 1, null, false, null, 0f, 1, 0f, false, null, null, null, true, 1f, 0f, true, null, 1f, null, null);
             }
             else
             { 
@@ -171,7 +162,6 @@ namespace Oripathy
             }
         }
 
-
         private TickTimer warmupTimer = new TickTimer();
 
         private TickTimer shatterTimer = new TickTimer();
@@ -188,7 +178,7 @@ namespace Oripathy
         private Sustainer shatterSustainer;
 
         private static readonly FloatRange
-            randDelayFactor = new FloatRange(0.5f, 1f);
+            randDayDelay = new FloatRange(-0.1f, 0.7f);
 
     }
 }

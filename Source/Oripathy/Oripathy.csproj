@@ -53,8 +53,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GameCondition_OriginiumFallout.cs" />
+    <Compile Include="GameCondition_OriginiumRain.cs" />
+    <Compile Include="HediffDefOf.cs" />
+    <Compile Include="OriginiumUtility.cs" />
     <Compile Include="ThoughtWorker_Oripathic_Solidarity.cs" />
-    <Compile Include="DefOf.cs" />
+    <Compile Include="DamageDefOf.cs" />
     <Compile Include="HediffCompProperties_HediffDependentSeverityPerDay.cs" />
     <Compile Include="HediffComp_HediffDependentSeverityPerDay.cs" />
     <Compile Include="Hediff_Oripathy.cs" />
@@ -64,6 +68,8 @@
     <Compile Include="ThoughtWorker_Precept_IsNotOripathic_Social.cs" />
     <Compile Include="ThoughtWorker_Precept_IsOripathic.cs" />
     <Compile Include="ThoughtWorker_Precept_IsOripathic_Social.cs" />
+    <Compile Include="WeatherOverlay_OriginiumFog.cs" />
+    <Compile Include="WeatherOverlay_OriginiumRain.cs" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />

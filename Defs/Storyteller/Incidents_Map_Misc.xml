@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<IncidentDef>
+    <defName>ToxicFallout</defName>
+    <label>toxic fallout</label>
+    <category>Misc</category>
+    <targetTags>
+      <li>Map_PlayerHome</li>
+    </targetTags>
+    <workerClass>IncidentWorker_MakeGameCondition</workerClass>
+    <gameCondition>ToxicFallout</gameCondition>
+    <letterLabel>Toxic fallout</letterLabel>
+    <letterDef>ThreatSmall</letterDef>
+    <baseChance>0.12</baseChance>
+    <earliestDay>60</earliestDay>
+    <minRefireDays>90</minRefireDays>
+    <disabledWhen>
+      <extremeWeatherIncidentsDisabled>true</extremeWeatherIncidentsDisabled>
+    </disabledWhen>
+    <durationDays>2.5~10.5</durationDays>
+    <tale>ToxicFallout</tale>
+  </IncidentDef>
+  
+	<IncidentDef>
+    <defName>OriginiumRain</defName>
+    <label>originium rain</label>
+    <category>Misc</category>
+    <targetTags>
+      <li>Map_PlayerHome</li>
+    </targetTags>
+    <workerClass>IncidentWorker_MakeGameCondition</workerClass>
+    <gameCondition>ToxicFallout</gameCondition>
+    <letterLabel>Toxic fallout</letterLabel>
+    <letterDef>ThreatSmall</letterDef>
+    <baseChance>0.12</baseChance>
+    <earliestDay>60</earliestDay>
+    <minRefireDays>90</minRefireDays>
+    <disabledWhen>
+      <extremeWeatherIncidentsDisabled>true</extremeWeatherIncidentsDisabled>
+    </disabledWhen>
+    <durationDays>2.5~10.5</durationDays>
+    <tale>ToxicFallout</tale>
+  </IncidentDef>
+</Defs>
