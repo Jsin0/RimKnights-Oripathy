@@ -1,15 +1,15 @@
-﻿using System;
+﻿using RimWorld;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using RimWorld;
 using UnityEngine;
 using Verse;
 
 namespace Oripathy
 {
-    public class GameCondition_OriginiumRain : GameCondition_ForceWeather
+    internal class GameCondition_OriginiumDustStorm : GameCondition_OriginiumRain
     {
         public override int TransitionTicks
         {
@@ -48,9 +48,9 @@ namespace Oripathy
                 }
             }
         }
-        public static void DoPawnToxicDamage(Pawn p, bool protectedByRoof = true)
+        public static void DoPawnToxicDamage(Pawn p, bool protectedByIndoors = true)
         {
-            if (p.Spawned && protectedByRoof && p.Position.Roofed(p.Map))
+            if (p.Spawned && protectedByIndoors && !p.Position.UsesOutdoorTemperature(p.Map))
             {
                 return;
             }
@@ -60,7 +60,6 @@ namespace Oripathy
             {
                 num *= Mathf.Max(1f - p.GetStatValue(StatDefOf.ToxicEnvironmentResistance, true, -1), 0f);
             }
-            num *= DamageMultiplier;
             if (num != 0f)
             {
                 float num2 = Mathf.Lerp(0.85f, 1.15f, Rand.ValueSeeded(p.thingIDNumber ^ 74374237));
@@ -96,9 +95,6 @@ namespace Oripathy
         {
             return false;
         }
-
-        public static float DamageMultiplier = 1f;
-
         private SkyColorSet OriginiumRainColors = new SkyColorSet(new ColorInt(184, 165, 20).ToColor, new ColorInt(170, 207, 46).ToColor, new Color(0.6f, 0.6f, 0.6f), 0.85f);
 
         private List<SkyOverlay> overlays = new List<SkyOverlay>();

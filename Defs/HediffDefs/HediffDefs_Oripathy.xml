@@ -100,6 +100,10 @@
 		<maxSeverity>1</maxSeverity>
 		<initialSeverity>0.1</initialSeverity>
 		<comps>
+			<li Class="HediffCompProperties_Pollution" MayRequire="Ludeon.RimWorld.Biotech">
+			<pollutedSeverity>0.0333</pollutedSeverity>
+			<interval>60</interval>
+		  </li>
 			<li Class="HediffCompProperties_Immunizable">
 				<compClass>HediffComp_ImmunizableToxic</compClass>
 				<severityPerDayNotImmune>-0.1</severityPerDayNotImmune>

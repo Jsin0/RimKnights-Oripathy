@@ -53,7 +53,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="GameCondition_OriginiumFallout.cs" />
+    <Compile Include="GameCondition_OriginiumDustStorm.cs" />
     <Compile Include="GameCondition_OriginiumRain.cs" />
     <Compile Include="HediffDefOf.cs" />
     <Compile Include="OriginiumUtility.cs" />
@@ -68,7 +68,7 @@
     <Compile Include="ThoughtWorker_Precept_IsNotOripathic_Social.cs" />
     <Compile Include="ThoughtWorker_Precept_IsOripathic.cs" />
     <Compile Include="ThoughtWorker_Precept_IsOripathic_Social.cs" />
-    <Compile Include="WeatherOverlay_OriginiumFog.cs" />
+    <Compile Include="WeatherOverlay_OriginiumDust.cs" />
     <Compile Include="WeatherOverlay_OriginiumRain.cs" />
   </ItemGroup>
   <ItemGroup>
