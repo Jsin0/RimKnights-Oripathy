@@ -53,6 +53,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Building_OriginiumTrapDamager.cs" />
     <Compile Include="GameCondition_OriginiumDustStorm.cs" />
     <Compile Include="GameCondition_OriginiumRain.cs" />
     <Compile Include="GameCondition_OriginiumStorm.cs" />

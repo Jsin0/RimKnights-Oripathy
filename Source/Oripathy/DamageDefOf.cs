@@ -17,6 +17,9 @@ namespace Originium
         }
 
         public static DamageDef RM_OriginiumDust;
-        public static DamageDef RM_OriginiumBomb;
+
+        public static DamageDef RM_OriginiumCut;
+
+        //public static DamageDef RM_OriginiumBomb;
     }
 }
