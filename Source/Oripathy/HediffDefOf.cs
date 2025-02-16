@@ -15,8 +15,8 @@ namespace Originium
         {
             DefOfHelper.EnsureInitializedInCtor(typeof(HediffDefOf));
         }
-        public static HediffDef Oripathy;
+        public static HediffDef RM_Oripathy;
 
-        public static HediffDef OriginiumBuildup;
+        public static HediffDef RM_OriginiumBuildup;
     }
 }

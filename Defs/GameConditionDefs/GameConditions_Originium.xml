@@ -1,43 +1,43 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 	<GameConditionDef>
-		<defName>OriginiumRain</defName>
+		<defName>RM_OriginiumRain</defName>
 		<conditionClass>Originium.GameCondition_OriginiumRain</conditionClass>
 		<label>originium rain</label>
-		<description>Rain contaminated with active originium falls from the sky. Anyone outside risks contracting oripathy and agitating their condition.</description>
-		<weatherDef>OriginiumRain</weatherDef>
+		<description>Rain contaminated with active originium falls from the sky. Anyone outside risks contracting RM_Oripathy and agitating their condition.</description>
+		<weatherDef>RM_OriginiumRain</weatherDef>
 		<preventNeutralVisitors>true</preventNeutralVisitors>
 		<canBePermanent>true</canBePermanent>
 		<natural>true</natural>
 		<letterDef>NegativeEvent</letterDef>
-		<letterText>Drops of ichorous fluid have begun falling from the sky.\n\nAnyone exposed has an incrased risk of contracting oripathy or agitate a preexisting condition.</letterText>
+		<letterText>Drops of ichorous fluid have begun falling from the sky.\n\nAnyone exposed has an incrased risk of contracting RM_Oripathy or agitate a preexisting condition.</letterText>
 		<endMessage>The contaminated rain is ending.</endMessage>
 		<allowUnderground>false</allowUnderground>
 		<pennedAnimalsSeekShelter>true</pennedAnimalsSeekShelter>
 	</GameConditionDef>
 	
 	<GameConditionDef>
-		<defName>OriginiumStorm</defName>
+		<defName>RM_OriginiumStorm</defName>
 		<conditionClass>Originium.GameCondition_OriginiumStorm</conditionClass>
 		<label>originium storm</label>
 		<description>Rain contaminated with active originium falls from the sky. The originium seems to have worsened the storm.</description>
-		<weatherDef>OriginiumStorm</weatherDef>
+		<weatherDef>RM_OriginiumStorm</weatherDef>
 		<preventNeutralVisitors>true</preventNeutralVisitors>
 		<canBePermanent>true</canBePermanent>
 		<natural>true</natural>
 		<letterDef>NegativeEvent</letterDef>
-		<letterText>Contaminated rain falls from the sky while lightning strikes the ground.\n\nAnyone exposed has an incrased risk of contracting oripathy or agitate a preexisting condition while the lightning will start fires.</letterText>
+		<letterText>Contaminated rain falls from the sky while lightning strikes the ground.\n\nAnyone exposed has an incrased risk of contracting RM_Oripathy or agitate a preexisting condition while the lightning will start fires.</letterText>
 		<endMessage>The originium storm is ending.</endMessage>
 		<allowUnderground>false</allowUnderground>
 		<pennedAnimalsSeekShelter>true</pennedAnimalsSeekShelter>
 	</GameConditionDef>
 	
 	<GameConditionDef>
-		<defName>OriginiumDustStorm</defName>
+		<defName>RM_OriginiumDuststorm</defName>
 		<conditionClass>Originium.GameCondition_OriginiumDustStorm</conditionClass>
 		<label>originium dust storm</label>
 		<description>Strong winds have kicked up clouds of active originium dust. \n\nAnyone outdoors risks exposure to originium.</description>
-		<weatherDef>OriginiumStorm</weatherDef>
+		<weatherDef>RM_OriginiumStorm</weatherDef>
 		<preventNeutralVisitors>true</preventNeutralVisitors>
 		<canBePermanent>true</canBePermanent>
 		<natural>true</natural>

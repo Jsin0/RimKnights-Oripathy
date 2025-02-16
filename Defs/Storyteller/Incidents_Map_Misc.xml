@@ -22,7 +22,7 @@
   </IncidentDef>
   
 	<IncidentDef>
-    <defName>OriginiumRain</defName>
+    <defName>RM_OriginiumRain</defName>
     <label>originium rain</label>
     <category>Misc</category>
     <targetTags>

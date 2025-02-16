@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 	<HediffDef ParentName="InfectionBase">
-		<defName>Oripathy</defName>
+		<defName>RM_Oripathy</defName>
 		<hediffClass>Originium.Hediff_Oripathy</hediffClass>
 		<label>oripathy</label>
 		<description>An incurable disease due to the introduction of originium into the body.</description>
@@ -19,7 +19,7 @@
 				<surgicalDetectionDesc>{PAWN_nameDef} is showing early signs of Originium. While incurable, {PAWN_objective} can live an adequate life with regular care and monitoring.</surgicalDetectionDesc>
 			</li>
 			<li Class="Originium.HediffCompProperties_HediffDependentSeverityPerDay">
-				<hediff>OriginiumBuildup</hediff>
+				<hediff>RM_OriginiumBuildup</hediff>
 				<hediffSeverityToSeverityGainCurve>
 					<points>
 						<li>(0, 0.017)</li>
@@ -89,7 +89,7 @@
 	</HediffDef>
 			
 	<HediffDef>
-	<defName>OriginiumBuildup</defName>
+	<defName>RM_OriginiumBuildup</defName>
 		<label>blood originium-crystal density</label>
 		<description>Originium crystals present in the bloodstream.
 	\nOriginium is always present in the blood stream at low levels but at higher levels, may lead to a condition known as Originium.</description>
@@ -121,7 +121,7 @@
 		  <li>
 			<label>initial</label>
 			<minSeverity>0.04</minSeverity>
-			<painOffset>0.05</painOffset>
+			<painOffset>0.01</painOffset>
 			<capMods>
 			  <li>
 				<capacity>BloodFiltration</capacity>
@@ -132,19 +132,54 @@
 		  <li>
 			<label>low</label>
 			<minSeverity>0.2</minSeverity>
-			<painOffset>0.10</painOffset>
+			<painOffset>0.03</painOffset>
 			<capMods>
 			  <li>
 				<capacity>BloodFiltration</capacity>
-				<offset>-0.05</offset>
+				<offset>-0.03</offset>
 			  </li>
 			</capMods>
 		  </li>
 		  <li>
 			<label>moderate</label>
 			<minSeverity>0.40</minSeverity>
-			<painOffset>0.15</painOffset>
-			<vomitMtbDays>5</vomitMtbDays>
+			<painOffset>0.05</painOffset>
+			<vomitMtbDays>7</vomitMtbDays>
+			<capMods>
+			  <li>
+				<capacity>BloodFiltration</capacity>
+				<offset>-0.05</offset>
+			  </li>
+			</capMods>
+			<hediffGivers>
+			  <li Class="HediffGiver_Random">
+				<hediff>RM_Oripathy</hediff>
+				<mtbDays>60</mtbDays>
+			  </li>
+			</hediffGivers>
+		  </li>
+		  <li>
+			<label>serious</label>
+			<minSeverity>0.60</minSeverity>
+			<painOffset>0.07</painOffset>
+			<vomitMtbDays>1</vomitMtbDays>
+			<capMods>
+			  <li>
+				<capacity>BloodFiltration</capacity>
+				<offset>-0.07</offset>
+			  </li>
+			</capMods>
+			<hediffGivers>
+			  <li Class="HediffGiver_Random">
+				<hediff>RM_Oripathy</hediff>
+				<mtbDays>20</mtbDays>
+			  </li>
+			</hediffGivers>
+		  </li>
+		  <li>
+			<label>extreme</label>
+			<minSeverity>0.90</minSeverity>
+			<painOffset>0.10</painOffset>
 			<capMods>
 			  <li>
 				<capacity>BloodFiltration</capacity>
@@ -153,43 +188,8 @@
 			</capMods>
 			<hediffGivers>
 			  <li Class="HediffGiver_Random">
-				<hediff>Oripathy</hediff>
-				<mtbDays>60</mtbDays>
-			  </li>
-			</hediffGivers>
-		  </li>
-		  <li>
-			<label>serious</label>
-			<minSeverity>0.60</minSeverity>
-			<painOffset>0.20</painOffset>
-			<vomitMtbDays>1</vomitMtbDays>
-			<capMods>
-			  <li>
-				<capacity>BloodFiltration</capacity>
-				<offset>-0.15</offset>
-			  </li>
-			</capMods>
-			<hediffGivers>
-			  <li Class="HediffGiver_Random">
-				<hediff>Oripathy</hediff>
-				<mtbDays>20</mtbDays>
-			  </li>
-			</hediffGivers>
-		  </li>
-		  <li>
-			<label>extreme</label>
-			<minSeverity>0.90</minSeverity>
-			<painOffset>0.25</painOffset>
-			<capMods>
-			  <li>
-				<capacity>BloodFiltration</capacity>
-				<offset>-0.20</offset>
-			  </li>
-			</capMods>
-			<hediffGivers>
-			  <li Class="HediffGiver_Random">
-				<hediff>Oripathy</hediff>
-				<mtbDays>1</mtbDays>
+				<hediff>RM_Oripathy</hediff>
+				<mtbDays>0.5</mtbDays>
 			  </li>
 			</hediffGivers>
 		  </li>
@@ -251,7 +251,7 @@
 			<severityPerDayTended>-0.001</severityPerDayTended>
 		 </li>
 		<li Class="Originium.HediffCompProperties_HediffDependentSeverityPerDay">
-			<hediff>OriginiumBuildup</hediff>
+			<hediff>RM_OriginiumBuildup</hediff>
 			<hediffSeverityToSeverityGainCurve>
 				<points>
 					<li>(0, 0.003)</li>

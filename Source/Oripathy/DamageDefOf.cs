@@ -16,6 +16,7 @@ namespace Originium
             DefOfHelper.EnsureInitializedInCtor(typeof(DamageDefOf));
         }
 
-        public static DamageDef OriginiumDust;
+        public static DamageDef RM_OriginiumDust;
+        public static DamageDef RM_OriginiumBomb;
     }
 }

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 	<DamageDef>
-		<defName>OriginiumDust</defName>
+		<defName>RM_OriginiumDust</defName>
 		<label>active originium dust</label>
 		<workerClass>DamageWorker_Extinguish</workerClass>
 		<harmsHealth>false</harmsHealth>
@@ -13,5 +13,25 @@
 		<explosionColorEdge>(0.706, 0.839, 0.09, 0.05)</explosionColorEdge>
 		<soundExplosion>Explosion_Smoke</soundExplosion>
 		<combatLogRules>Damage_Smoke</combatLogRules>
+	</DamageDef>
+	
+	<DamageDef ParentName="CutBase">
+		<defName>RM_OriginiumCut</defName>
+		<label>originium cut</label>
+		<additionalHediffs>
+		  <li>
+			<hediff>RM_OriginiumBuildup</hediff>
+			<severityPerDamageDealt>0.015</severityPerDamageDealt>
+			<victimSeverityScaling>ToxicResistance</victimSeverityScaling>
+			<inverseStatScaling>true</inverseStatScaling>
+			<victimSeverityScalingByInvBodySize>true</victimSeverityScalingByInvBodySize>
+		  </li>
+		  <li>
+			<hediff>RM_Oripathy</hediff>
+			<severityPerDamageDealt>0.005</severityPerDamageDealt>
+			<inverseStatScaling>true</inverseStatScaling>
+			<victimSeverityScalingByInvBodySize>true</victimSeverityScalingByInvBodySize>
+		  </li>
+		</additionalHediffs>
 	</DamageDef>
 </Defs>

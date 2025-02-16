@@ -3,20 +3,20 @@
 	<!-- Issue -->
 
   <IssueDef>
-    <defName>Oripathy</defName>
-    <label>oripathy</label>
+    <defName>RM_Oripathy</defName>
+    <label>Oripathy</label>
     <iconPath>UI/Issues/BodyModifications</iconPath>
   </IssueDef>
   
   <HistoryEventDef>
     <defName>BecomeOripathic</defName>
-    <label>become infected with oripathy</label>
+    <label>become infected with RM_Oripathy</label>
   </HistoryEventDef>
   
   <!-- Precept-->
   <PreceptDef>
     <defName>Oripathy_Abhorrent</defName>
-    <issue>Oripathy</issue>
+    <issue>RM_Oripathy</issue>
     <label>abhorrent</label>
     <description>Oripathy is a curse and the infected should not live alongside the healthy.</description>
     <impact>High</impact>
@@ -40,7 +40,7 @@
 
   <PreceptDef>
     <defName>Oripathy_Disapproved</defName>
-    <issue>Oripathy</issue>
+    <issue>RM_Oripathy</issue>
     <label>disapproved</label>
     <description>Oripathy is dangerous and so are the infected.</description>
     <impact>Low</impact>
@@ -58,7 +58,7 @@
   
   <PreceptDef>
     <defName>Oripathy_Accepted</defName>
-    <issue>Oripathy</issue>
+    <issue>RM_Oripathy</issue>
     <label>accepted</label>
     <description>While unfortunate, oripathy is a fact of life and the infected deserve to be treated like any other.</description>
     <impact>Low</impact>
@@ -68,7 +68,7 @@
 
   <PreceptDef>
     <defName>Oripathy_Exalted</defName>
-    <issue>Oripathy</issue>
+    <issue>RM_Oripathy</issue>
     <label>exalted</label>
     <description>Oripathy is a blessing and the infected were chosen to carry this blessing.</description>
     <impact>High</impact>
@@ -131,7 +131,7 @@
     <stages>
       <li>
         <label>oripathic</label>
-        <description>I'm infected with Originium. I'm no better than the dirt on the ground.</description>
+        <description>I'm an oripathic. I'm no better than the dirt on the ground.</description>
         <baseMoodEffect>-10</baseMoodEffect>
       </li>
     </stages>
@@ -174,7 +174,7 @@
     <stages>
       <li>
         <label>oripathic</label>
-        <description>I'm infected with Originium. This is terrible.</description>
+        <description>I'm infected with oripathy. My days are numbered.</description>
         <baseMoodEffect>-5</baseMoodEffect>
       </li>
     </stages>

@@ -15,11 +15,6 @@
     <statBases>
       <MarketValue>5</MarketValue>
       <Mass>0.5</Mass>
-      <StuffPower_Armor_Sharp>0.9</StuffPower_Armor_Sharp>
-      <StuffPower_Armor_Blunt>0.45</StuffPower_Armor_Blunt>
-      <StuffPower_Armor_Heat>0.54</StuffPower_Armor_Heat>
-      <StuffPower_Insulation_Cold>3</StuffPower_Insulation_Cold>
-      <StuffPower_Insulation_Heat>0</StuffPower_Insulation_Heat>
       <BluntDamageMultiplier>1.5</BluntDamageMultiplier>
     </statBases>
     <thingCategories>
@@ -30,31 +25,10 @@
     <deepLumpSizeRange>1~4</deepLumpSizeRange>
     <burnableByRecipe>false</burnableByRecipe>
     <smeltable>false</smeltable>
-    <stuffProps>
-		<categories>
-			<li>Stony</li>
-		</categories>
-		<commonality>0.05</commonality>
-		<color>(46,46,46)</color>
-		<constructEffect>ConstructMetal</constructEffect>
-		<soundImpactBullet>BulletImpact_Ground</soundImpactBullet>
-		<soundImpactMelee>Pawn_Melee_Punch_HitBuilding_Stone</soundImpactMelee>
-		<soundMeleeHitSharp>MeleeHit_Stone</soundMeleeHitSharp>
-		<soundMeleeHitBlunt>MeleeHit_Stone</soundMeleeHitBlunt>
-		<statFactors>
-			<MaxHitPoints>0.5</MaxHitPoints>
-			<WorkToMake>1.4</WorkToMake>
-			<WorkToBuild>5.0</WorkToBuild>
-			<Beauty>2.5</Beauty>
-			<Flammability>0</Flammability>
-			<MeleeWeapon_CooldownMultiplier>1.3</MeleeWeapon_CooldownMultiplier>
-		</statFactors>
-    </stuffProps>
-    <terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
     <allowedArchonexusCount>80</allowedArchonexusCount>  
   </ThingDef>
   
-    
+  <!--
   <ThingDef ParentName="ResourceBase">
     <defName>RM_OriginiumShard</defName>
     <label>originium shard</label>
@@ -80,6 +54,20 @@
     <thingCategories>
       <li>Manufactured</li>
     </thingCategories>
+    <comps>
+      <li Class="CompProperties_Explosive">
+        <explosiveRadius>1.1</explosiveRadius>
+        <explosiveDamageType>Flame</explosiveDamageType>
+        <explosiveExpandPerStackcount>0.037</explosiveExpandPerStackcount>
+        <startWickOnDamageTaken>
+          <li>Flame</li>
+        </startWickOnDamageTaken>
+        <startWickHitPointsPercent>0.333</startWickHitPointsPercent>
+        <preExplosionSpawnThingDef>Filth_Fuel</preExplosionSpawnThingDef>
+        <preExplosionSpawnChance>1</preExplosionSpawnChance>
+        <wickTicks>70~150</wickTicks>
+      </li>
+    </comps>
   </ThingDef>
-
+	-->
 </Defs>

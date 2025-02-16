@@ -64,7 +64,7 @@ namespace Originium
             {
                 float num2 = Mathf.Lerp(0.85f, 1.15f, Rand.ValueSeeded(p.thingIDNumber ^ 74374237));
                 num *= num2;
-                HealthUtility.AdjustSeverity(p, HediffDefOf.OriginiumBuildup, num);
+                HealthUtility.AdjustSeverity(p, HediffDefOf.RM_OriginiumBuildup, num);
             }
         }
         public override void GameConditionDraw(Map map)
