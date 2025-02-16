@@ -7,7 +7,7 @@ using RimWorld;
 using UnityEngine;
 using Verse;
 
-namespace Oripathy
+namespace Originium
 {
     public class GameCondition_OriginiumRain : GameCondition_ForceWeather
     {
@@ -60,7 +60,8 @@ namespace Oripathy
             {
                 num *= Mathf.Max(1f - p.GetStatValue(StatDefOf.ToxicEnvironmentResistance, true, -1), 0f);
             }
-            num *= DamageMultiplier;
+            Log.Message(damageMultiplier);
+            num *= damageMultiplier;
             if (num != 0f)
             {
                 float num2 = Mathf.Lerp(0.85f, 1.15f, Rand.ValueSeeded(p.thingIDNumber ^ 74374237));
@@ -97,7 +98,7 @@ namespace Oripathy
             return false;
         }
 
-        public static float DamageMultiplier = 1f;
+        private static float damageMultiplier = 1f;
 
         private SkyColorSet OriginiumRainColors = new SkyColorSet(new ColorInt(184, 165, 20).ToColor, new ColorInt(170, 207, 46).ToColor, new Color(0.6f, 0.6f, 0.6f), 0.85f);
 

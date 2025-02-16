@@ -7,7 +7,7 @@ using RimWorld;
 using UnityEngine;
 using Verse;
 
-namespace Oripathy
+namespace Originium
 {
     [StaticConstructorOnStartup]
     public class WeatherOverlay_OriginiumRain : SkyOverlay

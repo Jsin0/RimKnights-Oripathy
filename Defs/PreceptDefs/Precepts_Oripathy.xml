@@ -95,7 +95,7 @@
   <ThoughtDef>
     <defName>Oripathic_Abhorrent_Social</defName>
     <thoughtClass>Thought_SituationalSocial</thoughtClass>
-    <workerClass>Oripathy.ThoughtWorker_Precept_IsOripathic_Social</workerClass>
+    <workerClass>Originium.ThoughtWorker_Precept_IsOripathic_Social</workerClass>
     <nullifyingTraits>
       <li>Kind</li>
     </nullifyingTraits>
@@ -111,7 +111,7 @@
   <ThoughtDef>
     <defName>NotOripathic_Abhorrent_Social</defName>
     <thoughtClass>Thought_SituationalSocial</thoughtClass>
-    <workerClass>Oripathy.ThoughtWorker_Precept_IsNotOripathic_Social</workerClass>
+    <workerClass>Originium.ThoughtWorker_Precept_IsNotOripathic_Social</workerClass>
     <nullifyingTraits>
       <li>Kind</li>
     </nullifyingTraits>
@@ -126,12 +126,12 @@
   
   <ThoughtDef>
     <defName>Oripathic_Abhorrent</defName>
-    <workerClass>Oripathy.ThoughtWorker_Precept_IsOripathic</workerClass>
+    <workerClass>Originium.ThoughtWorker_Precept_IsOripathic</workerClass>
     <validWhileDespawned>true</validWhileDespawned>
     <stages>
       <li>
         <label>oripathic</label>
-        <description>I'm infected with oripathy. I'm no better than the dirt on the ground.</description>
+        <description>I'm infected with Originium. I'm no better than the dirt on the ground.</description>
         <baseMoodEffect>-10</baseMoodEffect>
       </li>
     </stages>
@@ -139,7 +139,7 @@
   
   <ThoughtDef>
     <defName>NotOripathic_Abhorrent</defName>
-    <workerClass>Oripathy.ThoughtWorker_Precept_IsNotOripathic</workerClass>
+    <workerClass>Originium.ThoughtWorker_Precept_IsNotOripathic</workerClass>
     <validWhileDespawned>true</validWhileDespawned>
     <stages>
       <li>
@@ -153,7 +153,7 @@
   <ThoughtDef>
     <defName>Oripathic_Disapproved_Social</defName>
     <thoughtClass>Thought_SituationalSocial</thoughtClass>
-    <workerClass>Oripathy.ThoughtWorker_Precept_IsOripathic_Social</workerClass>
+    <workerClass>Originium.ThoughtWorker_Precept_IsOripathic_Social</workerClass>
     <validWhileDespawned>true</validWhileDespawned>
     <nullifyingTraits>
       <li>Kind</li>
@@ -168,13 +168,13 @@
   
   <ThoughtDef>
     <defName>Oripathic_Disapproved</defName>
-    <workerClass>Oripathy.ThoughtWorker_Precept_IsOripathic</workerClass>
+    <workerClass>Originium.ThoughtWorker_Precept_IsOripathic</workerClass>
     <validWhileDespawned>true</validWhileDespawned>
     <developmentalStageFilter>Baby, Child, Adult</developmentalStageFilter>
     <stages>
       <li>
         <label>oripathic</label>
-        <description>I'm infected with oripathy. This is terrible.</description>
+        <description>I'm infected with Originium. This is terrible.</description>
         <baseMoodEffect>-5</baseMoodEffect>
       </li>
     </stages>
@@ -183,7 +183,7 @@
   <ThoughtDef>
     <defName>Oripathic_Exalted_Social</defName>
     <thoughtClass>Thought_SituationalSocial</thoughtClass>
-    <workerClass>Oripathy.ThoughtWorker_Precept_IsOripathic_Social</workerClass>
+    <workerClass>Originium.ThoughtWorker_Precept_IsOripathic_Social</workerClass>
     <validWhileDespawned>true</validWhileDespawned>
     <stages>
       <li>
@@ -196,7 +196,7 @@
   <ThoughtDef>
     <defName>NotOripathic_Exalted_Social</defName>
     <thoughtClass>Thought_SituationalSocial</thoughtClass>
-    <workerClass>Oripathy.ThoughtWorker_Precept_IsNotOripathic_Social</workerClass>
+    <workerClass>Originium.ThoughtWorker_Precept_IsNotOripathic_Social</workerClass>
     <validWhileDespawned>true</validWhileDespawned>
     <stages>
       <li>
@@ -208,7 +208,7 @@
   
   <ThoughtDef>
     <defName>Oripathic_Exalted</defName>
-    <workerClass>Oripathy.ThoughtWorker_Precept_IsOripathic</workerClass>
+    <workerClass>Originium.ThoughtWorker_Precept_IsOripathic</workerClass>
     <validWhileDespawned>true</validWhileDespawned>
     <developmentalStageFilter>Baby, Child, Adult</developmentalStageFilter>
     <stages>
@@ -222,7 +222,7 @@
   
   <ThoughtDef>
     <defName>NotOripathic_Exalted</defName>
-    <workerClass>Oripathy.ThoughtWorker_Precept_IsNotOripathic</workerClass>
+    <workerClass>Originium.ThoughtWorker_Precept_IsNotOripathic</workerClass>
     <validWhileDespawned>true</validWhileDespawned>
     <developmentalStageFilter>Baby, Child, Adult</developmentalStageFilter>
     <stages>

@@ -55,6 +55,7 @@
   <ItemGroup>
     <Compile Include="GameCondition_OriginiumDustStorm.cs" />
     <Compile Include="GameCondition_OriginiumRain.cs" />
+    <Compile Include="GameCondition_OriginiumStorm.cs" />
     <Compile Include="HediffDefOf.cs" />
     <Compile Include="OriginiumUtility.cs" />
     <Compile Include="ThoughtWorker_Oripathic_Solidarity.cs" />

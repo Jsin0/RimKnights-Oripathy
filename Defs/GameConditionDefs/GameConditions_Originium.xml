@@ -2,13 +2,14 @@
 <Defs>
 	<GameConditionDef>
 		<defName>OriginiumRain</defName>
-		<conditionClass>Oripathy.GameCondition_OriginiumRain</conditionClass>
+		<conditionClass>Originium.GameCondition_OriginiumRain</conditionClass>
 		<label>originium rain</label>
 		<description>Rain contaminated with active originium falls from the sky. Anyone outside risks contracting oripathy and agitating their condition.</description>
 		<weatherDef>OriginiumRain</weatherDef>
 		<preventNeutralVisitors>true</preventNeutralVisitors>
 		<canBePermanent>true</canBePermanent>
 		<natural>true</natural>
+		<letterDef>NegativeEvent</letterDef>
 		<letterText>Drops of ichorous fluid have begun falling from the sky.\n\nAnyone exposed has an incrased risk of contracting oripathy or agitate a preexisting condition.</letterText>
 		<endMessage>The contaminated rain is ending.</endMessage>
 		<allowUnderground>false</allowUnderground>
@@ -17,18 +18,33 @@
 	
 	<GameConditionDef>
 		<defName>OriginiumStorm</defName>
-		<conditionClass>Oripathy.GameCondition_OriginiumRain</conditionClass>
+		<conditionClass>Originium.GameCondition_OriginiumStorm</conditionClass>
 		<label>originium storm</label>
-		<description>Rain contaminated with active originium falls from the sky. Anyone outside risks contracting oripathy and agitating their condition.</description>
+		<description>Rain contaminated with active originium falls from the sky. The originium seems to have worsened the storm.</description>
 		<weatherDef>OriginiumStorm</weatherDef>
 		<preventNeutralVisitors>true</preventNeutralVisitors>
 		<canBePermanent>true</canBePermanent>
 		<natural>true</natural>
+		<letterDef>NegativeEvent</letterDef>
 		<letterText>Contaminated rain falls from the sky while lightning strikes the ground.\n\nAnyone exposed has an incrased risk of contracting oripathy or agitate a preexisting condition while the lightning will start fires.</letterText>
 		<endMessage>The originium storm is ending.</endMessage>
 		<allowUnderground>false</allowUnderground>
 		<pennedAnimalsSeekShelter>true</pennedAnimalsSeekShelter>
-		<damageMultiplier>5</damageMultiplier>
 	</GameConditionDef>
 	
+	<GameConditionDef>
+		<defName>OriginiumDustStorm</defName>
+		<conditionClass>Originium.GameCondition_OriginiumDustStorm</conditionClass>
+		<label>originium dust storm</label>
+		<description>Strong winds have kicked up clouds of active originium dust. \n\nAnyone outdoors risks exposure to originium.</description>
+		<weatherDef>OriginiumStorm</weatherDef>
+		<preventNeutralVisitors>true</preventNeutralVisitors>
+		<canBePermanent>true</canBePermanent>
+		<natural>true</natural>
+		<letterDef>NegativeEvent</letterDef>
+		<letterText>Strong winds have kicked up clouds of active originium dust. \n\nAnyone outdoors risks exposure to originium.</letterText>
+		<endMessage>The originium storm is ending.</endMessage>
+		<allowUnderground>false</allowUnderground>
+		<pennedAnimalsSeekShelter>true</pennedAnimalsSeekShelter>
+	</GameConditionDef>
 </Defs>

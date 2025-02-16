@@ -6,7 +6,7 @@
 		<degreeDatas>
 		  <li>
 			<label>oripathic</label>
-			<description>{PAWN_nameDef} has contracted a disease known as oripathy. {PAWN_nameDef} experience pity and prejudice.</description>
+			<description>{PAWN_nameDef} has contracted a disease known as Originium. {PAWN_nameDef} experience pity and prejudice.</description>
 		  </li>
 		</degreeDatas>
 	</TraitDef>

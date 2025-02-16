@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using RimWorld;
 using Verse;
 
-namespace Oripathy
+namespace Originium
 {
     public class HediffCompProperties_HediffDependentSeverityPerDay : HediffCompProperties
     {

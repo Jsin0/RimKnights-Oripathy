@@ -4,16 +4,16 @@
     <defName>OriginiumRain</defName>
     <label>originium rain</label>
     <isBad>true</isBad>
-    <canOccurAsRandomForcedEvent>true</canOccurAsRandomForcedEvent>
-    <description>Anyone exposed to the contaminated rain for long enough will contract oripathy.</description>
+    <canOccurAsRandomForcedEvent>false</canOccurAsRandomForcedEvent>
+    <description>Anyone exposed to the contaminated rain for long enough will contract Originium.</description>
     <favorability>VeryBad</favorability>
     <perceivePriority>3</perceivePriority>
     <weatherThought>SoakingWet</weatherThought>
-    <accuracyMultiplier>0.5</accuracyMultiplier>
+    <accuracyMultiplier>0.8</accuracyMultiplier>
     <rainRate>1</rainRate>
     <moveSpeedMultiplier>0.9</moveSpeedMultiplier>
 	<overlayClasses>
-      <li>Oripathy.WeatherOverlay_OriginiumRain</li>
+      <li>Originium.WeatherOverlay_OriginiumRain</li>
       <li>WeatherOverlay_Fog</li>
     </overlayClasses> 
     <ambientSounds>
@@ -50,6 +50,7 @@
     <defName>OriginiumStorm</defName>
     <label>originium thunderstorm</label>
     <isBad>true</isBad>
+    <canOccurAsRandomForcedEvent>false</canOccurAsRandomForcedEvent>
     <description>The lightning will start fires, but the rain will put it out. The rain also reduces movement speed and shooting accuracy.</description>
     <temperatureRange>0~999</temperatureRange>
     <windSpeedFactor>1.5</windSpeedFactor>
@@ -57,7 +58,7 @@
     <favorability>Bad</favorability>
     <perceivePriority>2</perceivePriority>
     <weatherThought>SoakingWet</weatherThought>
-    <accuracyMultiplier>0.8</accuracyMultiplier>
+    <accuracyMultiplier>0.5</accuracyMultiplier>
     <rainRate>1</rainRate>
     <moveSpeedMultiplier>0.8</moveSpeedMultiplier>
     <ambientSounds>
@@ -67,16 +68,17 @@
     <durationRange>15000~40000</durationRange>
     <eventMakers>
       <li>
-        <averageInterval>1200</averageInterval>
+        <averageInterval>1000</averageInterval>
         <eventClass>WeatherEvent_LightningFlash</eventClass>
       </li>
       <li>
-        <averageInterval>1200</averageInterval>
+        <averageInterval>1000</averageInterval>
         <eventClass>WeatherEvent_LightningStrike</eventClass>
       </li>
     </eventMakers>
     <overlayClasses>
-      <li>Oripathy.WeatherOverlay_OriginiumRain</li>
+      <li>Originium.WeatherOverlay_OriginiumRain</li>
+      <li>Originium.WeatherOverlay_OriginiumRain</li>
     </overlayClasses>
     <commonalityRainfallFactor>
       <points>
@@ -116,9 +118,11 @@
     <defName>OriginiumDuststorm</defName>
     <label>originium dust storm</label>
     <isBad>true</isBad>
-    <description>The dust storm reduces weapon accuracy while increasing the risk of contracting oripathy.</description>
+    <canOccurAsRandomForcedEvent>false</canOccurAsRandomForcedEvent>
+    <description>The dust storm reduces weapon accuracy while increasing the risk of contracting Originium.</description>
     <temperatureRange>0~999</temperatureRange>
-    <windSpeedFactor>1.5</windSpeedFactor>
+    <windSpeedFactor>1.8</windSpeedFactor>
+    <windSpeedOffset>1.5</windSpeedOffset>
     <accuracyMultiplier>0.3</accuracyMultiplier>
     <favorability>VeryBad</favorability>
     <perceivePriority>2</perceivePriority>
@@ -126,9 +130,9 @@
       <li>Ambient_Wind_Storm</li>
     </ambientSounds>
     <overlayClasses>
-      <li>Oripathy.WeatherOverlay_OriginiumDust</li>
-      <li>Oripathy.WeatherOverlay_OriginiumDust</li>
-      <li>Oripathy.WeatherOverlay_OriginiumDust</li>
+      <li>Originium.WeatherOverlay_OriginiumDust</li>
+      <li>Originium.WeatherOverlay_OriginiumDust</li>
+      <li>Originium.WeatherOverlay_OriginiumDust</li>
     </overlayClasses>
     <commonalityRainfallFactor>
       <points>
@@ -136,7 +140,6 @@
         <li>(1300, 1)</li>
       </points>
     </commonalityRainfallFactor>    
-    <!-- Colors are Overcast -->
     <skyColorsDay>
       <sky>(0.8,0.8,0.8)</sky>
       <shadow>(0.92,0.92,0.92)</shadow>

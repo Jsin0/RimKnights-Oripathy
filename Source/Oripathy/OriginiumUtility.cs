@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Verse;
 
-namespace Oripathy
+namespace Originium
 {
     public class OriginiumUtility
     {

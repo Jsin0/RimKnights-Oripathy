@@ -9,20 +9,26 @@ using RimWorld;
 using UnityEngine;
 using Verse.Sound;
 
-namespace Oripathy
+namespace Originium
 {
     public class Hediff_Oripathy : HediffWithComps
     {
         public override void PostAdd(DamageInfo? dinfo)
         {
+            if (!this.pawn.RaceProps.IsFlesh)
+            {
+                Log.Error("Tried giving oripathy to an inorganic pawn");
+                this.pawn.health.RemoveHediff(this);
+                return;
+            }
             base.PostAdd(dinfo);
-            //this.pawn.story.traits.GainTrait(new Trait(Oripathy.TraitDefOf.Oripathic));
+
         }
         /*
         public override void PostRemoved()
         {
             base.PostRemoved();
-            this.pawn.story.traits.RemoveTrait(new Trait(Oripathy.TraitDefOf.Oripathic));
+            this.pawn.story.traits.RemoveTrait(new Trait(Originium.TraitDefOf.Oripathic));
         }*/
         
         public override void Notify_PawnDied(DamageInfo? dinfo, Hediff culprit = null)
@@ -38,7 +44,7 @@ namespace Oripathy
         {
             this.shattering = true;
             this.warmupTimer.Start(GenTicks.TicksGame, this.GetFinalDelay(), new Action(this.TryShatter));
-            //Log.Message("Oripathy: " + this.pawn.Name + " will soon shatter soon");
+            //Log.Message("Originium: " + this.pawn.Name + " will soon shatter soon");
         }
         private void TryShatter()
         {
@@ -124,7 +130,11 @@ namespace Oripathy
                 {
                     sustainer.End();
                 }
-                GenExplosion.DoExplosion(base.pawn.Position, base.pawn.MapHeld, base.pawn.BodySize * 2f, Oripathy.DamageDefOf.OriginiumDust, base.pawn, 1, -1f, null, null, null, null, null, 1f, 1, null, false, null, 0f, 1, 0f, false, null, null, null, true, 1f, 0f, true, null, 1f, null, null);
+                IntVec3 center = base.pawn.Position;
+                Map map = base.pawn.MapHeld;
+                float radius = base.pawn.BodySize * 2f;
+                GenExplosion.DoExplosion(center, map, radius, Originium.DamageDefOf.OriginiumDust, base.pawn, 1, -1f, null, null, null, null, null, 1f, 1, null, false, null, 0f, 1, 0f, false, null, null, null, true, 1f, 0f, true, null, 1f, null, null);
+                PollutionUtility.GrowPollutionAt(center, map, (int)Math.Round(3.15 * radius * radius));
             }
             else
             { 

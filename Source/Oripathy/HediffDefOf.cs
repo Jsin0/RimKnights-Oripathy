@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using RimWorld;
 using Verse;
 
-namespace Oripathy
+namespace Originium
 {
     [DefOf]
     public static class HediffDefOf

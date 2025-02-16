@@ -7,7 +7,7 @@ using RimWorld;
 using UnityEngine;
 using Verse;
 
-namespace Oripathy
+namespace Originium
 {
     [StaticConstructorOnStartup]
     public class WeatherOverlay_OriginiumDust : SkyOverlay
@@ -31,7 +31,7 @@ namespace Oripathy
         private FloatRange panSpeed2 = new FloatRange(0.001f, 0.02f);
 
         private static readonly Material DustOverlayWorld = MatLoader.LoadMat("Weather/FogOverlayWorld", -1);
-        //private static readonly Material DustOverlayWorld = MaterialPool.MatFrom("Oripathy/Textures/Weather/DustStorm", ShaderDatabase.WorldOverlayTransparent);
-        //private static readonly Material DustOverlayWorld = MatLoader.LoadMat("Oripathy/Textures/Weather/DustStorm", -1);
+        //private static readonly Material DustOverlayWorld = MaterialPool.MatFrom("Originium/Textures/Weather/DustStorm", ShaderDatabase.WorldOverlayTransparent);
+        //private static readonly Material DustOverlayWorld = MatLoader.LoadMat("Originium/Textures/Weather/DustStorm", -1);
     }
 }

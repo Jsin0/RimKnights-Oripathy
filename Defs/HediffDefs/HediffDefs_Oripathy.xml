@@ -2,7 +2,7 @@
 <Defs>
 	<HediffDef ParentName="InfectionBase">
 		<defName>Oripathy</defName>
-		<hediffClass>Oripathy.Hediff_Oripathy</hediffClass>
+		<hediffClass>Originium.Hediff_Oripathy</hediffClass>
 		<label>oripathy</label>
 		<description>An incurable disease due to the introduction of originium into the body.</description>
 		<lethalSeverity>1</lethalSeverity>
@@ -16,9 +16,9 @@
 				<severityPerDayTended>-0.015</severityPerDayTended>
 			</li>
 			<li Class="HediffCompProperties_SurgeryInspectable">
-				<surgicalDetectionDesc>{PAWN_nameDef} is showing early signs of oripathy. While incurable, {PAWN_objective} can live an adequate life with regular care and monitoring.</surgicalDetectionDesc>
+				<surgicalDetectionDesc>{PAWN_nameDef} is showing early signs of Originium. While incurable, {PAWN_objective} can live an adequate life with regular care and monitoring.</surgicalDetectionDesc>
 			</li>
-			<li Class="Oripathy.HediffCompProperties_HediffDependentSeverityPerDay">
+			<li Class="Originium.HediffCompProperties_HediffDependentSeverityPerDay">
 				<hediff>OriginiumBuildup</hediff>
 				<hediffSeverityToSeverityGainCurve>
 					<points>
@@ -92,7 +92,7 @@
 	<defName>OriginiumBuildup</defName>
 		<label>blood originium-crystal density</label>
 		<description>Originium crystals present in the bloodstream.
-	\nOriginium is always present in the blood stream at low levels but at higher levels, may lead to a condition known as Oripathy.</description>
+	\nOriginium is always present in the blood stream at low levels but at higher levels, may lead to a condition known as Originium.</description>
 		<hediffClass>HediffWithComps</hediffClass>
 		<defaultLabelColor>(1.0, 0.5, 0.0)</defaultLabelColor>
 		<scenarioCanAdd>true</scenarioCanAdd>
@@ -101,7 +101,8 @@
 		<initialSeverity>0.1</initialSeverity>
 		<comps>
 			<li Class="HediffCompProperties_Pollution" MayRequire="Ludeon.RimWorld.Biotech">
-			<pollutedSeverity>0.0333</pollutedSeverity>
+			<pollutedSeverity>0.0003</pollutedSeverity>
+			<unpollutedSeverity>0</unpollutedSeverity>
 			<interval>60</interval>
 		  </li>
 			<li Class="HediffCompProperties_Immunizable">
@@ -249,7 +250,7 @@
 			<baseTendDurationHours>96</baseTendDurationHours>
 			<severityPerDayTended>-0.001</severityPerDayTended>
 		 </li>
-		<li Class="Oripathy.HediffCompProperties_HediffDependentSeverityPerDay">
+		<li Class="Originium.HediffCompProperties_HediffDependentSeverityPerDay">
 			<hediff>OriginiumBuildup</hediff>
 			<hediffSeverityToSeverityGainCurve>
 				<points>

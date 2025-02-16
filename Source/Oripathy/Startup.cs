@@ -7,7 +7,7 @@ using RimWorld;
 using Verse;
 using HarmonyLib;
 
-namespace Oripathy.Utilities
+namespace Originium.Utilities
 {
     [StaticConstructorOnStartup]
     internal static class Startup

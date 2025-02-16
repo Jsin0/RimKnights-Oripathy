@@ -1,15 +1,15 @@
-﻿using RimWorld;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using RimWorld;
 using UnityEngine;
 using Verse;
 
 namespace Originium
 {
-    internal class GameCondition_OriginiumDustStorm : GameCondition_OriginiumRain
+    public class GameCondition_OriginiumStorm : GameCondition_ForceWeather
     {
         public override int TransitionTicks
         {
@@ -22,7 +22,7 @@ namespace Originium
         {
             base.GameConditionTick();
             List<Map> affectedMaps = base.AffectedMaps;
-            if (Find.TickManager.TicksGame % 3451 == 0)
+            if (Find.TickManager.TicksGame % damageInterval == 0)
             {
                 for (int i = 0; i < affectedMaps.Count; i++)
                 {
@@ -44,13 +44,13 @@ namespace Originium
             {
                 if (!allPawnsSpawned[i].kindDef.immuneToGameConditionEffects)
                 {
-                    GameCondition_OriginiumRain.DoPawnToxicDamage(allPawnsSpawned[i], true);
+                    GameCondition_OriginiumStorm.DoPawnToxicDamage(allPawnsSpawned[i], true);
                 }
             }
         }
-        public static void DoPawnToxicDamage(Pawn p, bool protectedByIndoors = true)
+        public static void DoPawnToxicDamage(Pawn p, bool protectedByRoof = true)
         {
-            if (p.Spawned && protectedByIndoors && !p.Position.GetRoom(p.Map).PsychologicallyOutdoors)
+            if (p.Spawned && protectedByRoof && p.Position.Roofed(p.Map))
             {
                 return;
             }
@@ -60,6 +60,8 @@ namespace Originium
             {
                 num *= Mathf.Max(1f - p.GetStatValue(StatDefOf.ToxicEnvironmentResistance, true, -1), 0f);
             }
+            Log.Message(damageMultiplier);
+            num *= damageMultiplier;
             if (num != 0f)
             {
                 float num2 = Mathf.Lerp(0.85f, 1.15f, Rand.ValueSeeded(p.thingIDNumber ^ 74374237));
@@ -80,7 +82,7 @@ namespace Originium
         }
         public override SkyTarget? SkyTarget(Map map)
         {
-            return new SkyTarget?(new SkyTarget(0.85f, this.OriginiumDustColors, 1f, 1f));
+            return new SkyTarget?(new SkyTarget(0.85f, this.OriginiumRainColors, 1f, 1f));
         }
         public override void End()
         {
@@ -96,7 +98,11 @@ namespace Originium
             return false;
         }
 
-        private SkyColorSet OriginiumDustColors = new SkyColorSet(new ColorInt(184, 165, 20).ToColor, new ColorInt(170, 207, 46).ToColor, new Color(0.6f, 0.6f, 0.6f), 0.85f);
+        private static int damageInterval = 2001;
+
+        private static float damageMultiplier = 2;
+
+        private SkyColorSet OriginiumRainColors = new SkyColorSet(new ColorInt(184, 165, 20).ToColor, new ColorInt(170, 207, 46).ToColor, new Color(0.6f, 0.6f, 0.6f), 0.85f);
 
         private List<SkyOverlay> overlays = new List<SkyOverlay>();
     }
