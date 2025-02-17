@@ -29,7 +29,7 @@
 		  </li>
 		  <li>
 			<hediff>RM_Oripathy</hediff>
-			<severityPerDamageDealt>0.005</severityPerDamageDealt>
+			<severityPerDamageDealt>0.001</severityPerDamageDealt>
 			<inverseStatScaling>true</inverseStatScaling>
 			<victimSeverityScalingByInvBodySize>true</victimSeverityScalingByInvBodySize>
 		  </li>
