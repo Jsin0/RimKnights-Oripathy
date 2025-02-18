@@ -25,9 +25,9 @@
 	</ThingDef>
 	
 	<ThingDef ParentName="BuildingBase">
-    <defName>RM_OriginiumSpike</defName>
-    <label>Originium Spike</label>
-    <description>A large crystal of active originium. Getting a scratch from this has a near certain chance of contracting oripathy.</description>
+    <defName>RM_OriginiumCluster</defName>
+    <label>originium cluster</label>
+    <description>A large crystal cluster of active originium. Getting a scratch from this has a near certain chance of contracting oripathy.</description>
     <thingClass>Originium.Building_OriginiumTrapDamager</thingClass>
     <graphicData>
       <texPath>Things/Building/Natural/OriginiumSpikes</texPath>

@@ -43,7 +43,7 @@ namespace Originium
             boltMesh = LightningBoltMeshPool.RandomBoltMesh;
             if (!strikeLoc.Fogged(map))
             {
-                GenExplosion.DoExplosion(strikeLoc, map, 1.9f, RimWorld.DamageDefOf.Flame, null, -1, -1f, null, null, null, null, Originium.ThingDefOf.RM_OriginiumSpike, 0.1f, 1, null, false, null, 0f, 1, 0f, false, null, null, null, true, 1f, 0f, true, null, 1f, null, null);
+                GenExplosion.DoExplosion(strikeLoc, map, 1.9f, RimWorld.DamageDefOf.Flame, null, -1, -1f, null, null, null, null, Originium.ThingDefOf.RM_OriginiumCluster, 0.1f, 1, null, false, null, 0f, 1, 0f, false, null, null, null, true, 1f, 0f, true, null, 1f, null, null);
                 Vector3 vector = strikeLoc.ToVector3Shifted();
                 for (int i = 0; i < 4; i++)
                 {
