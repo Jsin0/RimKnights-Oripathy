@@ -37,7 +37,7 @@
 		<conditionClass>Originium.GameCondition_OriginiumDustStorm</conditionClass>
 		<label>originium dust storm</label>
 		<description>Strong winds have kicked up clouds of active originium dust. \n\nAnyone outdoors risks exposure to originium.</description>
-		<weatherDef>RM_OriginiumStorm</weatherDef>
+		<weatherDef>RM_OriginiumDuststorm</weatherDef>
 		<preventNeutralVisitors>true</preventNeutralVisitors>
 		<canBePermanent>true</canBePermanent>
 		<natural>true</natural>

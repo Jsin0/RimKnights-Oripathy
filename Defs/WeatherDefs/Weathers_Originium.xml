@@ -73,7 +73,7 @@
       </li>
       <li>
         <averageInterval>1000</averageInterval>
-        <eventClass>WeatherEvent_LightningStrike</eventClass>
+        <eventClass>Originium.WeatherEvent_OriginiumLightningStrike</eventClass>
       </li>
     </eventMakers>
     <overlayClasses>
