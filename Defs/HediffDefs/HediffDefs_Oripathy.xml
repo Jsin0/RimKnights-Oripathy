@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 	<HediffDef ParentName="InfectionBase">
-		<defName>RM_Oripathy</defName>
+		<defName>RK_Oripathy</defName>
 		<hediffClass>Originium.Hediff_Oripathy</hediffClass>
 		<label>oripathy</label>
 		<description>An incurable disease due to the introduction of originium into the body.</description>
@@ -19,7 +19,7 @@
 				<surgicalDetectionDesc>{PAWN_nameDef} is showing early signs of Originium. While incurable, {PAWN_objective} can live an adequate life with regular care and monitoring.</surgicalDetectionDesc>
 			</li>
 			<li Class="Originium.HediffCompProperties_HediffDependentSeverityPerDay">
-				<hediff>RM_OriginiumBuildup</hediff>
+				<hediff>RK_OriginiumBuildup</hediff>
 				<hediffSeverityToSeverityGainCurve>
 					<points>
 						<li>(0, 0.017)</li>
@@ -39,7 +39,7 @@
 				<painOffset>0.05</painOffset>
 				<hediffGivers>
 					<li Class="HediffGiver_Random">
-						<hediff>OripathyLesion</hediff>
+						<hediff>RK_OripathyLesion</hediff>
 						<mtbDays>438</mtbDays>
 						<canAffectAnyLivePart>true</canAffectAnyLivePart>
 					</li>
@@ -51,7 +51,7 @@
 				<painOffset>0.10</painOffset>
 				<hediffGivers>
 					<li Class="HediffGiver_Random">
-						<hediff>OripathyLesion</hediff>
+						<hediff>RK_OripathyLesion</hediff>
 						<mtbDays>226</mtbDays>
 						<canAffectAnyLivePart>true</canAffectAnyLivePart>
 					</li>
@@ -64,7 +64,7 @@
 				<painOffset>0.15</painOffset>
 				<hediffGivers>
 					<li Class="HediffGiver_Random">
-						<hediff>OripathyLesion</hediff>
+						<hediff>RK_OripathyLesion</hediff>
 						<mtbDays>100</mtbDays>
 						<canAffectAnyLivePart>true</canAffectAnyLivePart>
 					</li>
@@ -79,7 +79,7 @@
 				<mtbDeathDestroysBrain>true</mtbDeathDestroysBrain>
 				<hediffGivers>
 					<li Class="HediffGiver_Random">
-						<hediff>OripathyLesion</hediff>
+						<hediff>RK_OripathyLesion</hediff>
 						<mtbDays>20</mtbDays>
 						<canAffectAnyLivePart>true</canAffectAnyLivePart>
 					</li>
@@ -89,7 +89,7 @@
 	</HediffDef>
 			
 	<HediffDef>
-	<defName>RM_OriginiumBuildup</defName>
+	<defName>RK_OriginiumBuildup</defName>
 		<label>blood originium-crystal density</label>
 		<description>Originium crystals present in the bloodstream.
 	\nOriginium is always present in the blood stream at low levels but at higher levels, may lead to a condition known as Originium.</description>
@@ -153,7 +153,7 @@
 			</capMods>
 			<hediffGivers>
 			  <li Class="HediffGiver_Random">
-				<hediff>RM_Oripathy</hediff>
+				<hediff>RK_Oripathy</hediff>
 				<mtbDays>60</mtbDays>
 			  </li>
 			</hediffGivers>
@@ -171,7 +171,7 @@
 			</capMods>
 			<hediffGivers>
 			  <li Class="HediffGiver_Random">
-				<hediff>RM_Oripathy</hediff>
+				<hediff>RK_Oripathy</hediff>
 				<mtbDays>20</mtbDays>
 			  </li>
 			</hediffGivers>
@@ -188,7 +188,7 @@
 			</capMods>
 			<hediffGivers>
 			  <li Class="HediffGiver_Random">
-				<hediff>RM_Oripathy</hediff>
+				<hediff>RK_Oripathy</hediff>
 				<mtbDays>0.5</mtbDays>
 			  </li>
 			</hediffGivers>
@@ -198,7 +198,7 @@
 
 	
 	<HediffDef ParentName="ChronicDiseaseBase">
-    <defName>OripathyLesion</defName>
+    <defName>RK_OripathyLesion</defName>
     <label>oripathy lesion</label>
     <labelNoun>an oripathy lesion</labelNoun>
     <description>A lump of originium crystals. Without treatment, the lesion will grow over time, causing worsening symptoms and eventually killing the patient.
@@ -251,7 +251,7 @@
 			<severityPerDayTended>-0.001</severityPerDayTended>
 		 </li>
 		<li Class="Originium.HediffCompProperties_HediffDependentSeverityPerDay">
-			<hediff>RM_OriginiumBuildup</hediff>
+			<hediff>RK_OriginiumBuildup</hediff>
 			<hediffSeverityToSeverityGainCurve>
 				<points>
 					<li>(0, 0.003)</li>

@@ -3,20 +3,20 @@
 	<!-- Issue -->
 
   <IssueDef>
-    <defName>RM_Oripathy</defName>
+    <defName>RK_Oripathy</defName>
     <label>Oripathy</label>
     <iconPath>UI/Issues/BodyModifications</iconPath>
   </IssueDef>
   
   <HistoryEventDef>
     <defName>BecomeOripathic</defName>
-    <label>become infected with RM_Oripathy</label>
+    <label>become infected with RK_Oripathy</label>
   </HistoryEventDef>
   
   <!-- Precept-->
   <PreceptDef>
     <defName>Oripathy_Abhorrent</defName>
-    <issue>RM_Oripathy</issue>
+    <issue>RK_Oripathy</issue>
     <label>abhorrent</label>
     <description>Oripathy is a curse and the infected should not live alongside the healthy.</description>
     <impact>High</impact>
@@ -40,7 +40,7 @@
 
   <PreceptDef>
     <defName>Oripathy_Disapproved</defName>
-    <issue>RM_Oripathy</issue>
+    <issue>RK_Oripathy</issue>
     <label>disapproved</label>
     <description>Oripathy is dangerous and so are the infected.</description>
     <impact>Low</impact>
@@ -58,7 +58,7 @@
   
   <PreceptDef>
     <defName>Oripathy_Accepted</defName>
-    <issue>RM_Oripathy</issue>
+    <issue>RK_Oripathy</issue>
     <label>accepted</label>
     <description>While unfortunate, oripathy is a fact of life and the infected deserve to be treated like any other.</description>
     <impact>Low</impact>
@@ -68,7 +68,7 @@
 
   <PreceptDef>
     <defName>Oripathy_Exalted</defName>
-    <issue>RM_Oripathy</issue>
+    <issue>RK_Oripathy</issue>
     <label>exalted</label>
     <description>Oripathy is a blessing and the infected were chosen to carry this blessing.</description>
     <impact>High</impact>

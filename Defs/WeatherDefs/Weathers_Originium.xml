@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 	<WeatherDef>
-    <defName>RM_OriginiumRain</defName>
+    <defName>RK_OriginiumRain</defName>
     <label>originium rain</label>
     <isBad>true</isBad>
     <canOccurAsRandomForcedEvent>false</canOccurAsRandomForcedEvent>
@@ -47,7 +47,7 @@
   </WeatherDef>
   
   <WeatherDef>
-    <defName>RM_OriginiumStorm</defName>
+    <defName>RK_OriginiumStorm</defName>
     <label>originium thunderstorm</label>
     <isBad>true</isBad>
     <canOccurAsRandomForcedEvent>false</canOccurAsRandomForcedEvent>
@@ -115,7 +115,7 @@
   </WeatherDef>
   
   <WeatherDef>
-    <defName>RM_OriginiumDuststorm</defName>
+    <defName>RK_OriginiumDuststorm</defName>
     <label>originium dust storm</label>
     <isBad>true</isBad>
     <canOccurAsRandomForcedEvent>false</canOccurAsRandomForcedEvent>

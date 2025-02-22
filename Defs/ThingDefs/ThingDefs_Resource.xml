@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 	<ThingDef ParentName="ResourceBase">
-    <defName>RM_OriginiumOre</defName>
+    <defName>RK_OriginiumOre</defName>
     <label>originium</label>
     <description>A common mineral in Terra, this semi-transparent black crystal contains enormous energy, and is the primary factor of causing Catastrophes.</description>
     <graphicData>
@@ -30,7 +30,7 @@
   
   <!--
   <ThingDef ParentName="ResourceBase">
-    <defName>RM_OriginiumShard</defName>
+    <defName>RK_OriginiumShard</defName>
     <label>originium shard</label>
     <description>A less stable form of originium. </description>
     <graphicData>

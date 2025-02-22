@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 	<DamageDef>
-		<defName>RM_OriginiumDust</defName>
+		<defName>RK_OriginiumDust</defName>
 		<label>active originium dust</label>
 		<workerClass>DamageWorker_Extinguish</workerClass>
 		<harmsHealth>false</harmsHealth>
-		<hediff>RM_OriginiumBuildup</hediff>
+		<hediff>RK_OriginiumBuildup</hediff>
 		<defaultDamage>0</defaultDamage>
 		<canInterruptJobs>false</canInterruptJobs>
 		<makesBlood>false</makesBlood>
@@ -16,19 +16,19 @@
 	</DamageDef>
 	
 	<DamageDef ParentName="CutBase">
-		<defName>RM_OriginiumCut</defName>
+		<defName>RK_OriginiumCut</defName>
 		<label>originium cut</label>
 		<canInterruptJobs>false</canInterruptJobs>
 		<additionalHediffs>
 		  <li>
-			<hediff>RM_OriginiumBuildup</hediff>
+			<hediff>RK_OriginiumBuildup</hediff>
 			<severityPerDamageDealt>0.015</severityPerDamageDealt>
 			<victimSeverityScaling>ToxicResistance</victimSeverityScaling>
 			<inverseStatScaling>true</inverseStatScaling>
 			<victimSeverityScalingByInvBodySize>true</victimSeverityScalingByInvBodySize>
 		  </li>
 		  <li>
-			<hediff>RM_Oripathy</hediff>
+			<hediff>RK_Oripathy</hediff>
 			<severityPerDamageDealt>0.001</severityPerDamageDealt>
 			<inverseStatScaling>true</inverseStatScaling>
 			<victimSeverityScalingByInvBodySize>true</victimSeverityScalingByInvBodySize>

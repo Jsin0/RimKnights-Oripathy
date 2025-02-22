@@ -18,10 +18,10 @@ namespace Originium.Utilities
         static Startup()
         {
 
-            Log.Message("RM_Oripathy loaded.");
-            Harmony harmony = new Harmony("Jsin.RM_Oripathy.Harmony");
+            Log.Message("RK_Oripathy loaded.");
+            Harmony harmony = new Harmony("Jsin.RK_Oripathy.Harmony");
             harmony.PatchAll();
-            Log.Message("RM_Oripathy patches applied");
+            Log.Message("RK_Oripathy patches applied");
         }
         [HarmonyPatch(typeof(Corpse))]
         [HarmonyPatch("TickRare",0)]

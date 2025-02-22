@@ -16,7 +16,7 @@
 		</statBases>
 		<building>
 		  <isResourceRock>true</isResourceRock>
-		  <mineableThing>RM_OriginiumOre</mineableThing>
+		  <mineableThing>RK_OriginiumOre</mineableThing>
 		  <mineableYield>4</mineableYield>
 		  <mineableScatterCommonality>1.00</mineableScatterCommonality>
 		  <mineableScatterLumpSizeRange>3~6</mineableScatterLumpSizeRange>
@@ -25,7 +25,7 @@
 	</ThingDef>
 	
 	<ThingDef ParentName="BuildingBase">
-    <defName>RM_OriginiumCluster</defName>
+    <defName>RK_OriginiumCluster</defName>
     <label>originium cluster</label>
     <description>A large crystal cluster of active originium. Getting a scratch from this has a near certain chance of contracting oripathy.</description>
     <thingClass>Originium.Building_OriginiumTrapDamager</thingClass>
@@ -43,7 +43,7 @@
     <tickerType>Normal</tickerType>
     <stealable>false</stealable>
 	<costList>
-      <RM_OriginiumOre>40</RM_OriginiumOre>
+      <RK_OriginiumOre>40</RK_OriginiumOre>
     </costList>
     <statBases>
       <Mass>2.5</Mass>

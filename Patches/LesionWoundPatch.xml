@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+	<!--Patch flesh typedef for hediffWounds-->
+<Operation Class="PatchOperationAdd">
+  <xpath>Defs/FleshTypeDef[defName="Normal"]/hediffWounds</xpath>
+  <value>
+	<li>
+		<hediff>RK_OripathyLesion</hediff>
+		<wounds>
+          <li>
+            <texture>Textures\Things\Wounds\OripathyLesionA</texture>
+            <flipWest>true</flipWest>
+            <tintWithSkinColor>false</tintWithSkinColor>
+            <displayOverApparel>false</displayOverApparel>
+            <displayPermanent>false</displayPermanent>
+            <drawOffsetSouth>(0, 0.001, -0.24)</drawOffsetSouth>
+            <drawOffsetEastWest>(-0.03, 0.001, -0.24)</drawOffsetEastWest>
+          </li>
+          <li>
+            <texture>Textures\Things\Wounds\OripathyLesionB</texture>
+            <flipWest>true</flipWest>
+            <tintWithSkinColor>false</tintWithSkinColor>
+            <displayOverApparel>false</displayOverApparel>
+            <displayPermanent>false</displayPermanent>
+            <drawOffsetSouth>(0, 0.001, -0.24)</drawOffsetSouth>
+            <drawOffsetEastWest>(-0.03, 0.001, -0.24)</drawOffsetEastWest>
+          </li>
+          <li>
+            <texture>Textures\Things\Wounds\OripathyLesionC</texture>
+            <flipWest>true</flipWest>
+            <tintWithSkinColor>false</tintWithSkinColor>
+            <displayOverApparel>false</displayOverApparel>
+            <displayPermanent>false</displayPermanent>
+            <drawOffsetSouth>(0, 0.001, -0.24)</drawOffsetSouth>
+            <drawOffsetEastWest>(-0.03, 0.001, -0.24)</drawOffsetEastWest>
+          </li>
+        </wounds>
+	</li>
+  </value>
+</Operation>

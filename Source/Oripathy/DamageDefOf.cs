@@ -16,10 +16,10 @@ namespace Originium
             DefOfHelper.EnsureInitializedInCtor(typeof(DamageDefOf));
         }
 
-        public static DamageDef RM_OriginiumDust;
+        public static DamageDef RK_OriginiumDust;
 
-        public static DamageDef RM_OriginiumCut;
+        public static DamageDef RK_OriginiumCut;
 
-        //public static DamageDef RM_OriginiumBomb;
+        //public static DamageDef RK_OriginiumBomb;
     }
 }

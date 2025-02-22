@@ -16,6 +16,6 @@ namespace Originium
             DefOfHelper.EnsureInitializedInCtor(typeof(ThingDefOf));
         }
 
-        public static ThingDef RM_OriginiumCluster;
+        public static ThingDef RK_OriginiumCluster;
     }
 }

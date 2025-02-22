@@ -26,7 +26,7 @@ namespace Originium
             int num3 = 0;
             while ((float)num3 < 5f)
             {
-                DamageInfo damageInfo = new DamageInfo(Originium.DamageDefOf.RM_OriginiumCut, num, num2, -1f, this, null, null, DamageInfo.SourceCategory.ThingOrUnknown, null, true, true, QualityCategory.Normal, true);
+                DamageInfo damageInfo = new DamageInfo(Originium.DamageDefOf.RK_OriginiumCut, num, num2, -1f, this, null, null, DamageInfo.SourceCategory.ThingOrUnknown, null, true, true, QualityCategory.Normal, true);
                 DamageWorker.DamageResult damageResult = p.TakeDamage(damageInfo);
                 if (num3 == 0)
                 {
