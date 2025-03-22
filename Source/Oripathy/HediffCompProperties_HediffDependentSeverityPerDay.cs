@@ -28,6 +28,8 @@ namespace Originium
 
         public SimpleCurve hediffSeverityToSeverityGainCurve;
 
+        public int updateInterval = 250;
+
         public float mechanitorFactor = 1f;
 
         public float minAge = 0f;

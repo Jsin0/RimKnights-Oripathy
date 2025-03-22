@@ -43,7 +43,7 @@ namespace Originium
 
             float num = this.severityPerDay;
 
-            if (base.Pawn.IsHashIntervalTick(600))
+            if (base.Pawn.IsHashIntervalTick(this.Props.updateInterval))
             {
                 this.severityPerDay = RecalculateChangePerDay();
             }

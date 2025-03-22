@@ -204,6 +204,7 @@
     <description>A lump of originium crystals. Without treatment, the lesion will grow over time, causing worsening symptoms and eventually killing the patient.
 \nA skilled doctor can excise the lesion. An unskilled doctor may be able to simply amputate the body part which contains the lesion.</description>
     <hediffClass>HediffWithComps</hediffClass>
+    <displayWound>true</displayWound>
     <initialSeverity>0.3</initialSeverity>
     <chanceToCauseNoPain>0.1</chanceToCauseNoPain>
     <tendable>true</tendable>

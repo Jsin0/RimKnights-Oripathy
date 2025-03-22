@@ -3,7 +3,7 @@
 	<ThingDef ParentName="RockBase">
 		<defName>MineableOriginium</defName>
 		<label>originium ore</label>
-		<description>A deposit of dormant originium.</description>
+		<description>A deposit of originium ore.</description>
 		<graphicData>
 		  <texPath>Things/Building/Linked/RockFlecked_Atlas</texPath>
 		  <graphicClass>Graphic_Single</graphicClass>
