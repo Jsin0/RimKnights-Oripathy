@@ -58,7 +58,7 @@ namespace Originium
             if (this.shatterWarmupEffecter == null && (corpse = this.pawn.ParentHolder as Corpse) != null)
             {
                 this.shatterWarmupEffecter = EffecterDefOf.RK_ShatterWarmup.Spawn(corpse, corpse.MapHeld, Vector3.zero);
-                this.pawn.MapHeld.effecterMaintainer.AddEffecterToMaintain(this.shatterWarmupEffecter, corpse, 250);
+                corpse.MapHeld.effecterMaintainer.AddEffecterToMaintain(this.shatterWarmupEffecter, corpse, 250);
             }
         }
         private void TryShatter()
@@ -69,8 +69,8 @@ namespace Originium
                 return;
             }
 
-            /*Messages.Message(this.pawn.Name + "'s corpse will soon shatter.", MessageTypeDefOf.NegativeEvent);*/
             this.shatterTimer.Start(GenTicks.TicksGame, Hediff_Oripathy.shatterDurationSeconds.RandomInRange.SecondsToTicks(), new Action(this.DoShatterCorpse));
+            Messages.Message(this.pawn.Name + "'s corpse will soon shatter.", MessageTypeDefOf.NegativeEvent);
             this.TryTriggerShatterEffect();
         }
 
@@ -80,8 +80,8 @@ namespace Originium
             if ((corpse = this.pawn.ParentHolder as Corpse) != null && this.shattering && this.effecter == null)
             {
                 Log.Message("shatter effect");
-                this.effecter = EffecterDefOf.RK_ShatterWarmup.Spawn(corpse, corpse.MapHeld, Vector3.zero);
-                this.pawn.MapHeld.effecterMaintainer.AddEffecterToMaintain(this.effecter, corpse, 250);
+                this.effecter = EffecterDefOf.RK_Shattering.Spawn(corpse, corpse.MapHeld, Vector3.zero);
+                corpse.MapHeld.effecterMaintainer.AddEffecterToMaintain(this.effecter, corpse, 250);
             }
         }
         public override void Tick()
@@ -111,12 +111,16 @@ namespace Originium
             }
             if (!this.warmupTimer.Finished)
             {
-                Log.Message("Warmup timer not done.");
+                //Log.Message("Warmup timer not done.");
                 this.warmupTimer.TickInterval();
                 if(this.shatterWarmupEffecter != null)
                 {
-                    Log.Message("prolonging warmup effecter");
+                    //Log.Message("prolonging warmup effecter");
                     this.shatterWarmupEffecter.ticksLeft += 250;
+                }
+                else
+                {
+                    TryTriggerWarmupEffect();
                 }
             }
             else if (!this.shatterTimer.Finished)
@@ -192,16 +196,17 @@ namespace Originium
             }
         }
 
+
         private TickTimer warmupTimer = new TickTimer();
 
         private TickTimer shatterTimer = new TickTimer();
 
         private static readonly FloatRange
-            shatterDurationSeconds = new FloatRange(30f, 60f);
+            shatterDurationSeconds = new FloatRange(45f, 75f);
 
         private bool shattering;
 
-        private int ticksDelay = 60000;
+        private int ticksDelay = 0;//60000;
 
         private Effecter shatterWarmupEffecter;
 
