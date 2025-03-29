@@ -9,8 +9,9 @@ using Verse;
 
 namespace Originium
 {
-    internal class GameCondition_OriginiumDustStorm : GameCondition_OriginiumRain
+    public class GameCondition_OriginiumDustStorm : GameCondition_OriginiumRain
     {
+        /*
         public override int TransitionTicks
         {
             get
@@ -36,7 +37,7 @@ namespace Originium
                     this.overlays[i].TickOverlay(affectedMaps[j]);
                 }
             }
-        }
+        }*/
         private void DoPawnsToxicDamage(Map map)
         {
             IReadOnlyList<Pawn> allPawnsSpawned = map.mapPawns.AllPawnsSpawned;
@@ -44,10 +45,11 @@ namespace Originium
             {
                 if (!allPawnsSpawned[i].kindDef.immuneToGameConditionEffects)
                 {
-                    GameCondition_OriginiumRain.DoPawnToxicDamage(allPawnsSpawned[i], true);
+                    GameCondition_OriginiumRain.DoPawnToxicDamage(allPawnsSpawned[i], false, true);
                 }
             }
         }
+        /*
         public static void DoPawnToxicDamage(Pawn p, bool protectedByIndoors = true)
         {
             if (p.Spawned && protectedByIndoors && !p.Position.GetRoom(p.Map).PsychologicallyOutdoors)
@@ -95,9 +97,9 @@ namespace Originium
         {
             return false;
         }
-
         private SkyColorSet OriginiumDustColors = new SkyColorSet(new ColorInt(184, 165, 20).ToColor, new ColorInt(170, 207, 46).ToColor, new Color(0.6f, 0.6f, 0.6f), 0.85f);
 
         private List<SkyOverlay> overlays = new List<SkyOverlay>();
+        */
     }
 }

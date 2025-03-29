@@ -1,5 +1,4 @@
-﻿using RimWorld;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,7 +13,10 @@ namespace Originium
     [StaticConstructorOnStartup]
     public class WeatherEvent_OriginiumLightningStrike : WeatherEvent_LightningStrike
     {
-
+        public WeatherEvent_OriginiumLightningStrike(Map map)
+            : base(map)
+        {
+        }
         public WeatherEvent_OriginiumLightningStrike(Map map, IntVec3 forcedStrikeLoc)
             : base(map)
         {

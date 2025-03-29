@@ -18,7 +18,7 @@
 	
 	<GameConditionDef>
 		<defName>RK_OriginiumStorm</defName>
-		<conditionClass>Originium.GameCondition_OriginiumStorm</conditionClass>
+		<conditionClass>Originium.GameCondition_OriginiumRain</conditionClass>
 		<label>originium storm</label>
 		<description>Rain contaminated with active originium falls from the sky. The originium seems to have worsened the storm.</description>
 		<weatherDef>RK_OriginiumStorm</weatherDef>

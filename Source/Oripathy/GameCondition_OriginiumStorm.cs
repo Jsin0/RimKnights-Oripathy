@@ -9,8 +9,9 @@ using Verse;
 
 namespace Originium
 {
-    public class GameCondition_OriginiumStorm : GameCondition_ForceWeather
+    public class GameCondition_OriginiumStorm : GameCondition_OriginiumRain
     {
+        /*
         public override int TransitionTicks
         {
             get
@@ -36,7 +37,7 @@ namespace Originium
                     this.overlays[i].TickOverlay(affectedMaps[j]);
                 }
             }
-        }
+        }*/
         private void DoPawnsToxicDamage(Map map)
         {
             IReadOnlyList<Pawn> allPawnsSpawned = map.mapPawns.AllPawnsSpawned;
@@ -44,10 +45,11 @@ namespace Originium
             {
                 if (!allPawnsSpawned[i].kindDef.immuneToGameConditionEffects)
                 {
-                    GameCondition_OriginiumStorm.DoPawnToxicDamage(allPawnsSpawned[i], true);
+                    GameCondition_OriginiumRain.DoPawnToxicDamage(allPawnsSpawned[i], true, false, 2f);
                 }
             }
         }
+        /*
         public static void DoPawnToxicDamage(Pawn p, bool protectedByRoof = true)
         {
             if (p.Spawned && protectedByRoof && p.Position.Roofed(p.Map))
@@ -80,10 +82,6 @@ namespace Originium
         {
             return GameConditionUtility.LerpInOutValue(this, (float)this.TransitionTicks, 1f);
         }
-        public override SkyTarget? SkyTarget(Map map)
-        {
-            return new SkyTarget?(new SkyTarget(0.85f, this.OriginiumRainColors, 1f, 1f));
-        }
         public override void End()
         {
             base.End();
@@ -96,13 +94,13 @@ namespace Originium
         public override bool AllowEnjoyableOutsideNow(Map map)
         {
             return false;
+        }*/
+        public override SkyTarget? SkyTarget(Map map)
+        {
+            return new SkyTarget?(new SkyTarget(0.85f, this.OriginiumRainColors, 1f, 1f));
         }
 
-        private static int damageInterval = 2001;
-
-        private static float damageMultiplier = 2;
-
-        private SkyColorSet OriginiumRainColors = new SkyColorSet(new ColorInt(184, 165, 20).ToColor, new ColorInt(170, 207, 46).ToColor, new Color(0.6f, 0.6f, 0.6f), 0.85f);
+        private SkyColorSet OriginiumRainColors = new SkyColorSet(new ColorInt(204, 176, 91).ToColor, new ColorInt(212, 117, 0).ToColor, new Color(0.4f, 0.4f, 0.4f), 0.85f);
 
         private List<SkyOverlay> overlays = new List<SkyOverlay>();
     }

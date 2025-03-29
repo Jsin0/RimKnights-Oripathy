@@ -1,41 +1,30 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
-	<HediffDef ParentName="InfectionBase">
+	<HediffDef ParentName="ChronicDiseaseBase">
 		<defName>RK_Oripathy</defName>
 		<hediffClass>Originium.Hediff_Oripathy</hediffClass>
 		<label>oripathy</label>
-		<description>An incurable disease due to the introduction of originium into the body.</description>
-		<lethalSeverity>1</lethalSeverity>
-		<tendable>true</tendable>
+		<description>Also known as stone disease, Oripathy an incurable disease due to the assimilation of originium into the body.  It is characterized by crystalline growths throughout the body.</description>
+		<!--<lethalSeverity>1</lethalSeverity>-->
+		<!--<tendable>true</tendable>-->
 		<everCurableByItem>false</everCurableByItem>
 		<taleOnVisible>ToxicityRevealed</taleOnVisible>
 		<scenarioCanAdd>true</scenarioCanAdd>
 		<comps>
-			<li Class="HediffCompProperties_TendDuration">
-				<baseTendDurationHours>96</baseTendDurationHours>
-				<severityPerDayTended>-0.015</severityPerDayTended>
-			</li>
-			<li Class="HediffCompProperties_SurgeryInspectable">
-				<surgicalDetectionDesc>{PAWN_nameDef} is showing early signs of Originium. While incurable, {PAWN_objective} can live an adequate life with regular care and monitoring.</surgicalDetectionDesc>
-			</li>
 			<li Class="Originium.HediffCompProperties_HediffDependentSeverityPerDay">
 				<hediff>RK_OriginiumBuildup</hediff>
-				<hediffSeverityToSeverityGainCurve>
-					<points>
-						<li>(0, 0.017)</li>
-						<li>(1.00, 0.5)</li>
-					</points>
-				</hediffSeverityToSeverityGainCurve>
+				<severityFactor>0.29</severityFactor>
+				<severityOffset>0.005</severityOffset>
+				<severityPerDayRange>0~0.002</severityPerDayRange>
+				<updateInterval>250</updateInterval>
+				<suppressorHediff>RK_SuppressantHigh</suppressorHediff>
+				<suppressionFactor>0.2</suppressionFactor>
 			</li>
 		</comps>
 		<stages>
 			<li>
-				<label>initial</label>
-				<becomeVisible>false</becomeVisible>
-			</li>
-			<li>
 				<label>minor</label>
-				<minSeverity>0.1</minSeverity>
+				<minSeverity>0.01</minSeverity>
 				<painOffset>0.05</painOffset>
 				<hediffGivers>
 					<li Class="HediffGiver_Random">
@@ -75,8 +64,6 @@
 				<label>extreme</label>
 				<lifeThreatening>true</lifeThreatening>
 				<painOffset>0.20</painOffset>
-				<deathMtbDays>90</deathMtbDays>
-				<mtbDeathDestroysBrain>true</mtbDeathDestroysBrain>
 				<hediffGivers>
 					<li Class="HediffGiver_Random">
 						<hediff>RK_OripathyLesion</hediff>
@@ -90,10 +77,10 @@
 			
 	<HediffDef>
 	<defName>RK_OriginiumBuildup</defName>
-		<label>blood originium-crystal density</label>
+		<label>blood originium buildup</label>
 		<description>Originium crystals present in the bloodstream.
-	\nOriginium is always present in the blood stream at low levels but at higher levels, may lead to a condition known as Originium.</description>
-		<hediffClass>HediffWithComps</hediffClass>
+	\nOriginium is always present in the blood stream at low levels but at higher levels, may lead to a condition known as Oripathy.</description>
+		<hediffClass>Hediff_High</hediffClass>
 		<defaultLabelColor>(1.0, 0.5, 0.0)</defaultLabelColor>
 		<scenarioCanAdd>true</scenarioCanAdd>
 		<taleOnVisible>ToxicityRevealed</taleOnVisible>
@@ -107,7 +94,7 @@
 		  </li>
 			<li Class="HediffCompProperties_Immunizable">
 				<compClass>HediffComp_ImmunizableToxic</compClass>
-				<severityPerDayNotImmune>-0.1</severityPerDayNotImmune>
+				<severityPerDayNotImmune>-0.5</severityPerDayNotImmune>
 			</li>
 			<li Class="HediffCompProperties_SurgeryInspectable">
 				<surgicalDetectionDesc>{PAWN_nameDef} is showing early signs of active originium exposure. Keep {PAWN_objective} away from sources of active originium.</surgicalDetectionDesc>
@@ -249,17 +236,56 @@
     <comps>
 		 <li Class="HediffCompProperties_TendDuration">
 			<baseTendDurationHours>96</baseTendDurationHours>
-			<severityPerDayTended>-0.001</severityPerDayTended>
+			<severityPerDayTended>-0.005</severityPerDayTended>
 		 </li>
 		<li Class="Originium.HediffCompProperties_HediffDependentSeverityPerDay">
-			<hediff>RK_OriginiumBuildup</hediff>
-			<hediffSeverityToSeverityGainCurve>
-				<points>
-					<li>(0, 0.003)</li>
-					<li>(1.00, 0.05)</li>
-				</points>
-			</hediffSeverityToSeverityGainCurve>
+			<hediff>RK_Oripathy</hediff>
+			<severityCurve>
+			  <points>
+				<li>(0, 0.005)</li>
+				<li>(0.25, 0.01)</li>
+				<li>(0.50, 0.02)</li>
+				<li>(0.75, 0.04)</li>
+				<li>(1, 0.08)</li>
+			  </points>
+			</severityCurve>
+			<updateInterval>1000</updateInterval>
+			<suppressorHediff>RK_SuppressantHigh</suppressorHediff>
+			<suppressionFactor>0.2</suppressionFactor>
 		</li>
     </comps>
   </HediffDef>
+  
+  <RecipeDef ParentName="SurgeryFlesh">
+    <defName>RK_ExciseLesion</defName>
+    <label>excise oripathic lesion</label>
+    <description>Excise an oripathic lesion.</description>
+    <workerClass>Recipe_RemoveHediff</workerClass>
+    <jobString>Excising lesion.</jobString>
+    <workAmount>6000</workAmount>
+    <removesHediff>RK_OripathyLesion</removesHediff>
+    <successfullyRemovedHediffMessage>{0} has successfully excised {1}'s lesion.</successfullyRemovedHediffMessage>
+    <deathOnFailedSurgeryChance>0.25</deathOnFailedSurgeryChance>
+    <skillRequirements>
+      <Medicine>12</Medicine>
+    </skillRequirements>
+    <ingredients>
+      <li>
+        <filter>
+          <categories>
+            <li>Medicine</li>
+          </categories>
+        </filter>
+        <count>4</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <categories>
+        <li>Medicine</li>
+      </categories>
+      <disallowedThingDefs>
+        <li>MedicineHerbal</li>
+      </disallowedThingDefs>
+    </fixedIngredientFilter>
+  </RecipeDef>
 </Defs>

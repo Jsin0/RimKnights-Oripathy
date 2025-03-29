@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<EffecterDef>
+		<defName>RK_ShatterWarmup</defName>
+		<children>
+		  <li>
+			<subEffecterClass>SubEffecter_SprayerContinuous</subEffecterClass>
+			<positionRadius>0.2</positionRadius>
+			<positionOffset>(0, 0, 0.12)</positionOffset>
+			<fleckDef>Fleck_WastePackDissolutionCell</fleckDef>
+			<!--<chancePerTick>0.08</chancePerTick>-->
+			<ticksBetweenMotes>15</ticksBetweenMotes>
+			<scale>0.4~0.8</scale>
+			<spawnLocType>OnSource</spawnLocType>
+		  </li>
+		  <li>
+			<subEffecterClass>SubEffecter_SoundTriggered</subEffecterClass>
+			<soundDef>PollutionSpreading</soundDef>
+			<spawnLocType>OnSource</spawnLocType>
+		  </li>
+		</children>
+  </EffecterDef>
+</Defs>

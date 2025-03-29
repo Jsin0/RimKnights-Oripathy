@@ -1,29 +1,5 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<Defs>	
-	<ThingDef ParentName="RockBase">
-		<defName>MineableOriginium</defName>
-		<label>originium ore</label>
-		<description>A deposit of originium ore.</description>
-		<graphicData>
-		  <texPath>Things/Building/Linked/RockFlecked_Atlas</texPath>
-		  <graphicClass>Graphic_Single</graphicClass>
-		  <shaderType>CutoutComplex</shaderType>
-		  <color>(97,97,97)</color>
-		  <colorTwo>(26,26,26)</colorTwo>
-		</graphicData>
-		<statBases>
-		  <MaxHitPoints>1500</MaxHitPoints>
-		</statBases>
-		<building>
-		  <isResourceRock>true</isResourceRock>
-		  <mineableThing>RK_OriginiumOre</mineableThing>
-		  <mineableYield>4</mineableYield>
-		  <mineableScatterCommonality>1.00</mineableScatterCommonality>
-		  <mineableScatterLumpSizeRange>3~6</mineableScatterLumpSizeRange>
-		  <veinMineable>true</veinMineable>
-		</building>
-	</ThingDef>
-	
+<Defs>		
 	<ThingDef ParentName="BuildingBase">
     <defName>RK_OriginiumCluster</defName>
     <label>originium cluster</label>
@@ -42,9 +18,7 @@
     <rotatable>false</rotatable>
     <tickerType>Normal</tickerType>
     <stealable>false</stealable>
-	<costList>
-      <RK_OriginiumOre>40</RK_OriginiumOre>
-    </costList>
+	<mineable>true</mineable>
     <statBases>
       <Mass>2.5</Mass>
       <MaxHitPoints>100</MaxHitPoints>
@@ -56,14 +30,20 @@
       <TrapSpringChance>0.10</TrapSpringChance>
     </statBases>
     <building>
-      <deconstructible>false</deconstructible>
-      <claimable>false</claimable>
-      <displayAttackToDestroyOnInspectPane>true</displayAttackToDestroyOnInspectPane>
-      <isTrap>true</isTrap>
-      <trapDamageCategory>Sharp</trapDamageCategory>
-      <expandHomeArea>false</expandHomeArea>
-      <ai_chillDestination>false</ai_chillDestination>
+		<isInert>true</isInert>
+		<canBuildNonEdificesUnder>false</canBuildNonEdificesUnder>
+		<claimable>false</claimable>
+		<isTrap>true</isTrap>
+		<trapDamageCategory>Sharp</trapDamageCategory>
+		<expandHomeArea>false</expandHomeArea>
+		<ai_chillDestination>false</ai_chillDestination>
     </building>
+    <damageMultipliers>
+      <li>
+        <damageDef>Thump</damageDef>
+        <multiplier>4</multiplier>
+      </li>
+    </damageMultipliers>
   </ThingDef>
 	
 </Defs>

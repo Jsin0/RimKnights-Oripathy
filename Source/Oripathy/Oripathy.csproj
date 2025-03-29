@@ -57,11 +57,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Building_OriginiumTrapDamager.cs" />
+    <Compile Include="DebugActions_Oripathy.cs" />
+    <Compile Include="EffecterDefOf.cs" />
     <Compile Include="GameCondition_OriginiumDustStorm.cs" />
     <Compile Include="GameCondition_OriginiumRain.cs" />
     <Compile Include="GameCondition_OriginiumStorm.cs" />
     <Compile Include="HediffDefOf.cs" />
+    <Compile Include="OriginiumModExtension.cs" />
     <Compile Include="OriginiumUtility.cs" />
+    <Compile Include="StatDefOf.cs" />
     <Compile Include="ThingDefOf.cs" />
     <Compile Include="ThoughtWorker_Oripathic_Solidarity.cs" />
     <Compile Include="DamageDefOf.cs" />

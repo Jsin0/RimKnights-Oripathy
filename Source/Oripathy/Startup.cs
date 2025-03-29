@@ -42,5 +42,24 @@ namespace Originium.Utilities
                 }
             }
         }
+        
+        [HarmonyPatch(typeof(PollutionUtility))]
+        [HarmonyPatch("PawnPollutionTick")]
+        public class PawnPollutionTick_Patch
+        {
+            [HarmonyPostfix]
+            public static void PostFix( Pawn pawn)
+            {
+                if (!pawn.Spawned)
+                {
+                    //Log.Error("corpse no longer exists");
+                    return;
+                }
+                if (pawn.IsHashIntervalTick(3451) && pawn.Position.IsPolluted(pawn.Map))
+                {
+                    GameCondition_OriginiumRain.DoPawnToxicDamage(pawn, false, false);
+                }
+            }
+        }
     }
 }

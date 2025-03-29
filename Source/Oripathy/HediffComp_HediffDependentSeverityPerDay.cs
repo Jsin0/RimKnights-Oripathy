@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using RimWorld;
+using UnityEngine;
 using Verse;
 
 namespace Originium
@@ -56,13 +57,15 @@ namespace Originium
             return num2;
         }
 
+
         public float RecalculateChangePerDay()
         {
             Hediff affectorHediff = this.Pawn.health.hediffSet.GetFirstHediffOfDef(this.Props.hediff);
+            bool isSuppressed = this.Pawn.health.hediffSet.HasHediff(this.Props.suppressorHediff);
 
             float severity = ((affectorHediff != null) ? affectorHediff.Severity : 0f);
 
-            return this.Props.hediffSeverityToSeverityGainCurve.Evaluate(severity);
+            return this.Props.CalculateSeverityPerDay(severity, isSuppressed);
         }
 
         public float severityPerDay;

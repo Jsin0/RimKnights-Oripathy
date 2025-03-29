@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using RimWorld;
+﻿using RimWorld;
 using Verse;
 using Verse.Sound;
 
@@ -21,7 +16,7 @@ namespace Originium
             {
                 return;
             }
-            float num = this.GetStatValue(StatDefOf.TrapMeleeDamage, true, -1) * Building_OriginiumTrapDamager.DamageRandomFactorRange.RandomInRange;
+            float num = this.GetStatValue(RimWorld.StatDefOf.TrapMeleeDamage, true, -1) * Building_OriginiumTrapDamager.DamageRandomFactorRange.RandomInRange;
             float num2 = num * 0.015f;
             int num3 = 0;
             while ((float)num3 < 5f)

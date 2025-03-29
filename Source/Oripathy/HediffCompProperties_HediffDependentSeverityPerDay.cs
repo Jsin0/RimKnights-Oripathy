@@ -15,18 +15,39 @@ namespace Originium
             this.compClass = typeof(HediffComp_HediffDependentSeverityPerDay);
         }
 
-        public float CalculateSeverityPerDay()
+        public float CalculateSeverityPerDay(float affectorSeverity = 0f, bool suppressed = false)
         {
-            return this.hediffSeverityToSeverityGainCurve.Evaluate(0f);
+            float sev;
+            if (severityCurve != null)
+            {
+                sev = this.severityCurve.Evaluate(affectorSeverity);
+            }
+            else
+            {
+                sev = (this.severityFactor * affectorSeverity) + this.severityOffset;
+            }
+             
+            if (suppressed)
+            {
+                sev *= this.suppressionFactor;
+            }
+
+            return sev + this.severityPerDayRange.RandomInRange;
         }
 
-        public bool showDaysToRecover;
+        public FloatRange severityPerDayRange = FloatRange.Zero;
 
-        public bool showHoursToRecover;
+        public SimpleCurve severityCurve;
+
+        public float severityFactor = 1f;
+
+        public float severityOffset = 0f;
 
         public HediffDef hediff;
 
-        public SimpleCurve hediffSeverityToSeverityGainCurve;
+        public HediffDef suppressorHediff;
+
+        public float suppressionFactor = 0.1f;
 
         public int updateInterval = 250;
 

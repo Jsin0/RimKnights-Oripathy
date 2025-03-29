@@ -18,12 +18,14 @@ namespace Originium
                 return 5000;
             }
         }
+
         public override void GameConditionTick()
         {
             base.GameConditionTick();
             List<Map> affectedMaps = base.AffectedMaps;
-            if (Find.TickManager.TicksGame % 3451 == 0)
+            if (Find.TickManager.TicksGame % damageInterval == 0)
             {
+                Log.Message(damageInterval);
                 for (int i = 0; i < affectedMaps.Count; i++)
                 {
                     this.DoPawnsToxicDamage(affectedMaps[i]);
@@ -48,17 +50,24 @@ namespace Originium
                 }
             }
         }
-        public static void DoPawnToxicDamage(Pawn p, bool protectedByRoof = true)
+        public static void DoPawnToxicDamage(Pawn p, bool protectedByRoof = true, bool protectedIndoors = false, float damageMultiplier = 1f)
         {
             if (p.Spawned && protectedByRoof && p.Position.Roofed(p.Map))
             {
                 return;
             }
+            if (protectedIndoors && !p.Position.GetRoom(p.Map).PsychologicallyOutdoors)
+            {
+                return;
+            }
             float num = 0.023006668f;
-            num *= Mathf.Max(1f - p.GetStatValue(StatDefOf.ToxicResistance, true, -1), 0f);
             if (ModsConfig.BiotechActive)
             {
-                num *= Mathf.Max(1f - p.GetStatValue(StatDefOf.ToxicEnvironmentResistance, true, -1), 0f);
+                num *= Mathf.Max(1f - p.GetStatValue(RimWorld.StatDefOf.ToxicEnvironmentResistance, true, -1), 0f);
+            }
+            else
+            {
+                num *= Mathf.Max(1f - p.GetStatValue(StatDefOf.RK_OriginiumResistance, true, -1), 0f);
             }
             Log.Message(damageMultiplier);
             num *= damageMultiplier;
@@ -98,9 +107,9 @@ namespace Originium
             return false;
         }
 
-        private static float damageMultiplier = 1f;
+        private static int damageInterval = 3451;
 
-        private SkyColorSet OriginiumRainColors = new SkyColorSet(new ColorInt(184, 165, 20).ToColor, new ColorInt(170, 207, 46).ToColor, new Color(0.6f, 0.6f, 0.6f), 0.85f);
+        private SkyColorSet OriginiumRainColors = new SkyColorSet(new ColorInt(255, 191, 48).ToColor, new ColorInt(212, 184, 42).ToColor, new Color(0.6f, 0.6f, 0.6f), 0.85f);
 
         private List<SkyOverlay> overlays = new List<SkyOverlay>();
     }
