@@ -19,9 +19,11 @@ namespace Originium
                 if (p.health.hediffSet.HasHediff(HediffDefOf.RK_Oripathy))
                 {
                     Messages.Message(p.Name + " already has oripathy", MessageTypeDefOf.NegativeEvent);
-                    return;
                 }
-                p.health.AddHediff(HediffDefOf.RK_Oripathy);
+                else
+                {
+                    p.health.AddHediff(HediffDefOf.RK_Oripathy);
+                }
                 p.health.hediffSet.GetFirstHediffOfDef(HediffDefOf.RK_Oripathy).Severity = 1f;
             }
         }

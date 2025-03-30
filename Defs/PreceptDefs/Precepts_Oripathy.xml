@@ -102,7 +102,7 @@
     <validWhileDespawned>true</validWhileDespawned>
     <stages>
       <li>
-        <label>oripathic</label>
+        <label>infected</label>
         <baseOpinionOffset>-20</baseOpinionOffset>
       </li>
     </stages>
@@ -118,7 +118,7 @@
     <validWhileDespawned>true</validWhileDespawned>
     <stages>
       <li>
-        <label>not oripathic</label>
+        <label>not infected</label>
         <baseOpinionOffset>10</baseOpinionOffset>
       </li>
     </stages>
@@ -130,8 +130,8 @@
     <validWhileDespawned>true</validWhileDespawned>
     <stages>
       <li>
-        <label>oripathic</label>
-        <description>I'm an oripathic. I'm no better than the dirt on the ground.</description>
+        <label>infected</label>
+        <description>I'm an infected. I'm no better than the dirt on the ground.</description>
         <baseMoodEffect>-10</baseMoodEffect>
       </li>
     </stages>
@@ -143,7 +143,7 @@
     <validWhileDespawned>true</validWhileDespawned>
     <stages>
       <li>
-        <label>not oripathic</label>
+        <label>not infected</label>
         <description>At least I'm not an infected.</description>
         <baseMoodEffect>5</baseMoodEffect>
       </li>
@@ -160,7 +160,7 @@
     </nullifyingTraits>
     <stages>
       <li>
-        <label>oripathic</label>
+        <label>infected</label>
         <baseOpinionOffset>-10</baseOpinionOffset>
       </li>
     </stages>
@@ -173,7 +173,7 @@
     <developmentalStageFilter>Baby, Child, Adult</developmentalStageFilter>
     <stages>
       <li>
-        <label>oripathic</label>
+        <label>infected</label>
         <description>I'm infected with oripathy. My days are numbered.</description>
         <baseMoodEffect>-5</baseMoodEffect>
       </li>

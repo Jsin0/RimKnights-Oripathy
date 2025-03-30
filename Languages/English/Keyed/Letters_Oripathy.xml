@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+	<RK_LetterLabelShattering>Corpse disintegrating: {0}</RK_LetterLabelShattering>
+	<RK_LetterShattering>{0} is disintegrating. Very soon they will explode in a cloud of active originium dust, potentially spreading infection.  \nKeep others away from {0}'s corpse!</RK_LetterShattering>
+	<RK_LetterLabelOripathicDeath>Oripathic corpse: {0}</RK_LetterLabelOripathicDeath>
+	<RK_LetterOripathicDeath>{0} was oripathic and their corpse will eventually explode in a cloud of originium dust.  \nConsider incinerating the corpse or keep it away from people.</RK_LetterOripathicDeath>
+</LanguageData>

@@ -63,7 +63,6 @@
     <Compile Include="GameCondition_OriginiumRain.cs" />
     <Compile Include="GameCondition_OriginiumStorm.cs" />
     <Compile Include="HediffDefOf.cs" />
-    <Compile Include="OriginiumModExtension.cs" />
     <Compile Include="OriginiumUtility.cs" />
     <Compile Include="StatDefOf.cs" />
     <Compile Include="ThingDefOf.cs" />

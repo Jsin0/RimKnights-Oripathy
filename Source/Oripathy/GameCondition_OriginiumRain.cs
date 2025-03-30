@@ -25,7 +25,7 @@ namespace Originium
             List<Map> affectedMaps = base.AffectedMaps;
             if (Find.TickManager.TicksGame % damageInterval == 0)
             {
-                Log.Message(damageInterval);
+                //Log.Message(damageInterval);
                 for (int i = 0; i < affectedMaps.Count; i++)
                 {
                     this.DoPawnsToxicDamage(affectedMaps[i]);
@@ -69,7 +69,7 @@ namespace Originium
             {
                 num *= Mathf.Max(1f - p.GetStatValue(StatDefOf.RK_OriginiumResistance, true, -1), 0f);
             }
-            Log.Message(damageMultiplier);
+            //Log.Message(damageMultiplier);
             num *= damageMultiplier;
             if (num != 0f)
             {

@@ -8,6 +8,7 @@ using Verse;
 using RimWorld;
 using UnityEngine;
 using Verse.Sound;
+using Verse.Noise;
 
 namespace Originium
 {
@@ -25,28 +26,32 @@ namespace Originium
             base.PostAdd(dinfo);
 
         }
-        /*
-        public override void PostRemoved()
-        {
-            base.PostRemoved();
-            this.pawn.story.traits.RemoveTrait(new Trait(Originium.TraitDefOf.Oripathic));
-        }*/
         
         public override void Notify_PawnDied(DamageInfo? dinfo, Hediff culprit = null)
         {
             base.Notify_PawnDied(dinfo, culprit);
+
+            if (this.pawn.Faction == Faction.OfPlayer)
+            {
+                String name = this.pawn.Name.ToStringShort;
+                Find.LetterStack.ReceiveLetter("RK_LetterLabelOripathicDeath".Translate(name), "RK_LetterOripathicDeath".Translate(name), LetterDefOf.NegativeEvent, new TargetInfo(this.pawn.Position, this.pawn.MapHeld, false), null, null, null, null, 0, true);
+            }
+            
             this.TryTriggerWarmupTimer();
             this.TryTriggerWarmupEffect();
         }
         private int GetFinalDelay()
         {
-            return (int)((this.Severity * (-2.5) + 3 + Hediff_Oripathy.randDayDelay.RandomInRange) * 60000); //converts from days to ticks
+            //return 1000;
+            return (int)((this.Severity * (0.95) + 1 + Hediff_Oripathy.randDayDelay.RandomInRange) * 60000); //60000 converts from days to ticks
         }
         private void TryTriggerWarmupTimer()
         {
-            this.shattering = true;
-            this.warmupTimer.Start(GenTicks.TicksGame, this.GetFinalDelay(), new Action(this.TryShatter));
-            //Log.Message("Originium: " + this.pawn.Name + " will soon shatter soon");
+            if(this.pawn.Corpse != null)
+            {
+                this.shattering = true;
+                this.warmupTimer.Start(GenTicks.TicksGame, this.GetFinalDelay(), new Action(this.TryShatter));
+            }
         }
         private void TryTriggerWarmupEffect()
         {
@@ -70,30 +75,31 @@ namespace Originium
             }
 
             this.shatterTimer.Start(GenTicks.TicksGame, Hediff_Oripathy.shatterDurationSeconds.RandomInRange.SecondsToTicks(), new Action(this.DoShatterCorpse));
-            Messages.Message(this.pawn.Name + "'s corpse will soon shatter.", MessageTypeDefOf.NegativeEvent);
             this.TryTriggerShatterEffect();
+
+            String name = this.pawn.Name.ToStringShort;
+            Find.LetterStack.ReceiveLetter("RK_LetterLabelShattering".Translate(name), "RK_LetterShattering".Translate(name), LetterDefOf.NegativeEvent, new TargetInfo(this.pawn.Position, this.pawn.MapHeld, false), null, null, null, null, 0, true);
         }
 
         private void TryTriggerShatterEffect()
         {
             Corpse corpse;
-            if ((corpse = this.pawn.ParentHolder as Corpse) != null && this.shattering && this.effecter == null)
+            if ((corpse = this.pawn.ParentHolder as Corpse) != null && this.shattering && this.shatterEffecter == null)
             {
-                Log.Message("shatter effect");
-                this.effecter = EffecterDefOf.RK_Shattering.Spawn(corpse, corpse.MapHeld, Vector3.zero);
-                corpse.MapHeld.effecterMaintainer.AddEffecterToMaintain(this.effecter, corpse, 250);
+                this.shatterEffecter = EffecterDefOf.RK_Shattering.Spawn(corpse, corpse.MapHeld, Vector3.zero);
+                corpse.MapHeld.effecterMaintainer.AddEffecterToMaintain(this.shatterEffecter, corpse, 250);
             }
         }
         public override void Tick()
         {
+            base.Tick();
             Corpse corpse;
             if ((corpse = this.pawn.ParentHolder as Corpse) != null && this.shattering)
             {
-                if (this.warmupTimer.Finished && this.effecter == null)
+                if (this.warmupTimer.Finished && this.shatterEffecter == null)
                 {
-                    Log.Message("cell pollustion spawned");
-                    this.effecter = EffecterDefOf.RK_Shattering.Spawn(corpse, corpse.MapHeld, Vector3.zero);
-                    corpse.MapHeld.effecterMaintainer.AddEffecterToMaintain(this.effecter, corpse, 250);
+                    this.shatterEffecter = EffecterDefOf.RK_Shattering.Spawn(corpse, corpse.MapHeld, Vector3.zero);
+                    corpse.MapHeld.effecterMaintainer.AddEffecterToMaintain(this.shatterEffecter, corpse, 250);
                 }
                 if (this.shatterSustainer == null)
                 {
@@ -115,7 +121,7 @@ namespace Originium
                 this.warmupTimer.TickInterval();
                 if(this.shatterWarmupEffecter != null)
                 {
-                    //Log.Message("prolonging warmup effecter");
+                    //Log.Message("prolonging warmup shatterEffecter");
                     this.shatterWarmupEffecter.ticksLeft += 250;
                 }
                 else
@@ -135,9 +141,13 @@ namespace Originium
                         sustainer.Maintain();
                     }
                 }
-                if(this.effecter != null)
+                if(this.shatterEffecter != null)
                 {
-                    this.effecter.ticksLeft = (this.shatterTimer.Finished ? 0 : (this.effecter.ticksLeft + 250));
+                    this.shatterEffecter.ticksLeft = (this.shatterTimer.Finished ? 0 : (this.shatterEffecter.ticksLeft + 250));
+                }
+                else
+                {
+                    TryTriggerShatterEffect();
                 }
             }
         }
@@ -171,12 +181,18 @@ namespace Originium
 
         public override void Notify_PawnCorpseDestroyed()
         {
-            Sustainer sustainer = this.shatterSustainer;
-            if (sustainer == null)
+            if (shatterSustainer != null)
             {
-                return;
+                shatterSustainer.End();
             }
-            sustainer.End();
+            if (shatterEffecter != null)
+            {
+                shatterEffecter.ForceEnd();
+            }
+            if (shatterWarmupEffecter != null)
+            {
+                shatterWarmupEffecter.ForceEnd();
+            }
         }
 
         public override void ExposeData()
@@ -189,10 +205,6 @@ namespace Originium
             {
                 this.shatterTimer.OnFinish = new Action(this.DoShatterCorpse);
                 this.warmupTimer.OnFinish = new Action(this.TryShatter);
-                if (!this.shattering && this.pawn.Dead)
-                {
-                    TryTriggerWarmupTimer();
-                }
             }
         }
 
@@ -206,11 +218,9 @@ namespace Originium
 
         private bool shattering;
 
-        private int ticksDelay = 0;//60000;
-
         private Effecter shatterWarmupEffecter;
 
-        private Effecter effecter;
+        private Effecter shatterEffecter;
 
         private Sustainer shatterSustainer;
 

@@ -46,7 +46,6 @@
 					</li>
 				</hediffGivers>
 			</li>
-			
 			<li>
 				<minSeverity>0.70</minSeverity>
 				<label>major</label>
@@ -54,7 +53,7 @@
 				<hediffGivers>
 					<li Class="HediffGiver_Random">
 						<hediff>RK_OripathyLesion</hediff>
-						<mtbDays>100</mtbDays>
+						<mtbDays>60</mtbDays>
 						<canAffectAnyLivePart>true</canAffectAnyLivePart>
 					</li>
 				</hediffGivers>
@@ -62,12 +61,12 @@
 			<li>
 				<minSeverity>0.90</minSeverity>
 				<label>extreme</label>
-				<lifeThreatening>true</lifeThreatening>
-				<painOffset>0.20</painOffset>
+				<painOffset>0.25</painOffset>
 				<hediffGivers>
 					<li Class="HediffGiver_Random">
 						<hediff>RK_OripathyLesion</hediff>
-						<mtbDays>20</mtbDays>
+						<mtbDays>10</mtbDays>
+						<countToAffect>2</countToAffect>
 						<canAffectAnyLivePart>true</canAffectAnyLivePart>
 					</li>
 				</hediffGivers>
@@ -88,13 +87,13 @@
 		<initialSeverity>0.1</initialSeverity>
 		<comps>
 			<li Class="HediffCompProperties_Pollution" MayRequire="Ludeon.RimWorld.Biotech">
-			<pollutedSeverity>0.0003</pollutedSeverity>
-			<unpollutedSeverity>0</unpollutedSeverity>
+				<pollutedSeverity>0.0003</pollutedSeverity>
+				<unpollutedSeverity>0</unpollutedSeverity>
 			<interval>60</interval>
-		  </li>
+			</li>
 			<li Class="HediffCompProperties_Immunizable">
 				<compClass>HediffComp_ImmunizableToxic</compClass>
-				<severityPerDayNotImmune>-0.5</severityPerDayNotImmune>
+				<severityPerDayNotImmune>-0.18</severityPerDayNotImmune>
 			</li>
 			<li Class="HediffCompProperties_SurgeryInspectable">
 				<surgicalDetectionDesc>{PAWN_nameDef} is showing early signs of active originium exposure. Keep {PAWN_objective} away from sources of active originium.</surgicalDetectionDesc>
@@ -188,48 +187,47 @@
     <defName>RK_OripathyLesion</defName>
     <label>oripathy lesion</label>
     <labelNoun>an oripathy lesion</labelNoun>
-    <description>A lump of originium crystals. Without treatment, the lesion will grow over time, causing worsening symptoms and eventually killing the patient.
-\nA skilled doctor can excise the lesion. An unskilled doctor may be able to simply amputate the body part which contains the lesion.</description>
+    <description>A lump of originium crystals. Without treatment, the lesion will grow over time, causing worsening symptoms and eventually killing the patient. \nA skilled doctor can excise the lesion. An unskilled doctor may be able to simply amputate the body part which contains the lesion.</description>
     <hediffClass>HediffWithComps</hediffClass>
     <displayWound>true</displayWound>
-    <initialSeverity>0.3</initialSeverity>
-    <chanceToCauseNoPain>0.1</chanceToCauseNoPain>
+    <initialSeverity>0.01</initialSeverity>
+    <chanceToCauseNoPain>0.15</chanceToCauseNoPain>
     <tendable>true</tendable>
     <stages>
       <li>
         <label>minor</label>
         <partEfficiencyOffset>-0.1</partEfficiencyOffset>
-        <painOffset>0.1</painOffset>
+        <painOffset>0.01</painOffset>
       </li>
       <li>
         <minSeverity>0.15</minSeverity>
         <label>minor</label>
         <partEfficiencyOffset>-0.25</partEfficiencyOffset>
-        <painOffset>0.2</painOffset>
+        <painOffset>0.05</painOffset>
       </li>
       <li>
         <minSeverity>0.4</minSeverity>
         <label>major</label>
         <partEfficiencyOffset>-0.5</partEfficiencyOffset>
-        <painOffset>0.35</painOffset>
+        <painOffset>0.1</painOffset>
       </li>
       <li>
         <minSeverity>0.6</minSeverity>
         <label>major</label>
         <partEfficiencyOffset>-0.8</partEfficiencyOffset>
-        <painOffset>0.5</painOffset>
+        <painOffset>0.2</painOffset>
       </li>
       <li>
         <minSeverity>0.8</minSeverity>
         <label>extreme</label>
         <partEfficiencyOffset>-0.9</partEfficiencyOffset>
-        <painOffset>0.6</painOffset>
+        <painOffset>0.4</painOffset>
       </li>
       <li>
         <minSeverity>1</minSeverity>
         <label>extreme</label>
         <partEfficiencyOffset>-1.0</partEfficiencyOffset>
-        <painOffset>0.7</painOffset>
+        <painOffset>0.6</painOffset>
         <destroyPart>true</destroyPart>
       </li>
     </stages>
@@ -265,7 +263,7 @@
     <workAmount>6000</workAmount>
     <removesHediff>RK_OripathyLesion</removesHediff>
     <successfullyRemovedHediffMessage>{0} has successfully excised {1}'s lesion.</successfullyRemovedHediffMessage>
-    <deathOnFailedSurgeryChance>0.25</deathOnFailedSurgeryChance>
+    <deathOnFailedSurgeryChance>0.15</deathOnFailedSurgeryChance>
     <skillRequirements>
       <Medicine>12</Medicine>
     </skillRequirements>

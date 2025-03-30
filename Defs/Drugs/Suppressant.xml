@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
   <ThingDef ParentName="MakeableDrugPillBase">
-    <defName>RK_Suppresant</defName>
-    <label>oripathy suppresant</label>
+    <defName>RK_Suppressant</defName>
+    <label>oripathy Suppressant</label>
     <description>A drug for slowing down the progression of Oripathy.</description>
     <possessionCount>10</possessionCount>
     <descriptionHyperlinks><HediffDef>RK_SuppressantHigh</HediffDef></descriptionHyperlinks>
     <graphicData>
-      <texPath>Things/Item/Drug/Penoxycyline</texPath>
+      <texPath>Things/Item/Drug/RK_Suppressant</texPath>
       <graphicClass>Graphic_StackCount</graphicClass>
     </graphicData>
     <socialPropernessMatters>false</socialPropernessMatters>
@@ -55,7 +55,7 @@
   <HediffDef>
     <defName>RK_SuppressantHigh</defName>
     <hediffClass>Hediff_High</hediffClass>
-    <label>oripathy suppresant</label>
+    <label>oripathy Suppressant</label>
     <description>Drug induced suppression of oripathy symptoms. Does nothing for uninfected individuals.</description>
     <defaultLabelColor>(0.13,0.73,1)</defaultLabelColor>
     <scenarioCanAdd>true</scenarioCanAdd>
