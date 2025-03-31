@@ -17,6 +17,11 @@ namespace Originium
 
         public float CalculateSeverityPerDay(float affectorSeverity = 0f, bool suppressed = false)
         {
+            if (suppressed)
+            {
+                return overrideSeverity;
+            }
+
             float sev;
             if (severityCurve != null)
             {
@@ -27,11 +32,6 @@ namespace Originium
                 sev = (this.severityFactor * affectorSeverity) + this.severityOffset;
             }
              
-            if (suppressed)
-            {
-                sev *= this.suppressionFactor;
-            }
-
             return sev + this.severityPerDayRange.RandomInRange;
         }
 
@@ -45,9 +45,9 @@ namespace Originium
 
         public HediffDef hediff;
 
-        public HediffDef suppressorHediff;
+        public HediffDef overrideHediff;
 
-        public float suppressionFactor = 0.1f;
+        public float overrideSeverity = 0f;
 
         public int updateInterval = 250;
 

@@ -42,8 +42,7 @@ namespace Originium
         }
         private int GetFinalDelay()
         {
-            //return 1000;
-            return (int)((this.Severity * (0.95) + 1 + Hediff_Oripathy.randDayDelay.RandomInRange) * 60000); //60000 converts from days to ticks
+            return (int)((this.Severity * (-0.70) + 1 + Hediff_Oripathy.randDayDelay.RandomInRange) * 60000); //60000 converts from days to ticks
         }
         private void TryTriggerWarmupTimer()
         {
@@ -225,7 +224,7 @@ namespace Originium
         private Sustainer shatterSustainer;
 
         private static readonly FloatRange
-            randDayDelay = new FloatRange(-0.1f, 0.7f);
+            randDayDelay = new FloatRange(-0.2f, 0.5f);
 
     }
 }

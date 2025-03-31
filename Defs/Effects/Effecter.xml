@@ -25,12 +25,12 @@
 		<defName>RK_Shattering</defName>
 		<children>
 		  <li>
-			<subEffecterClass>SubEffecter_SprayerContinuous</subEffecterClass>
+			<subEffecterClass>SubEffecter_SprayerChance</subEffecterClass>
 			<positionRadius>1</positionRadius>
 			<positionOffset>(0, 0, 0.12)</positionOffset>
 			<fleckDef>HeatGlow</fleckDef>
-			<!--<chancePerTick>0.08</chancePerTick>-->
-			<ticksBetweenMotes>15</ticksBetweenMotes>
+			<chancePerTick>0.08</chancePerTick>
+			<!--<ticksBetweenMotes>15</ticksBetweenMotes>-->
 			<scale>0.4~1.0</scale>
 			<spawnLocType>OnSource</spawnLocType>
 		  </li>

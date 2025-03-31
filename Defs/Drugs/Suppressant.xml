@@ -12,6 +12,7 @@
     </graphicData>
     <socialPropernessMatters>false</socialPropernessMatters>
     <rotatable>false</rotatable>
+    <stackLimit>10</stackLimit>
     <statBases>
       <WorkToMake>1200</WorkToMake>
       <MarketValue>1000</MarketValue>

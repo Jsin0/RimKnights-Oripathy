@@ -53,7 +53,6 @@ namespace Originium
 
             float num2 = num * ((curStage != null) ? curStage.severityGainFactor : 1f);
 
-            //Log.Message("Severity per day: " + num);
             return num2;
         }
 
@@ -61,7 +60,7 @@ namespace Originium
         public float RecalculateChangePerDay()
         {
             Hediff affectorHediff = this.Pawn.health.hediffSet.GetFirstHediffOfDef(this.Props.hediff);
-            bool isSuppressed = this.Pawn.health.hediffSet.HasHediff(this.Props.suppressorHediff);
+            bool isSuppressed = this.Pawn.health.hediffSet.HasHediff(this.Props.overrideHediff);
 
             float severity = ((affectorHediff != null) ? affectorHediff.Severity : 0f);
 

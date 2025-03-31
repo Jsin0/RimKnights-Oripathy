@@ -5,11 +5,10 @@
 		<hediffClass>Originium.Hediff_Oripathy</hediffClass>
 		<label>oripathy</label>
 		<description>Also known as stone disease, Oripathy an incurable disease due to the assimilation of originium into the body.  It is characterized by crystalline growths throughout the body.</description>
-		<!--<lethalSeverity>1</lethalSeverity>-->
-		<!--<tendable>true</tendable>-->
 		<everCurableByItem>false</everCurableByItem>
 		<taleOnVisible>ToxicityRevealed</taleOnVisible>
 		<scenarioCanAdd>true</scenarioCanAdd>
+		<maxSeverity>1</maxSeverity>
 		<comps>
 			<li Class="Originium.HediffCompProperties_HediffDependentSeverityPerDay">
 				<hediff>RK_OriginiumBuildup</hediff>
@@ -17,8 +16,8 @@
 				<severityOffset>0.005</severityOffset>
 				<severityPerDayRange>0~0.002</severityPerDayRange>
 				<updateInterval>250</updateInterval>
-				<suppressorHediff>RK_SuppressantHigh</suppressorHediff>
-				<suppressionFactor>0.2</suppressionFactor>
+				<overrideHediff>RK_SuppressantHigh</overrideHediff>
+				<overrideSeverity>0.001</overrideSeverity>
 			</li>
 		</comps>
 		<stages>
@@ -175,7 +174,7 @@
 			<hediffGivers>
 			  <li Class="HediffGiver_Random">
 				<hediff>RK_Oripathy</hediff>
-				<mtbDays>0.5</mtbDays>
+				<mtbDays>1</mtbDays>
 			  </li>
 			</hediffGivers>
 		  </li>
@@ -184,75 +183,75 @@
 
 	
 	<HediffDef ParentName="ChronicDiseaseBase">
-    <defName>RK_OripathyLesion</defName>
-    <label>oripathy lesion</label>
-    <labelNoun>an oripathy lesion</labelNoun>
-    <description>A lump of originium crystals. Without treatment, the lesion will grow over time, causing worsening symptoms and eventually killing the patient. \nA skilled doctor can excise the lesion. An unskilled doctor may be able to simply amputate the body part which contains the lesion.</description>
-    <hediffClass>HediffWithComps</hediffClass>
-    <displayWound>true</displayWound>
-    <initialSeverity>0.01</initialSeverity>
-    <chanceToCauseNoPain>0.15</chanceToCauseNoPain>
-    <tendable>true</tendable>
-    <stages>
-      <li>
-        <label>minor</label>
-        <partEfficiencyOffset>-0.1</partEfficiencyOffset>
-        <painOffset>0.01</painOffset>
-      </li>
-      <li>
-        <minSeverity>0.15</minSeverity>
-        <label>minor</label>
-        <partEfficiencyOffset>-0.25</partEfficiencyOffset>
-        <painOffset>0.05</painOffset>
-      </li>
-      <li>
-        <minSeverity>0.4</minSeverity>
-        <label>major</label>
-        <partEfficiencyOffset>-0.5</partEfficiencyOffset>
-        <painOffset>0.1</painOffset>
-      </li>
-      <li>
-        <minSeverity>0.6</minSeverity>
-        <label>major</label>
-        <partEfficiencyOffset>-0.8</partEfficiencyOffset>
-        <painOffset>0.2</painOffset>
-      </li>
-      <li>
-        <minSeverity>0.8</minSeverity>
-        <label>extreme</label>
-        <partEfficiencyOffset>-0.9</partEfficiencyOffset>
-        <painOffset>0.4</painOffset>
-      </li>
-      <li>
-        <minSeverity>1</minSeverity>
-        <label>extreme</label>
-        <partEfficiencyOffset>-1.0</partEfficiencyOffset>
-        <painOffset>0.6</painOffset>
-        <destroyPart>true</destroyPart>
-      </li>
-    </stages>
-    <comps>
-		 <li Class="HediffCompProperties_TendDuration">
-			<baseTendDurationHours>96</baseTendDurationHours>
-			<severityPerDayTended>-0.005</severityPerDayTended>
-		 </li>
-		<li Class="Originium.HediffCompProperties_HediffDependentSeverityPerDay">
-			<hediff>RK_Oripathy</hediff>
-			<severityCurve>
-			  <points>
-				<li>(0, 0.005)</li>
-				<li>(0.25, 0.01)</li>
-				<li>(0.50, 0.02)</li>
-				<li>(0.75, 0.04)</li>
-				<li>(1, 0.08)</li>
-			  </points>
-			</severityCurve>
-			<updateInterval>1000</updateInterval>
-			<suppressorHediff>RK_SuppressantHigh</suppressorHediff>
-			<suppressionFactor>0.2</suppressionFactor>
-		</li>
-    </comps>
-  </HediffDef>
+		<defName>RK_OripathyLesion</defName>
+		<label>oripathy lesion</label>
+		<labelNoun>an oripathy lesion</labelNoun>
+		<description>A lump of originium crystals. Without treatment, the lesion will grow over time, causing worsening symptoms and eventually killing the patient. \nA skilled doctor can excise the lesion. An unskilled doctor may be able to simply amputate the body part which contains the lesion.</description>
+		<hediffClass>HediffWithComps</hediffClass>
+		<displayWound>true</displayWound>
+		<initialSeverity>0.01</initialSeverity>
+		<chanceToCauseNoPain>0.15</chanceToCauseNoPain>
+		<tendable>true</tendable>
+		<stages>
+		  <li>
+			<label>minor</label>
+			<partEfficiencyOffset>-0.1</partEfficiencyOffset>
+			<painOffset>0.01</painOffset>
+		  </li>
+		  <li>
+			<minSeverity>0.15</minSeverity>
+			<label>minor</label>
+			<partEfficiencyOffset>-0.25</partEfficiencyOffset>
+			<painOffset>0.05</painOffset>
+		  </li>
+		  <li>
+			<minSeverity>0.4</minSeverity>
+			<label>major</label>
+			<partEfficiencyOffset>-0.5</partEfficiencyOffset>
+			<painOffset>0.1</painOffset>
+		  </li>
+		  <li>
+			<minSeverity>0.6</minSeverity>
+			<label>major</label>
+			<partEfficiencyOffset>-0.8</partEfficiencyOffset>
+			<painOffset>0.2</painOffset>
+		  </li>
+		  <li>
+			<minSeverity>0.8</minSeverity>
+			<label>extreme</label>
+			<partEfficiencyOffset>-0.9</partEfficiencyOffset>
+			<painOffset>0.4</painOffset>
+		  </li>
+		  <li>
+			<minSeverity>1</minSeverity>
+			<label>extreme</label>
+			<partEfficiencyOffset>-1.0</partEfficiencyOffset>
+			<painOffset>0.6</painOffset>
+			<destroyPart>true</destroyPart>
+		  </li>
+		</stages>
+		<comps>
+			 <li Class="HediffCompProperties_TendDuration">
+				<baseTendDurationHours>96</baseTendDurationHours>
+				<severityPerDayTended>-0.005</severityPerDayTended>
+			 </li>
+			<li Class="Originium.HediffCompProperties_HediffDependentSeverityPerDay">
+				<hediff>RK_Oripathy</hediff>
+				<severityCurve>
+				  <points>
+					<li>(0, 0.005)</li>
+					<li>(0.25, 0.01)</li>
+					<li>(0.50, 0.02)</li>
+					<li>(0.75, 0.04)</li>
+					<li>(1, 0.08)</li>
+				  </points>
+				</severityCurve>
+				<updateInterval>1000</updateInterval>
+				<suppressorHediff>RK_SuppressantHigh</suppressorHediff>
+				<suppressionFactor>0.2</suppressionFactor>
+			</li>
+		</comps>
+	</HediffDef>
   
   <RecipeDef ParentName="SurgeryFlesh">
     <defName>RK_ExciseLesion</defName>
@@ -260,12 +259,12 @@
     <description>Excise an oripathic lesion.</description>
     <workerClass>Recipe_RemoveHediff</workerClass>
     <jobString>Excising lesion.</jobString>
-    <workAmount>6000</workAmount>
+    <workAmount>8000</workAmount>
     <removesHediff>RK_OripathyLesion</removesHediff>
     <successfullyRemovedHediffMessage>{0} has successfully excised {1}'s lesion.</successfullyRemovedHediffMessage>
     <deathOnFailedSurgeryChance>0.15</deathOnFailedSurgeryChance>
     <skillRequirements>
-      <Medicine>12</Medicine>
+      <Medicine>15</Medicine>
     </skillRequirements>
     <ingredients>
       <li>
