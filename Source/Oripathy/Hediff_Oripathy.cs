@@ -14,7 +14,17 @@ namespace Originium
 {
     public class Hediff_Oripathy : HediffWithComps
     {
-
+        public override string SeverityLabel
+        {
+            get
+            {
+                if (this.Severity <= 0f)
+                {
+                    return null;
+                }
+                return this.Severity.ToStringPercent("F0");
+            }
+        }
         public override void PostAdd(DamageInfo? dinfo)
         {
             if (!this.pawn.RaceProps.IsFlesh)

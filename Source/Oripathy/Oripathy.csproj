@@ -62,6 +62,8 @@
     <Compile Include="GameCondition_OriginiumDustStorm.cs" />
     <Compile Include="GameCondition_OriginiumRain.cs" />
     <Compile Include="GameCondition_OriginiumStorm.cs" />
+    <Compile Include="HediffCompProperties_DynamicMinSeverity.cs" />
+    <Compile Include="HediffComp_DynamicMinSeverity.cs" />
     <Compile Include="HediffDefOf.cs" />
     <Compile Include="OriginiumUtility.cs" />
     <Compile Include="StatDefOf.cs" />
