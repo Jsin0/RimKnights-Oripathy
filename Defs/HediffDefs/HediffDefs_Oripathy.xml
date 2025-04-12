@@ -79,6 +79,7 @@
 		<description>Originium crystals present in the bloodstream.
 	\nOriginium is always present in the blood stream at low levels but at higher levels, may lead to a condition known as Oripathy.</description>
 		<hediffClass>Hediff_High</hediffClass>
+		<tendable>true</tendable>
 		<defaultLabelColor>(1.0, 0.5, 0.0)</defaultLabelColor>
 		<scenarioCanAdd>true</scenarioCanAdd>
 		<taleOnVisible>ToxicityRevealed</taleOnVisible>
@@ -93,9 +94,19 @@
 			<li Class="HediffCompProperties_Immunizable">
 				<compClass>HediffComp_ImmunizableToxic</compClass>
 				<severityPerDayNotImmune>-0.18</severityPerDayNotImmune>
+			</li><li Class="HediffCompProperties_TendDuration">
+				<baseTendDurationHours>24</baseTendDurationHours>
+				<severityPerDayTended>-0.1</severityPerDayTended>
 			</li>
-			<li Class="HediffCompProperties_SurgeryInspectable">
-				<surgicalDetectionDesc>{PAWN_nameDef} is showing early signs of active originium exposure. Keep {PAWN_objective} away from sources of active originium.</surgicalDetectionDesc>
+			<li Class="Originium.HediffCompProperties_HediffDependentSeverityPerDay">
+				<hediff>RK_Oripathy</hediff>
+				<severityCurve>
+				  <points>
+					<li>(0, 0.00)</li>
+					<li>(1, 0.30)</li>
+				  </points>
+				</severityCurve>
+				<updateInterval>1000</updateInterval>
 			</li>
 		</comps>
 		<stages>

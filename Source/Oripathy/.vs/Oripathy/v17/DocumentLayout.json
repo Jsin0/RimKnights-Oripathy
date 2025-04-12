@@ -1,22 +1,10 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\SteamLibrary\\steamapps\\common\\RimWorld\\Mods\\RimKnights - Oripathy\\Source\\Oripathy\\",
+  "WorkspaceRootPath": "D:\\SteamLibrary\\steamapps\\common\\RimWorld\\Mods\\Rimknights - Oripathy\\Source\\Oripathy\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{E29E61F4-4FFC-4FE5-BFEA-C85CA58E9A2C}|Oripathy.csproj|d:\\steamlibrary\\steamapps\\common\\rimworld\\mods\\rimknights - oripathy\\source\\oripathy\\hediffcomp_dynamicminseverity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E29E61F4-4FFC-4FE5-BFEA-C85CA58E9A2C}|Oripathy.csproj|solutionrelative:hediffcomp_dynamicminseverity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E29E61F4-4FFC-4FE5-BFEA-C85CA58E9A2C}|Oripathy.csproj|d:\\steamlibrary\\steamapps\\common\\rimworld\\mods\\rimknights - oripathy\\source\\oripathy\\hediffcompproperties_dynamicminseverity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E29E61F4-4FFC-4FE5-BFEA-C85CA58E9A2C}|Oripathy.csproj|solutionrelative:hediffcompproperties_dynamicminseverity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E29E61F4-4FFC-4FE5-BFEA-C85CA58E9A2C}|Oripathy.csproj|D:\\SteamLibrary\\steamapps\\common\\RimWorld\\Mods\\RimKnights - Oripathy\\Source\\Oripathy\\hediffcomp_hediffdependentseverityperday.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E29E61F4-4FFC-4FE5-BFEA-C85CA58E9A2C}|Oripathy.csproj|solutionrelative:hediffcomp_hediffdependentseverityperday.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E29E61F4-4FFC-4FE5-BFEA-C85CA58E9A2C}|Oripathy.csproj|D:\\SteamLibrary\\steamapps\\common\\RimWorld\\Mods\\RimKnights - Oripathy\\Source\\Oripathy\\hediffcompproperties_hediffdependentseverityperday.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E29E61F4-4FFC-4FE5-BFEA-C85CA58E9A2C}|Oripathy.csproj|solutionrelative:hediffcompproperties_hediffdependentseverityperday.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E29E61F4-4FFC-4FE5-BFEA-C85CA58E9A2C}|Oripathy.csproj|d:\\steamlibrary\\steamapps\\common\\rimworld\\mods\\rimknights - oripathy\\source\\oripathy\\hediff_oripathy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E29E61F4-4FFC-4FE5-BFEA-C85CA58E9A2C}|Oripathy.csproj|solutionrelative:hediff_oripathy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,58 +14,19 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "HediffCompProperties_DynamicMinSeverity.cs",
-              "DocumentMoniker": "D:\\SteamLibrary\\steamapps\\common\\RimWorld\\Mods\\RimKnights - Oripathy\\Source\\Oripathy\\HediffCompProperties_DynamicMinSeverity.cs",
-              "RelativeDocumentMoniker": "HediffCompProperties_DynamicMinSeverity.cs",
-              "ToolTip": "D:\\SteamLibrary\\steamapps\\common\\RimWorld\\Mods\\RimKnights - Oripathy\\Source\\Oripathy\\HediffCompProperties_DynamicMinSeverity.cs",
-              "RelativeToolTip": "HediffCompProperties_DynamicMinSeverity.cs",
-              "ViewState": "AgIAABAAAAAAAAAAAAAQwBcAAAAdAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-02T17:27:37.664Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "HediffComp_DynamicMinSeverity.cs",
-              "DocumentMoniker": "D:\\SteamLibrary\\steamapps\\common\\RimWorld\\Mods\\RimKnights - Oripathy\\Source\\Oripathy\\HediffComp_DynamicMinSeverity.cs",
-              "RelativeDocumentMoniker": "HediffComp_DynamicMinSeverity.cs",
-              "ToolTip": "D:\\SteamLibrary\\steamapps\\common\\RimWorld\\Mods\\RimKnights - Oripathy\\Source\\Oripathy\\HediffComp_DynamicMinSeverity.cs",
-              "RelativeToolTip": "HediffComp_DynamicMinSeverity.cs",
-              "ViewState": "AgIAABAAAAAAAAAAAAAQwCYAAAAWAAAAAAAAAA==",
+              "Title": "Hediff_Oripathy.cs",
+              "DocumentMoniker": "D:\\SteamLibrary\\steamapps\\common\\RimWorld\\Mods\\Rimknights - Oripathy\\Source\\Oripathy\\Hediff_Oripathy.cs",
+              "RelativeDocumentMoniker": "Hediff_Oripathy.cs",
+              "ToolTip": "D:\\SteamLibrary\\steamapps\\common\\RimWorld\\Mods\\Rimknights - Oripathy\\Source\\Oripathy\\Hediff_Oripathy.cs",
+              "RelativeToolTip": "Hediff_Oripathy.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-02T17:27:20.754Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "HediffCompProperties_HediffDependentSeverityPerDay.cs",
-              "DocumentMoniker": "D:\\SteamLibrary\\steamapps\\common\\RimWorld\\Mods\\RimKnights - Oripathy\\Source\\Oripathy\\HediffCompProperties_HediffDependentSeverityPerDay.cs",
-              "RelativeDocumentMoniker": "HediffCompProperties_HediffDependentSeverityPerDay.cs",
-              "ToolTip": "D:\\SteamLibrary\\steamapps\\common\\RimWorld\\Mods\\RimKnights - Oripathy\\Source\\Oripathy\\HediffCompProperties_HediffDependentSeverityPerDay.cs",
-              "RelativeToolTip": "HediffCompProperties_HediffDependentSeverityPerDay.cs",
-              "ViewState": "AgIAABAAAAAAAAAAAAAQwDIAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-30T19:13:11.744Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "HediffComp_HediffDependentSeverityPerDay.cs",
-              "DocumentMoniker": "D:\\SteamLibrary\\steamapps\\common\\RimWorld\\Mods\\RimKnights - Oripathy\\Source\\Oripathy\\HediffComp_HediffDependentSeverityPerDay.cs",
-              "RelativeDocumentMoniker": "HediffComp_HediffDependentSeverityPerDay.cs",
-              "ToolTip": "D:\\SteamLibrary\\steamapps\\common\\RimWorld\\Mods\\RimKnights - Oripathy\\Source\\Oripathy\\HediffComp_HediffDependentSeverityPerDay.cs",
-              "RelativeToolTip": "HediffComp_HediffDependentSeverityPerDay.cs",
-              "ViewState": "AgIAAC4AAAAAAAAAAAAkwEAAAABXAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-30T07:44:51.025Z",
+              "WhenOpened": "2025-04-03T06:01:10.447Z",
               "EditorCaption": ""
             }
           ]
