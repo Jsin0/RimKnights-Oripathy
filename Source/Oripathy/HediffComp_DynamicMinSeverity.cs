@@ -21,32 +21,68 @@ namespace Originium
         public override void CompPostPostAdd(DamageInfo? dinfo)
         {
             base.CompPostPostAdd(dinfo);
-            CalculateSeverity();
+            CalculateLimits();
+            AdjustSeverity();
         }
 
-        public void CalculateSeverity(bool isMin = true)
+        public override void CompPostTick(ref float severityAdjustment)
+        {
+            base.CompPostTick(ref severityAdjustment);
+
+            if (base.Pawn.IsHashIntervalTick(this.Props.updateInterval))
+            {
+                CalculateLimits();
+            }
+
+            AdjustSeverity();
+        }
+
+        private void AdjustSeverity()
+        {
+            float severity = this.parent.Severity;
+            if (severity > maxSeverity)
+            {
+                this.parent.Severity = maxSeverity;
+
+            }else if(severity < minSeverity)
+            {
+                this.parent.Severity = minSeverity;
+            }
+
+        }
+
+        public void CalculateLimits()
         {
             Hediff hediff = this.Pawn.health.hediffSet.GetFirstHediffOfDef(this.Props.hediff);
             float severity = ((hediff != null) ? hediff.Severity : 0f);
 
-            float newLimit = ((isMin) ? this.Props.CalculateMinSeverity(severity): this.Props.CalculateMaxSeverity(severity));
+            float num;
+            if ((num = this.Props.CalculateMinSeverity(severity)) != -88) { minSeverity = num; }
+            if ((num = this.Props.CalculateMaxSeverity(severity)) != -88) { maxSeverity = num; }
 
-            if (newLimit == -8)
-            {
-                return;
-            }
-
-            if (isMin)
-            {
-                this.Def.minSeverity = newLimit;
-            }
-            else
-            {
-                this.Def.maxSeverity = newLimit;
-            }
-
+            if (maxSeverity < minSeverity) {maxSeverity = minSeverity;}
         }
 
+        public override void CompExposeData()
+        {
+            base.CompExposeData();
+            Scribe_Values.Look<float>(ref this.minSeverity, "minSeverity", 0f, false);
+            Scribe_Values.Look<float>(ref this.maxSeverity,"maxSeverity",0f,false);
+        }
 
+        public override string CompDebugString()
+        {
+            StringBuilder stringBuilder = new StringBuilder();
+            stringBuilder.AppendLine(base.CompDebugString());
+
+            stringBuilder.AppendLine("Minimum severity: " + this.minSeverity.ToString("0.##"));
+            stringBuilder.AppendLine("Maximum severity: " + this.maxSeverity.ToString("0.##"));
+
+            return stringBuilder.ToString();
+
+        }
+        public float minSeverity;
+
+        public float maxSeverity;
     }
 }

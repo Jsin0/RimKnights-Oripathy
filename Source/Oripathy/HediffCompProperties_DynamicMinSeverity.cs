@@ -15,48 +15,35 @@ namespace Originium
             this.compClass = typeof(HediffComp_DynamicSeverityRange);
         }
 
-        public float CalculateMinSeverity(float affectorSeverity = 0f)
+        public float CalculateMinSeverity(float affectorSeverity)
         {
-            if(severityCurveMin == null)
-            {
-                if (severityFactorMin == null)
-                {
-                    return -8;
-                }
-                else
-                {
-                    return affectorSeverity * severityFactorMin + severityOffsetMin;
-                }
-            }
-            else
-            {
-                return severityCurveMin.Evaluate(affectorSeverity);
-            }
+            return CalculateSeverity( severityCurveMin, severityFactorMin,affectorSeverity, severityOffsetMin);
         }
-        public float CalculateMaxSeverity(float affectorSeverity = 0f)
+        public float CalculateMaxSeverity(float affectorSeverity)
         {
-            if (severityCurveMax == null)
+            return CalculateSeverity(severityCurveMax, severityFactorMax, affectorSeverity, severityOffsetMax);
+        }
+
+        private float CalculateSeverity( SimpleCurve curve, float factor ,float xValue = 0f, float offset = 0f)
+        {
+            if (curve == null)
             {
-                if(severityFactorMax == null)
+                if(factor == null)
                 {
-                    return -1;
+                    return -88;
                 }
                 else
                 {
-                    return affectorSeverity * severityFactorMax + severityOffsetMax;
+                    return xValue * factor + offset;
                 }
             }
             else
             {
-                return severityCurveMax.Evaluate(affectorSeverity);
+                return curve.Evaluate(xValue);
             }
         }
 
         public HediffDef hediff;
-
-        public float minSeverity = 0f;
-
-        public float maxSeverity = 1f;
 
         public SimpleCurve severityCurveMin;
 
@@ -64,11 +51,11 @@ namespace Originium
 
         public float severityFactorMin;
 
-        public float severityOffsetMin = 0f;
+        public float severityOffsetMin;
 
         public float severityFactorMax;
 
-        public float severityOffsetMax = 0f;
+        public float severityOffsetMax;
 
         public int updateInterval = 250;
     }

@@ -16,8 +16,11 @@
 				<severityOffset>0.005</severityOffset>
 				<severityPerDayRange>0~0.002</severityPerDayRange>
 				<updateInterval>250</updateInterval>
-				<overrideHediff>RK_SuppressantHigh</overrideHediff>
-				<overrideSeverity>0.001</overrideSeverity>
+			</li>
+			<li Class="Originium.HediffCompProperties_Suppressible">
+				<suppressor>RK_SuppressantHigh</suppressor>
+				<suppresedHediff>RK_OripathySuppressed</suppresedHediff>
+				<unsuppressedHediff>RK_Oripathy</unsuppressedHediff>
 			</li>
 		</comps>
 		<stages>
@@ -72,9 +75,73 @@
 			</li>
 		</stages>
 	</HediffDef>
+	
+	<HediffDef ParentName="RK_Oripathy">
+		<defName>RK_OripathySuppressed</defName>
+		<comps>
+			<li Class="HediffCompProperties_SeverityPerDay">
+				<severityPerDay>0.001</severityPerDay>
+			</li>
+			<li Class="Originium.HediffCompProperties_Suppressible">
+				<suppressor>RK_SuppressantHigh</suppressor>
+				<suppresedHediff>RK_OripathySuppressed</suppresedHediff>
+				<unsuppressedHediff>RK_Oripathy</unsuppressedHediff>
+			</li>
+		</comps>
+		<stages>
+			<li>
+				<label>minor</label>
+				<minSeverity>0.01</minSeverity>
+				<painOffset>0.01</painOffset>
+				<hediffGivers>
+					<li Class="HediffGiver_Random">
+						<hediff>RK_OripathyLesion</hediff>
+						<mtbDays>880</mtbDays>
+						<canAffectAnyLivePart>true</canAffectAnyLivePart>
+					</li>
+				</hediffGivers>
+			</li>
+			<li>
+				<minSeverity>0.35</minSeverity>
+				<label>moderate</label>
+				<painOffset>0.05</painOffset>
+				<hediffGivers>
+					<li Class="HediffGiver_Random">
+						<hediff>RK_OripathyLesion</hediff>
+						<mtbDays>440</mtbDays>
+						<canAffectAnyLivePart>true</canAffectAnyLivePart>
+					</li>
+				</hediffGivers>
+			</li>
+			<li>
+				<minSeverity>0.70</minSeverity>
+				<label>major</label>
+				<painOffset>0.075</painOffset>
+				<hediffGivers>
+					<li Class="HediffGiver_Random">
+						<hediff>RK_OripathyLesion</hediff>
+						<mtbDays>120</mtbDays>
+						<canAffectAnyLivePart>true</canAffectAnyLivePart>
+					</li>
+				</hediffGivers>
+			</li>
+			<li>
+				<minSeverity>0.90</minSeverity>
+				<label>extreme</label>
+				<painOffset>0.125</painOffset>
+				<hediffGivers>
+					<li Class="HediffGiver_Random">
+						<hediff>RK_OripathyLesion</hediff>
+						<mtbDays>60</mtbDays>
+						<canAffectAnyLivePart>true</canAffectAnyLivePart>
+					</li>
+				</hediffGivers>
+			</li>
+		</stages>
+	</HediffDef>
 			
 	<HediffDef>
-	<defName>RK_OriginiumBuildup</defName>
+		<defName>RK_OriginiumBuildup</defName>
 		<label>blood originium buildup</label>
 		<description>Originium crystals present in the bloodstream.
 	\nOriginium is always present in the blood stream at low levels but at higher levels, may lead to a condition known as Oripathy.</description>
@@ -89,23 +156,26 @@
 			<li Class="HediffCompProperties_Pollution" MayRequire="Ludeon.RimWorld.Biotech">
 				<pollutedSeverity>0.0003</pollutedSeverity>
 				<unpollutedSeverity>0</unpollutedSeverity>
-			<interval>60</interval>
-			</li>
-			<li Class="HediffCompProperties_Immunizable">
-				<compClass>HediffComp_ImmunizableToxic</compClass>
-				<severityPerDayNotImmune>-0.18</severityPerDayNotImmune>
-			</li><li Class="HediffCompProperties_TendDuration">
+				<interval>60</interval>
+			<li Class="HediffCompProperties_TendDuration">
 				<baseTendDurationHours>24</baseTendDurationHours>
-				<severityPerDayTended>-0.1</severityPerDayTended>
+				<severityPerDayTended>-0.2</severityPerDayTended>
 			</li>
-			<li Class="Originium.HediffCompProperties_HediffDependentSeverityPerDay">
+			<li Class="Originium.HediffCompProperties_Suppressible">
+				<suppressor>RK_SuppressantHigh</suppressor>
+				<suppresedHediff>RK_OriginiumBuildupSuppressed</suppresedHediff>
+				<unsuppressedHediff>RK_OriginiumBuildup</unsuppressedHediff>
+			</li>
+			<li Class="Originium.HediffCompProperties_DynamicSeverityRange">
 				<hediff>RK_Oripathy</hediff>
-				<severityCurve>
+				<severityCurveMin>
 				  <points>
 					<li>(0, 0.00)</li>
-					<li>(1, 0.30)</li>
+					<li>(0.25, 0.1)</li>
+					<li>(0.6, 0.35)</li>
+					<li>(1.0, 0.50)</li>
 				  </points>
-				</severityCurve>
+				</severityCurveMin>
 				<updateInterval>1000</updateInterval>
 			</li>
 		</comps>
@@ -140,7 +210,7 @@
 			<label>moderate</label>
 			<minSeverity>0.40</minSeverity>
 			<painOffset>0.05</painOffset>
-			<vomitMtbDays>7</vomitMtbDays>
+			<vomitMtbDays>10</vomitMtbDays>
 			<capMods>
 			  <li>
 				<capacity>BloodFiltration</capacity>
@@ -158,7 +228,7 @@
 			<label>serious</label>
 			<minSeverity>0.60</minSeverity>
 			<painOffset>0.07</painOffset>
-			<vomitMtbDays>1</vomitMtbDays>
+			<vomitMtbDays>5</vomitMtbDays>
 			<capMods>
 			  <li>
 				<capacity>BloodFiltration</capacity>
@@ -191,6 +261,87 @@
 		  </li>
 		</stages>
 	  </HediffDef>
+	  
+	  <HediffDef ParentName="RK_OriginiumBuildup">
+		<defName>RK_OriginiumBuildupSuppressed</defName>
+		<label>blood originium buildup (suppressed)</label>
+		<description>
+			Originium crystals present in the bloodstream.
+			\nOriginium is always present in the blood stream at low levels but at higher levels, may lead to a condition known as Oripathy.
+			\n\n A suppressant has reduced the effects of originium in the blood
+		</description>
+		<comps>
+			<li Class="HediffCompProperties_Pollution" MayRequire="Ludeon.RimWorld.Biotech">
+				<pollutedSeverity>0.0003</pollutedSeverity>
+				<unpollutedSeverity>0</unpollutedSeverity>
+				<interval>240</interval>
+			<li Class="HediffCompProperties_TendDuration">
+				<baseTendDurationHours>24</baseTendDurationHours>
+				<severityPerDayTended>-0.3</severityPerDayTended>
+			</li>
+			<li Class="Originium.HediffCompProperties_Suppressible">
+				<suppressor>RK_SuppressantHigh</suppressor>
+				<suppresedHediff>RK_OriginiumBuildupSuppressed</suppresedHediff>
+				<unsuppressedHediff>RK_OriginiumBuildup</unsuppressedHediff>
+			</li>
+			<li Class="Originium.HediffCompProperties_DynamicSeverityRange">
+				<hediff>RK_Oripathy</hediff>
+				<severityCurveMin>
+				  <points>
+					<li>(0, 0.00)</li>
+					<li>(0.25, 0.1)</li>
+					<li>(0.6, 0.35)</li>
+					<li>(1.0, 0.50)</li>
+				  </points>
+				</severityCurveMin>
+				<updateInterval>1000</updateInterval>
+			</li>
+		</comps>
+		<stages>
+		  <li>
+			<label>low</label>
+			<painOffset>0.01</painOffset>
+		  </li>
+		  <li>
+			<label>moderate</label>
+			<minSeverity>0.30</minSeverity>
+			<painOffset>0.04</painOffset>
+			<capMods>
+			  <li>
+				<capacity>BloodFiltration</capacity>
+				<offset>-0.05</offset>
+			  </li>
+			</capMods>
+			<hediffGivers>
+			  <li Class="HediffGiver_Random">
+				<hediff>RK_Oripathy</hediff>
+				<mtbDays>75</mtbDays>
+			  </li>
+			</hediffGivers>
+		  </li>
+		  <li>
+			<label>serious</label>
+			<minSeverity>0.60</minSeverity>
+			<painOffset>0.07</painOffset>
+			<vomitMtbDays>10</vomitMtbDays>
+			<capMods>
+			  <li>
+				<capacity>BloodFiltration</capacity>
+				<offset>-0.07</offset>
+			  </li>
+			</capMods>
+			<hediffGivers>
+			  <li Class="HediffGiver_Random">
+				<hediff>RK_Oripathy</hediff>
+				<mtbDays>30</mtbDays>
+			  </li>
+			</hediffGivers>
+		  </li>
+		  </li>
+		</stages>
+	  </HediffDef>
+	  
+	  
 
 	
 	<HediffDef ParentName="ChronicDiseaseBase">
@@ -258,8 +409,6 @@
 				  </points>
 				</severityCurve>
 				<updateInterval>1000</updateInterval>
-				<overrideHediff>RK_SuppressantHigh</overrideHediff>
-				<overrideSeverity>0.005</overrideSeverity>
 			</li>
 		</comps>
 	</HediffDef>
@@ -275,7 +424,7 @@
     <successfullyRemovedHediffMessage>{0} has successfully excised {1}'s lesion.</successfullyRemovedHediffMessage>
     <deathOnFailedSurgeryChance>0.15</deathOnFailedSurgeryChance>
     <skillRequirements>
-      <Medicine>15</Medicine>
+      <Medicine>12</Medicine>
     </skillRequirements>
     <ingredients>
       <li>
