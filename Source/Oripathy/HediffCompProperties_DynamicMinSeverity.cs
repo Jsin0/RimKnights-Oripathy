@@ -22,7 +22,7 @@ namespace Originium
         public float CalculateMaxSeverity(float affectorSeverity)
         {
             return CalculateSeverity(severityCurveMax, severityFactorMax, affectorSeverity, severityOffsetMax);
-        }
+        } 
 
         private float CalculateSeverity( SimpleCurve curve, float factor ,float xValue = 0f, float offset = 0f)
         {
@@ -58,5 +58,7 @@ namespace Originium
         public float severityOffsetMax;
 
         public int updateInterval = 250;
+
+        public float adjustment = 0f;
     }
 }

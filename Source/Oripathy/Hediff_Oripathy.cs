@@ -1,9 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Runtime.CompilerServices;
 using Verse;
 using RimWorld;
 using UnityEngine;
@@ -32,7 +27,8 @@ namespace Originium
                 Log.Error("Tried giving oripathy to an inorganic pawn");
                 this.pawn.health.RemoveHediff(this);
                 return;
-            }
+            }(GeneUtility.IsBaseliner(this.pawn) )
+
             base.PostAdd(dinfo);
 
         }

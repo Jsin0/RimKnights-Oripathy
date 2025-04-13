@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using RimWorld;
+using UnityEngine;
 using Verse;
 
 namespace Originium
@@ -40,15 +41,24 @@ namespace Originium
         private void AdjustSeverity()
         {
             float severity = this.parent.Severity;
-            if (severity > maxSeverity)
+            float adjustment = this.Props.adjustment;
+            if (adjustment == 0) 
             {
-                this.parent.Severity = maxSeverity;
-
-            }else if(severity < minSeverity)
-            {
-                this.parent.Severity = minSeverity;
+                if (severity > maxSeverity || severity < minSeverity)
+                {
+                    this.parent.Severity = Mathf.Clamp(severity, minSeverity, maxSeverity);
+                }
             }
-
+            else
+            {
+                if (severity < minSeverity){
+                    this.parent.Severity += this.Props.adjustment;
+                }else if(severity > maxSeverity)
+                {
+                    this.parent.Severity -= this.Props.adjustment;
+                }
+            }
+            
         }
 
         public void CalculateLimits()
@@ -57,8 +67,24 @@ namespace Originium
             float severity = ((hediff != null) ? hediff.Severity : 0f);
 
             float num;
-            if ((num = this.Props.CalculateMinSeverity(severity)) != -88) { minSeverity = num; }
-            if ((num = this.Props.CalculateMaxSeverity(severity)) != -88) { maxSeverity = num; }
+
+            if ((num = this.Props.CalculateMinSeverity(severity)) != -88) 
+            { 
+                minSeverity = num; 
+            }
+            else
+            {
+                minSeverity = this.parent.def.minSeverity;
+            }
+
+            if ((num = this.Props.CalculateMaxSeverity(severity)) != -88) 
+            { 
+                maxSeverity = num; 
+            }
+            else
+            {
+                maxSeverity= this.parent.def.maxSeverity;
+            }
 
             if (maxSeverity < minSeverity) {maxSeverity = minSeverity;}
         }

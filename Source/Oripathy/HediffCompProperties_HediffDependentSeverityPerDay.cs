@@ -15,13 +15,8 @@ namespace Originium
             this.compClass = typeof(HediffComp_HediffDependentSeverityPerDay);
         }
 
-        public float CalculateSeverityPerDay(float affectorSeverity = 0f, bool suppressed = false)
+        public float CalculateSeverityPerDay(float affectorSeverity = 0f)
         {
-            if (suppressed)
-            {
-                return overrideSeverity;
-            }
-
             float sev;
             if (severityCurve != null)
             {
@@ -44,10 +39,6 @@ namespace Originium
         public float severityOffset = 0f;
 
         public HediffDef hediff;
-
-        public HediffDef overrideHediff;
-
-        public float overrideSeverity = 0f;
 
         public int updateInterval = 250;
 

@@ -17,10 +17,9 @@ namespace Originium
                 return (HediffCompProperties_Suppressible)this.props;
             }
         }
-        public override void CompPostMake()
+        public override void CompPostPostAdd(DamageInfo? dinfo)
         {
-            base.CompPostMake();
-            this.doSuppression();
+            doSuppression();
         }
 
         public override void CompPostTick(ref float severityAdjustment)
@@ -39,7 +38,7 @@ namespace Originium
 
             if (hediffDef == null) 
             {
-                Log.Message("HediffComp_Suppressible Error: HediffDef not defined");
+                Log.Message("HediffComp_Suppressible Error: this comp is suppressed or unsupressed without a replacement hediff");
                 return;
             }
 
@@ -52,7 +51,7 @@ namespace Originium
             }
             else
             {
-                hediff = base.Pawn.health.GetOrAddHediff(this.Props.suppressedHediff);
+                hediff = base.Pawn.health.GetOrAddHediff(hediffDef);
                 hediff.Severity = this.parent.Severity;
             }
             base.Pawn.health.RemoveHediff(this.parent);

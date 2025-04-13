@@ -67,6 +67,8 @@
     <Compile Include="HediffComp_DynamicMinSeverity.cs" />
     <Compile Include="HediffComp_Suppressible.cs" />
     <Compile Include="HediffDefOf.cs" />
+    <Compile Include="Hediff_OriginiumBuildup.cs" />
+    <Compile Include="ModSettings.cs" />
     <Compile Include="OriginiumUtility.cs" />
     <Compile Include="StatDefOf.cs" />
     <Compile Include="ThingDefOf.cs" />
