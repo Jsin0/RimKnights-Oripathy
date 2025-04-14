@@ -101,7 +101,8 @@
 	
 	<HediffDef ParentName="OripathyBase">
 		<defName>RK_OripathySuppressed</defName>
-		<label>oripathy</label>
+		<label>oripathy (suppressed)</label>
+		<description>Also known as stone disease, Oripathy an incurable disease due to the assimilation of originium into the body.  It is characterized by crystalline growths throughout the body. \n\nA drug is currently suppressing symptoms.</description>
 		<comps>
 			<li Class="HediffCompProperties_SeverityPerDay">
 				<severityPerDay>0.001</severityPerDay>
