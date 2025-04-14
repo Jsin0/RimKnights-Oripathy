@@ -1,9 +1,9 @@
-﻿using System;
-using Verse;
-using RimWorld;
+﻿using RimWorld;
+using System;
 using UnityEngine;
-using Verse.Sound;
+using Verse;
 using Verse.Noise;
+using Verse.Sound;
 
 namespace Originium
 {
@@ -27,12 +27,17 @@ namespace Originium
                 Log.Error("Tried giving oripathy to an inorganic pawn");
                 this.pawn.health.RemoveHediff(this);
                 return;
-            }(GeneUtility.IsBaseliner(this.pawn) )
+            }
+            else if (GeneUtility.IsBaseliner(this.pawn) && OripathyMod.settings.baselinersImmune)
+            {
+                this.pawn.health.RemoveHediff(this);
+                return;
+            }
 
             base.PostAdd(dinfo);
 
         }
-        
+
         public override void Notify_PawnDied(DamageInfo? dinfo, Hediff culprit = null)
         {
             base.Notify_PawnDied(dinfo, culprit);
@@ -42,7 +47,7 @@ namespace Originium
                 String name = this.pawn.Name.ToStringShort;
                 Find.LetterStack.ReceiveLetter("RK_LetterLabelOripathicDeath".Translate(name), "RK_LetterOripathicDeath".Translate(name), LetterDefOf.NegativeEvent, new TargetInfo(this.pawn.Position, this.pawn.MapHeld, false), null, null, null, null, 0, true);
             }
-            
+
             this.TryTriggerWarmupTimer();
             this.TryTriggerWarmupEffect();
         }
@@ -52,7 +57,7 @@ namespace Originium
         }
         private void TryTriggerWarmupTimer()
         {
-            if(this.pawn.Corpse != null)
+            if (this.pawn.Corpse != null)
             {
                 this.shattering = true;
                 this.warmupTimer.Start(GenTicks.TicksGame, this.GetFinalDelay(), new Action(this.TryShatter));
@@ -60,7 +65,7 @@ namespace Originium
         }
         private void TryTriggerWarmupEffect()
         {
-            if(!this.shattering)
+            if (!this.shattering)
             {
                 return;
             }
@@ -124,7 +129,7 @@ namespace Originium
             {
                 //Log.Message("Warmup timer not done.");
                 this.warmupTimer.TickInterval();
-                if(this.shatterWarmupEffecter != null)
+                if (this.shatterWarmupEffecter != null)
                 {
                     //Log.Message("prolonging warmup shatterEffecter");
                     this.shatterWarmupEffecter.ticksLeft += 250;
@@ -138,7 +143,7 @@ namespace Originium
             {
                 //Log.Message("Shatter timer not done.");
                 this.shatterTimer.TickInterval();
-                if(this.shatterSustainer != null && !this.shatterSustainer.Ended)
+                if (this.shatterSustainer != null && !this.shatterSustainer.Ended)
                 {
                     Sustainer sustainer = this.shatterSustainer;
                     if (sustainer != null)
@@ -146,7 +151,7 @@ namespace Originium
                         sustainer.Maintain();
                     }
                 }
-                if(this.shatterEffecter != null)
+                if (this.shatterEffecter != null)
                 {
                     this.shatterEffecter.ticksLeft = (this.shatterTimer.Finished ? 0 : (this.shatterEffecter.ticksLeft + 250));
                 }
@@ -159,29 +164,32 @@ namespace Originium
         private void DoShatterCorpse()
         {
             //Log.Message("countdown timer done.");
-            if (base.pawn.MapHeld != null)
+            if (base.pawn != null)
             {
-                //Log.Message(base.pawn.Name + " is shattering.");
-                Sustainer sustainer = this.shatterSustainer;
-                if (sustainer != null)
+                if (base.pawn.MapHeld != null)
                 {
-                    sustainer.End();
-                }
-                IntVec3 center = base.pawn.Position;
-                Map map = base.pawn.MapHeld;
-                float radius = base.pawn.BodySize * 2f;
-                GenExplosion.DoExplosion(center, map, radius, Originium.DamageDefOf.RK_OriginiumDust, base.pawn, 1, -1f, null, null, null, null, ThingDefOf.RK_OriginiumCluster, 0.20f, 1, null, false, null, 0f, 1, 0f, false, null, null, null, true, 1f, 0f, true, null, 1f, null, null);
-                GenSpawn.Spawn(Originium.ThingDefOf.RK_OriginiumCluster, center, map);
-                if (ModsConfig.BiotechActive) {PollutionUtility.GrowPollutionAt(center, map, (int)Math.Round(3.15 * radius * radius));}
-               
-            }
-            else
-            { 
-                Log.Error("corpse in null map, no explosion");
-            }
+                    //Log.Message(base.pawn.Name + " is shattering.");
+                    Sustainer sustainer = this.shatterSustainer;
+                    if (sustainer != null)
+                    {
+                        sustainer.End();
+                    }
+                    IntVec3 center = base.pawn.Position;
+                    Map map = base.pawn.MapHeld;
+                    float radius = base.pawn.BodySize * 2f;
+                    GenExplosion.DoExplosion(center, map, radius, Originium.DamageDefOf.RK_OriginiumDust, base.pawn, 1, -1f, null, null, null, null, ThingDefOf.RK_OriginiumCluster, 0.20f, 1, null, false, null, 0f, 1, 0f, false, null, null, null, true, 1f, 0f, true, null, 1f, null, null);
+                    GenSpawn.Spawn(Originium.ThingDefOf.RK_OriginiumCluster, center, map);
+                    if (ModsConfig.BiotechActive) { PollutionUtility.GrowPollutionAt(center, map, (int)Math.Round(3.15 * radius * radius)); }
 
-            this.shattering = false;
-            base.pawn.Corpse.Destroy(DestroyMode.Vanish);
+                }
+                else
+                {
+                    Log.Error("corpse in null map, no explosion");
+                }
+
+                this.shattering = false;
+                base.pawn.Corpse.Destroy(DestroyMode.Vanish);
+            }
         }
 
         public override void Notify_PawnCorpseDestroyed()

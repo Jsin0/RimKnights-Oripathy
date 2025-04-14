@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <ThingDef ParentName="MakeableDrugPillBase">
+    <defName>RK_Suppressant</defName>
+    <label>oripathy suppressant</label>
+    <description>A drug for slowing down the progression of Oripathy. Primarily manufactured by Rhodes Island Pharmaceuticals.</description>
+    <possessionCount>5</possessionCount>
+    <descriptionHyperlinks><HediffDef>RK_SuppressantHigh</HediffDef></descriptionHyperlinks>
+    <graphicData>
+		<texPath>Things/Item/Drug/RK_Suppressant</texPath>
+		<graphicClass>Graphic_StackCount</graphicClass>
+    </graphicData>
+    <socialPropernessMatters>false</socialPropernessMatters>
+    <rotatable>false</rotatable>
+    <stackLimit>5</stackLimit>
+    <statBases>
+		<WorkToMake>1200</WorkToMake>
+		<MarketValue>2000</MarketValue>
+		<Mass>0.05</Mass>
+		<Flammability>0.2</Flammability>
+    </statBases>
+    <techLevel>Spacer</techLevel>
+    <ingestible>
+		<drugCategory>Medical</drugCategory>
+		<outcomeDoers>
+			<li Class="IngestionOutcomeDoer_GiveHediff">
+				<hediffDef>RK_SuppressantHigh</hediffDef>
+				<severity>1.0</severity>
+			</li>
+		</outcomeDoers>
+    </ingestible>
+    <recipeMaker>
+      <researchPrerequisite>RK_SuppressantProduction</researchPrerequisite>
+      <recipeUsers>
+        <li>DrugLab</li>
+      </recipeUsers>
+      <displayPriority>2100</displayPriority>
+    </recipeMaker>
+    <costList>
+      <MedicineUltratech>1</MedicineUltratech>
+	  <Neutroamine>10</Neutroamine>
+    </costList>
+    <comps>
+      <li Class="CompProperties_Drug">
+        <listOrder>1000</listOrder>
+        <overdoseSeverityOffset>0.08~0.14</overdoseSeverityOffset>
+      </li>
+    </comps>
+  </ThingDef>
+  
+  <HediffDef>
+    <defName>RK_SuppressantHigh</defName>
+    <hediffClass>Hediff_High</hediffClass>
+    <label>oripathy Suppressant</label>
+    <description>Drug induced suppression of oripathy symptoms. Does nothing for uninfected individuals.</description>
+    <defaultLabelColor>(0.13,0.73,1)</defaultLabelColor>
+    <scenarioCanAdd>true</scenarioCanAdd>
+    <maxSeverity>1.0</maxSeverity>
+    <isBad>false</isBad>
+    <comps>
+      <li Class="HediffCompProperties_SeverityPerDay">
+        <severityPerDay>-0.18</severityPerDay>
+        <showHoursToRecover>true</showHoursToRecover>
+      </li>
+	</comps>
+  </HediffDef>
+</Defs>

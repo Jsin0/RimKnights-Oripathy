@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<SCGF.GasDef ParentName="GasBase">
+    <defName>RK_OriginiumDustGas</defName>
+    <label>active originium dust cloud</label>
+    <color>(231, 188, 101)</color>
+    <dissipationRate>3</dissipationRate>
+
+    <diffuses>true</diffuses>
+
+    <appliesTo>
+        <!-- Apply to pawns with 'organic' flesh... -->
+        <li Class="SCGF.Filters.Organic" />
+    </appliesTo>
+
+    <immunityWhen>
+        <!-- Mouth-covering protective apparel (like gas masks) mean immunity for this gas. -->
+        <li Class="SCGF.Filters.ProtectiveApparel">
+            <types>
+                <li>Mouth</li>
+            </types>
+        </li>
+    </immunityWhen>
+
+    <actions>
+        <li Class="SCGF.Actions.ApplyHediff">
+			<hediffDef>RK_OriginiumBuildup</hediffDef>
+			<severityPerTick>0.2</severityPerTick>
+			<densityFactor>0.5</densityFactor>
+
+			<!-- And further multiply severity increase based on the pawn's ToxicEnvironmentResistance stat. -->
+			<impactedByStat>ToxicEnvironmentResistance</impactedByStat>
+
+			<!-- With that stat value being multiplied by 2. -->
+			<statImpactFactor>2</statImpactFactor>
+
+			<!-- If at the final stage of the hediff (sedated), severity increase should be multiplied by 0.25. -->
+			<finalStageFactor>0.25</finalStageFactor>
+		</li>
+    </actions>
+
+    <texPath>Things/Gas/GasCloudThickA</texPath>
+
+    <shaderPath>Map/GasRotating</shaderPath>
+</SCGF.GasDef>
+</Defs>

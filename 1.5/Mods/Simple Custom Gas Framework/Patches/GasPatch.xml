@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?>
+	<!--Patch flesh typedef for hediffWounds-->
+<Patch>
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/DamageDef[defName="RK_OriginiumDust"]</xpath>
+		<value>
+			<modExtensions>
+				<li Class="SCGF.CustomGasExtension">
+					<gasDef>RK_OriginiumDustGas</gasDef>
+				</li>
+			</modExtensions>
+		</value>
+	</Operation>
+</Patch>

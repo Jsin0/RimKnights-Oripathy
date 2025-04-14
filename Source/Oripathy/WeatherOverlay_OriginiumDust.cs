@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using RimWorld;
+﻿using RimWorld;
+using System;
 using UnityEngine;
 using Verse;
 
@@ -15,7 +11,7 @@ namespace Originium
         public WeatherOverlay_OriginiumDust()
         {
             this.worldOverlayMat = WeatherOverlay_OriginiumDust.DustOverlayWorld;
-            this.worldOverlayPanSpeed1 = panSpeed1.RandomInRange ;
+            this.worldOverlayPanSpeed1 = panSpeed1.RandomInRange;
             this.worldOverlayPanSpeed2 = panSpeed2.RandomInRange;
             this.worldPanDir1 = new Vector2(1f, 1f);
             this.worldPanDir1.Normalize();

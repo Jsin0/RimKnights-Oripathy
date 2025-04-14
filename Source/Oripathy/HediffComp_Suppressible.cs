@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using RimWorld;
+using System;
 using Verse;
-using RimWorld;
 
 namespace Originium
 {
@@ -29,20 +25,20 @@ namespace Originium
             {
                 doSuppression();
             }
-            
+
         }
 
         private void doSuppression()
         {
             HediffDef hediffDef = ((this.isSuppressed()) ? this.Props.suppressedHediff : this.Props.unsuppressedHediff);
 
-            if (hediffDef == null) 
+            if (hediffDef == null)
             {
                 Log.Message("HediffComp_Suppressible Error: this comp is suppressed or unsupressed without a replacement hediff");
                 return;
             }
 
-            Hediff hediff = base.Pawn.health.hediffSet.GetFirstHediffOfDef(hediffDef, false); 
+            Hediff hediff = base.Pawn.health.hediffSet.GetFirstHediffOfDef(hediffDef, false);
 
             if (hediff != null)
             {
