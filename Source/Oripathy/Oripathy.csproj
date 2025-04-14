@@ -17,7 +17,7 @@
     <DebugSymbols>false</DebugSymbols>
     <DebugType>none</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>..\..\Assemblies\</OutputPath>
+    <OutputPath>..\..\1.5\Assemblies\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>0</WarningLevel>
@@ -31,9 +31,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="0Harmony, Version=2.2.2.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\Assemblies\0Harmony.dll</HintPath>
+    <Reference Include="0Harmony">
+      <HintPath>..\..\..\..\..\..\workshop\content\294100\2009463077\1.4\Assemblies\0Harmony.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="Assembly-CSharp">
       <HintPath>..\..\..\..\RimWorldWin64_Data\Managed\Assembly-CSharp.dll</HintPath>
@@ -49,6 +49,7 @@
     <Reference Include="System.Xml" />
     <Reference Include="UnityEngine">
       <HintPath>..\..\..\..\RimWorldWin64_Data\Managed\UnityEngine.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="UnityEngine.CoreModule">
       <HintPath>..\..\..\..\RimWorldWin64_Data\Managed\UnityEngine.CoreModule.dll</HintPath>
@@ -62,13 +63,17 @@
     <Compile Include="GameCondition_OriginiumDustStorm.cs" />
     <Compile Include="GameCondition_OriginiumRain.cs" />
     <Compile Include="GameCondition_OriginiumStorm.cs" />
-    <Compile Include="HediffCompProperties_DynamicMinSeverity.cs" />
-    <Compile Include="HediffComp_DynamicMinSeverity.cs" />
+    <Compile Include="HediffCompProperties_DynamicSeverityRange.cs" />
+    <Compile Include="HediffCompProperties_Suppressible.cs" />
+    <Compile Include="HediffComp_DynamicSeverityRange.cs" />
+    <Compile Include="HediffComp_Suppressible.cs" />
     <Compile Include="HediffDefOf.cs" />
+    <Compile Include="Hediff_OriginiumBuildup.cs" />
+    <Compile Include="ModSettings.cs" />
     <Compile Include="OriginiumUtility.cs" />
+    <Compile Include="OripathyMod.cs" />
     <Compile Include="StatDefOf.cs" />
     <Compile Include="ThingDefOf.cs" />
-    <Compile Include="ThoughtWorker_Oripathic_Solidarity.cs" />
     <Compile Include="DamageDefOf.cs" />
     <Compile Include="HediffCompProperties_HediffDependentSeverityPerDay.cs" />
     <Compile Include="HediffComp_HediffDependentSeverityPerDay.cs" />

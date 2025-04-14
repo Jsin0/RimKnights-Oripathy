@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <ThingDef ParentName="MakeableDrugPillBase">
+    <defName>RK_FrostNovaDrug</defName>
+    <label>frostnova</label>
+    <description>An herb-based painkiller made available by Rhodes Island Pharmaceuticals.</description>
+    <possessionCount>25</possessionCount>
+    <descriptionHyperlinks><HediffDef>RK_FrostNovaHigh</HediffDef></descriptionHyperlinks>
+    <graphicData>
+      <texPath>Things/Item/Drug/RK_FrostNovaDrug</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+    </graphicData>
+    <socialPropernessMatters>false</socialPropernessMatters>
+    <rotatable>false</rotatable>
+    <stackLimit>25</stackLimit>
+    <statBases>
+      <WorkToMake>400</WorkToMake>
+      <MarketValue>10</MarketValue>
+      <Mass>0.035</Mass>
+      <Flammability>1.3</Flammability>
+    </statBases>
+    <techLevel>Neolithic</techLevel>
+    <ingestible>
+      <drugCategory>Medical</drugCategory>
+      <outcomeDoers>
+        <li Class="IngestionOutcomeDoer_GiveHediff">
+          <hediffDef>RK_FrostNovaHigh</hediffDef>
+          <severity>1.0</severity>
+        </li>
+      </outcomeDoers>
+    </ingestible>
+    <recipeMaker>
+      <researchPrerequisite>RK_FrostNovaDrug</researchPrerequisite>
+      <recipeUsers>
+        <li>DrugLab</li>
+		<li>CraftingSpot</li>
+      </recipeUsers>
+      <displayPriority>2100</displayPriority>
+    </recipeMaker>
+    <costList>
+      <MedicineHerbal>4</MedicineHerbal>
+    </costList>
+    <comps>
+      <li Class="CompProperties_Drug">
+        <listOrder>1000</listOrder>
+        <overdoseSeverityOffset>0.08~0.14</overdoseSeverityOffset>
+      </li>
+    </comps>
+  </ThingDef>
+  
+  <HediffDef>
+    <defName>RK_FrostNovaHigh</defName>
+    <label>frostnova analgesic</label>
+    <labelNoun>painkiller</labelNoun>
+    <description>Frostnova's active chemical in the bloodstream. Provides a mild analgesic effect.</description>
+    <hediffClass>Hediff_High</hediffClass>
+    <defaultLabelColor>(0.9,0.9,0.9)</defaultLabelColor>
+    <scenarioCanAdd>true</scenarioCanAdd>
+    <maxSeverity>1.0</maxSeverity>
+    <isBad>false</isBad>
+    <comps>
+      <li Class="HediffCompProperties_SeverityPerDay">
+        <severityPerDay>-1.0</severityPerDay>
+        <showHoursToRecover>true</showHoursToRecover>
+      </li>
+    </comps>
+      <stages>
+        <li>
+          <painOffset>-0.1</painOffset>
+        </li>
+      </stages>
+  </HediffDef>
+</Defs>

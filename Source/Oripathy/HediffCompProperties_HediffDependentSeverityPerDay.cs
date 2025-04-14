@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using RimWorld;
+﻿using RimWorld;
+using System;
 using Verse;
 
 namespace Originium
@@ -15,13 +11,8 @@ namespace Originium
             this.compClass = typeof(HediffComp_HediffDependentSeverityPerDay);
         }
 
-        public float CalculateSeverityPerDay(float affectorSeverity = 0f, bool suppressed = false)
+        public float CalculateSeverityPerDay(float affectorSeverity = 0f)
         {
-            if (suppressed)
-            {
-                return overrideSeverity;
-            }
-
             float sev;
             if (severityCurve != null)
             {
@@ -31,7 +22,7 @@ namespace Originium
             {
                 sev = (this.severityFactor * affectorSeverity) + this.severityOffset;
             }
-             
+
             return sev + this.severityPerDayRange.RandomInRange;
         }
 
@@ -44,10 +35,6 @@ namespace Originium
         public float severityOffset = 0f;
 
         public HediffDef hediff;
-
-        public HediffDef overrideHediff;
-
-        public float overrideSeverity = 0f;
 
         public int updateInterval = 250;
 

@@ -1,9 +1,6 @@
-﻿using System;
+﻿using RimWorld;
+using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using RimWorld;
 using UnityEngine;
 using Verse;
 
@@ -11,7 +8,7 @@ namespace Originium
 {
     public class GameCondition_OriginiumStorm : GameCondition_OriginiumRain
     {
-        
+
         private void DoPawnsToxicDamage(Map map)
         {
             IReadOnlyList<Pawn> allPawnsSpawned = map.mapPawns.AllPawnsSpawned;
@@ -23,7 +20,7 @@ namespace Originium
                 }
             }
         }
-        
+
         public override SkyTarget? SkyTarget(Map map)
         {
             return new SkyTarget?(new SkyTarget(0.85f, this.OriginiumRainColors, 1f, 1f));

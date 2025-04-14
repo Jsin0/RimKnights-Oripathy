@@ -1,20 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using HarmonyLib;
 using RimWorld;
+using System;
 using Verse;
-using HarmonyLib;
 
 namespace Originium.Utilities
 {
     [StaticConstructorOnStartup]
     internal static class Startup
     {
-        //static Startup()
-        //{
-        //}
         static Startup()
         {
 
@@ -24,7 +17,7 @@ namespace Originium.Utilities
             Log.Message("RK_Oripathy patches applied");
         }
         [HarmonyPatch(typeof(Corpse))]
-        [HarmonyPatch("TickRare",0)]
+        [HarmonyPatch("TickRare", 0)]
         public class Corpse_TickRare_Patch
         {
             [HarmonyPostfix]
@@ -36,19 +29,19 @@ namespace Originium.Utilities
                     return;
                 }
                 Hediff_Oripathy firstHediff = __instance.InnerPawn.health.hediffSet.GetFirstHediff<Hediff_Oripathy>();
-                if(firstHediff != null)
+                if (firstHediff != null)
                 {
                     firstHediff.TickRare();
                 }
             }
         }
-        
+
         [HarmonyPatch(typeof(PollutionUtility))]
         [HarmonyPatch("PawnPollutionTick")]
         public class PawnPollutionTick_Patch
         {
             [HarmonyPostfix]
-            public static void PostFix( Pawn pawn)
+            public static void PostFix(Pawn pawn)
             {
                 if (!pawn.Spawned)
                 {

@@ -1,0 +1,11 @@
+<loadFolders>
+	<v1.5>
+		<li>/</li>
+		<li>1.5</li>
+		<li IfModActive="ludeon.rimworld.ideology">1.5/Mods/Ideology</li>
+		<li IfModActive="nachotoast.scgf">1.5/Mods/Simple Custom Gas Framework</li>
+	</v1.5>
+</loadFolders>
+
+
+
