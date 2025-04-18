@@ -55,11 +55,17 @@ namespace Originium
 
         public float RecalculateChangePerDay()
         {
-            Hediff affectorHediff = this.Pawn.health.hediffSet.GetFirstHediffOfDef(this.Props.hediff);
+            Hediff affectorHediff = this.Pawn.health.hediffSet.GetFirstHediffOfDef(this.Props.primaryHediff);
+            bool primary = true;
+            if (affectorHediff == null) 
+            { 
+                affectorHediff = this.Pawn.health.hediffSet.GetFirstHediffOfDef(this.Props.secondHediff);
+                primary = false;
+            }
 
             float severity = ((affectorHediff != null) ? affectorHediff.Severity : 0f);
 
-            return this.Props.CalculateSeverityPerDay(severity);
+            return this.Props.CalculateSeverityPerDay(severity, primary);
         }
 
         public float severityPerDay;

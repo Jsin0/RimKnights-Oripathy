@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" ?>
+	<!--Patch flesh typedef for hediffWounds-->
+<Patch>
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/MemeDef[defName="VME_HolyDiseases"]/requireOne</xpath>
+		<value>
+			<li>
+				<li>Oripathy_Exalted</li>
+			</li>
+		</value>
+	</Operation>
+</Patch>

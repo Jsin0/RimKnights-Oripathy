@@ -21,5 +21,6 @@
 	</modDependencies>
 	<loadAfter>
 	  <li>nachotoast.scgf</li>
+	  <li>vanillaexpanded.vmemese</li>
 	</loadAfter>
 </ModMetaData>

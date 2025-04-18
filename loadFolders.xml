@@ -4,6 +4,7 @@
 		<li>1.5</li>
 		<li IfModActive="ludeon.rimworld.ideology">1.5/Mods/Ideology</li>
 		<li IfModActive="nachotoast.scgf">1.5/Mods/Simple Custom Gas Framework</li>
+		<li IfModActive="vanillaexpanded.vmemese">1.5/Mods/VIE - Memes and Structures</li>
 	</v1.5>
 </loadFolders>
 

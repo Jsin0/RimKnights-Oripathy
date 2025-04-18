@@ -136,11 +136,11 @@
         </li>
         
         <!-- Game start dialog -->
-        <li Class="ScenPart_GameStartDialog">
-          <def>GameStartDialog</def>
-          <textKey>GameStartDialog</textKey>
-          <closeSound>GameStartSting</closeSound>
-        </li>
+		<li Class="ScenPart_GameStartDialog">
+			<def>GameStartDialog</def>
+			<text>After years of tolerating abuse and injustice, you and four others decided to leave your community and create your own home.  Will you create a haven for the Infected or will your legacy be the originium dust that scatters in the wind?</text>
+			<closeSound>GameStartSting</closeSound>
+		</li>
         
       </parts>
     </scenario>

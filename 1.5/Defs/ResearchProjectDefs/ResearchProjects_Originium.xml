@@ -7,6 +7,9 @@
 		<baseCost>1000</baseCost>
 		<techLevel>Spacer</techLevel>
 		<techprintMarketValue>1000</techprintMarketValue>
+		<requiredResearchFacilities>
+		  <li>MultiAnalyzer</li>
+		</requiredResearchFacilities>
 		<prerequisites>
 		  <li>PenoxycylineProduction</li>
 		  <li>GoJuiceProduction</li>

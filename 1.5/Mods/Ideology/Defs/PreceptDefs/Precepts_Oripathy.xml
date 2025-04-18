@@ -55,16 +55,6 @@
       </li>
     </comps>
   </PreceptDef>
-  
-  <PreceptDef>
-    <defName>Oripathy_Accepted</defName>
-    <issue>RK_Oripathy</issue>
-    <label>accepted</label>
-    <description>While unfortunate, oripathy is a fact of life and the infected deserve to be treated like any other.</description>
-    <impact>Low</impact>
-    <displayOrderInIssue>5</displayOrderInIssue>
-    <displayOrderInImpact>100</displayOrderInImpact>
-  </PreceptDef>
 
   <PreceptDef>
     <defName>Oripathy_Exalted</defName>
