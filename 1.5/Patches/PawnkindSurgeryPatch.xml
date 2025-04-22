@@ -4,6 +4,7 @@
 	  <xpath>Defs/ThingDef[@Name="Human" or @Name="AnimalThingBase"]/recipes</xpath>
 	  <value>
 		<li>RK_ExciseLesion</li>
+		<li>RK_Infect</li>
 	  </value>
 	</Operation>
 </Patch>

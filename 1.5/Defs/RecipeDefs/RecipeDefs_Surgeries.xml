@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<RecipeDef ParentName="SurgeryFlesh">
+		<defName>RK_ExciseLesion</defName>
+		<label>excise oripathic lesion</label>
+		<description>Excise an oripathic lesion.</description>
+		<workerClass>Recipe_RemoveHediff</workerClass>
+		<jobString>Excising lesion.</jobString>
+		<workAmount>8000</workAmount>
+		<removesHediff>RK_OripathyLesion</removesHediff>
+		<successfullyRemovedHediffMessage>{0} has successfully excised {1}'s lesion.</successfullyRemovedHediffMessage>
+		<deathOnFailedSurgeryChance>0.15</deathOnFailedSurgeryChance>
+		<skillRequirements>
+		  <Medicine>12</Medicine>
+		</skillRequirements>
+		<ingredients>
+		  <li>
+			<filter>
+			  <categories>
+				<li>Medicine</li>
+			  </categories>
+			</filter>
+			<count>4</count>
+		  </li>
+		</ingredients>
+		<fixedIngredientFilter>
+		  <categories>
+			<li>Medicine</li>
+		  </categories>
+		  <disallowedThingDefs>
+			<li>MedicineHerbal</li>
+		  </disallowedThingDefs>
+		</fixedIngredientFilter>
+	  </RecipeDef>
+  
+	<RecipeDef ParentName="SurgeryFlesh">
+		<defName>RK_Infect</defName>
+		<label>infect with oripathy</label>
+		<description>introduce active originium into the bloodstream, infecting the individual</description>
+		<workerClass>Recipe_AddHediff</workerClass>
+		<jobString>infecting TargetA.</jobString>
+		<workAmount>1000</workAmount>
+		<hideBodyPartNames>true</hideBodyPartNames>
+		<isViolation>true</isViolation>
+		<targetsBodyPart>false</targetsBodyPart>
+		<addsHediff>RK_Oripathy</addsHediff>
+		<successfullyRemovedHediffMessage>{0} has successfully infected {1}.</successfullyRemovedHediffMessage>
+		<surgeryIgnoreEnvironment>true</surgeryIgnoreEnvironment>
+		<skillRequirements>
+		  <Medicine>3</Medicine>
+		</skillRequirements>
+	  </RecipeDef>
+</Defs>

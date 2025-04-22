@@ -475,37 +475,4 @@
 			</li>
 		</comps>
 	</HediffDef>
-  
-  <RecipeDef ParentName="SurgeryFlesh">
-    <defName>RK_ExciseLesion</defName>
-    <label>excise oripathic lesion</label>
-    <description>Excise an oripathic lesion.</description>
-    <workerClass>Recipe_RemoveHediff</workerClass>
-    <jobString>Excising lesion.</jobString>
-    <workAmount>8000</workAmount>
-    <removesHediff>RK_OripathyLesion</removesHediff>
-    <successfullyRemovedHediffMessage>{0} has successfully excised {1}'s lesion.</successfullyRemovedHediffMessage>
-    <deathOnFailedSurgeryChance>0.15</deathOnFailedSurgeryChance>
-    <skillRequirements>
-      <Medicine>12</Medicine>
-    </skillRequirements>
-    <ingredients>
-      <li>
-        <filter>
-          <categories>
-            <li>Medicine</li>
-          </categories>
-        </filter>
-        <count>4</count>
-      </li>
-    </ingredients>
-    <fixedIngredientFilter>
-      <categories>
-        <li>Medicine</li>
-      </categories>
-      <disallowedThingDefs>
-        <li>MedicineHerbal</li>
-      </disallowedThingDefs>
-    </fixedIngredientFilter>
-  </RecipeDef>
 </Defs>

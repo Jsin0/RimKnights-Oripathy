@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+	<!--Patch flesh typedef for hediffWounds-->
+<Patch>
+	<Operation Class="PatchOperationAdd">
+	  <xpath>Defs/HediffDef[defName="Scaria"]</xpath>
+	  <value>
+		<hediffGivers>
+			<li Class="HediffGiver_Random">
+				<hediff>RK_Oripathy</hediff>
+				<mtbDays>0</mtbDays>
+			</li>
+		</hediffGivers>
+	  </value>
+	</Operation>
+</Patch>

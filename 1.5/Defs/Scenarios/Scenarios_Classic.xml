@@ -35,7 +35,7 @@
           <chance>1.0</chance>
           <hediff>RK_Oripathy</hediff>
           <hideOffMap>true</hideOffMap>
-          <severityRange>0.1~0.35</severityRange>
+          <severityRange>0.01~0.10</severityRange>
         </li>
         
         <!-- Player starting things -->
