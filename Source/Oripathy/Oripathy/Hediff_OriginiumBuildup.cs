@@ -18,6 +18,15 @@ namespace Originium
                 return this.Severity.ToStringPercent("F0");
             }
         }
+
+        public override bool ShouldRemove
+        {
+            get 
+            { 
+                return base.ShouldRemove && !this.isOripathic; 
+            }
+        }
+
         public override void PostAdd(DamageInfo? dinfo)
         {
             if (!this.pawn.RaceProps.IsFlesh)
@@ -33,5 +42,15 @@ namespace Originium
 
             base.PostAdd(dinfo);
         }
+
+        public override void ExposeData()
+        {
+            base.ExposeData();
+            Scribe_Deep.Look<bool>(ref this.isOripathic, "isOripathic", false);
+        }
+
+        public bool isOripathic = false;
+    
     }
+
 }

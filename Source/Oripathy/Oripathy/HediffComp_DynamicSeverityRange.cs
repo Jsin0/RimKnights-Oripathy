@@ -37,25 +37,20 @@ namespace Originium
 
         private void AdjustSeverity()
         {
+            Log.Message("Adjusting Severity");
             float severity = this.parent.Severity;
-            float adjustment = this.Props.adjustment;
-            if (adjustment == 0)
+            float adjustment;
+            if (severity < minSeverity)
             {
-                if (severity > maxSeverity || severity < minSeverity)
-                {
-                    this.parent.Severity = Mathf.Clamp(severity, minSeverity, maxSeverity);
-                }
+                adjustment = (minSeverity - severity) / 60000f / this.Props.updateInterval;
+                Log.Message($"severity {severity} {adjustment}");
+                this.parent.Severity += adjustment;
             }
-            else
+            else if (severity > maxSeverity)
             {
-                if (severity < minSeverity)
-                {
-                    this.parent.Severity += this.Props.adjustment;
-                }
-                else if (severity > maxSeverity)
-                {
-                    this.parent.Severity -= this.Props.adjustment;
-                }
+                adjustment = (severity - maxSeverity) / 60000f / this.Props.updateInterval;
+                Log.Message($"severity {severity} {adjustment}");
+                this.parent.Severity -= adjustment;
             }
 
         }
@@ -73,7 +68,7 @@ namespace Originium
             }
             else
             {
-                Log.Message("no min factor supplied");
+                //Log.Message("no min factor supplied");
                 minSeverity = this.parent.def.minSeverity;
             }
 
@@ -83,7 +78,7 @@ namespace Originium
             }
             else
             {
-                Log.Message("no max factor supplied");
+                //Log.Message("no max factor supplied");
                 maxSeverity = this.parent.def.maxSeverity;
             }
 

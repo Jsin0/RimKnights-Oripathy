@@ -34,6 +34,8 @@ namespace Originium
                 return;
             }
 
+            (this.pawn.health.GetOrAddHediff(HediffDefOf.RK_OriginiumBuildup) as Hediff_OriginiumBuildup).isOripathic = true;
+
             base.PostAdd(dinfo);
 
         }

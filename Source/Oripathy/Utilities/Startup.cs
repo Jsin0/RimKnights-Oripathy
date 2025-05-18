@@ -50,7 +50,7 @@ namespace Originium.Utilities
                 }
                 if (pawn.IsHashIntervalTick(3451) && pawn.Position.IsPolluted(pawn.Map))
                 {
-                    GameCondition_OriginiumRain.DoPawnToxicDamage(pawn, false, false);
+                    GameCondition_OriginiumRain.DoPawnOriDamage(pawn, false, false);
                 }
             }
         }

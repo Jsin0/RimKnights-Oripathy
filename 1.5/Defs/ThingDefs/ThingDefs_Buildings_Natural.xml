@@ -1,49 +1,120 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>		
-	<ThingDef ParentName="BuildingBase">
-    <defName>RK_OriginiumCluster</defName>
-    <label>originium cluster</label>
-    <description>A large crystal cluster of active originium. Getting a scratch from this has a near certain chance of contracting oripathy.</description>
-    <thingClass>Originium.Building_OriginiumTrapDamager</thingClass>
-    <graphicData>
-      <texPath>Things/Building/Natural/OriginiumSpikes</texPath>
-      <graphicClass>Graphic_Random</graphicClass>
-      <damageData>
-        <rect>(0,0,1,0.15)</rect>
-      </damageData>
-    </graphicData>
-    <altitudeLayer>Building</altitudeLayer>
-    <pathCost>40</pathCost>
-    <pathCostIgnoreRepeat>true</pathCostIgnoreRepeat>
-    <rotatable>false</rotatable>
-    <tickerType>Normal</tickerType>
-    <stealable>false</stealable>
-	<mineable>true</mineable>
-    <statBases>
-      <Mass>2.5</Mass>
-      <MaxHitPoints>100</MaxHitPoints>
-      <WorkToBuild>3200</WorkToBuild>
-      <Flammability>0</Flammability>
-      <Beauty>-18</Beauty>
-      <Cleanliness>-5</Cleanliness>
-      <TrapMeleeDamage>5</TrapMeleeDamage>
-      <TrapSpringChance>0.10</TrapSpringChance>
-    </statBases>
-    <building>
-		<isInert>true</isInert>
-		<canBuildNonEdificesUnder>false</canBuildNonEdificesUnder>
-		<claimable>false</claimable>
-		<isTrap>true</isTrap>
-		<trapDamageCategory>Sharp</trapDamageCategory>
-		<expandHomeArea>false</expandHomeArea>
-		<ai_chillDestination>false</ai_chillDestination>
-    </building>
-    <damageMultipliers>
-      <li>
-        <damageDef>Thump</damageDef>
-        <multiplier>4</multiplier>
-      </li>
-    </damageMultipliers>
-  </ThingDef>
+	<ThingDef Name="OriginiumClusterBase" ParentName="BuildingNaturalBase" Abstract="True">
+		<thingClass>Building</thingClass>
+		<altitudeLayer>Building</altitudeLayer>
+		<passability>Impassable</passability>
+		<blockWind>true</blockWind>
+		<castEdgeShadows>true</castEdgeShadows>
+		<fillPercent>1</fillPercent>
+		<coversFloor>true</coversFloor>
+		<neverMultiSelect>false</neverMultiSelect>
+		<rotatable>false</rotatable>
+		<saveCompressible>true</saveCompressible>
+		<holdsRoof>true</holdsRoof>
+		<staticSunShadowHeight>1.0</staticSunShadowHeight>
+		<blockLight>true</blockLight>
+		<mineable>true</mineable>
+		<stealable>false</stealable>
+		<tickerType>Normal</tickerType>
+		<fertility>0</fertility>
+		<canOverlapZones>false</canOverlapZones>
+		<statBases>
+		  <Flammability>0</Flammability>
+		  <Beauty>-18</Beauty>
+		  <Cleanliness>-5</Cleanliness>
+		</statBases>
+		<building>
+			<isInert>true</isInert>
+			<isNaturalRock>false</isNaturalRock>
+			<canBuildNonEdificesUnder>false</canBuildNonEdificesUnder>
+			<ai_chillDestination>false</ai_chillDestination>
+			<expandHomeArea>false</expandHomeArea>
+			<claimable>false</claimable>
+			<deconstructible>false</deconstructible>
+			<destroyShakeAmount>0</destroyShakeAmount>
+			<supportsWallAttachments>false</supportsWallAttachments>
+			<isResourceRock>true</isResourceRock>
+			<mineableThing>RK_OriginiumShard</mineableThing>
+			<mineableYield>1</mineableYield>
+		</building>
+		<damageMultipliers>
+		  <li>
+			<damageDef>Thump</damageDef>
+			<multiplier>4</multiplier>
+		  </li>
+		</damageMultipliers>
+	</ThingDef>
 	
+	<ThingDef ParentName="OriginiumClusterBase">
+		<defName>RK_OriginiumCluster</defName>
+		<label>small originium cluster</label>
+		<description>A relatively small cluster of active originium. Getting a scratch from this has a near certain chance of contracting oripathy.</description>
+		<thingClass>Originium.Building_OriginiumTrapDamager</thingClass>
+		<graphicData>
+		  <texPath>Things/Building/Natural/OriginiumSpikes</texPath>
+		  <graphicClass>Graphic_Random</graphicClass>
+		  <damageData>
+			<rect>(0,0,1,0.15)</rect>
+		  </damageData>
+		</graphicData>
+		<passability>PassThroughOnly</passability>
+		<pathCost>40</pathCost>
+		<pathCostIgnoreRepeat>true</pathCostIgnoreRepeat>
+		<statBases>
+		  <MaxHitPoints>100</MaxHitPoints>
+		  <TrapMeleeDamage>5</TrapMeleeDamage>
+		  <TrapSpringChance>0.10</TrapSpringChance>
+		</statBases>
+		<building>
+			<isTrap>true</isTrap>
+			<trapDamageCategory>Sharp</trapDamageCategory>
+			<isResourceRock>false</isResourceRock>
+			<mineableThing>RK_OriginiumShard</mineableThing>
+			<mineableYield>0</mineableYield>
+		</building>
+	  </ThingDef>
+	
+	<ThingDef ParentName="OriginiumClusterBase">
+		<defName>RK_OriginiumClusterM</defName>
+		<label>originium cluster</label>
+		<description>A cluster of active originium. Getting a scratch from this has a near certain chance of contracting oripathy.</description>
+		<graphicData>
+		  <texPath>Things/Building/Natural/OriginiumSpikes</texPath>
+		  <graphicClass>Graphic_Random</graphicClass>
+		  <drawSize>(1,2)</drawSize>
+		  <damageData>
+			<rect>(0,0,1,0.15)</rect>
+		  </damageData>
+		</graphicData>
+		<size>(1,1)</size>
+		<statBases>
+		  <MaxHitPoints>200</MaxHitPoints>
+		</statBases>
+		<building>
+			<mineableYield>1</mineableYield>
+		</building>
+	  </ThingDef>
+  
+	<ThingDef ParentName="OriginiumClusterBase">
+		<defName>RK_OriginiumClusterL</defName>
+		<label>large originium cluster</label>
+		<description>A large crystal cluster of active originium. Getting a scratch from this has a near certain chance of contracting oripathy.</description>
+		<graphicData>
+		  <texPath>Things/Building/Natural/OriginiumSpikes</texPath>
+		  <graphicClass>Graphic_Random</graphicClass>
+		  <drawSize>(2,2)</drawSize>
+		  <damageData>
+			<rect>(0,0,1,0.15)</rect>
+		  </damageData>
+		</graphicData>
+		<size>(2,2)</size>
+		<statBases>
+		  <MaxHitPoints>500</MaxHitPoints>
+		</statBases>
+		<building>
+			<mineableThing>RK_OriginiumShard</mineableThing>
+			<mineableYield>5</mineableYield>
+		</building>
+	</ThingDef>
 </Defs>

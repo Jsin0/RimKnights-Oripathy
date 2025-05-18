@@ -15,6 +15,21 @@
 		<combatLogRules>Damage_Smoke</combatLogRules>
 	</DamageDef>
 	
+	<DamageDef>
+		<defName>RK_OriginiumGas</defName>
+		<label>active originium dust</label>
+		<workerClass>DamageWorker_Extinguish</workerClass>
+		<harmsHealth>false</harmsHealth>
+		<hediff>RK_OriginiumBuildup</hediff>
+		<defaultDamage>0</defaultDamage>
+		<canInterruptJobs>false</canInterruptJobs>
+		<makesBlood>false</makesBlood>
+		<explosionCellFleck>BlastExtinguisher</explosionCellFleck>
+		<explosionColorEdge>(231, 188, 101,13)</explosionColorEdge>
+		<soundExplosion>Explosion_Smoke</soundExplosion>
+		<combatLogRules>Damage_Smoke</combatLogRules>
+	</DamageDef>
+	
 	<DamageDef ParentName="CutBase">
 		<defName>RK_OriginiumCut</defName>
 		<label>originium cut</label>

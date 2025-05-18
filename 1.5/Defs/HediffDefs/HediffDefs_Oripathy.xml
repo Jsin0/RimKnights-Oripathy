@@ -25,15 +25,20 @@
 				<severityFactor>0.29</severityFactor>
 				<severityOffset>0.003</severityOffset>
 				<severityPerDayRange>0~0.002</severityPerDayRange>
-				<updateInterval>250</updateInterval>
+				<updateInterval>60</updateInterval>
 			</li>
 			<li Class="HediffCompProperties_SurgeryInspectable">
 				<surgicalDetectionDesc>{PAWN_nameDef} is showing early signs of oripathy. Keep {PAWN_objective} away from sources of originium.</surgicalDetectionDesc>
 			</li>
 		</comps>
 		<stages>
+			  <li>
+				<label>initial</label>
+				<becomeVisible>false</becomeVisible>
+			  </li>
 			<li>
 				<label>minor</label>
+				<minSeverity>0.01</minSeverity>
 				<painOffset>0.05</painOffset>
 				<hediffGivers>
 					<li Class="HediffGiver_Random">
@@ -128,6 +133,10 @@
 		</comps>
 		<stages>
 			<li>
+				<label>initial</label>
+				<becomeVisible>false</becomeVisible>
+			</li>
+			<li>
 				<label>minor</label>
 				<minSeverity>0.01</minSeverity>
 				<painOffset>0.01</painOffset>
@@ -193,7 +202,7 @@
 		<defaultLabelColor>(1.0, 0.5, 0.0)</defaultLabelColor>
 		<scenarioCanAdd>true</scenarioCanAdd>
 		<maxSeverity>1</maxSeverity>
-		<initialSeverity>0.1</initialSeverity>
+		<initialSeverity>0.0</initialSeverity>
 		<comps>
 			<li Class="Originium.HediffCompProperties_Suppressible">
 				<suppressor>RK_SuppressantHigh</suppressor>
@@ -227,8 +236,7 @@
 					<li>(1.0, 0.50)</li>
 				  </points>
 				</minSeverityCurve>
-				<adjustment>0.01</adjustment>
-				<updateInterval>1000</updateInterval>
+				<updateInterval>60</updateInterval>
 			</li>
 		</comps>
 		<stages>
@@ -350,13 +358,17 @@
 					<li>(1.0, 0.50)</li>
 				  </points>
 				</minSeverityCurve>
-				<adjustment>0.01</adjustment>
-				<updateInterval>1000</updateInterval>
+				<updateInterval>60</updateInterval>
 			</li>
 		</comps>
 		<stages>
 		  <li>
+			<label>initial</label>
+			<becomeVisible>false</becomeVisible>
+		  </li>
+		  <li>
 			<label>low</label>
+			<minSeverity>0.01</minSeverity>
 			<painOffset>0.01</painOffset>
 		  </li>
 		  <li>
@@ -471,7 +483,7 @@
 					<li>(1, 0.32)</li>
 				  </points>
 				</severityCurve2>
-				<updateInterval>1000</updateInterval>
+				<updateInterval>60</updateInterval>
 			</li>
 		</comps>
 	</HediffDef>

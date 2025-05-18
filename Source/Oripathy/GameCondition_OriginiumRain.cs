@@ -1,4 +1,5 @@
-﻿using RimWorld;
+﻿using Originium.Utilities;
+using RimWorld;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,6 +9,21 @@ namespace Originium
 {
     public class GameCondition_OriginiumRain : GameCondition_ForceWeather
     {
+        public override void Init()
+        {
+            base.Init();
+            Utilities.OriginiumModExtension modExtension = this.def.GetModExtension<Utilities.OriginiumModExtension>();
+            if (modExtension != null) 
+            {
+                protectedByRoof = modExtension.protectedByRoof;
+
+                protectedIndoors = modExtension.protectedIndoors;
+
+                damageMultiplier = modExtension.damageMultiplier;
+
+                damageInterval = modExtension.damageInterval;
+            }
+        }
         public override int TransitionTicks
         {
             get
@@ -25,7 +41,7 @@ namespace Originium
                 //Log.Message(damageInterval);
                 for (int i = 0; i < affectedMaps.Count; i++)
                 {
-                    this.DoPawnsToxicDamage(affectedMaps[i]);
+                    this.DoPawnsOriDamage(affectedMaps[i]);
                 }
             }
             for (int i = 0; i < this.overlays.Count; i++)
@@ -36,18 +52,18 @@ namespace Originium
                 }
             }
         }
-        private void DoPawnsToxicDamage(Map map)
+        private void DoPawnsOriDamage(Map map)
         {
             IReadOnlyList<Pawn> allPawnsSpawned = map.mapPawns.AllPawnsSpawned;
             for (int i = 0; i < allPawnsSpawned.Count; i++)
             {
                 if (!allPawnsSpawned[i].kindDef.immuneToGameConditionEffects)
                 {
-                    GameCondition_OriginiumRain.DoPawnToxicDamage(allPawnsSpawned[i], true);
+                    GameCondition_OriginiumRain.DoPawnOriDamage(allPawnsSpawned[i], protectedByRoof, protectedIndoors, damageMultiplier);
                 }
             }
         }
-        public static void DoPawnToxicDamage(Pawn p, bool protectedByRoof = true, bool protectedIndoors = false, float damageMultiplier = 1f)
+        public static void DoPawnOriDamage(Pawn p, bool protectedByRoof = false, bool protectedIndoors = false, float damageMultiplier = 1f)
         {
             if (p.Spawned && protectedByRoof && p.Position.Roofed(p.Map))
             {
@@ -58,14 +74,7 @@ namespace Originium
                 return;
             }
             float num = 0.023006668f;
-            if (ModsConfig.BiotechActive)
-            {
-                num *= Mathf.Max(1f - p.GetStatValue(RimWorld.StatDefOf.ToxicEnvironmentResistance, true, -1), 0f);
-            }
-            else
-            {
-                num *= Mathf.Max(1f - p.GetStatValue(StatDefOf.RK_OriginiumResistance, true, -1), 0f);
-            }
+            num *= Mathf.Max(1f - p.GetStatValue(RimWorld.StatDefOf.ToxicEnvironmentResistance, true, -1), 0f);
             //Log.Message(damageMultiplier);
             num *= damageMultiplier;
             if (num != 0f)
@@ -104,7 +113,13 @@ namespace Originium
             return false;
         }
 
-        private static int damageInterval = 3451;
+        private bool protectedByRoof = true;
+
+        private bool protectedIndoors = false;
+
+        private float damageMultiplier = 1f;
+
+        private int damageInterval = 3451;
 
         private SkyColorSet OriginiumRainColors = new SkyColorSet(new ColorInt(255, 191, 48).ToColor, new ColorInt(212, 184, 42).ToColor, new Color(0.6f, 0.6f, 0.6f), 0.85f);
 
