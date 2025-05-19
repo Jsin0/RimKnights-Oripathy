@@ -12,7 +12,7 @@ namespace Originium
         public override void Init()
         {
             base.Init();
-            Utilities.OriginiumModExtension modExtension = this.def.GetModExtension<Utilities.OriginiumModExtension>();
+            Utilities.GameConditionExtension modExtension = this.def.GetModExtension<Utilities.GameConditionExtension>();
             if (modExtension != null) 
             {
                 protectedByRoof = modExtension.protectedByRoof;

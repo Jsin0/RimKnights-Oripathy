@@ -31,7 +31,7 @@
 		<allowUnderground>false</allowUnderground>
 		<pennedAnimalsSeekShelter>true</pennedAnimalsSeekShelter>
 		<modExtensions>
-            <li Class="Originium.Utilities.OriginiumModExtension">
+            <li Class="Originium.Utilities.GameConditionExtension">
                 <damageMultiplier>2</damageMultiplier>
 				<damageInterval>2687</damageInterval>
             </li>
@@ -53,7 +53,7 @@
 		<allowUnderground>false</allowUnderground>
 		<pennedAnimalsSeekShelter>true</pennedAnimalsSeekShelter>
 		<modExtensions>
-            <li Class="Originium.Utilities.OriginiumModExtension">
+            <li Class="Originium.Utilities.GameConditionExtension">
                 <protectedByRoof>false</protectedByRoof>
 				<damageInterval>2027</damageInterval>
             </li>

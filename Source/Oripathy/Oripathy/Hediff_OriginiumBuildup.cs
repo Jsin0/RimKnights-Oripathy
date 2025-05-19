@@ -46,7 +46,7 @@ namespace Originium
         public override void ExposeData()
         {
             base.ExposeData();
-            Scribe_Deep.Look<bool>(ref this.isOripathic, "isOripathic", false);
+            Scribe_Values.Look<bool>(ref this.isOripathic, "isOripathic", false);
         }
 
         public bool isOripathic = false;

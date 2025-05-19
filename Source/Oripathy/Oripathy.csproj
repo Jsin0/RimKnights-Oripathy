@@ -57,11 +57,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Building_OriginiumTrapDamager.cs" />
-    <Compile Include="DamageWorker_ActiveOriginium.cs" />
+    <Compile Include="Originium\Building_OriginiumTrapDamager.cs" />
+    <Compile Include="Originium\CompMutable.cs" />
+    <Compile Include="Originium\CompProperties_Mutable.cs" />
+    <Compile Include="Originium\DamageWorker_ApplyHediff.cs" />
     <Compile Include="Utilities\DebugActions_Oripathy.cs" />
     <Compile Include="DefOf\EffecterDefOf.cs" />
-    <Compile Include="GameCondition_OriginiumRain.cs" />
+    <Compile Include="GameConditions\GameCondition_OriginiumRain.cs" />
     <Compile Include="Oripathy\HediffCompProperties_DynamicSeverityRange.cs" />
     <Compile Include="Oripathy\HediffCompProperties_Suppressible.cs" />
     <Compile Include="Oripathy\HediffComp_DynamicSeverityRange.cs" />
@@ -69,8 +71,8 @@
     <Compile Include="Oripathy\HediffDefOf.cs" />
     <Compile Include="Oripathy\Hediff_OriginiumBuildup.cs" />
     <Compile Include="Utilities\ModSettings.cs" />
-    <Compile Include="OriginiumCluster.cs" />
-    <Compile Include="Utilities\OriginiumModExtension.cs" />
+    <Compile Include="Originium\Building_OriginiumCluster.cs" />
+    <Compile Include="Utilities\GameConditionExtension.cs" />
     <Compile Include="Utilities\OriginiumUtility.cs" />
     <Compile Include="Utilities\OripathyMod.cs" />
     <Compile Include="DefOf\StatDefOf.cs" />
@@ -85,9 +87,9 @@
     <Compile Include="ThoughtWorkers\ThoughtWorker_Precept_IsNotOripathic_Social.cs" />
     <Compile Include="ThoughtWorkers\ThoughtWorker_Precept_IsOripathic.cs" />
     <Compile Include="ThoughtWorkers\ThoughtWorker_Precept_IsOripathic_Social.cs" />
-    <Compile Include="WeatherEvent_OriginiumLightningStrike.cs" />
-    <Compile Include="WeatherOverlay_OriginiumDust.cs" />
-    <Compile Include="WeatherOverlay_OriginiumRain.cs" />
+    <Compile Include="GameConditions\WeatherEvent_OriginiumLightningStrike.cs" />
+    <Compile Include="GameConditions\WeatherOverlay_OriginiumDust.cs" />
+    <Compile Include="GameConditions\WeatherOverlay_OriginiumRain.cs" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />

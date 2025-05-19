@@ -8,7 +8,7 @@ using Verse;
 
 namespace Originium.Utilities
 {
-    public class OriginiumModExtension : DefModExtension
+    public class GameConditionExtension : DefModExtension
     {
         public bool protectedByRoof = true;
 
@@ -17,5 +17,10 @@ namespace Originium.Utilities
         public float damageMultiplier = 1f;
 
         public int damageInterval = 3451;
+    }
+
+    public class BuildingExtension : DefModExtension
+    {
+        public int cooldownTicks = 60000;
     }
 }

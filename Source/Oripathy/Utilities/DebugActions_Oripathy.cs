@@ -40,6 +40,12 @@ namespace Originium
             }
         }
 
+        [DebugAction("Originium", "shatter explosion", actionType = DebugActionType.ToolMap, allowedGameStates = AllowedGameStates.PlayingOnMap)]
+        public static void DoShatterExplosion()
+        {
+            GenExplosion.DoExplosion(UI.MouseCell(), Find.CurrentMap, 3f, DamageDefOf.RK_ActiveOriginium, null);
+        }
+
         [DebugAction("Originium", "Test shattering", actionType = DebugActionType.ToolMapForPawns, allowedGameStates = AllowedGameStates.PlayingOnMap)]
         public static void TestShattering(Pawn p)
         {

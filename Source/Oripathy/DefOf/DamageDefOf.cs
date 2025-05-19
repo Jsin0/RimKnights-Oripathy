@@ -12,7 +12,7 @@ namespace Originium
             DefOfHelper.EnsureInitializedInCtor(typeof(DamageDefOf));
         }
 
-        public static DamageDef RK_OriginiumDust;
+        public static DamageDef RK_ActiveOriginium;
 
         public static DamageDef RK_OriginiumCut;
 

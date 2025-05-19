@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>		
 	<ThingDef Name="OriginiumClusterBase" ParentName="BuildingNaturalBase" Abstract="True">
-		<thingClass>Building</thingClass>
+		<thingClass>Mineable</thingClass>
 		<altitudeLayer>Building</altitudeLayer>
 		<passability>Impassable</passability>
 		<blockWind>true</blockWind>
@@ -61,10 +61,12 @@
 		<passability>PassThroughOnly</passability>
 		<pathCost>40</pathCost>
 		<pathCostIgnoreRepeat>true</pathCostIgnoreRepeat>
+		<staticSunShadowHeight>0.0</staticSunShadowHeight>
+		<blockLight>false</blockLight>
 		<statBases>
 		  <MaxHitPoints>100</MaxHitPoints>
 		  <TrapMeleeDamage>5</TrapMeleeDamage>
-		  <TrapSpringChance>0.10</TrapSpringChance>
+		  <TrapSpringChance>1</TrapSpringChance>
 		</statBases>
 		<building>
 			<isTrap>true</isTrap>
@@ -73,6 +75,16 @@
 			<mineableThing>RK_OriginiumShard</mineableThing>
 			<mineableYield>0</mineableYield>
 		</building>
+		<comps>
+			<li Class="Originium.CompProperties_Mutable">
+				<trigger>RK_ActiveOriginium</trigger>
+				<changeInto>RK_OriginiumClusterM</changeInto>
+				<offspring>RK_OriginiumCluster</offspring>
+				<damageType>RK_ActiveOriginium</damageType>
+				<cooldownHours>1</cooldownHours>
+				<chance>0.5</chance>
+			</li>
+		</comps>
 	  </ThingDef>
 	
 	<ThingDef ParentName="OriginiumClusterBase">
@@ -82,7 +94,8 @@
 		<graphicData>
 		  <texPath>Things/Building/Natural/OriginiumSpikes</texPath>
 		  <graphicClass>Graphic_Random</graphicClass>
-		  <drawSize>(1,2)</drawSize>
+		  <drawSize>(2,2)</drawSize>
+		  <drawOffset>(0,0,0.5)</drawOffset>
 		  <damageData>
 			<rect>(0,0,1,0.15)</rect>
 		  </damageData>
@@ -94,6 +107,16 @@
 		<building>
 			<mineableYield>1</mineableYield>
 		</building>
+		<comps>
+			<li Class="Originium.CompProperties_Mutable">
+				<trigger>RK_ActiveOriginium</trigger>
+				<changeInto>RK_OriginiumClusterL</changeInto>
+				<offspring>RK_OriginiumCluster</offspring>
+				<damageType>RK_ActiveOriginium</damageType>
+				<cooldownHours>1</cooldownHours>
+				<chance>0.5</chance>
+			</li>
+		</comps>
 	  </ThingDef>
   
 	<ThingDef ParentName="OriginiumClusterBase">
@@ -103,7 +126,8 @@
 		<graphicData>
 		  <texPath>Things/Building/Natural/OriginiumSpikes</texPath>
 		  <graphicClass>Graphic_Random</graphicClass>
-		  <drawSize>(2,2)</drawSize>
+		  <drawSize>(3,3)</drawSize>
+		  <drawOffset>(0,0,0.5)</drawOffset>
 		  <damageData>
 			<rect>(0,0,1,0.15)</rect>
 		  </damageData>

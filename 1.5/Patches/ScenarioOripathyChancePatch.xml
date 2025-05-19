@@ -13,15 +13,6 @@
           <hideOffMap>true</hideOffMap>
           <severityRange>0.01~0.15</severityRange>
         </li>
-		<li Class="ScenPart_ForcedHediff">
-          <def>ForcedHediff</def>
-          <visible>false</visible>
-          <context>All</context>
-          <chance>1</chance>
-          <hediff>RK_OriginiumBuildup</hediff>
-          <hideOffMap>true</hideOffMap>
-          <severityRange>0.0</severityRange>
-        </li>
 	  </value>
 	</Operation>
 </Patch>

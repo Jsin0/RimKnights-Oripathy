@@ -37,19 +37,19 @@ namespace Originium
 
         private void AdjustSeverity()
         {
-            Log.Message("Adjusting Severity");
+            //Log.Message("Adjusting Severity");
             float severity = this.parent.Severity;
             float adjustment;
             if (severity < minSeverity)
             {
                 adjustment = (minSeverity - severity) / 60000f / this.Props.updateInterval;
-                Log.Message($"severity {severity} {adjustment}");
+                //Log.Message($"severity {severity} {adjustment}");
                 this.parent.Severity += adjustment;
             }
             else if (severity > maxSeverity)
             {
                 adjustment = (severity - maxSeverity) / 60000f / this.Props.updateInterval;
-                Log.Message($"severity {severity} {adjustment}");
+                //Log.Message($"severity {severity} {adjustment}");
                 this.parent.Severity -= adjustment;
             }
 

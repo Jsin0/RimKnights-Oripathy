@@ -179,7 +179,7 @@ namespace Originium
                     IntVec3 center = base.pawn.Position;
                     Map map = base.pawn.MapHeld;
                     float radius = base.pawn.BodySize * 2f;
-                    GenExplosion.DoExplosion(center, map, radius, Originium.DamageDefOf.RK_OriginiumDust, base.pawn, 1, -1f, null, null, null, null, ThingDefOf.RK_OriginiumCluster, 0.20f, 1, null, false, null, 0f, 1, 0f, false, null, null, null, true, 1f, 0f, true, null, 1f, null, null);
+                    GenExplosion.DoExplosion(center, map, radius, Originium.DamageDefOf.RK_ActiveOriginium, base.pawn, 1, -1f, null, null, null, null, ThingDefOf.RK_OriginiumCluster, 0.20f, 1, null, false, null, 0f, 1, 0f, false, null, null, null, true, 1f, 0f, true, null, 1f, null, null);
                     GenSpawn.Spawn(Originium.ThingDefOf.RK_OriginiumCluster, center, map);
                     if (ModsConfig.BiotechActive) { PollutionUtility.GrowPollutionAt(center, map, (int)Math.Round(3.15 * radius * radius)); }
 

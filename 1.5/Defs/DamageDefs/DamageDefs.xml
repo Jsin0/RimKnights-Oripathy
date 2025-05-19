@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 	<DamageDef>
-		<defName>RK_OriginiumDust</defName>
+		<defName>RK_ActiveOriginium</defName>
 		<label>active originium dust</label>
-		<workerClass>DamageWorker_Extinguish</workerClass>
+		<workerClass>Originium.DamageWorker_ApplyHediff</workerClass>
 		<harmsHealth>false</harmsHealth>
 		<hediff>RK_OriginiumBuildup</hediff>
-		<defaultDamage>0</defaultDamage>
+		<defaultDamage>100</defaultDamage>
 		<canInterruptJobs>false</canInterruptJobs>
 		<makesBlood>false</makesBlood>
 		<explosionCellFleck>BlastExtinguisher</explosionCellFleck>
@@ -24,10 +24,6 @@
 		<defaultDamage>0</defaultDamage>
 		<canInterruptJobs>false</canInterruptJobs>
 		<makesBlood>false</makesBlood>
-		<explosionCellFleck>BlastExtinguisher</explosionCellFleck>
-		<explosionColorEdge>(231, 188, 101,13)</explosionColorEdge>
-		<soundExplosion>Explosion_Smoke</soundExplosion>
-		<combatLogRules>Damage_Smoke</combatLogRules>
 	</DamageDef>
 	
 	<DamageDef ParentName="CutBase">
