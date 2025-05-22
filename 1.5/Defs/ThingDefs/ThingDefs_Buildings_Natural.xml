@@ -81,8 +81,8 @@
 				<changeInto>RK_OriginiumClusterM</changeInto>
 				<offspring>RK_OriginiumCluster</offspring>
 				<damageType>RK_ActiveOriginium</damageType>
-				<cooldownHours>1</cooldownHours>
-				<chance>0.5</chance>
+				<cooldownHours>4</cooldownHours>
+				<chance>0.25</chance>
 			</li>
 		</comps>
 	  </ThingDef>
@@ -113,8 +113,9 @@
 				<changeInto>RK_OriginiumClusterL</changeInto>
 				<offspring>RK_OriginiumCluster</offspring>
 				<damageType>RK_ActiveOriginium</damageType>
-				<cooldownHours>1</cooldownHours>
-				<chance>0.5</chance>
+				<cooldownHours>8</cooldownHours>
+				<chance>0.40</chance>
+				<effectRadius>2</effectRadius>
 			</li>
 		</comps>
 	  </ThingDef>

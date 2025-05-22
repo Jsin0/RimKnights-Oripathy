@@ -23,7 +23,9 @@ namespace Originium
 
         public float chance = 1f;
 
-        public int cooldownHours = 1;
+        public float cooldownHours = 1;
+
+        public float spreadIntervalHours;
 
         public int effectRadius = 1;
 

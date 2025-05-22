@@ -34,84 +34,132 @@ namespace Originium
             {
                 if (Rand.Chance(Props.chance))
                 {
-                    Spread();
+                    TrySpread();
                     TryGrow();
                 }
             }
         }
         public override void CompTick()
         {
-            if (this.parent.IsHashIntervalTick(250))
-            {
-                if (this.cooldownTicksLeft > 0) 
-                { 
-                    this.cooldownTicksLeft -= 250;
-                }
-                else
+            if (!ready)
                 {
-                    ready = true;
+                if (this.parent.IsHashIntervalTick(250))
+                {
+                    if (this.cooldownTicksLeft > 0) 
+                    { 
+                        this.cooldownTicksLeft -= 250;
+                    }
+                    else
+                    {
+                        ready = true;
+                    }
+                }
+            }
+            else
+            {
+                if(this.parent.IsHashIntervalTick(UnityEngine.Mathf.RoundToInt(Props.spreadIntervalHours * 2500f)))
+                {
+
                 }
             }
         }
-        private void Spread()
+        private void TrySpread()
         {
-            GenExplosion.DoExplosion(this.parent.Position, this.parent.Map, 1f, DamageDefOf.RK_ActiveOriginium, this.parent, -1, -1, null, null, null, null, Props.offspring, Props.chance);
-            ResetCooldown();
+            if (Props.offspring != null)
+            {
+                if (Rand.Chance(Props.chance))
+                {
+                    GenExplosion.DoExplosion(this.parent.Position, this.parent.Map, Props.effectRadius, DamageDefOf.RK_ActiveOriginium, this.parent, -1, -1, null, null, null, null, Props.offspring, Props.chance);
+                    ResetCooldown();
+                }
+            }
         }
         private void TryGrow()
         {
-            IntVec3 location = this.parent.Position;
-            Map map = this.parent.Map;
-            if (Props.changeInto.size.x > 1 || Props.changeInto.size.z >1)
+            if (Props.changeInto == null || this.parent == null) return;
+
+            if (Rand.Chance(Props.chance))
             {
-                IntVec3[] clusterOffsets = new IntVec3[]
+                if (Props.changeInto.size.x > 1 || Props.changeInto.size.z > 1)
                 {
-                    IntVec3.Zero,
-                    IntVec3.North,
-                    IntVec3.East,
-                    IntVec3.NorthEast
-                };
-
-                List<Thing> toRemove = new List<Thing>();
-
-                foreach(IntVec3 offset in clusterOffsets)
+                    Merge();
+                }else
                 {
-                    IntVec3 checkCell = this.parent.Position + offset;
-                    if (!checkCell.InBounds(map)) return;
-
-                    Thing found = checkCell.GetFirstThing(map, this.parent.def);
-                    if (found == null) return;
-
-                    toRemove.Add(found);
-                }
-
-                CellRect placementRect = new CellRect(location.x, location.z, 2, 2);
-                if (! placementRect.InBounds(map)) return;  
-
-                foreach (IntVec3 placementCell in placementRect)
-                {
-                    if(!placementCell.Standable(map)) return;
-                }
-
-                foreach (Thing t in toRemove)
-                {
-                    t.Destroy(DestroyMode.Vanish);
+                    GenSpawn.Spawn(Props.changeInto, this.parent.Position, this.parent.Map);
                 }
 
             }
-                Thing newBuilding = ThingMaker.MakeThing(Props.changeInto);
-                GenSpawn.Spawn(newBuilding, location, map, Rot4.North);
+
         }
         private void Merge()
         {
-
-        }
-        private void Grow()
-        {
             IntVec3 location = this.parent.Position;
             Map map = this.parent.Map;
-            this.parent.Destroy();
-            GenSpawn.Spawn(Props.changeInto, location, map);
+            IntVec2 thingSize = Props.changeInto.size;
+
+            List<IntVec3> clusterOffsets = new List<IntVec3>();
+
+            //Adds the cells to check depending on how big the thing will be
+            for (int i = 0; i < thingSize.x; i++)
+            {
+                for (int j = 0; j < thingSize.z; j++)
+                {
+                    clusterOffsets.Add(new IntVec3(i, 0, j));
+                }
+            }
+
+            List<Thing> mergeableThings = new List<Thing>();
+            IntVec3 finalOffset = new IntVec3 { };
+            IntVec3 newLocation = new IntVec3 { };
+
+            foreach (IntVec3 cluster in clusterOffsets)
+            {
+                newLocation = location - cluster;
+
+                mergeableThings.Clear();
+
+                Thing found;
+                foreach (IntVec3 offset in clusterOffsets)
+                {
+                    IntVec3 checkCell = newLocation + offset;
+
+                    found = checkCell.GetFirstThing(map, this.parent.def);
+                    //Log.Message(this.parent.def + " found in cell");
+                    if (!checkCell.InBounds(map) && found == null)
+                    {
+                        //Log.Message(this.parent.def + " not found in cell. terminating attempt");
+                        mergeableThings.Clear();
+                        break;
+                    }
+
+                    //Log.Message(found.Label +  " | " + found.Position);
+                    mergeableThings.Add(found);
+                }
+
+                if (mergeableThings.Count > 0)
+                {
+                    break;
+                }
+            }
+
+            if (mergeableThings.Count == thingSize.Area)
+            {
+                CellRect placementRect = new CellRect(newLocation.x, newLocation.z, thingSize.x, thingSize.z);
+                if (!placementRect.InBounds(map)) return;
+
+                /*
+                foreach (IntVec3 placementCell in placementRect)
+                {
+                    if (!placementCell.Standable(map)) 
+                    { 
+                        Log.Message("placementCell (" +  placementCell.x + "," + placementCell.z + ") not standable");
+                        return; 
+                    }
+                }
+                */
+                GenSpawn.Spawn(Props.changeInto, newLocation, map);
+                ResetCooldown();
+            }
         }
 
         private int cooldownTicksLeft;
