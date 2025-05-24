@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>		
 	<ThingDef Name="OriginiumClusterBase" ParentName="BuildingNaturalBase" Abstract="True">
-		<thingClass>Mineable</thingClass>
+		<thingClass>Originium.Building_OriginiumCluster</thingClass>
 		<altitudeLayer>Building</altitudeLayer>
 		<passability>Impassable</passability>
 		<blockWind>true</blockWind>
@@ -81,8 +81,9 @@
 				<changeInto>RK_OriginiumClusterM</changeInto>
 				<offspring>RK_OriginiumCluster</offspring>
 				<damageType>RK_ActiveOriginium</damageType>
-				<cooldownHours>4</cooldownHours>
-				<chance>0.25</chance>
+				<spreadIntervalHours>0.5</spreadIntervalHours>
+				<cooldownHours>0.1</cooldownHours>
+				<chance>1</chance>
 			</li>
 		</comps>
 	  </ThingDef>
@@ -113,9 +114,10 @@
 				<changeInto>RK_OriginiumClusterL</changeInto>
 				<offspring>RK_OriginiumCluster</offspring>
 				<damageType>RK_ActiveOriginium</damageType>
-				<cooldownHours>8</cooldownHours>
-				<chance>0.40</chance>
-				<effectRadius>2</effectRadius>
+				<cooldownHours>0.1</cooldownHours>
+				<spreadIntervalHours>0.5</spreadIntervalHours>
+				<chance>1</chance>
+				<effectRadius>1</effectRadius>
 			</li>
 		</comps>
 	  </ThingDef>
@@ -141,5 +143,15 @@
 			<mineableThing>RK_OriginiumShard</mineableThing>
 			<mineableYield>5</mineableYield>
 		</building>
+		<comps>
+			<li Class="Originium.CompProperties_Mutable">
+				<trigger>RK_ActiveOriginium</trigger>
+				<offspring>RK_OriginiumClusterM</offspring>
+				<damageType>RK_ActiveOriginium</damageType>
+				<cooldownHours>0.1</cooldownHours>
+				<spreadIntervalHours>0.5</spreadIntervalHours>
+				<chance>1</chance>
+			</li>
+		</comps>
 	</ThingDef>
 </Defs>

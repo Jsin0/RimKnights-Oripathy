@@ -25,7 +25,7 @@ namespace Originium
 
         public float cooldownHours = 1;
 
-        public float spreadIntervalHours;
+        public float spreadIntervalHours = 12f;
 
         public int effectRadius = 1;
 

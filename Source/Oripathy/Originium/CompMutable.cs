@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using RimWorld;
 using Verse;
 using Verse.Noise;
+using UnityEngine;
 
 namespace Originium
 {
@@ -18,32 +19,43 @@ namespace Originium
                 return (CompProperties_Mutable)this.props;
             }
         }
-        public override void Initialize(CompProperties props)
+        private int spreadIntervalTicks
         {
-            base.Initialize(props);
-            ResetCooldown();
+            get
+            {
+                return Mathf.Abs(Mathf.RoundToInt(this.Props.spreadIntervalHours * 2500f));
+            }
+        }
+        private int cooldownTicks
+        {
+            get
+            {
+                return Mathf.Abs(Mathf.RoundToInt(this.Props.cooldownHours * 2500f));
+            }
         }
         private void ResetCooldown()
         {
-            this.cooldownTicksLeft = UnityEngine.Mathf.RoundToInt(Props.cooldownHours * 2500f);
+            this.cooldownTicksLeft = cooldownTicks;
             this.ready = false;
         }
         public override void PostPostApplyDamage(DamageInfo dinfo, float totalDamageDealt)
         {
-            if (dinfo.Def == Props.trigger && ready) 
+            if (dinfo.Def == this.Props.trigger && ready) 
             {
-                if (Rand.Chance(Props.chance))
+                if (Rand.Chance(this.Props.chance))
                 {
-                    TrySpread();
                     TryGrow();
+                    TrySpread();
                 }
             }
         }
         public override void CompTick()
         {
-            if (!ready)
-                {
-                if (this.parent.IsHashIntervalTick(250))
+            if (!active) return;
+
+            if (this.parent.IsHashIntervalTick(250))
+            {
+                if (!ready)
                 {
                     if (this.cooldownTicksLeft > 0) 
                     { 
@@ -54,38 +66,94 @@ namespace Originium
                         ready = true;
                     }
                 }
-            }
-            else
-            {
-                if(this.parent.IsHashIntervalTick(UnityEngine.Mathf.RoundToInt(Props.spreadIntervalHours * 2500f)))
+                else
                 {
-
-                }
-            }
-        }
-        private void TrySpread()
-        {
-            if (Props.offspring != null)
-            {
-                if (Rand.Chance(Props.chance))
-                {
-                    GenExplosion.DoExplosion(this.parent.Position, this.parent.Map, Props.effectRadius, DamageDefOf.RK_ActiveOriginium, this.parent, -1, -1, null, null, null, null, Props.offspring, Props.chance);
+                    TrySpread();
+                    TryGrow();
                     ResetCooldown();
                 }
             }
         }
+        public override void CompTickRare()
+        {
+            base.CompTickRare();
+            Log.Message("tickrare");
+        }
+        public override void CompTickLong()
+        {
+            base.CompTickLong();
+            Log.Message("long tick");
+            CheckActivity();
+        }
+        private void TrySpread()
+        {
+            if (this.Props.offspring != null && this.parent != null)
+            {
+                //Log.Message("spreading at " + this.parent.Position);
+                Spread();
+                /*
+                if (Rand.Chance(Props.chance))
+                {
+                    //Spread(this.parent.Position, this.parent.Map);
+                    GenExplosion.DoExplosion(this.parent.Position, this.parent.Map, Props.effectRadius, DamageDefOf.RK_ActiveOriginium, this.parent, 25, -1, null, null, null, null, Props.offspring, Props.chance,1,null,false,null,0,1,0.1f,true,null,null,null,false,1,0,false,null,0,null,null);
+                    ResetCooldown();
+                }*/
+            }
+        }
+        private void Spread()
+        {
+            List<IntVec3> adjCells = GenAdjFast.AdjacentCells8Way(this.parent);
+            Map map = this.parent.Map;
+            int count = 0;
+            foreach (IntVec3 cell in adjCells)
+            {
+                if (!cell.InBounds(map) || cell == this.parent.Position) 
+                { 
+                    count++;
+                    continue; 
+                }
+
+                Building building = cell.GetFirstBuilding(map);
+                if (building != null)
+                {
+                    //Log.Message(building.GetType().ToString());
+                    if (building.def == this.Props.offspring || building.GetType() == typeof(Building_OriginiumCluster))
+                    {
+                        count++;
+                        continue;
+                    }
+                }
+
+                if (Rand.Chance(this.Props.chance))
+                {
+                    if (!cell.Walkable(map))
+                    {
+                        //Log.Message("damaging building");
+                        DamageInfo dinfo = new DamageInfo(RimWorld.DamageDefOf.Stab, 25f);
+                        building.TakeDamage(dinfo);
+                        if (!building.Destroyed) continue;
+                    }
+
+                    //Log.Message("spawning thing at " + cell.ToString());
+                    GenSpawn.Spawn(this.Props.offspring, cell, map);
+                    count++;
+                }
+            }
+
+            if (count >= adjCells.Count) active = false;
+        }
         private void TryGrow()
         {
-            if (Props.changeInto == null || this.parent == null) return;
+            if (this.Props.changeInto == null || this.parent == null) return;
 
-            if (Rand.Chance(Props.chance))
+            if (Rand.Chance(this.Props.chance))
             {
-                if (Props.changeInto.size.x > 1 || Props.changeInto.size.z > 1)
+                if (this.Props.changeInto.size.x > 1 || this.Props.changeInto.size.z > 1)
                 {
                     Merge();
                 }else
                 {
-                    GenSpawn.Spawn(Props.changeInto, this.parent.Position, this.parent.Map);
+                    GenSpawn.Spawn(this.Props.changeInto, this.parent.Position, this.parent.Map);
                 }
 
             }
@@ -95,7 +163,7 @@ namespace Originium
         {
             IntVec3 location = this.parent.Position;
             Map map = this.parent.Map;
-            IntVec2 thingSize = Props.changeInto.size;
+            IntVec2 thingSize = this.Props.changeInto.size;
 
             List<IntVec3> clusterOffsets = new List<IntVec3>();
 
@@ -136,13 +204,13 @@ namespace Originium
                     mergeableThings.Add(found);
                 }
 
-                if (mergeableThings.Count > 0)
+                if (mergeableThings.Count >= thingSize.Area)
                 {
                     break;
                 }
             }
 
-            if (mergeableThings.Count == thingSize.Area)
+            if (mergeableThings.Count >= thingSize.Area)
             {
                 CellRect placementRect = new CellRect(newLocation.x, newLocation.z, thingSize.x, thingSize.z);
                 if (!placementRect.InBounds(map)) return;
@@ -157,14 +225,35 @@ namespace Originium
                     }
                 }
                 */
-                GenSpawn.Spawn(Props.changeInto, newLocation, map);
-                ResetCooldown();
+                GenSpawn.Spawn(this.Props.changeInto, newLocation, map);
             }
+        }
+        private void CheckActivity()
+        {
+            List<IntVec3> adjCells = GenAdjFast.AdjacentCells8Way(this.parent.Position).Where(c => c.GetFirstBuilding(this.parent.Map).GetType().IsSubclassOf(typeof(Building_OriginiumCluster))).ToList();
+            if(adjCells.Count < 8)
+            {
+                active = true;
+            }
+            else
+            {
+                active= false;
+            }
+
+        }
+        public override void PostExposeData()
+        {
+            base.PostExposeData();
+            Scribe_Values.Look<int>(ref this.cooldownTicksLeft, "cooldownTicksLeft", cooldownTicks);
+            Scribe_Values.Look<bool>(ref this.ready, "ready", ready);
+            Scribe_Values.Look<bool>(ref this.active, "active", active);
         }
 
         private int cooldownTicksLeft;
 
         private bool ready = false;
+
+        private bool active = true;
 
     }
 }

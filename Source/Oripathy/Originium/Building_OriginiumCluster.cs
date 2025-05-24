@@ -10,6 +10,7 @@ namespace Originium
 {
     public class Building_OriginiumCluster : Mineable
     {
+        /*
         public override void PostApplyDamage(DamageInfo dinfo, float totalDamageDealt)
         {
             base.PostApplyDamage(dinfo, totalDamageDealt);
@@ -19,6 +20,7 @@ namespace Originium
                 Grow();
             }
         }
+
         public override void TickRare()
         {
             base.TickRare();
@@ -31,6 +33,7 @@ namespace Originium
                 ready = true;
             }
         }
+        
         public void Spread()
         {
 
@@ -41,10 +44,12 @@ namespace Originium
 
         }
 
+
         private bool ready = false;
 
         private int cooldownTicks = 60000;
 
-        private List<ThingDef> stages = new List<ThingDef>();
+        
+        private List<ThingDef> stages = new List<ThingDef>();*/
     }
 }
