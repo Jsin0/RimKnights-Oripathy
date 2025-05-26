@@ -35,79 +35,86 @@ namespace Originium
         }
         private void ResetCooldown()
         {
-            this.cooldownTicksLeft = cooldownTicks;
-            this.ready = false;
+            if (this.active)
+            {
+                this.cooldownTicksLeft = cooldownTicks;
+                this.ready = false;
+            }
         }
+        /*
         public override void PostPostApplyDamage(DamageInfo dinfo, float totalDamageDealt)
         {
             if (dinfo.Def == this.Props.trigger && ready) 
             {
-                if (Rand.Chance(this.Props.chance))
+                //if (Rand.Chance(this.Props.chance))
                 {
                     TryGrow();
                     TrySpread();
-                }
-            }
-        }
-        public override void CompTick()
-        {
-            if (!active) return;
-
-            if (this.parent.IsHashIntervalTick(250))
-            {
-                if (!ready)
-                {
-                    if (this.cooldownTicksLeft > 0) 
-                    { 
-                        this.cooldownTicksLeft -= 250;
-                    }
-                    else
-                    {
-                        ready = true;
-                    }
-                }
-                else
-                {
-                    TrySpread();
-                    TryGrow();
                     ResetCooldown();
                 }
             }
+        }*/
+        public override void CompTick()
+        {
+            base.CompTick();
+
+            if (active && this.parent.IsHashIntervalTick(250))
+            {
+                CompTickRare();
+            }
+
+            if (this.parent.IsHashIntervalTick(1000))
+            {
+                CompTickLong();
+            }
+
         }
         public override void CompTickRare()
         {
             base.CompTickRare();
-            Log.Message("tickrare");
+            if (!ready)
+            {
+                if (this.cooldownTicksLeft > 0)
+                {
+                    this.cooldownTicksLeft -= 250;
+                }
+                else
+                {
+                    ready = true;
+                }
+            }
+            else
+            {
+                TryGrow();
+                if (this.active)
+                {
+                    TrySpread();
+                    ResetCooldown();
+                }
+            }
         }
         public override void CompTickLong()
         {
             base.CompTickLong();
-            Log.Message("long tick");
             CheckActivity();
         }
         private void TrySpread()
         {
-            if (this.Props.offspring != null && this.parent != null)
+            if (this.Props.offspring != null && this.parent != null && active)
             {
                 //Log.Message("spreading at " + this.parent.Position);
                 Spread();
-                /*
-                if (Rand.Chance(Props.chance))
-                {
-                    //Spread(this.parent.Position, this.parent.Map);
-                    GenExplosion.DoExplosion(this.parent.Position, this.parent.Map, Props.effectRadius, DamageDefOf.RK_ActiveOriginium, this.parent, 25, -1, null, null, null, null, Props.offspring, Props.chance,1,null,false,null,0,1,0.1f,true,null,null,null,false,1,0,false,null,0,null,null);
-                    ResetCooldown();
-                }*/
             }
         }
         private void Spread()
         {
             List<IntVec3> adjCells = GenAdjFast.AdjacentCells8Way(this.parent);
-            Map map = this.parent.Map;
+            Map map = this.parent.MapHeld;
+            if (map == null) { return; }
             int count = 0;
             foreach (IntVec3 cell in adjCells)
             {
-                if (!cell.InBounds(map) || cell == this.parent.Position) 
+                if (!cell.InBounds(map) || cell == this.parent.PositionHeld) 
                 { 
                     count++;
                     continue; 
@@ -120,6 +127,8 @@ namespace Originium
                     if (building.def == this.Props.offspring || building.GetType() == typeof(Building_OriginiumCluster))
                     {
                         count++;
+                        DamageInfo dinfo = new DamageInfo(DamageDefOf.RK_ActiveOriginium, 1f);
+                        building.TakeDamage(dinfo);
                         continue;
                     }
                 }
@@ -129,7 +138,7 @@ namespace Originium
                     if (!cell.Walkable(map))
                     {
                         //Log.Message("damaging building");
-                        DamageInfo dinfo = new DamageInfo(RimWorld.DamageDefOf.Stab, 25f);
+                        DamageInfo dinfo = new DamageInfo(RimWorld.DamageDefOf.Stab, 100f);
                         building.TakeDamage(dinfo);
                         if (!building.Destroyed) continue;
                     }
@@ -144,7 +153,7 @@ namespace Originium
         }
         private void TryGrow()
         {
-            if (this.Props.changeInto == null || this.parent == null) return;
+            if (this.Props.changeInto == null || this.parent == null || !this.active) return;
 
             if (Rand.Chance(this.Props.chance))
             {
@@ -161,10 +170,18 @@ namespace Originium
         }
         private void Merge()
         {
+            /*
+            if(this.parent == null || this.parent.Map == null) 
+            {
+                //Log.Message("parent or map is null");
+                return;
+            }*/
+
             IntVec3 location = this.parent.Position;
             Map map = this.parent.Map;
             IntVec2 thingSize = this.Props.changeInto.size;
 
+            //Log.Message("Checking " + this.parent + " at " + location);
             List<IntVec3> clusterOffsets = new List<IntVec3>();
 
             //Adds the cells to check depending on how big the thing will be
@@ -183,22 +200,21 @@ namespace Originium
             foreach (IntVec3 cluster in clusterOffsets)
             {
                 newLocation = location - cluster;
-
                 mergeableThings.Clear();
 
                 Thing found;
-                foreach (IntVec3 offset in clusterOffsets)
+                 foreach (IntVec3 offset in clusterOffsets)
                 {
                     IntVec3 checkCell = newLocation + offset;
-
+                    //Log.Message("Checking cell: " + checkCell.ToString());
                     found = checkCell.GetFirstThing(map, this.parent.def);
                     //Log.Message(this.parent.def + " found in cell");
-                    if (!checkCell.InBounds(map) && found == null)
+                    if (!checkCell.InBounds(map) || found == null)
                     {
                         //Log.Message(this.parent.def + " not found in cell. terminating attempt");
                         mergeableThings.Clear();
                         break;
-                    }
+                    }   
 
                     //Log.Message(found.Label +  " | " + found.Position);
                     mergeableThings.Add(found);
@@ -206,6 +222,7 @@ namespace Originium
 
                 if (mergeableThings.Count >= thingSize.Area)
                 {
+                    //Log.Message("Found things: " + mergeableThings.Count + "/" + thingSize.Area);
                     break;
                 }
             }
@@ -215,22 +232,21 @@ namespace Originium
                 CellRect placementRect = new CellRect(newLocation.x, newLocation.z, thingSize.x, thingSize.z);
                 if (!placementRect.InBounds(map)) return;
 
-                /*
-                foreach (IntVec3 placementCell in placementRect)
-                {
-                    if (!placementCell.Standable(map)) 
-                    { 
-                        Log.Message("placementCell (" +  placementCell.x + "," + placementCell.z + ") not standable");
-                        return; 
-                    }
-                }
-                */
+                //Log.Message("Placing thing at " + newLocation.ToString());
                 GenSpawn.Spawn(this.Props.changeInto, newLocation, map);
             }
         }
         private void CheckActivity()
         {
-            List<IntVec3> adjCells = GenAdjFast.AdjacentCells8Way(this.parent.Position).Where(c => c.GetFirstBuilding(this.parent.Map).GetType().IsSubclassOf(typeof(Building_OriginiumCluster))).ToList();
+            List<IntVec3> adjCells = GenAdjFast.AdjacentCells8Way(this.parent.PositionHeld).Where(c => {
+                Building building = c.GetFirstBuilding(this.parent.MapHeld);
+                if(building != null)
+                {
+                    return building.GetType().IsSubclassOf(typeof(Building_OriginiumCluster));
+                }
+                else { return false; }
+            }).ToList();
+            Log.Message(string.Join(",",adjCells));
             if(adjCells.Count < 8)
             {
                 active = true;
@@ -238,7 +254,9 @@ namespace Originium
             else
             {
                 active= false;
+                this.parent.Destroy();
             }
+            Log.Message("active: " + active);
 
         }
         public override void PostExposeData()

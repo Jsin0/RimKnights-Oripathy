@@ -7,8 +7,16 @@
       "RelativeMoniker": "D:0:0:{E29E61F4-4FFC-4FE5-BFEA-C85CA58E9A2C}|Oripathy.csproj|solutionrelative:originium\\compmutable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{E29E61F4-4FFC-4FE5-BFEA-C85CA58E9A2C}|Oripathy.csproj|D:\\SteamLibrary\\steamapps\\common\\RimWorld\\Mods\\Rimknights - Oripathy\\Source\\Oripathy\\oripathy\\hediff_oripathy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E29E61F4-4FFC-4FE5-BFEA-C85CA58E9A2C}|Oripathy.csproj|solutionrelative:oripathy\\hediff_oripathy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{E29E61F4-4FFC-4FE5-BFEA-C85CA58E9A2C}|Oripathy.csproj|D:\\SteamLibrary\\steamapps\\common\\RimWorld\\Mods\\Rimknights - Oripathy\\Source\\Oripathy\\utilities\\debugactions_oripathy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E29E61F4-4FFC-4FE5-BFEA-C85CA58E9A2C}|Oripathy.csproj|solutionrelative:utilities\\debugactions_oripathy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E29E61F4-4FFC-4FE5-BFEA-C85CA58E9A2C}|Oripathy.csproj|D:\\SteamLibrary\\steamapps\\common\\RimWorld\\Mods\\Rimknights - Oripathy\\Source\\Oripathy\\originium\\compproperties_mutable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E29E61F4-4FFC-4FE5-BFEA-C85CA58E9A2C}|Oripathy.csproj|solutionrelative:originium\\compproperties_mutable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{E29E61F4-4FFC-4FE5-BFEA-C85CA58E9A2C}|Oripathy.csproj|D:\\SteamLibrary\\steamapps\\common\\RimWorld\\Mods\\Rimknights - Oripathy\\Source\\Oripathy\\originium\\building_originiumtrapdamager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -19,16 +27,8 @@
       "RelativeMoniker": "D:0:0:{E29E61F4-4FFC-4FE5-BFEA-C85CA58E9A2C}|Oripathy.csproj|solutionrelative:originium\\damageworker_applyhediff.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E29E61F4-4FFC-4FE5-BFEA-C85CA58E9A2C}|Oripathy.csproj|d:\\steamlibrary\\steamapps\\common\\rimworld\\mods\\rimknights - oripathy\\source\\oripathy\\originium\\building_originiumcluster.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{E29E61F4-4FFC-4FE5-BFEA-C85CA58E9A2C}|Oripathy.csproj|D:\\SteamLibrary\\steamapps\\common\\RimWorld\\Mods\\Rimknights - Oripathy\\Source\\Oripathy\\originium\\building_originiumcluster.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E29E61F4-4FFC-4FE5-BFEA-C85CA58E9A2C}|Oripathy.csproj|solutionrelative:originium\\building_originiumcluster.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E29E61F4-4FFC-4FE5-BFEA-C85CA58E9A2C}|Oripathy.csproj|D:\\SteamLibrary\\steamapps\\common\\RimWorld\\Mods\\Rimknights - Oripathy\\Source\\Oripathy\\originium\\compproperties_mutable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E29E61F4-4FFC-4FE5-BFEA-C85CA58E9A2C}|Oripathy.csproj|solutionrelative:originium\\compproperties_mutable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E29E61F4-4FFC-4FE5-BFEA-C85CA58E9A2C}|Oripathy.csproj|D:\\SteamLibrary\\steamapps\\common\\RimWorld\\Mods\\Rimknights - Oripathy\\Source\\Oripathy\\oripathy\\hediff_oripathy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E29E61F4-4FFC-4FE5-BFEA-C85CA58E9A2C}|Oripathy.csproj|solutionrelative:oripathy\\hediff_oripathy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -42,7 +42,7 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 6,
               "Title": "Building_OriginiumCluster.cs",
               "DocumentMoniker": "D:\\SteamLibrary\\steamapps\\common\\RimWorld\\Mods\\Rimknights - Oripathy\\Source\\Oripathy\\Originium\\Building_OriginiumCluster.cs",
               "RelativeDocumentMoniker": "Originium\\Building_OriginiumCluster.cs",
@@ -50,12 +50,11 @@
               "RelativeToolTip": "Originium\\Building_OriginiumCluster.cs",
               "ViewState": "AgIAAA4AAAAAAAAAAAAQwCwAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-24T00:41:52.328Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-24T00:41:52.328Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 1,
               "Title": "Hediff_Oripathy.cs",
               "DocumentMoniker": "D:\\SteamLibrary\\steamapps\\common\\RimWorld\\Mods\\Rimknights - Oripathy\\Source\\Oripathy\\Oripathy\\Hediff_Oripathy.cs",
               "RelativeDocumentMoniker": "Oripathy\\Hediff_Oripathy.cs",
@@ -63,11 +62,12 @@
               "RelativeToolTip": "Oripathy\\Hediff_Oripathy.cs",
               "ViewState": "AgIAAAcAAAAAAAAAAAAAALUAAAB5AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-22T16:16:03.355Z"
+              "WhenOpened": "2025-05-22T16:16:03.355Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "DebugActions_Oripathy.cs",
               "DocumentMoniker": "D:\\SteamLibrary\\steamapps\\common\\RimWorld\\Mods\\Rimknights - Oripathy\\Source\\Oripathy\\Utilities\\DebugActions_Oripathy.cs",
               "RelativeDocumentMoniker": "Utilities\\DebugActions_Oripathy.cs",
@@ -80,13 +80,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 3,
               "Title": "CompProperties_Mutable.cs",
               "DocumentMoniker": "D:\\SteamLibrary\\steamapps\\common\\RimWorld\\Mods\\Rimknights - Oripathy\\Source\\Oripathy\\Originium\\CompProperties_Mutable.cs",
               "RelativeDocumentMoniker": "Originium\\CompProperties_Mutable.cs",
               "ToolTip": "D:\\SteamLibrary\\steamapps\\common\\RimWorld\\Mods\\Rimknights - Oripathy\\Source\\Oripathy\\Originium\\CompProperties_Mutable.cs",
               "RelativeToolTip": "Originium\\CompProperties_Mutable.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAqwBMAAAAjAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwBsAAAAvAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-18T03:17:40.863Z",
               "EditorCaption": ""
@@ -99,14 +99,14 @@
               "RelativeDocumentMoniker": "Originium\\CompMutable.cs",
               "ToolTip": "D:\\SteamLibrary\\steamapps\\common\\RimWorld\\Mods\\Rimknights - Oripathy\\Source\\Oripathy\\Originium\\CompMutable.cs",
               "RelativeToolTip": "Originium\\CompMutable.cs",
-              "ViewState": "AgIAALYAAAAAAAAAAAAwwMYAAAAwAAAAAAAAAA==",
+              "ViewState": "AgIAABUAAAAAAAAAAAAAADcAAAALAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-18T03:16:49.073Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "Building_OriginiumTrapDamager.cs",
               "DocumentMoniker": "D:\\SteamLibrary\\steamapps\\common\\RimWorld\\Mods\\Rimknights - Oripathy\\Source\\Oripathy\\Originium\\Building_OriginiumTrapDamager.cs",
               "RelativeDocumentMoniker": "Originium\\Building_OriginiumTrapDamager.cs",
@@ -114,12 +114,11 @@
               "RelativeToolTip": "Originium\\Building_OriginiumTrapDamager.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAA+AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-18T03:07:35.877Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-18T03:07:35.877Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
               "Title": "DamageWorker_ApplyHediff.cs",
               "DocumentMoniker": "D:\\SteamLibrary\\steamapps\\common\\RimWorld\\Mods\\Rimknights - Oripathy\\Source\\Oripathy\\Originium\\DamageWorker_ApplyHediff.cs",
               "RelativeDocumentMoniker": "Originium\\DamageWorker_ApplyHediff.cs",
@@ -127,8 +126,7 @@
               "RelativeToolTip": "Originium\\DamageWorker_ApplyHediff.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAyAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-18T02:56:25.222Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-18T02:56:25.222Z"
             }
           ]
         }

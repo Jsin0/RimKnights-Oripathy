@@ -50,7 +50,7 @@
 		<defName>RK_OriginiumCluster</defName>
 		<label>small originium cluster</label>
 		<description>A relatively small cluster of active originium. Getting a scratch from this has a near certain chance of contracting oripathy.</description>
-		<thingClass>Originium.Building_OriginiumTrapDamager</thingClass>
+		<thingClass>Originium.Building_OriginiumCluster</thingClass>
 		<graphicData>
 		  <texPath>Things/Building/Natural/OriginiumSpikes</texPath>
 		  <graphicClass>Graphic_Random</graphicClass>
@@ -58,10 +58,14 @@
 			<rect>(0,0,1,0.15)</rect>
 		  </damageData>
 		</graphicData>
+		<holdsRoof>false</holdsRoof>
+		<blockWind>false</blockWind>
+		<castEdgeShadows>false</castEdgeShadows>
+		<fillPercent>0.1</fillPercent>
 		<passability>PassThroughOnly</passability>
 		<pathCost>40</pathCost>
 		<pathCostIgnoreRepeat>true</pathCostIgnoreRepeat>
-		<staticSunShadowHeight>0.0</staticSunShadowHeight>
+		<staticSunShadowHeight>0.1</staticSunShadowHeight>
 		<blockLight>false</blockLight>
 		<statBases>
 		  <MaxHitPoints>100</MaxHitPoints>
@@ -81,9 +85,9 @@
 				<changeInto>RK_OriginiumClusterM</changeInto>
 				<offspring>RK_OriginiumCluster</offspring>
 				<damageType>RK_ActiveOriginium</damageType>
-				<spreadIntervalHours>0.5</spreadIntervalHours>
-				<cooldownHours>0.1</cooldownHours>
-				<chance>1</chance>
+				<spreadIntervalHours>1</spreadIntervalHours>
+				<cooldownHours>1</cooldownHours>
+				<chance>0.10</chance>
 			</li>
 		</comps>
 	  </ThingDef>
@@ -101,6 +105,8 @@
 			<rect>(0,0,1,0.15)</rect>
 		  </damageData>
 		</graphicData>
+		<holdsRoof>false</holdsRoof>
+		<staticSunShadowHeight>0.5</staticSunShadowHeight>
 		<size>(1,1)</size>
 		<statBases>
 		  <MaxHitPoints>200</MaxHitPoints>
@@ -114,10 +120,9 @@
 				<changeInto>RK_OriginiumClusterL</changeInto>
 				<offspring>RK_OriginiumCluster</offspring>
 				<damageType>RK_ActiveOriginium</damageType>
-				<cooldownHours>0.1</cooldownHours>
-				<spreadIntervalHours>0.5</spreadIntervalHours>
-				<chance>1</chance>
-				<effectRadius>1</effectRadius>
+				<cooldownHours>1</cooldownHours>
+				<spreadIntervalHours>2</spreadIntervalHours>
+				<chance>0.2</chance>
 			</li>
 		</comps>
 	  </ThingDef>
@@ -148,9 +153,9 @@
 				<trigger>RK_ActiveOriginium</trigger>
 				<offspring>RK_OriginiumClusterM</offspring>
 				<damageType>RK_ActiveOriginium</damageType>
-				<cooldownHours>0.1</cooldownHours>
-				<spreadIntervalHours>0.5</spreadIntervalHours>
-				<chance>1</chance>
+				<cooldownHours>1</cooldownHours>
+				<spreadIntervalHours>1</spreadIntervalHours>
+				<chance>0.5</chance>
 			</li>
 		</comps>
 	</ThingDef>
