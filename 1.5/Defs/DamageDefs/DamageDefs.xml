@@ -5,7 +5,7 @@
 		<label>active originium dust</label>
 		<workerClass>Originium.DamageWorker_ApplyHediff</workerClass>
 		<harmsHealth>false</harmsHealth>
-		<hediff>RK_OriginiumBuildup</hediff>
+		<!--<hediff>RK_OriginiumBuildup</hediff>-->
 		<defaultDamage>100</defaultDamage>
 		<canInterruptJobs>false</canInterruptJobs>
 		<makesBlood>false</makesBlood>
@@ -13,6 +13,15 @@
 		<explosionColorEdge>(231, 188, 101,13)</explosionColorEdge>
 		<soundExplosion>Explosion_Smoke</soundExplosion>
 		<combatLogRules>Damage_Smoke</combatLogRules>
+		<additionalHediffs>
+		  <li>
+			<hediff>RK_OriginiumBuildup</hediff>
+			<severityPerDamageDealt>0.01</severityPerDamageDealt>
+			<victimSeverityScaling>ToxicEnvironmentResistance</victimSeverityScaling>
+			<inverseStatScaling>true</inverseStatScaling>
+			<victimSeverityScalingByInvBodySize>true</victimSeverityScalingByInvBodySize>
+		  </li>
+		</additionalHediffs>
 	</DamageDef>
 	
 	<DamageDef>

@@ -4,6 +4,7 @@
 		<thingClass>Originium.Building_OriginiumCluster</thingClass>
 		<altitudeLayer>Building</altitudeLayer>
 		<passability>Impassable</passability>
+		
 		<blockWind>true</blockWind>
 		<castEdgeShadows>true</castEdgeShadows>
 		<fillPercent>1</fillPercent>
@@ -16,7 +17,7 @@
 		<blockLight>true</blockLight>
 		<mineable>true</mineable>
 		<stealable>false</stealable>
-		<tickerType>Normal</tickerType>
+		<tickerType>Rare</tickerType>
 		<fertility>0</fertility>
 		<canOverlapZones>false</canOverlapZones>
 		<statBases>
@@ -43,6 +44,10 @@
 			<damageDef>Thump</damageDef>
 			<multiplier>4</multiplier>
 		  </li>
+		  <li>
+			<damageDef>Bomb</damageDef>
+			<multiplier>3</multiplier>
+		  </li>
 		</damageMultipliers>
 	</ThingDef>
 	
@@ -50,10 +55,10 @@
 		<defName>RK_OriginiumCluster</defName>
 		<label>small originium cluster</label>
 		<description>A relatively small cluster of active originium. Getting a scratch from this has a near certain chance of contracting oripathy.</description>
-		<thingClass>Originium.Building_OriginiumCluster</thingClass>
 		<graphicData>
 		  <texPath>Things/Building/Natural/OriginiumSpikes</texPath>
 		  <graphicClass>Graphic_Random</graphicClass>
+		  <drawOffset>(0,0,0.5)</drawOffset>
 		  <damageData>
 			<rect>(0,0,1,0.15)</rect>
 		  </damageData>
@@ -67,31 +72,69 @@
 		<pathCostIgnoreRepeat>true</pathCostIgnoreRepeat>
 		<staticSunShadowHeight>0.1</staticSunShadowHeight>
 		<blockLight>false</blockLight>
+		<tickerType>Normal</tickerType>
 		<statBases>
 		  <MaxHitPoints>100</MaxHitPoints>
-		  <TrapMeleeDamage>5</TrapMeleeDamage>
-		  <TrapSpringChance>1</TrapSpringChance>
 		</statBases>
 		<building>
-			<isTrap>true</isTrap>
-			<trapDamageCategory>Sharp</trapDamageCategory>
 			<isResourceRock>false</isResourceRock>
 			<mineableThing>RK_OriginiumShard</mineableThing>
-			<mineableYield>0</mineableYield>
+			<mineableYield>1</mineableYield>
 		</building>
 		<comps>
 			<li Class="Originium.CompProperties_Mutable">
 				<trigger>RK_ActiveOriginium</trigger>
 				<changeInto>RK_OriginiumClusterM</changeInto>
 				<offspring>RK_OriginiumCluster</offspring>
-				<damageType>RK_ActiveOriginium</damageType>
-				<spreadIntervalHours>1</spreadIntervalHours>
-				<cooldownHours>1</cooldownHours>
-				<chance>0.10</chance>
+				<spreadMTBHours>72</spreadMTBHours>
+				<spreadCount>3</spreadCount>
+			</li>
+			<li Class="Originium.CompProperties_HazardTouch">
+				<damageDef>RK_OriginiumCut</damageDef>
+				<baseSpringChance>0.5</baseSpringChance>
+				<baseDamage>5</baseDamage>
 			</li>
 		</comps>
 	  </ThingDef>
-	
+	  
+	<ThingDef ParentName="OriginiumClusterBase">
+		<defName>RK_OriginiumClusterInactive</defName>
+		<label>small originium cluster (inactive)</label>
+		<description>A relatively small cluster of active originium. Getting a scratch from this has a near certain chance of contracting oripathy.</description>
+		<graphicData>
+		  <texPath>Things/Building/Natural/OriginiumSpikes</texPath>
+		  <graphicClass>Graphic_Random</graphicClass>
+		  <damageData>
+			<rect>(0,0,1,0.15)</rect>
+		  </damageData>
+		</graphicData>
+		<holdsRoof>false</holdsRoof>
+		<blockWind>false</blockWind>
+		<castEdgeShadows>false</castEdgeShadows>
+		<fillPercent>0.1</fillPercent>
+		<passability>PassThroughOnly</passability>
+		<pathCost>80</pathCost>
+		<pathCostIgnoreRepeat>true</pathCostIgnoreRepeat>
+		<staticSunShadowHeight>0.1</staticSunShadowHeight>
+		<blockLight>false</blockLight>
+		<tickerType>Normal</tickerType>
+		<statBases>
+		  <MaxHitPoints>100</MaxHitPoints>
+		</statBases>
+		<building>
+			<isResourceRock>false</isResourceRock>
+			<mineableThing>RK_OriginiumShard</mineableThing>
+			<mineableYield>1</mineableYield>
+		</building>
+		<comps>
+			<li Class="Originium.CompProperties_HazardTouch">
+				<damageDef>RK_OriginiumCut</damageDef>
+				<baseSpringChance>1.0</baseSpringChance>
+				<baseDamage>5</baseDamage>
+			</li>
+		</comps>
+	  </ThingDef>
+	  
 	<ThingDef ParentName="OriginiumClusterBase">
 		<defName>RK_OriginiumClusterM</defName>
 		<label>originium cluster</label>
@@ -112,17 +155,15 @@
 		  <MaxHitPoints>200</MaxHitPoints>
 		</statBases>
 		<building>
-			<mineableYield>1</mineableYield>
+			<mineableYield>2</mineableYield>
 		</building>
 		<comps>
 			<li Class="Originium.CompProperties_Mutable">
 				<trigger>RK_ActiveOriginium</trigger>
 				<changeInto>RK_OriginiumClusterL</changeInto>
 				<offspring>RK_OriginiumCluster</offspring>
-				<damageType>RK_ActiveOriginium</damageType>
-				<cooldownHours>1</cooldownHours>
-				<spreadIntervalHours>2</spreadIntervalHours>
-				<chance>0.2</chance>
+				<spreadMTBHours>48</spreadMTBHours>
+				<spreadCount>5</spreadCount>
 			</li>
 		</comps>
 	  </ThingDef>
@@ -152,10 +193,8 @@
 			<li Class="Originium.CompProperties_Mutable">
 				<trigger>RK_ActiveOriginium</trigger>
 				<offspring>RK_OriginiumClusterM</offspring>
-				<damageType>RK_ActiveOriginium</damageType>
-				<cooldownHours>1</cooldownHours>
-				<spreadIntervalHours>1</spreadIntervalHours>
-				<chance>0.5</chance>
+				<spreadMTBHours>24</spreadMTBHours>
+				<spreadCount>8</spreadCount>
 			</li>
 		</comps>
 	</ThingDef>

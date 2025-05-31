@@ -21,11 +21,16 @@
 		<defName>RK_Oripathy</defName>
 		<comps>
 			<li Class="Originium.HediffCompProperties_HediffDependentSeverityPerDay">
-				<primaryHediff>RK_OriginiumBuildup</primaryHediff>
-				<severityFactor>0.29</severityFactor>
-				<severityOffset>0.003</severityOffset>
-				<severityPerDayRange>0~0.002</severityPerDayRange>
-				<updateInterval>60</updateInterval>
+				<AffectorHediffs>
+					<li>
+						<hediff>RK_OriginiumBuildup</hediff>
+						<severityFactor>0.58</severityFactor>
+						<severityOffset>0.006</severityOffset>
+						<severityPerDayRange>0~0.002</severityPerDayRange>
+						<severityScalingStat>RK_OriginiumResistance<severityScalingStat>
+						<inverseStatScaling>true</inverseStatScaling>
+					</li>
+				</AffectorHediffs>
 			</li>
 			<li Class="HediffCompProperties_SurgeryInspectable">
 				<surgicalDetectionDesc>{PAWN_nameDef} is showing early signs of oripathy. Keep {PAWN_objective} away from sources of originium.</surgicalDetectionDesc>
@@ -124,11 +129,16 @@
 				<severityPerDay>0.001</severityPerDay>
 			</li>
 			<li Class="Originium.HediffCompProperties_HediffDependentSeverityPerDay">
-				<primaryHediff>RK_OriginiumBuildupSuppressed</primaryHediff>
-				<severityFactor>0.1</severityFactor>
-				<severityOffset>0.001</severityOffset>
-				<severityPerDayRange>0~0.002</severityPerDayRange>
-				<updateInterval>250</updateInterval>
+				<AffectorHediffs>
+					<li>
+						<hediff>RK_OriginiumBuildupSuppressed</hediff>
+						<severityFactor>0.1</severityFactor>
+						<severityOffset>0.001</severityOffset>
+						<severityPerDayRange>0~0.002</severityPerDayRange>
+						<severityScalingStat>RK_OriginiumResistance<severityScalingStat>
+						<inverseStatScaling>true</inverseStatScaling>
+					</li>
+				</AffectorHediffs>
 			</li>
 		</comps>
 		<stages>
@@ -358,7 +368,7 @@
 					<li>(1.0, 0.50)</li>
 				  </points>
 				</minSeverityCurve>
-				<updateInterval>60</updateInterval>
+				<updateInterval>250</updateInterval>
 			</li>
 		</comps>
 		<stages>
@@ -458,32 +468,42 @@
 		  </li>
 		</stages>
 		<comps>
-			 <li Class="HediffCompProperties_TendDuration">
+			<li Class="HediffCompProperties_TendDuration">
 				<baseTendDurationHours>96</baseTendDurationHours>
 				<severityPerDayTended>-0.005</severityPerDayTended>
-			 </li>
+			</li>
+			
 			<li Class="Originium.HediffCompProperties_HediffDependentSeverityPerDay">
-				<primaryHediff>RK_OriginiumBuildupSuppressed</primaryHediff>
-				<severityCurve>
-				  <points>
-					<li>(0, 0.003)</li>
-					<li>(0.25, 0.01)</li>
-					<li>(0.50, 0.02)</li>
-					<li>(0.75, 0.04)</li>
-					<li>(1, 0.08)</li>
-				  </points>
-				</severityCurve>
-				<secondHediff>RK_OriginiumBuildup</secondHediff>
-				<severityCurve2>
-				  <points>
-					<li>(0, 0.013)</li>
-					<li>(0.30, 0.02)</li>
-					<li>(0.60, 0.04)</li>
-					<li>(0.90, 0.16)</li>
-					<li>(1, 0.32)</li>
-				  </points>
-				</severityCurve2>
-				<updateInterval>60</updateInterval>
+				<AffectorHediffs>
+					<li>
+						<hediff>RK_OriginiumBuildupSuppressed</hediff>
+						<curve>
+						  <points>
+							<li>(0, 0.006)</li>
+							<li>(0.25, 0.02)</li>
+							<li>(0.50, 0.07)</li>
+							<li>(0.75, 0.08)</li>
+							<li>(1, 0.16)</li>
+						  </points>
+						</curve>
+						<severityScalingStat>RK_OriginiumResistance<severityScalingStat>
+						<inverseStatScaling>true</inverseStatScaling>
+					</li>
+					<li>
+						<hediff>RK_OriginiumBuildup</hediff>
+						<curve>
+							  <points>
+								<li>(0, 0.026)</li>
+								<li>(0.30, 0.04)</li>
+								<li>(0.60, 0.08)</li>
+								<li>(0.90, 0.32)</li>
+								<li>(1, 0.64)</li>
+							  </points>
+						</curve>
+						<severityScalingStat>RK_OriginiumResistance<severityScalingStat>
+						<inverseStatScaling>true</inverseStatScaling>
+					</li>
+				</AffectorHediffs>
 			</li>
 		</comps>
 	</HediffDef>

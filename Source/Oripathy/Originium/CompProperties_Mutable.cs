@@ -23,8 +23,10 @@ namespace Originium
 
         public float chance = 1f;
 
-        public float cooldownHours = 1;
+        public float cooldownHours = 1f;
 
-        public float spreadIntervalHours = 12f;
+        public float spreadMTBHours = 12f;
+
+        public int spreadCount = 8;
     }
 }

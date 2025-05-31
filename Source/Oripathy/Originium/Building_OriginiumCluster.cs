@@ -10,6 +10,14 @@ namespace Originium
 {
     public class Building_OriginiumCluster : Mineable
     {
+        public override void SpawnSetup(Map map, bool respawningAfterLoad)
+        {
+            base.SpawnSetup(map, respawningAfterLoad);
+            if (ModsConfig.BiotechActive)
+            {
+                PollutionUtility.GrowPollutionAt(this.Position,map,0);
+            }
+        }
         /*
         public override void PostApplyDamage(DamageInfo dinfo, float totalDamageDealt)
         {

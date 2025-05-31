@@ -58,9 +58,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Originium\Building_OriginiumTrapDamager.cs" />
+    <Compile Include="Originium\CompHazardTouch.cs" />
     <Compile Include="Originium\CompMutable.cs" />
+    <Compile Include="Originium\CompProperties_HazardTouch.cs" />
     <Compile Include="Originium\CompProperties_Mutable.cs" />
     <Compile Include="Originium\DamageWorker_ApplyHediff.cs" />
+    <Compile Include="Oripathy\AffectorHediff.cs" />
     <Compile Include="Utilities\DebugActions_Oripathy.cs" />
     <Compile Include="DefOf\EffecterDefOf.cs" />
     <Compile Include="GameConditions\GameCondition_OriginiumRain.cs" />

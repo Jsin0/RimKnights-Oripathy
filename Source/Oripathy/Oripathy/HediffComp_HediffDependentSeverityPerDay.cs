@@ -1,5 +1,6 @@
-﻿using RimWorld;
-using System;
+﻿using System;
+using System.Collections.Generic;
+using RimWorld;
 using UnityEngine;
 using Verse;
 
@@ -15,22 +16,6 @@ namespace Originium
             }
         }
 
-        public override void CompPostPostAdd(DamageInfo? dinfo)
-        {
-            base.CompPostPostAdd(dinfo);
-            this.severityPerDay = this.Props.CalculateSeverityPerDay();
-        }
-
-        public override void CompExposeData()
-        {
-            base.CompExposeData();
-            Scribe_Values.Look<float>(ref this.severityPerDay, "severityPerDay", 0f, false);
-            if (Scribe.mode == LoadSaveMode.PostLoadInit && this.severityPerDay == 0f)
-            {
-                this.severityPerDay = this.RecalculateChangePerDay();
-                Log.Warning("Hediff " + this.parent.Label + " had severityPerDay not matching parent.");
-            }
-        }
         public override float SeverityChangePerDay()
         {
             if (base.Pawn.ageTracker.AgeBiologicalYearsFloat < this.Props.minAge)
@@ -38,39 +23,45 @@ namespace Originium
                 return 0f;
             }
 
-            float num = this.severityPerDay;
-
-            if (base.Pawn.IsHashIntervalTick(this.Props.updateInterval))
-            {
-                this.severityPerDay = RecalculateChangePerDay();
-            }
+            float num = CalculateSeverityPerDay();
 
             HediffStage curStage = this.parent.CurStage;
 
-            float num2 = num * ((curStage != null) ? curStage.severityGainFactor : 1f);
+            num *= ((curStage != null) ? curStage.severityGainFactor : 1f);
 
-            return num2;
+            return num;
         }
 
-
-        public float RecalculateChangePerDay()
+        private float CalculateSeverityPerDay()
         {
-            Hediff affectorHediff = this.Pawn.health.hediffSet.GetFirstHediffOfDef(this.Props.primaryHediff);
-            bool primary = true;
-            if (affectorHediff == null) 
-            { 
-                affectorHediff = this.Pawn.health.hediffSet.GetFirstHediffOfDef(this.Props.secondHediff);
-                primary = false;
+            List<AffectorHediff> affectorHediffs = Props.AffectorHediffs;
+
+            for(int i = 0; i < affectorHediffs.Count; i++)
+            {
+                Hediff hediff = this.Pawn.health.hediffSet.GetFirstHediffOfDef(affectorHediffs[i]?.hediff);
+                if (hediff != null)
+                {
+                    AffectorHediff affector = affectorHediffs[i];
+                    float severity;
+                    if(affector.curve != null)
+                    {
+                        severity = affector.curve.Evaluate(hediff.Severity);
+                    }
+                    else
+                    {
+                        severity = affector.severityFactor * hediff.Severity + affector.severityOffset;
+                    }
+
+                    if(affector.severityScalingStat != null)
+                    {
+                        severity *= (affector.inverseStatScaling ? Mathf.Max(1f - this.Pawn.GetStatValue(affector.severityScalingStat, true, -1), 0f) : this.Pawn.GetStatValue(affector.severityScalingStat, true, -1));
+                    }
+
+                    return severity + affector.severityPerDayRange.RandomInRange;
+                }
+
             }
-
-            float severity = ((affectorHediff != null) ? affectorHediff.Severity : 0f);
-
-            return this.Props.CalculateSeverityPerDay(severity, primary);
+            return 0f;
         }
-
-        public float severityPerDay;
-
     }
-
-
 }
