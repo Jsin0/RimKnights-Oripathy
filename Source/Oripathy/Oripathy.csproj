@@ -64,7 +64,7 @@
     <Compile Include="Originium\CompProperties_Mutable.cs" />
     <Compile Include="Originium\DamageWorker_ApplyHediff.cs" />
     <Compile Include="Oripathy\AffectorHediff.cs" />
-    <Compile Include="Oripathy\Recipe_BloodPurge.cs" />
+    <Compile Include="Utilities\PatchOperationModConditional.cs" />
     <Compile Include="Utilities\StringPatcher.cs" />
     <Compile Include="Utilities\DebugActions_Oripathy.cs" />
     <Compile Include="DefOf\EffecterDefOf.cs" />

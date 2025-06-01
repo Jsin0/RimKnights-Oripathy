@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using RimWorld;
 using Verse;
@@ -52,6 +53,25 @@ namespace Originium.Utilities
 
                         }
                     }
+
+                    if(type == typeof(RecipeDef))
+                    {
+                        Log.Message("recipedef");
+                        RecipeDef recipeDef = def as RecipeDef;
+                        if (recipeDef?.jobString != null)
+                        {
+                            foreach ((string, string) pair in pairs)
+                            {
+                                if (recipeDef.jobString.Contains(pair.Item1))
+                                {
+                                    //Log.Message("replacing description");
+                                    recipeDef.jobString = recipeDef.jobString.Replace(pair.Item1, pair.Item2);
+                                    flag = true;
+                                }
+
+                            }
+                        }
+                    }
                     if (flag) Log.Message(def.label + ": " + def.description);
                 }
             }
@@ -63,7 +83,7 @@ namespace Originium.Utilities
             if (OriMod.settings.orifuel)
             {
                 pairs.Add(("chemfuel", "orifuel"));
-                if(ModLister.GetActiveModWithIdentifier("vanillaexpanded.vchemfuele") != null)
+                if(ModsConfig.ActiveModsInLoadOrder.Any((ModMetaData mod) => mod.Name =="Vanilla Chemfuel Expanded" || mod.PackageId == "vanillaexpanded.vchemfuele"))
                 {
                     pairs.Add(("deepchem", "crude originium"));
                 }
@@ -74,6 +94,12 @@ namespace Originium.Utilities
             }
             //Log.Message(pairs);
             return pairs;
+        }
+
+        private static string ReplaceWord(string input, string word, string replacement)
+        {
+            string pattern = $"\\b{replacement}\\b";
+            return Regex.Replace(input, pattern, replacement, RegexOptions.IgnoreCase);
         }
     }
 }
