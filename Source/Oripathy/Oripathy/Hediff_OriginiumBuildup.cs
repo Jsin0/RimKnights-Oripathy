@@ -34,7 +34,7 @@ namespace Originium
                 this.pawn.health.RemoveHediff(this);
                 return;
             }
-            else if (GeneUtility.IsBaseliner(this.pawn) && OripathyMod.settings.baselinersImmune)
+            else if (GeneUtility.IsBaseliner(this.pawn) && OriMod.settings.baselinersImmune)
             {
                 this.pawn.health.RemoveHediff(this);
                 return;

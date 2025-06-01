@@ -58,7 +58,7 @@
 		<graphicData>
 		  <texPath>Things/Building/Natural/OriginiumSpikes</texPath>
 		  <graphicClass>Graphic_Random</graphicClass>
-		  <drawOffset>(0,0,0.5)</drawOffset>
+		  <drawOffset>(0,0,0.25)</drawOffset>
 		  <damageData>
 			<rect>(0,0,1,0.15)</rect>
 		  </damageData>
@@ -143,7 +143,7 @@
 		  <texPath>Things/Building/Natural/OriginiumSpikes</texPath>
 		  <graphicClass>Graphic_Random</graphicClass>
 		  <drawSize>(2,2)</drawSize>
-		  <drawOffset>(0,0,0.5)</drawOffset>
+		  <drawOffset>(0,0,0.75)</drawOffset>
 		  <damageData>
 			<rect>(0,0,1,0.15)</rect>
 		  </damageData>
@@ -176,7 +176,7 @@
 		  <texPath>Things/Building/Natural/OriginiumSpikes</texPath>
 		  <graphicClass>Graphic_Random</graphicClass>
 		  <drawSize>(3,3)</drawSize>
-		  <drawOffset>(0,0,0.5)</drawOffset>
+		  <drawOffset>(0,0,0.75)</drawOffset>
 		  <damageData>
 			<rect>(0,0,1,0.15)</rect>
 		  </damageData>

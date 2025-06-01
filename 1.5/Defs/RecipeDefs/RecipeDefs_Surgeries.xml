@@ -31,7 +31,7 @@
 			<li>MedicineHerbal</li>
 		  </disallowedThingDefs>
 		</fixedIngredientFilter>
-	  </RecipeDef>
+	</RecipeDef>
   
 	<RecipeDef ParentName="SurgeryFlesh">
 		<defName>RK_Infect</defName>
@@ -39,15 +39,51 @@
 		<description>introduce active originium into the bloodstream, infecting the individual</description>
 		<workerClass>Recipe_AddHediff</workerClass>
 		<jobString>infecting TargetA.</jobString>
-		<workAmount>1000</workAmount>
+		<workAmount>200</workAmount>
 		<hideBodyPartNames>true</hideBodyPartNames>
 		<isViolation>true</isViolation>
+		<!--
+		<ingredients>
+		  <li>
+			<filter>
+			  <categories>
+				<li>RK_OriginiumShard</li>
+			  </categories>
+			</filter>
+			<count>1</count>
+		  </li>
+		</ingredients>-->
 		<targetsBodyPart>false</targetsBodyPart>
 		<addsHediff>RK_Oripathy</addsHediff>
 		<successfullyRemovedHediffMessage>{0} has successfully infected {1}.</successfullyRemovedHediffMessage>
 		<surgeryIgnoreEnvironment>true</surgeryIgnoreEnvironment>
-		<skillRequirements>
-		  <Medicine>3</Medicine>
-		</skillRequirements>
-	  </RecipeDef>
+	</RecipeDef>
+	  
+	<RecipeDef ParentName="SurgeryFlesh">
+		<defName>RK_BloodTransfusion</defName>
+		<label>originium purge</label>
+		<description>Use hemogen packs to temporarily reduce the target's blood originium buildup.</description>
+		<jobString>performing blood transfusion on TargetA.</jobString>
+		<workAmount>800</workAmount>
+		<hideBodyPartNames>true</hideBodyPartNames>
+		<targetsBodyPart>false</targetsBodyPart>
+		<anesthetize>false</anesthetize>
+		<workerClass>Recipe_BloodTransfusion</workerClass>
+		<surgeryOutcomeEffect IsNull="True" /> <!-- Always succeeds -->
+		<ingredients>
+		  <li>
+			<filter>
+			  <thingDefs>
+				<li>HemogenPack</li>
+			  </thingDefs>
+			</filter>
+		  </li>
+		</ingredients>
+		<fixedIngredientFilter>
+		  <thingDefs>
+			<li>HemogenPack</li>
+		  </thingDefs>
+		</fixedIngredientFilter>
+	</RecipeDef>
+
 </Defs>

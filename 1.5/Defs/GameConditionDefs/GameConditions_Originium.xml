@@ -16,7 +16,7 @@
 		<pennedAnimalsSeekShelter>true</pennedAnimalsSeekShelter>
 		<modExtensions>
             <li Class="Originium.Utilities.GameConditionExtension">
-				<compMutableCooldownFactor>0.85</compMutableCooldownFactor>
+				<compMutableCooldownFactor>0.1</compMutableCooldownFactor>
             </li>
         </modExtensions>
 	</GameConditionDef>
@@ -39,7 +39,7 @@
             <li Class="Originium.Utilities.GameConditionExtension">
                 <damageMultiplier>2</damageMultiplier>
 				<damageInterval>2687</damageInterval>
-				<compMutableCooldownFactor>0.75</compMutableCooldownFactor>
+				<compMutableCooldownFactor>0.1</compMutableCooldownFactor>
             </li>
         </modExtensions>
 	</GameConditionDef>

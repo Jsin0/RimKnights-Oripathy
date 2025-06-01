@@ -8,7 +8,7 @@ namespace Originium
         public override void SpawnSetup(Map map, bool respawningAfterLoad)
         {
             base.SpawnSetup(map, respawningAfterLoad);
-            if (ModsConfig.BiotechActive && OripathyMod.settings.originiumSpawnsPollution)
+            if (ModsConfig.BiotechActive && OriMod.settings.originiumSpawnsPollution)
             {
                 PollutionUtility.GrowPollutionAt(this.Position,map,0);
             }

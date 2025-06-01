@@ -9,11 +9,17 @@ namespace Originium
         public bool baselinersImmune = false;
 
         public bool originiumSpawnsPollution = true;
+
+        public bool orifuel = false;
+
+        public bool orundum = false;
         public override void ExposeData()
         {
             base.ExposeData();
-            Scribe_Values.Look(ref baselinersImmune, "BaselinersImmune");
-            Scribe_Values.Look(ref originiumSpawnsPollution, "originiumSpawnsPollution");
+            Scribe_Values.Look(ref baselinersImmune, "BaselinersImmune", false);
+            Scribe_Values.Look(ref originiumSpawnsPollution, "originiumSpawnsPollution", true);
+            Scribe_Values.Look(ref orifuel, "orifuel", false);
+            Scribe_Values.Look(ref orundum, "orundum", false);
         }
     }
 

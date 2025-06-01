@@ -21,8 +21,6 @@ namespace Originium
 
         public ThingDef offspring;
 
-        public float chance = 1f;
-
         public float cooldownHours = 1f;
 
         public float spreadMTBHours = 12f;

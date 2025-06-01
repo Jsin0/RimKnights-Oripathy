@@ -1,34 +1,30 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\SteamLibrary\\steamapps\\common\\RimWorld\\Mods\\RimKnights - Oripathy\\Source\\Oripathy\\",
+  "WorkspaceRootPath": "D:\\SteamLibrary\\steamapps\\common\\RimWorld\\Mods\\Rimknights - Oripathy\\Source\\Oripathy\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{E29E61F4-4FFC-4FE5-BFEA-C85CA58E9A2C}|Oripathy.csproj|d:\\steamlibrary\\steamapps\\common\\rimworld\\mods\\rimknights - oripathy\\source\\oripathy\\gameconditions\\gamecondition_originiumrain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E29E61F4-4FFC-4FE5-BFEA-C85CA58E9A2C}|Oripathy.csproj|solutionrelative:gameconditions\\gamecondition_originiumrain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E29E61F4-4FFC-4FE5-BFEA-C85CA58E9A2C}|Oripathy.csproj|D:\\SteamLibrary\\steamapps\\common\\RimWorld\\Mods\\Rimknights - Oripathy\\Source\\Oripathy\\utilities\\applyharmony.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E29E61F4-4FFC-4FE5-BFEA-C85CA58E9A2C}|Oripathy.csproj|solutionrelative:utilities\\applyharmony.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E29E61F4-4FFC-4FE5-BFEA-C85CA58E9A2C}|Oripathy.csproj|d:\\steamlibrary\\steamapps\\common\\rimworld\\mods\\rimknights - oripathy\\source\\oripathy\\utilities\\gameconditionextension.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E29E61F4-4FFC-4FE5-BFEA-C85CA58E9A2C}|Oripathy.csproj|solutionrelative:utilities\\gameconditionextension.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E29E61F4-4FFC-4FE5-BFEA-C85CA58E9A2C}|Oripathy.csproj|d:\\steamlibrary\\steamapps\\common\\rimworld\\mods\\rimknights - oripathy\\source\\oripathy\\utilities\\stringpatcher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E29E61F4-4FFC-4FE5-BFEA-C85CA58E9A2C}|Oripathy.csproj|solutionrelative:utilities\\stringpatcher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E29E61F4-4FFC-4FE5-BFEA-C85CA58E9A2C}|Oripathy.csproj|d:\\steamlibrary\\steamapps\\common\\rimworld\\mods\\rimknights - oripathy\\source\\oripathy\\originium\\compproperties_mutable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E29E61F4-4FFC-4FE5-BFEA-C85CA58E9A2C}|Oripathy.csproj|solutionrelative:originium\\compproperties_mutable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E29E61F4-4FFC-4FE5-BFEA-C85CA58E9A2C}|Oripathy.csproj|d:\\steamlibrary\\steamapps\\common\\rimworld\\mods\\rimknights - oripathy\\source\\oripathy\\oripathy\\recipe_bloodpurge.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E29E61F4-4FFC-4FE5-BFEA-C85CA58E9A2C}|Oripathy.csproj|solutionrelative:oripathy\\recipe_bloodpurge.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E29E61F4-4FFC-4FE5-BFEA-C85CA58E9A2C}|Oripathy.csproj|d:\\steamlibrary\\steamapps\\common\\rimworld\\mods\\rimknights - oripathy\\source\\oripathy\\oripathy\\hediff_oripathy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E29E61F4-4FFC-4FE5-BFEA-C85CA58E9A2C}|Oripathy.csproj|solutionrelative:oripathy\\hediff_oripathy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E29E61F4-4FFC-4FE5-BFEA-C85CA58E9A2C}|Oripathy.csproj|d:\\steamlibrary\\steamapps\\common\\rimworld\\mods\\rimknights - oripathy\\source\\oripathy\\utilities\\modsettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E29E61F4-4FFC-4FE5-BFEA-C85CA58E9A2C}|Oripathy.csproj|solutionrelative:utilities\\modsettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E29E61F4-4FFC-4FE5-BFEA-C85CA58E9A2C}|Oripathy.csproj|d:\\steamlibrary\\steamapps\\common\\rimworld\\mods\\rimknights - oripathy\\source\\oripathy\\originium\\compmutable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E29E61F4-4FFC-4FE5-BFEA-C85CA58E9A2C}|Oripathy.csproj|solutionrelative:originium\\compmutable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E29E61F4-4FFC-4FE5-BFEA-C85CA58E9A2C}|Oripathy.csproj|d:\\steamlibrary\\steamapps\\common\\rimworld\\mods\\rimknights - oripathy\\source\\oripathy\\utilities\\orimod.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E29E61F4-4FFC-4FE5-BFEA-C85CA58E9A2C}|Oripathy.csproj|solutionrelative:utilities\\orimod.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E29E61F4-4FFC-4FE5-BFEA-C85CA58E9A2C}|Oripathy.csproj|d:\\steamlibrary\\steamapps\\common\\rimworld\\mods\\rimknights - oripathy\\source\\oripathy\\utilities\\originiumutility.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{E29E61F4-4FFC-4FE5-BFEA-C85CA58E9A2C}|Oripathy.csproj|D:\\SteamLibrary\\steamapps\\common\\RimWorld\\Mods\\Rimknights - Oripathy\\Source\\Oripathy\\utilities\\originiumutility.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E29E61F4-4FFC-4FE5-BFEA-C85CA58E9A2C}|Oripathy.csproj|solutionrelative:utilities\\originiumutility.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E29E61F4-4FFC-4FE5-BFEA-C85CA58E9A2C}|Oripathy.csproj|D:\\SteamLibrary\\steamapps\\common\\RimWorld\\Mods\\RimKnights - Oripathy\\Source\\Oripathy\\utilities\\debugactions_oripathy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E29E61F4-4FFC-4FE5-BFEA-C85CA58E9A2C}|Oripathy.csproj|solutionrelative:utilities\\debugactions_oripathy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -38,97 +34,84 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "GameCondition_OriginiumRain.cs",
-              "DocumentMoniker": "D:\\SteamLibrary\\steamapps\\common\\RimWorld\\Mods\\RimKnights - Oripathy\\Source\\Oripathy\\GameConditions\\GameCondition_OriginiumRain.cs",
-              "RelativeDocumentMoniker": "GameConditions\\GameCondition_OriginiumRain.cs",
-              "ToolTip": "D:\\SteamLibrary\\steamapps\\common\\RimWorld\\Mods\\RimKnights - Oripathy\\Source\\Oripathy\\GameConditions\\GameCondition_OriginiumRain.cs",
-              "RelativeToolTip": "GameConditions\\GameCondition_OriginiumRain.cs",
-              "ViewState": "AgIAAG4AAAAAAAAAAAAUwBkAAAAnAAAAAAAAAA==",
+              "DocumentIndex": 2,
+              "Title": "Recipe_BloodPurge.cs",
+              "DocumentMoniker": "D:\\SteamLibrary\\steamapps\\common\\RimWorld\\Mods\\Rimknights - Oripathy\\Source\\Oripathy\\Oripathy\\Recipe_BloodPurge.cs",
+              "RelativeDocumentMoniker": "Oripathy\\Recipe_BloodPurge.cs",
+              "ToolTip": "D:\\SteamLibrary\\steamapps\\common\\RimWorld\\Mods\\Rimknights - Oripathy\\Source\\Oripathy\\Oripathy\\Recipe_BloodPurge.cs",
+              "RelativeToolTip": "Oripathy\\Recipe_BloodPurge.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAACDAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-01T00:29:45.218Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "GameConditionExtension.cs",
-              "DocumentMoniker": "D:\\SteamLibrary\\steamapps\\common\\RimWorld\\Mods\\RimKnights - Oripathy\\Source\\Oripathy\\Utilities\\GameConditionExtension.cs",
-              "RelativeDocumentMoniker": "Utilities\\GameConditionExtension.cs",
-              "ToolTip": "D:\\SteamLibrary\\steamapps\\common\\RimWorld\\Mods\\RimKnights - Oripathy\\Source\\Oripathy\\Utilities\\GameConditionExtension.cs",
-              "RelativeToolTip": "Utilities\\GameConditionExtension.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAlAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-01T00:17:52.488Z",
+              "WhenOpened": "2025-06-01T07:34:24.384Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "CompMutable.cs",
-              "DocumentMoniker": "D:\\SteamLibrary\\steamapps\\common\\RimWorld\\Mods\\RimKnights - Oripathy\\Source\\Oripathy\\Originium\\CompMutable.cs",
-              "RelativeDocumentMoniker": "Originium\\CompMutable.cs",
-              "ToolTip": "D:\\SteamLibrary\\steamapps\\common\\RimWorld\\Mods\\RimKnights - Oripathy\\Source\\Oripathy\\Originium\\CompMutable.cs*",
-              "RelativeToolTip": "Originium\\CompMutable.cs*",
-              "ViewState": "AgIAAB0AAAAAAAAAAAAkwCkAAAAsAAAAAAAAAA==",
+              "Title": "OriMod.cs",
+              "DocumentMoniker": "D:\\SteamLibrary\\steamapps\\common\\RimWorld\\Mods\\Rimknights - Oripathy\\Source\\Oripathy\\Utilities\\OriMod.cs",
+              "RelativeDocumentMoniker": "Utilities\\OriMod.cs",
+              "ToolTip": "D:\\SteamLibrary\\steamapps\\common\\RimWorld\\Mods\\Rimknights - Oripathy\\Source\\Oripathy\\Utilities\\OriMod.cs",
+              "RelativeToolTip": "Utilities\\OriMod.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAACuAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-01T00:16:22.191Z",
+              "WhenOpened": "2025-06-01T07:08:50.628Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ModSettings.cs",
+              "DocumentMoniker": "D:\\SteamLibrary\\steamapps\\common\\RimWorld\\Mods\\Rimknights - Oripathy\\Source\\Oripathy\\Utilities\\ModSettings.cs",
+              "RelativeDocumentMoniker": "Utilities\\ModSettings.cs",
+              "ToolTip": "D:\\SteamLibrary\\steamapps\\common\\RimWorld\\Mods\\Rimknights - Oripathy\\Source\\Oripathy\\Utilities\\ModSettings.cs",
+              "RelativeToolTip": "Utilities\\ModSettings.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-01T07:04:34.206Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "StringPatcher.cs",
+              "DocumentMoniker": "D:\\SteamLibrary\\steamapps\\common\\RimWorld\\Mods\\Rimknights - Oripathy\\Source\\Oripathy\\Utilities\\StringPatcher.cs",
+              "RelativeDocumentMoniker": "Utilities\\StringPatcher.cs",
+              "ToolTip": "D:\\SteamLibrary\\steamapps\\common\\RimWorld\\Mods\\Rimknights - Oripathy\\Source\\Oripathy\\Utilities\\StringPatcher.cs",
+              "RelativeToolTip": "Utilities\\StringPatcher.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-01T06:01:29.693Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ApplyHarmony.cs",
+              "DocumentMoniker": "D:\\SteamLibrary\\steamapps\\common\\RimWorld\\Mods\\Rimknights - Oripathy\\Source\\Oripathy\\Utilities\\ApplyHarmony.cs",
+              "RelativeDocumentMoniker": "Utilities\\ApplyHarmony.cs",
+              "ToolTip": "D:\\SteamLibrary\\steamapps\\common\\RimWorld\\Mods\\Rimknights - Oripathy\\Source\\Oripathy\\Utilities\\ApplyHarmony.cs*",
+              "RelativeToolTip": "Utilities\\ApplyHarmony.cs*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-01T06:00:25.675Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
               "Title": "OriginiumUtility.cs",
-              "DocumentMoniker": "D:\\SteamLibrary\\steamapps\\common\\RimWorld\\Mods\\RimKnights - Oripathy\\Source\\Oripathy\\Utilities\\OriginiumUtility.cs",
+              "DocumentMoniker": "D:\\SteamLibrary\\steamapps\\common\\RimWorld\\Mods\\Rimknights - Oripathy\\Source\\Oripathy\\Utilities\\OriginiumUtility.cs",
               "RelativeDocumentMoniker": "Utilities\\OriginiumUtility.cs",
-              "ToolTip": "D:\\SteamLibrary\\steamapps\\common\\RimWorld\\Mods\\RimKnights - Oripathy\\Source\\Oripathy\\Utilities\\OriginiumUtility.cs",
+              "ToolTip": "D:\\SteamLibrary\\steamapps\\common\\RimWorld\\Mods\\Rimknights - Oripathy\\Source\\Oripathy\\Utilities\\OriginiumUtility.cs",
               "RelativeToolTip": "Utilities\\OriginiumUtility.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAABBAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-01T00:17:48.687Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "CompProperties_Mutable.cs",
-              "DocumentMoniker": "D:\\SteamLibrary\\steamapps\\common\\RimWorld\\Mods\\RimKnights - Oripathy\\Source\\Oripathy\\Originium\\CompProperties_Mutable.cs",
-              "RelativeDocumentMoniker": "Originium\\CompProperties_Mutable.cs",
-              "ToolTip": "D:\\SteamLibrary\\steamapps\\common\\RimWorld\\Mods\\RimKnights - Oripathy\\Source\\Oripathy\\Originium\\CompProperties_Mutable.cs",
-              "RelativeToolTip": "Originium\\CompProperties_Mutable.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-01T00:16:15.285Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Hediff_Oripathy.cs",
-              "DocumentMoniker": "D:\\SteamLibrary\\steamapps\\common\\RimWorld\\Mods\\RimKnights - Oripathy\\Source\\Oripathy\\Oripathy\\Hediff_Oripathy.cs",
-              "RelativeDocumentMoniker": "Oripathy\\Hediff_Oripathy.cs",
-              "ToolTip": "D:\\SteamLibrary\\steamapps\\common\\RimWorld\\Mods\\RimKnights - Oripathy\\Source\\Oripathy\\Oripathy\\Hediff_Oripathy.cs",
-              "RelativeToolTip": "Oripathy\\Hediff_Oripathy.cs",
-              "ViewState": "AgIAAE0AAAAAAAAAAAAswLYAAABaAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-01T00:09:12.748Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "DebugActions_Oripathy.cs",
-              "DocumentMoniker": "D:\\SteamLibrary\\steamapps\\common\\RimWorld\\Mods\\RimKnights - Oripathy\\Source\\Oripathy\\Utilities\\DebugActions_Oripathy.cs",
-              "RelativeDocumentMoniker": "Utilities\\DebugActions_Oripathy.cs",
-              "ToolTip": "D:\\SteamLibrary\\steamapps\\common\\RimWorld\\Mods\\RimKnights - Oripathy\\Source\\Oripathy\\Utilities\\DebugActions_Oripathy.cs",
-              "RelativeToolTip": "Utilities\\DebugActions_Oripathy.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAuwC0AAABuAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-19T07:27:38.99Z",
               "EditorCaption": ""
             }
           ]

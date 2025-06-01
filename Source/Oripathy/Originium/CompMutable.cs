@@ -17,10 +17,17 @@ namespace Originium
             }
         }
 
+        public override void PostSpawnSetup(bool respawningAfterLoad)
+        {
+            base.PostSpawnSetup(respawningAfterLoad);
+            CheckActivity();
+        }
+
         public override void PostPostApplyDamage(DamageInfo dinfo, float totalDamageDealt)
         {
             if (dinfo.Def == this.Props.trigger && !active) 
             {
+                spreadCounter = 0;
                 CheckActivity();
             }
         }
@@ -38,16 +45,19 @@ namespace Originium
             if(active)
             {
                 float spreadMTBHours = this.Props.spreadMTBHours;
-                float cooldownFactor = parent.Map.GameConditionManager.GetActiveCondition<GameCondition_OriginiumRain>()?.compMutableSpreadFactor ?? 1f;
-                if (spreadMTBHours > 0f && Rand.MTBEventOccurs(spreadMTBHours * cooldownFactor, 2500f, 250f))
+                if (spreadMTBHours > 0)
                 {
-                    TrySpread();
-                    TryGrow();
+                    float spreadFactor = parent.Map.GameConditionManager.GetActiveCondition<GameCondition_OriginiumRain>()?.compMutableSpreadFactor ?? 1f;
+                    //Log.Message("Spread Factor" + spreadFactor);
+                    if (Rand.MTBEventOccurs(spreadMTBHours * spreadFactor, 2500f, 250f))
+                    {
+                        TrySpread();
+                    }
+                    if (Rand.MTBEventOccurs(spreadMTBHours * spreadFactor, 2500f, 250f))
+                    {
+                        TryGrow();
+                    }
                 }
-            }
-            else
-            {
-                CheckActivity();
             }
         }
         private void TrySpread()
@@ -71,6 +81,8 @@ namespace Originium
                 }
             }
         }
+
+        /*
         private void Spread(List<IntVec3> cells, Map map)
         {
             for (int i = 0; i < cells.Count; i++)
@@ -83,14 +95,14 @@ namespace Originium
                     Building building = cell.GetFirstBuilding(map);
                     if (building != null)
                     {
-                        /*
+                        
                         //Log.Message(building.GetType().ToString());
                         if (building.def == this.Props.offspring || building.GetType() == typeof(Building_OriginiumCluster))
                         {
                             DamageInfo dinfo = new DamageInfo(DamageDefOf.RK_ActiveOriginium, 1f);
                             building.TakeDamage(dinfo);
                             continue;
-                        }*/
+                        }
 
                         if (!cell.Walkable(map))
                         {
@@ -105,39 +117,42 @@ namespace Originium
                     //canSpread = false;
                 }
             }
-        }
+        }*/
 
         private void Spread2(List<IntVec3> cells, Map map)
         {
-            IntVec3 cell;
-            if(cells.TryRandomElement(out cell))
+            if (this.Props.offspring != null && parent != null && canSpread)
             {
-                //Log.Message(cell.ToString());
-                Building building = cell.GetFirstBuilding(map);
-                if (building != null)
+                IntVec3 cell;
+                if (cells.TryRandomElement(out cell))
                 {
-                    /*Log.Message(building.GetType().ToString());
-                    if (building.GetType().IsAssignableFrom(parent.GetType()))
+                    //Log.Message(cell.ToString());
+                    Building building = cell.GetFirstBuilding(map);
+                    if (building != null)
                     {
-                        DamageInfo dinfo = new DamageInfo(DamageDefOf.RK_ActiveOriginium, 1f);
-                        building.TakeDamage(dinfo);
-                        return;
-                    }*/
+                        /*Log.Message(building.GetType().ToString());
+                        if (building.GetType().IsAssignableFrom(parent.GetType()))
+                        {
+                            DamageInfo dinfo = new DamageInfo(DamageDefOf.RK_ActiveOriginium, 1f);
+                            building.TakeDamage(dinfo);
+                            return;
+                        }*/
 
-                    if (!cell.Walkable(map))
-                    {
-                        //Log.Message("damaging building");
-                        DamageInfo dinfo = new DamageInfo(RimWorld.DamageDefOf.Stab, 100f);
-                        building.TakeDamage(dinfo);
-                        if (!building.Destroyed) return;
+                        if (!cell.Walkable(map))
+                        {
+                            //Log.Message("damaging building");
+                            DamageInfo dinfo = new DamageInfo(RimWorld.DamageDefOf.Stab, 100f);
+                            building.TakeDamage(dinfo);
+                            if (!building.Destroyed) return;
+                        }
                     }
-                }
-                //Log.Message("spawning");
-                GenSpawn.Spawn(this.Props.offspring, cell, map);
-                if (spreadCounter++ >= Props.spreadCount)
-                {
-                    active = false;
-                    spreadCounter = 0;
+                    //Log.Message("spawning");
+                    GenSpawn.Spawn(this.Props.offspring, cell, map);
+                    if (spreadCounter++ >= Props.spreadCount)
+                    {
+                        active = false;
+                        spreadCounter = 0;
+                    }
                 }
             }
         }
@@ -240,22 +255,23 @@ namespace Originium
         }
         private void CheckActivity()
         {
-            if (parent?.MapHeld == null || active)
+            if (parent?.MapHeld == null)
             {
+                //Log.Message("map null");
+                active = false;
                 return;
             }
 
-            this.canGrow = Props.changeInto != null && Props.chance > 0f && Props.spreadMTBHours > 0 && Props.cooldownHours > 0f;
-            this.canSpread = Props.cooldownHours > 0 && Props.chance > 0f && Props.offspring != null;
+            this.canGrow = Props.changeInto != null && Props.spreadMTBHours > 0;
+            this.canSpread = Props.offspring != null && Props.spreadMTBHours > 0;
 
-            if (!canSpread)
+            if (canSpread)
             {
-                Map map = parent?.MapHeld;
-                if (map == null) return;
 
-                List<IntVec3> adjCells = GenAdjFast.AdjacentCells8Way(parent).Where((IntVec3 x) => IsValidCell(x, map)).ToList();
+                List<IntVec3> adjCells = GenAdjFast.AdjacentCells8Way(parent).Where((IntVec3 x) => IsValidCell(x, parent.MapHeld)).ToList();
                 if (adjCells.Count == 0)
                 {
+                    //Log.Message("Can't spread");
                     canSpread = false;
                 }
             }
@@ -268,21 +284,19 @@ namespace Originium
             {
                 active = true;
             }
-
-            if(++checkCounter > 10) 
-            {
-                //Log.Message("Counter reached: deactivating");
-                active = false; 
-                checkCounter = 0;
-            }
         }
         public override void PostExposeData()
         {
             base.PostExposeData();
+            if(Scribe.mode == LoadSaveMode.PostLoadInit)
+            {
+                CheckActivity();
+            }
             Scribe_Values.Look<bool>(ref this.ready, "ready", false);
             Scribe_Values.Look<bool>(ref this.active, "active", false);
-            Scribe_Values.Look<bool>(ref this.canSpread, "ready", false);
+            Scribe_Values.Look<bool>(ref this.canSpread, "canSpread", false);
             Scribe_Values.Look<bool>(ref this.canGrow, "active", false);
+            Scribe_Values.Look<int>(ref this.spreadCounter, "spreadCounter", 0);
         }
 
         private bool canSpread = true;
