@@ -14,6 +14,11 @@
 		<endMessage>The contaminated rain is ending.</endMessage>
 		<allowUnderground>false</allowUnderground>
 		<pennedAnimalsSeekShelter>true</pennedAnimalsSeekShelter>
+		<modExtensions>
+            <li Class="Originium.Utilities.GameConditionExtension">
+				<compMutableCooldownFactor>0.85</compMutableCooldownFactor>
+            </li>
+        </modExtensions>
 	</GameConditionDef>
 	
 	<GameConditionDef>
@@ -34,6 +39,7 @@
             <li Class="Originium.Utilities.GameConditionExtension">
                 <damageMultiplier>2</damageMultiplier>
 				<damageInterval>2687</damageInterval>
+				<compMutableCooldownFactor>0.75</compMutableCooldownFactor>
             </li>
         </modExtensions>
 	</GameConditionDef>
@@ -56,6 +62,7 @@
             <li Class="Originium.Utilities.GameConditionExtension">
                 <protectedByRoof>false</protectedByRoof>
 				<damageInterval>2027</damageInterval>
+				<compMutableCooldownFactor>0.95</compMutableCooldownFactor>
             </li>
         </modExtensions>
 	</GameConditionDef>

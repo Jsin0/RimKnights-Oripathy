@@ -17,6 +17,8 @@ namespace Originium.Utilities
         public float damageMultiplier = 1f;
 
         public int damageInterval = 3451;
+
+        public float compMutableCooldownFactor = 1f;
     }
 
     public class BuildingExtension : DefModExtension

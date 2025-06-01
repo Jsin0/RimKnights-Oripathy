@@ -22,6 +22,8 @@ namespace Originium
                 damageMultiplier = modExtension.damageMultiplier;
 
                 damageInterval = modExtension.damageInterval;
+
+                compMutableSpreadFactor = modExtension.compMutableCooldownFactor;
             }
         }
         public override int TransitionTicks
@@ -124,5 +126,7 @@ namespace Originium
         private SkyColorSet OriginiumRainColors = new SkyColorSet(new ColorInt(255, 191, 48).ToColor, new ColorInt(212, 184, 42).ToColor, new Color(0.6f, 0.6f, 0.6f), 0.85f);
 
         private List<SkyOverlay> overlays = new List<SkyOverlay>();
+
+        public float compMutableSpreadFactor = 1f;
     }
 }

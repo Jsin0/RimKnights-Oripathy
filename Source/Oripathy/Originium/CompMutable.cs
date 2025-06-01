@@ -38,7 +38,8 @@ namespace Originium
             if(active)
             {
                 float spreadMTBHours = this.Props.spreadMTBHours;
-                if (spreadMTBHours > 0f && Rand.MTBEventOccurs(spreadMTBHours, 2500f, 250f))
+                float cooldownFactor = parent.Map.GameConditionManager.GetActiveCondition<GameCondition_OriginiumRain>()?.compMutableSpreadFactor ?? 1f;
+                if (spreadMTBHours > 0f && Rand.MTBEventOccurs(spreadMTBHours * cooldownFactor, 2500f, 250f))
                 {
                     TrySpread();
                     TryGrow();

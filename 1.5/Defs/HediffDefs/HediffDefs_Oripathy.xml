@@ -27,7 +27,7 @@
 						<severityFactor>0.58</severityFactor>
 						<severityOffset>0.006</severityOffset>
 						<severityPerDayRange>0~0.002</severityPerDayRange>
-						<severityScalingStat>RK_OriginiumResistance<severityScalingStat>
+						<severityScalingStat>RK_OriginiumResistance</severityScalingStat>
 						<inverseStatScaling>true</inverseStatScaling>
 					</li>
 				</AffectorHediffs>
@@ -135,7 +135,7 @@
 						<severityFactor>0.1</severityFactor>
 						<severityOffset>0.001</severityOffset>
 						<severityPerDayRange>0~0.002</severityPerDayRange>
-						<severityScalingStat>RK_OriginiumResistance<severityScalingStat>
+						<severityScalingStat>RK_OriginiumResistance</severityScalingStat>
 						<inverseStatScaling>true</inverseStatScaling>
 					</li>
 				</AffectorHediffs>
@@ -486,7 +486,7 @@
 							<li>(1, 0.16)</li>
 						  </points>
 						</curve>
-						<severityScalingStat>RK_OriginiumResistance<severityScalingStat>
+						<severityScalingStat>RK_OriginiumResistance</severityScalingStat>
 						<inverseStatScaling>true</inverseStatScaling>
 					</li>
 					<li>
@@ -500,7 +500,7 @@
 								<li>(1, 0.64)</li>
 							  </points>
 						</curve>
-						<severityScalingStat>RK_OriginiumResistance<severityScalingStat>
+						<severityScalingStat>RK_OriginiumResistance</severityScalingStat>
 						<inverseStatScaling>true</inverseStatScaling>
 					</li>
 				</AffectorHediffs>
