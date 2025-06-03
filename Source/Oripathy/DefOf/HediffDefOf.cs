@@ -2,7 +2,7 @@
 using System;
 using Verse;
 
-namespace Originium
+namespace RimKnights
 {
     [DefOf]
     public static class HediffDefOf
@@ -15,6 +15,7 @@ namespace Originium
 
         public static HediffDef RK_OriginiumBuildup;
 
+        [MayRequire("rimknights.industry")]
         public static HediffDef RK_HarvestShock;
     }
 }

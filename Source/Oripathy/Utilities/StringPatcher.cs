@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using RimWorld;
 using Verse;
 
-namespace Originium.Utilities
+namespace RimKnights.Utilities
 {
     [StaticConstructorOnStartup]
     static class StringPatcher

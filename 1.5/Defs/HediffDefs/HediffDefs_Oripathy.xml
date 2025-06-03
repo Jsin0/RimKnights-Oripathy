@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 	<HediffDef Name="OripathyBase" ParentName="ChronicDiseaseBase" Abstract="True">
-		<hediffClass>Originium.Hediff_Oripathy</hediffClass>
+		<hediffClass>RimKnights.Hediff_Oripathy</hediffClass>
 		<label>oripathy</label>
 		<description>Also known as stone disease, Oripathy an incurable disease due to the assimilation of originium into the body.  It is characterized by crystalline growths throughout the body.</description>
 		<everCurableByItem>false</everCurableByItem>
@@ -9,7 +9,7 @@
 		<scenarioCanAdd>true</scenarioCanAdd>
 		<maxSeverity>1</maxSeverity>
 		<comps>
-			<li Class="Originium.HediffCompProperties_Suppressible">
+			<li Class="RimKnights.HediffCompProperties_Suppressible">
 				<suppressor>RK_SuppressantHigh</suppressor>
 				<suppressedHediff>RK_OripathySuppressed</suppressedHediff>
 				<unsuppressedHediff>RK_Oripathy</unsuppressedHediff>
@@ -20,7 +20,7 @@
 	<HediffDef ParentName="OripathyBase">
 		<defName>RK_Oripathy</defName>
 		<comps>
-			<li Class="Originium.HediffCompProperties_HediffDependentSeverityPerDay">
+			<li Class="RimKnights.HediffCompProperties_HediffDependentSeverityPerDay">
 				<AffectorHediffs>
 					<li>
 						<hediff>RK_OriginiumBuildup</hediff>
@@ -113,7 +113,7 @@
 			<li Class="HediffCompProperties_SeverityPerDay">
 				<severityPerDay>0.001</severityPerDay>
 			</li>
-			<li Class="Originium.HediffCompProperties_HediffDependentSeverityPerDay">
+			<li Class="RimKnights.HediffCompProperties_HediffDependentSeverityPerDay">
 				<AffectorHediffs>
 					<li>
 						<hediff>RK_OriginiumBuildupSuppressed</hediff>
@@ -192,14 +192,14 @@
 	</HediffDef>
 	
 	<HediffDef Name="OriginiumBuildup" Abstract="True">
-		<hediffClass>Originium.Hediff_OriginiumBuildup</hediffClass>
+		<hediffClass>RimKnights.Hediff_OriginiumBuildup</hediffClass>
 		<tendable>true</tendable>
 		<defaultLabelColor>(1.0, 0.5, 0.0)</defaultLabelColor>
 		<scenarioCanAdd>true</scenarioCanAdd>
 		<maxSeverity>1</maxSeverity>
 		<initialSeverity>0.0</initialSeverity>
 		<comps>
-			<li Class="Originium.HediffCompProperties_Suppressible">
+			<li Class="RimKnights.HediffCompProperties_Suppressible">
 				<suppressor>RK_SuppressantHigh</suppressor>
 				<suppressedHediff>RK_OriginiumBuildupSuppressed</suppressedHediff>
 				<unsuppressedHediff>RK_OriginiumBuildup</unsuppressedHediff>
@@ -221,7 +221,7 @@
 				<baseTendDurationHours>24</baseTendDurationHours>
 				<severityPerDayTended>-0.2</severityPerDayTended>
 			</li>
-			<li Class="Originium.HediffCompProperties_DynamicSeverityRange">
+			<li Class="RimKnights.HediffCompProperties_DynamicSeverityRange">
 				<minAffector>
 					<hediff>RK_Oripathy</hediff>
 					<curve>
@@ -345,7 +345,7 @@
 				<baseTendDurationHours>24</baseTendDurationHours>
 				<severityPerDayTended>-0.3</severityPerDayTended>
 			</li>
-			<li Class="Originium.HediffCompProperties_DynamicSeverityRange">
+			<li Class="RimKnights.HediffCompProperties_DynamicSeverityRange">
 				<minAffector>
 					<hediff>RK_OripathySuppressed</hediff>
 					<curve>
@@ -461,7 +461,7 @@
 				<baseTendDurationHours>96</baseTendDurationHours>
 				<severityPerDayTended>-0.005</severityPerDayTended>
 			</li>
-			<li Class="Originium.HediffCompProperties_HediffDependentSeverityPerDay">
+			<li Class="RimKnights.HediffCompProperties_HediffDependentSeverityPerDay">
 				<AffectorHediffs>
 					<li>
 						<hediff>RK_OriginiumBuildupSuppressed</hediff>
@@ -491,51 +491,12 @@
 						<severityScalingStat>RK_OriginiumResistance</severityScalingStat>
 						<inverseStatScaling>true</inverseStatScaling>
 					</li>
+					<li MayRequire="rimknights.industry" Class="RimKnights.HediffCompProperties_Harvestable">
+						<resource>RK_OriginiumShard</resource>
+						<severityOffset>-0.30</severityOffset>
+						<miniumSeverity>0.60</miniumSeverity>
+					</li>
 				</AffectorHediffs>
-			</li>
-			<li Class="Originium.HediffCompProperties_Harvestable">
-				<resource>RK_OriginiumShard</resource>
-				<severityOffset>-0.30</severityOffset>
-				<miniumSeverity>0.60</miniumSeverity>
-			</li>
-		</comps>
-	</HediffDef>
-	<HediffDef>
-		<defName>RK_HarvestShock</defName>
-		<label>post-harvest pain</label>
-		<description>originium has recently been harvested from this person's lesions.</description>
-		<hediffClass>HediffWithComps</hediffClass>
-		<tendable>true</tendable>
-		<everCurableByItem>false</everCurableByItem>
-		<forceRemoveOnResurrection>true</forceRemoveOnResurrection>
-		<initialSeverity>0.35</initialSeverity>
-		<maxSeverity>1</maxSeverity>
-		<stages>
-			<li>
-				<minSeverity>0.01</minSeverity>
-				<painOffset>0.05</painOffset>
-			</li>
-			<li>
-				<minSeverity>0.15</minSeverity>
-				<painOffset>0.10</painOffset>
-			</li>
-			<li>
-				<minSeverity>0.35</minSeverity>
-				<painOffset>0.15</painOffset>
-			</li>
-			<li>
-				<minSeverity>0.65</minSeverity>
-				<painOffset>0.20</painOffset>
-			</li>
-			<li>
-				<minSeverity>0.85</minSeverity>
-				<painOffset>0.30</painOffset>
-			</li>
-		</stages>
-		<comps>
-			<li Class="HediffCompProperties_TendDuration">
-				<baseTendDurationHours>24</baseTendDurationHours>
-				<severityPerDayTended>-0.25</severityPerDayTended>
 			</li>
 		</comps>
 	</HediffDef>

@@ -6,16 +6,16 @@ using System.Threading.Tasks;
 using System.Xml;
 using Verse;
 
-namespace Originium.Utilities
+namespace RimKnights.Utilities
 {
     internal class PatchOperationModConditional : PatchOperationPathed
     {
-        public string settingName;
+        private string settingName;
         private PatchOperation match;
 
         protected override bool ApplyWorker(XmlDocument xml)
         {
-            var field = typeof(OripathyModSettings).GetField(settingName);
+            var field = typeof(CoreModeSettings).GetField(settingName);
             if(field == null)
             {
                 Log.Message("null field");
@@ -28,8 +28,7 @@ namespace Originium.Utilities
             }
             else
             {
-                Log.Message("setting inactive");
-                return active;
+                return true;
             }
         }
 

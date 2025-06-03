@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using RimWorld;
 using Verse;
 
-namespace Originium
+namespace RimKnights
 {
     public class HediffCompProperties_HediffDependentSeverityPerDay : HediffCompProperties
     {

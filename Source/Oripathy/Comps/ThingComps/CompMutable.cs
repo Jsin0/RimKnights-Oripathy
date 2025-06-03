@@ -5,7 +5,7 @@ using RimWorld;
 using Verse;
 using UnityEngine;
 
-namespace Originium
+namespace RimKnights
 {
     public class CompMutable : ThingComp
     {

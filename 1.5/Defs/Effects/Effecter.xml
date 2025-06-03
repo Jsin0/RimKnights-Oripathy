@@ -5,19 +5,20 @@
 		<children>
 		  <li>
 			<subEffecterClass>SubEffecter_SprayerChance</subEffecterClass>
-			<positionRadius>0.2</positionRadius>
+			<positionRadius>0.5</positionRadius>
 			<positionOffset>(0, 0, 0.12)</positionOffset>
-			<fleckDef>Fleck_WastePackDissolutionCell</fleckDef>
-			<chancePerTick>0.16</chancePerTick>
-			<!--<ticksBetweenMotes>45</ticksBetweenMotes>-->
-			<scale>0.4~0.8</scale>
+			<fleckDef>Smoke</fleckDef>
+			<!--<chancePerTick>0.16</chancePerTick>-->
+			<ticksBetweenMotes>100</ticksBetweenMotes>
+			<scale>0.1~0.5</scale>
 			<spawnLocType>OnSource</spawnLocType>
 		  </li>
+		  <!--
 		  <li>
 			<subEffecterClass>SubEffecter_SoundTriggered</subEffecterClass>
-			<soundDef>PollutionSpreading</soundDef>
+			<soundDef>FireBurning</soundDef>
 			<spawnLocType>OnSource</spawnLocType>
-		  </li>
+		  </li>-->
 		</children>
   </EffecterDef>
   

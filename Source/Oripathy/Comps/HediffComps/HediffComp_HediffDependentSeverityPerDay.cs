@@ -4,7 +4,7 @@ using RimWorld;
 using UnityEngine;
 using Verse;
 
-namespace Originium
+namespace RimKnights
 {
     public class HediffComp_HediffDependentSeverityPerDay : HediffComp_SeverityModifierBase
     {

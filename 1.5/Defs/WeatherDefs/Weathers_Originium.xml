@@ -13,7 +13,7 @@
     <rainRate>1</rainRate>
     <moveSpeedMultiplier>0.9</moveSpeedMultiplier>
 	<overlayClasses>
-      <li>Originium.WeatherOverlay_OriginiumRain</li>
+      <li>RimKnights.WeatherOverlay_OriginiumRain</li>
       <li>WeatherOverlay_Fog</li>
     </overlayClasses> 
     <ambientSounds>
@@ -73,12 +73,12 @@
       </li>
       <li>
         <averageInterval>1000</averageInterval>
-        <eventClass>Originium.WeatherEvent_OriginiumLightningStrike</eventClass>
+        <eventClass>RimKnights.WeatherEvent_OriginiumLightningStrike</eventClass>
       </li>
     </eventMakers>
     <overlayClasses>
-      <li>Originium.WeatherOverlay_OriginiumRain</li>
-      <li>Originium.WeatherOverlay_OriginiumRain</li>
+      <li>RimKnights.WeatherOverlay_OriginiumRain</li>
+      <li>RimKnights.WeatherOverlay_OriginiumRain</li>
     </overlayClasses>
     <commonalityRainfallFactor>
       <points>
@@ -130,9 +130,9 @@
       <li>Ambient_Wind_Storm</li>
     </ambientSounds>
     <overlayClasses>
-      <li>Originium.WeatherOverlay_OriginiumDust</li>
-      <li>Originium.WeatherOverlay_OriginiumDust</li>
-      <li>Originium.WeatherOverlay_OriginiumDust</li>
+      <li>RimKnights.WeatherOverlay_OriginiumDust</li>
+      <li>RimKnights.WeatherOverlay_OriginiumDust</li>
+      <li>RimKnights.WeatherOverlay_OriginiumDust</li>
     </overlayClasses>
     <commonalityRainfallFactor>
       <points>

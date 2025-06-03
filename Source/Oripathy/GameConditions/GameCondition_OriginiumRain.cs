@@ -1,11 +1,11 @@
-﻿using Originium.Utilities;
+﻿using RimKnights.Utilities;
 using RimWorld;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
 using Verse;
 
-namespace Originium
+namespace RimKnights
 {
     public class GameCondition_OriginiumRain : GameCondition_ForceWeather
     {

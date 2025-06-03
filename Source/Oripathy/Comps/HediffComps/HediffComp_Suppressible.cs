@@ -2,7 +2,7 @@
 using System;
 using Verse;
 
-namespace Originium
+namespace RimKnights
 {
     public class HediffComp_Suppressible : HediffComp
     {

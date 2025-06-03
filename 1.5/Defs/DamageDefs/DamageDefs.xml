@@ -3,7 +3,7 @@
 	<DamageDef>
 		<defName>RK_ActiveOriginium</defName>
 		<label>active originium dust</label>
-		<workerClass>Originium.DamageWorker_ApplyHediff</workerClass>
+		<workerClass>RimKnights.DamageWorker_ApplyHediff</workerClass>
 		<harmsHealth>false</harmsHealth>
 		<!--<hediff>RK_OriginiumBuildup</hediff>-->
 		<defaultDamage>100</defaultDamage>

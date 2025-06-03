@@ -4,7 +4,7 @@ using System;
 using System.Collections.Generic;
 using Verse;
 
-namespace Originium
+namespace RimKnights
 {
     public static class DebugActions_Oripathy
     {

@@ -7,7 +7,7 @@ using RimWorld;
 using UnityEngine;
 using Verse;
 
-namespace Originium
+namespace RimKnights
 {
     public class CompHazardTouch : ThingComp
     {

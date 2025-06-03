@@ -5,7 +5,7 @@
 
 using Verse;
 
-namespace Originium
+namespace RimKnights
 {
     public class OriginiumUtility
     {

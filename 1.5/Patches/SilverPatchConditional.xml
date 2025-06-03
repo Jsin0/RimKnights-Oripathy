@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 	<!--Patch flesh typedef for hediffWounds-->
 <Patch>
-	<Operation Class="Originium.Utilities.PatchOperationModConditional">
+	<Operation Class="RimKnights.Utilities.PatchOperationModConditional">
 	  <settingName>orundum</settingName>
 	  <match Class="PatchOperationReplace">
 		<xpath>Defs/ThingDef[defName="Silver"]/graphicData/texPath</xpath>

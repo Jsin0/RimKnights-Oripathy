@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ModMetaData>
-	<packageId>RimKnights.Oripathy</packageId>
-	<name>Rimknights - Oripathy</name>
+	<packageId>RimKnights.Core</packageId>
+	<name>Rimknights - Core</name>
 	<author>Jsin0</author>
-	<description>RimKnights - Oripathy brings the dreaded disease from the world of Arknights to Rimworld.  Currently, this mod only has the disease oripathy and a few sources of infection.</description>
+	<description>RimKnights - Core brings the dreaded disease from the world of Arknights to Rimworld.  Adds oripathy and originium as well as basic features for future modules.</description>
 	<supportedVersions>
   		<li>1.5</li>
 	</supportedVersions>

@@ -85,7 +85,7 @@
   <ThoughtDef>
     <defName>Oripathic_Abhorrent_Social</defName>
     <thoughtClass>Thought_SituationalSocial</thoughtClass>
-    <workerClass>Originium.ThoughtWorker_Precept_IsOripathic_Social</workerClass>
+    <workerClass>RimKnights.ThoughtWorker_Precept_IsOripathic_Social</workerClass>
     <nullifyingTraits>
       <li>Kind</li>
     </nullifyingTraits>
@@ -101,7 +101,7 @@
   <ThoughtDef>
     <defName>NotOripathic_Abhorrent_Social</defName>
     <thoughtClass>Thought_SituationalSocial</thoughtClass>
-    <workerClass>Originium.ThoughtWorker_Precept_IsNotOripathic_Social</workerClass>
+    <workerClass>RimKnights.ThoughtWorker_Precept_IsNotOripathic_Social</workerClass>
     <nullifyingTraits>
       <li>Kind</li>
     </nullifyingTraits>
@@ -116,7 +116,7 @@
   
   <ThoughtDef>
     <defName>Oripathic_Abhorrent</defName>
-    <workerClass>Originium.ThoughtWorker_Precept_IsOripathic</workerClass>
+    <workerClass>RimKnights.ThoughtWorker_Precept_IsOripathic</workerClass>
     <validWhileDespawned>true</validWhileDespawned>
     <stages>
       <li>
@@ -129,7 +129,7 @@
   
   <ThoughtDef>
     <defName>NotOripathic_Abhorrent</defName>
-    <workerClass>Originium.ThoughtWorker_Precept_IsNotOripathic</workerClass>
+    <workerClass>RimKnights.ThoughtWorker_Precept_IsNotOripathic</workerClass>
     <validWhileDespawned>true</validWhileDespawned>
     <stages>
       <li>
@@ -143,7 +143,7 @@
   <ThoughtDef>
     <defName>Oripathic_Disapproved_Social</defName>
     <thoughtClass>Thought_SituationalSocial</thoughtClass>
-    <workerClass>Originium.ThoughtWorker_Precept_IsOripathic_Social</workerClass>
+    <workerClass>RimKnights.ThoughtWorker_Precept_IsOripathic_Social</workerClass>
     <validWhileDespawned>true</validWhileDespawned>
     <nullifyingTraits>
       <li>Kind</li>
@@ -158,7 +158,7 @@
   
   <ThoughtDef>
     <defName>Oripathic_Disapproved</defName>
-    <workerClass>Originium.ThoughtWorker_Precept_IsOripathic</workerClass>
+    <workerClass>RimKnights.ThoughtWorker_Precept_IsOripathic</workerClass>
     <validWhileDespawned>true</validWhileDespawned>
     <developmentalStageFilter>Baby, Child, Adult</developmentalStageFilter>
     <stages>
@@ -173,7 +173,7 @@
   <ThoughtDef>
     <defName>Oripathic_Exalted_Social</defName>
     <thoughtClass>Thought_SituationalSocial</thoughtClass>
-    <workerClass>Originium.ThoughtWorker_Precept_IsOripathic_Social</workerClass>
+    <workerClass>RimKnights.ThoughtWorker_Precept_IsOripathic_Social</workerClass>
     <validWhileDespawned>true</validWhileDespawned>
     <stages>
       <li>
@@ -186,7 +186,7 @@
   <ThoughtDef>
     <defName>NotOripathic_Exalted_Social</defName>
     <thoughtClass>Thought_SituationalSocial</thoughtClass>
-    <workerClass>Originium.ThoughtWorker_Precept_IsNotOripathic_Social</workerClass>
+    <workerClass>RimKnights.ThoughtWorker_Precept_IsNotOripathic_Social</workerClass>
     <validWhileDespawned>true</validWhileDespawned>
     <stages>
       <li>
@@ -198,7 +198,7 @@
   
   <ThoughtDef>
     <defName>Oripathic_Exalted</defName>
-    <workerClass>Originium.ThoughtWorker_Precept_IsOripathic</workerClass>
+    <workerClass>RimKnights.ThoughtWorker_Precept_IsOripathic</workerClass>
     <validWhileDespawned>true</validWhileDespawned>
     <developmentalStageFilter>Baby, Child, Adult</developmentalStageFilter>
     <stages>
@@ -212,7 +212,7 @@
   
   <ThoughtDef>
     <defName>NotOripathic_Exalted</defName>
-    <workerClass>Originium.ThoughtWorker_Precept_IsNotOripathic</workerClass>
+    <workerClass>RimKnights.ThoughtWorker_Precept_IsNotOripathic</workerClass>
     <validWhileDespawned>true</validWhileDespawned>
     <developmentalStageFilter>Baby, Child, Adult</developmentalStageFilter>
     <stages>

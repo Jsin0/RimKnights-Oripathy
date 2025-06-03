@@ -5,7 +5,7 @@ using HarmonyLib;
 using RimWorld;
 using Verse;
 
-namespace Originium.Utilities
+namespace RimKnights.Utilities
 {
     [StaticConstructorOnStartup]
     internal static class ApplyHarmony

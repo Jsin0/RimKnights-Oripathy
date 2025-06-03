@@ -2,7 +2,7 @@
 using System;
 using Verse;
 
-namespace Originium
+namespace RimKnights
 {
     [DefOf]
     public static class DamageDefOf

@@ -3,7 +3,7 @@ using System;
 using UnityEngine;
 using Verse;
 
-namespace Originium
+namespace RimKnights
 {
     public class Hediff_OriginiumBuildup : HediffWithComps
     {

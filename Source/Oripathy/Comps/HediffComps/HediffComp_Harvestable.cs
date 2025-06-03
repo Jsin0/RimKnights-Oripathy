@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using RimWorld;
 using Verse;
 
-namespace Originium
+namespace RimKnights
 {
     public class HediffComp_Harvestable : HediffComp
     {

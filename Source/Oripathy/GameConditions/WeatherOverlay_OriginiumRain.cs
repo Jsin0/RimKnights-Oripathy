@@ -3,7 +3,7 @@ using System;
 using UnityEngine;
 using Verse;
 
-namespace Originium
+namespace RimKnights
 {
     [StaticConstructorOnStartup]
     public class WeatherOverlay_OriginiumRain : SkyOverlay

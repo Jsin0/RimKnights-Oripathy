@@ -4,7 +4,7 @@ using System.Text;
 using UnityEngine;
 using Verse;
 
-namespace Originium
+namespace RimKnights
 {
     public class HediffComp_DynamicSeverityRange : HediffComp
     {

@@ -2,7 +2,7 @@
 <Defs>
 	<GameConditionDef>
 		<defName>RK_OriginiumRain</defName>
-		<conditionClass>Originium.GameCondition_OriginiumRain</conditionClass>
+		<conditionClass>RimKnights.GameCondition_OriginiumRain</conditionClass>
 		<label>originium rain</label>
 		<description>Rain contaminated with active originium falls from the sky. Anyone outside risks contracting RK_Oripathy and agitating their condition.</description>
 		<weatherDef>RK_OriginiumRain</weatherDef>
@@ -15,7 +15,7 @@
 		<allowUnderground>false</allowUnderground>
 		<pennedAnimalsSeekShelter>true</pennedAnimalsSeekShelter>
 		<modExtensions>
-            <li Class="Originium.Utilities.GameConditionExtension">
+            <li Class="RimKnights.Utilities.GameConditionExtension">
 				<compMutableCooldownFactor>0.95</compMutableCooldownFactor>
             </li>
         </modExtensions>
@@ -23,7 +23,7 @@
 	
 	<GameConditionDef>
 		<defName>RK_OriginiumStorm</defName>
-		<conditionClass>Originium.GameCondition_OriginiumRain</conditionClass>
+		<conditionClass>RimKnights.GameCondition_OriginiumRain</conditionClass>
 		<label>originium storm</label>
 		<description>Rain contaminated with active originium falls from the sky. The originium seems to have worsened the storm.</description>
 		<weatherDef>RK_OriginiumStorm</weatherDef>
@@ -36,7 +36,7 @@
 		<allowUnderground>false</allowUnderground>
 		<pennedAnimalsSeekShelter>true</pennedAnimalsSeekShelter>
 		<modExtensions>
-            <li Class="Originium.Utilities.GameConditionExtension">
+            <li Class="RimKnights.Utilities.GameConditionExtension">
                 <damageMultiplier>2</damageMultiplier>
 				<damageInterval>2687</damageInterval>
 				<compMutableCooldownFactor>0.85</compMutableCooldownFactor>
@@ -46,7 +46,7 @@
 	
 	<GameConditionDef>
 		<defName>RK_OriginiumDuststorm</defName>
-		<conditionClass>Originium.GameCondition_OriginiumRain</conditionClass>
+		<conditionClass>RimKnights.GameCondition_OriginiumRain</conditionClass>
 		<label>originium dust storm</label>
 		<description>Strong winds have kicked up clouds of active originium dust. \n\nAnyone outdoors risks exposure to originium.</description>
 		<weatherDef>RK_OriginiumDuststorm</weatherDef>
@@ -59,7 +59,7 @@
 		<allowUnderground>false</allowUnderground>
 		<pennedAnimalsSeekShelter>true</pennedAnimalsSeekShelter>
 		<modExtensions>
-            <li Class="Originium.Utilities.GameConditionExtension">
+            <li Class="RimKnights.Utilities.GameConditionExtension">
                 <protectedByRoof>false</protectedByRoof>
 				<damageInterval>2027</damageInterval>
 				<compMutableCooldownFactor>0.95</compMutableCooldownFactor>

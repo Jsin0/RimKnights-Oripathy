@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>		
 	<ThingDef Name="OriginiumClusterBase" ParentName="BuildingNaturalBase" Abstract="True">
-		<thingClass>Originium.Building_OriginiumCluster</thingClass>
+		<thingClass>RimKnights.Building_OriginiumCluster</thingClass>
 		<altitudeLayer>Building</altitudeLayer>
 		<passability>Impassable</passability>
 		<blockWind>true</blockWind>
@@ -34,8 +34,8 @@
 			<deconstructible>false</deconstructible>
 			<destroyShakeAmount>0</destroyShakeAmount>
 			<supportsWallAttachments>false</supportsWallAttachments>
-			<isResourceRock>true</isResourceRock>
-			<mineableThing>RK_OriginiumShard</mineableThing>
+			<isResourceRock>false</isResourceRock>
+			<mineableThing MayRequire="rimknights.industry">RK_OriginiumShard</mineableThing>
 			<mineableYield>1</mineableYield>
 		</building>
 		<damageMultipliers>
@@ -75,20 +75,15 @@
 		<statBases>
 		  <MaxHitPoints>100</MaxHitPoints>
 		</statBases>
-		<building>
-			<isResourceRock>false</isResourceRock>
-			<mineableThing>RK_OriginiumShard</mineableThing>
-			<mineableYield>1</mineableYield>
-		</building>
 		<comps>
-			<li Class="Originium.CompProperties_Mutable">
+			<li Class="RimKnights.CompProperties_Mutable">
 				<trigger>RK_ActiveOriginium</trigger>
 				<changeInto>RK_OriginiumClusterM</changeInto>
 				<offspring>RK_OriginiumCluster</offspring>
 				<spreadMTBHours>72</spreadMTBHours>
 				<spreadCount>3</spreadCount>
 			</li>
-			<li Class="Originium.CompProperties_HazardTouch">
+			<li Class="RimKnights.CompProperties_HazardTouch">
 				<damageDef>RK_OriginiumCut</damageDef>
 				<baseSpringChance>0.5</baseSpringChance>
 				<baseDamage>5</baseDamage>
@@ -120,13 +115,8 @@
 		<statBases>
 		  <MaxHitPoints>100</MaxHitPoints>
 		</statBases>
-		<building>
-			<isResourceRock>false</isResourceRock>
-			<mineableThing>RK_OriginiumShard</mineableThing>
-			<mineableYield>1</mineableYield>
-		</building>
 		<comps>
-			<li Class="Originium.CompProperties_HazardTouch">
+			<li Class="RimKnights.CompProperties_HazardTouch">
 				<damageDef>RK_OriginiumCut</damageDef>
 				<baseSpringChance>1.0</baseSpringChance>
 				<baseDamage>5</baseDamage>
@@ -157,7 +147,7 @@
 			<mineableYield>2</mineableYield>
 		</building>
 		<comps>
-			<li Class="Originium.CompProperties_Mutable">
+			<li Class="RimKnights.CompProperties_Mutable">
 				<trigger>RK_ActiveOriginium</trigger>
 				<changeInto>RK_OriginiumClusterL</changeInto>
 				<offspring>RK_OriginiumCluster</offspring>
@@ -185,11 +175,10 @@
 		  <MaxHitPoints>500</MaxHitPoints>
 		</statBases>
 		<building>
-			<mineableThing>RK_OriginiumShard</mineableThing>
 			<mineableYield>5</mineableYield>
 		</building>
 		<comps>
-			<li Class="Originium.CompProperties_Mutable">
+			<li Class="RimKnights.CompProperties_Mutable">
 				<trigger>RK_ActiveOriginium</trigger>
 				<offspring>RK_OriginiumClusterM</offspring>
 				<spreadMTBHours>24</spreadMTBHours>

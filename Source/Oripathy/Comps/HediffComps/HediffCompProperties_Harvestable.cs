@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Verse;
 
-namespace Originium
+namespace RimKnights
 {
     public class HediffCompProperties_Harvestable : HediffCompProperties
     {

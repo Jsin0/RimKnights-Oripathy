@@ -5,7 +5,7 @@ using Verse;
 using Verse.Noise;
 using Verse.Sound;
 
-namespace Originium
+namespace RimKnights
 {
     public class Hediff_Oripathy : HediffWithComps
     {
@@ -72,11 +72,20 @@ namespace Originium
                 return;
             }
             Corpse corpse;
-            if (this.shatterWarmupEffecter == null && (corpse = this.pawn.ParentHolder as Corpse) != null)
+            if((corpse = this.pawn.ParentHolder as Corpse) != null)
             {
-                this.shatterWarmupEffecter = EffecterDefOf.RK_ShatterWarmup.Spawn(corpse, corpse.MapHeld, Vector3.zero);
-                corpse.MapHeld.effecterMaintainer.AddEffecterToMaintain(this.shatterWarmupEffecter, corpse, 250);
+                if (this.warmupEffecter == null)
+                {
+                    this.warmupEffecter = EffecterDefOf.RK_ShatterWarmup.Spawn(corpse, corpse.MapHeld, Vector3.zero);
+                    corpse.MapHeld.effecterMaintainer.AddEffecterToMaintain(this.warmupEffecter, corpse, 250);
+                }
+                if(this.warmupSustainer == null)
+                {
+                    SoundInfo soundInfo = SoundInfo.InMap(corpse, MaintenanceType.PerTickRare);
+                    this.shatterSustainer = SoundDefOf.FireBurning.TrySpawnSustainer(soundInfo);
+                }
             }
+                
         }
         private void TryShatter()
         {
@@ -105,6 +114,7 @@ namespace Originium
         public override void Tick()
         {
             base.Tick();
+            /*
             Corpse corpse;
             if ((corpse = this.pawn.ParentHolder as Corpse) != null && this.shattering)
             {
@@ -119,10 +129,11 @@ namespace Originium
                     SoundInfo soundInfo = SoundInfo.InMap(corpse, MaintenanceType.PerTickRare);
                     this.shatterSustainer = SoundDefOf.Tunnel.TrySpawnSustainer(soundInfo);
                 }
-            }
+            }*/
         }
         public void TickRare()
         {
+            Log.Message("shatter tickrare");
             if (!this.shattering)
             {
                 return;
@@ -131,10 +142,15 @@ namespace Originium
             {
                 //Log.Message("Warmup timer not done.");
                 this.warmupTimer.TickInterval();
-                if (this.shatterWarmupEffecter != null)
+                if (this.warmupEffecter != null)
                 {
                     //Log.Message("prolonging warmup shatterEffecter");
-                    this.shatterWarmupEffecter.ticksLeft += 250;
+                    this.warmupEffecter.ticksLeft += 250;
+                }
+                if(this.warmupSustainer != null && !this.warmupSustainer.Ended)
+                {
+                    this.warmupSustainer.Maintain();
+
                 }
                 else
                 {
@@ -147,11 +163,7 @@ namespace Originium
                 this.shatterTimer.TickInterval();
                 if (this.shatterSustainer != null && !this.shatterSustainer.Ended)
                 {
-                    Sustainer sustainer = this.shatterSustainer;
-                    if (sustainer != null)
-                    {
-                        sustainer.Maintain();
-                    }
+                    this.shatterSustainer.Maintain();
                 }
                 if (this.shatterEffecter != null)
                 {
@@ -179,8 +191,8 @@ namespace Originium
                     IntVec3 center = base.pawn.Position;
                     Map map = base.pawn.MapHeld;
                     float radius = base.pawn.BodySize * 2f;
-                    GenExplosion.DoExplosion(center, map, radius, Originium.DamageDefOf.RK_ActiveOriginium, base.pawn, -1, -1f, null, null, null, null, ThingDefOf.RK_OriginiumCluster, 0.20f, 1, null, false, null, 0f, 1, 0f, true, null, null, null, true, 1f, 0f, true, null, 1f, null, null);
-                    GenSpawn.Spawn(Originium.ThingDefOf.RK_OriginiumCluster, center, map);
+                    GenExplosion.DoExplosion(center, map, radius, RimKnights.DamageDefOf.RK_ActiveOriginium, base.pawn, -1, -1f, null, null, null, null, ThingDefOf.RK_OriginiumCluster, 0.20f, 1, null, false, null, 0f, 1, 0f, true, null, null, null, true, 1f, 0f, true, null, 1f, null, null);
+                    GenSpawn.Spawn(RimKnights.ThingDefOf.RK_OriginiumCluster, center, map);
 
                 }
                 else
@@ -203,9 +215,9 @@ namespace Originium
             {
                 shatterEffecter.ForceEnd();
             }
-            if (shatterWarmupEffecter != null)
+            if (warmupEffecter != null)
             {
-                shatterWarmupEffecter.ForceEnd();
+                warmupEffecter.ForceEnd();
             }
         }
 
@@ -232,7 +244,9 @@ namespace Originium
 
         private bool shattering;
 
-        private Effecter shatterWarmupEffecter;
+        private Effecter warmupEffecter;
+
+        private Sustainer warmupSustainer;
 
         private Effecter shatterEffecter;
 

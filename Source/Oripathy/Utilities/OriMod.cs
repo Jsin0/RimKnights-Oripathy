@@ -2,14 +2,14 @@
 using UnityEngine;
 using Verse;
 
-namespace Originium
+namespace RimKnights
 {
     public class OriMod : Mod
     {
-        internal static OripathyModSettings settings;
+        internal static CoreModeSettings settings;
         public OriMod(ModContentPack content) : base(content)
         {
-            settings = GetSettings<OripathyModSettings>();
+            settings = GetSettings<CoreModeSettings>();
         }
         public override void DoSettingsWindowContents(Rect inRect)
         {
@@ -25,7 +25,7 @@ namespace Originium
         }
         public override string SettingsCategory()
         {
-            return "RimKnights - Oripathy";
+            return "RimKnights - Core";
         }
     }
 }

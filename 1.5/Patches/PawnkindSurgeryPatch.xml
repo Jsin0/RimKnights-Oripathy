@@ -5,7 +5,7 @@
 	  <value>
 		<li>RK_ExciseLesion</li>
 		<li>RK_Infect</li>
-		<li>RK_HarvestLesion</li>
+		<li MayRequire="rimknights.industry">RK_HarvestLesion</li>
 	  </value>
 	</Operation>
 </Patch>

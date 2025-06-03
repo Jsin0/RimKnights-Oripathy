@@ -7,7 +7,7 @@ using RimWorld;
 using Verse;
 using Verse.Noise;
 
-namespace Originium
+namespace RimKnights
 {
     public class Building_OriginiteGenerator : Building
     {

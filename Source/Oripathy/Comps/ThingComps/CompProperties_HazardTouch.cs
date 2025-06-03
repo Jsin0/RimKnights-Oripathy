@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using RimWorld;
 using Verse;
 
-namespace Originium
+namespace RimKnights
 {
     public class CompProperties_HazardTouch : CompProperties
     {

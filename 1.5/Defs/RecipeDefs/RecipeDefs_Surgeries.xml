@@ -63,7 +63,7 @@
 		<defName>RK_HarvestLesion</defName>
 		<label>harvest originium</label>
 		<description>Remove a body part.</description>
-		<workerClass>Originium.Recipe_HarvestHediff</workerClass>
+		<workerClass>RimKnights.Recipe_HarvestHediff</workerClass>
 		<jobString>Harvesting originium.</jobString>
 		<isViolation>true</isViolation>
 		<workAmount>2000</workAmount>

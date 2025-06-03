@@ -11,3 +11,7 @@ D:\SteamLibrary\steamapps\common\RimWorld\Mods\Rimknights - Oripathy\1.5\Assembl
 D:\SteamLibrary\steamapps\common\RimWorld\Mods\Rimknights - Oripathy\Source\Oripathy\obj\Debug\Oripathy.csproj.AssemblyReference.cache
 D:\SteamLibrary\steamapps\common\RimWorld\Mods\Rimknights - Oripathy\Source\Oripathy\obj\Debug\Oripathy.csproj.CoreCompileInputs.cache
 D:\SteamLibrary\steamapps\common\RimWorld\Mods\Rimknights - Oripathy\Source\Oripathy\obj\Debug\Originium.dll
+D:\SteamLibrary\steamapps\common\RimWorld\Mods\Rimknights - Core\1.5\Assemblies\Originium.dll
+D:\SteamLibrary\steamapps\common\RimWorld\Mods\Rimknights - Core\Source\Oripathy\obj\Debug\Oripathy.csproj.AssemblyReference.cache
+D:\SteamLibrary\steamapps\common\RimWorld\Mods\Rimknights - Core\Source\Oripathy\obj\Debug\Oripathy.csproj.CoreCompileInputs.cache
+D:\SteamLibrary\steamapps\common\RimWorld\Mods\Rimknights - Core\Source\Oripathy\obj\Debug\Originium.dll

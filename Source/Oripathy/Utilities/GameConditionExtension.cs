@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using RimWorld;
 using Verse;
 
-namespace Originium.Utilities
+namespace RimKnights.Utilities
 {
     public class GameConditionExtension : DefModExtension
     {

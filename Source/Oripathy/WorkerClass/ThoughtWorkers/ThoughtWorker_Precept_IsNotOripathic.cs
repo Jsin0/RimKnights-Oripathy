@@ -2,7 +2,7 @@
 using System;
 using Verse;
 
-namespace Originium
+namespace RimKnights
 {
     public class ThoughtWorker_Precept_IsNotOripathic : ThoughtWorker_Precept
     {

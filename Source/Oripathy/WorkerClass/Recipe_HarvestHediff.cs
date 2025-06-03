@@ -7,7 +7,7 @@ using RimWorld;
 using Verse;
 using static HarmonyLib.Code;
 
-namespace Originium
+namespace RimKnights
 {
     public class Recipe_HarvestHediff : Recipe_Surgery
     {
@@ -67,7 +67,7 @@ namespace Originium
                 GenSpawn.Spawn(comp.Props.resource, billDoer.Position, billDoer.Map);
                 hediff.Severity += comp.Props.severityOffset;
                 comp.ResetCooldown();
-                pawn.health.AddHediff(HediffDefOf.RK_HarvestShock);
+                //pawn.health.AddHediff(HediffDefOf.RK_HarvestShock);
             }
         }
     }
