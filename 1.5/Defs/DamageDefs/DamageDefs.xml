@@ -24,6 +24,22 @@
 		</additionalHediffs>
 	</DamageDef>
 	
+	<DamageDef ParentName="Bomb">
+		<defName>RK_OriginiumBlast</defName>
+		<label>originium explosion</label>
+		<defaultDamage>100</defaultDamage>
+		<canInterruptJobs>true</canInterruptJobs>
+		<additionalHediffs>
+		  <li>
+			<hediff>RK_OriginiumBuildup</hediff>
+			<severityPerDamageDealt>0.01</severityPerDamageDealt>
+			<victimSeverityScaling>ToxicEnvironmentResistance</victimSeverityScaling>
+			<inverseStatScaling>true</inverseStatScaling>
+			<victimSeverityScalingByInvBodySize>true</victimSeverityScalingByInvBodySize>
+		  </li>
+		</additionalHediffs>
+	</DamageDef>
+	
 	<DamageDef>
 		<defName>RK_OriginiumGas</defName>
 		<label>active originium dust</label>

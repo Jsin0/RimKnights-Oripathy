@@ -14,5 +14,7 @@ namespace Originium
         public static HediffDef RK_Oripathy;
 
         public static HediffDef RK_OriginiumBuildup;
+
+        public static HediffDef RK_HarvestShock;
     }
 }

@@ -25,6 +25,7 @@ namespace Originium.Utilities
             List<(string, string)> pairs = GenerateStringPairs();
             foreach (Type type in allDefTypes)
             {
+                if (type.IsAbstract || type == typeof(BackstoryDef)) continue;
                 foreach(Def def in GenDefDatabase.GetAllDefsInDatabaseForDef(type))
                 {
                     bool flag = false;
@@ -35,7 +36,7 @@ namespace Originium.Utilities
                             if (def.label.Contains(pair.Item1))
                             {
                                 //Log.Message("replacing label");
-                                def.label = def.label.Replace(pair.Item1, pair.Item2);
+                                def.label = ReplaceWord(def.label, pair.Item1, pair.Item2);
                                 flag = true;
                             }
                         }
@@ -47,7 +48,7 @@ namespace Originium.Utilities
                             if (def.description.Contains(pair.Item1))
                             {
                                 //Log.Message("replacing description");
-                                def.description = def.description.Replace(pair.Item1, pair.Item2);
+                                def.description = ReplaceWord(def.description, pair.Item1, pair.Item2);
                                 flag = true;
                             }
 
@@ -56,7 +57,7 @@ namespace Originium.Utilities
 
                     if(type == typeof(RecipeDef))
                     {
-                        Log.Message("recipedef");
+                        //Log.Message("recipedef");
                         RecipeDef recipeDef = def as RecipeDef;
                         if (recipeDef?.jobString != null)
                         {
@@ -65,14 +66,14 @@ namespace Originium.Utilities
                                 if (recipeDef.jobString.Contains(pair.Item1))
                                 {
                                     //Log.Message("replacing description");
-                                    recipeDef.jobString = recipeDef.jobString.Replace(pair.Item1, pair.Item2);
+                                    recipeDef.jobString = ReplaceWord(recipeDef.jobString, pair.Item1, pair.Item2);
                                     flag = true;
                                 }
 
                             }
                         }
                     }
-                    if (flag) Log.Message(def.label + ": " + def.description);
+                    //if (flag) Log.Message(def.label + ": " + def.description);
                 }
             }
         }
@@ -98,8 +99,9 @@ namespace Originium.Utilities
 
         private static string ReplaceWord(string input, string word, string replacement)
         {
-            string pattern = $"\\b{replacement}\\b";
+            string pattern = $@"\b{word}\b";
             return Regex.Replace(input, pattern, replacement, RegexOptions.IgnoreCase);
+            
         }
     }
 }

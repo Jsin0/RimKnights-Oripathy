@@ -57,47 +57,53 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Originium\Building_OriginiumTrapDamager.cs" />
-    <Compile Include="Originium\CompHazardTouch.cs" />
-    <Compile Include="Originium\CompMutable.cs" />
-    <Compile Include="Originium\CompProperties_HazardTouch.cs" />
-    <Compile Include="Originium\CompProperties_Mutable.cs" />
-    <Compile Include="Originium\DamageWorker_ApplyHediff.cs" />
-    <Compile Include="Oripathy\AffectorHediff.cs" />
+    <Compile Include="ThingClass_Buildings\Building_OriginiteGenerator.cs" />
+    <Compile Include="Comps\ThingComps\CompHazardTouch.cs" />
+    <Compile Include="Comps\ThingComps\CompMutable.cs" />
+    <Compile Include="Comps\ThingComps\CompProperties_HazardTouch.cs" />
+    <Compile Include="Comps\ThingComps\CompProperties_Mutable.cs" />
+    <Compile Include="WorkerClass\DamageWorker_ApplyHediff.cs" />
+    <Compile Include="HediffClass\AffectorHediff.cs" />
+    <Compile Include="Comps\HediffComps\HediffCompProperties_Harvestable.cs" />
+    <Compile Include="Comps\HediffComps\HediffComp_Harvestable.cs" />
+    <Compile Include="WorkerClass\Recipe_HarvestHediff.cs" />
     <Compile Include="Utilities\PatchOperationModConditional.cs" />
     <Compile Include="Utilities\StringPatcher.cs" />
     <Compile Include="Utilities\DebugActions_Oripathy.cs" />
     <Compile Include="DefOf\EffecterDefOf.cs" />
     <Compile Include="GameConditions\GameCondition_OriginiumRain.cs" />
-    <Compile Include="Oripathy\HediffCompProperties_DynamicSeverityRange.cs" />
-    <Compile Include="Oripathy\HediffCompProperties_Suppressible.cs" />
-    <Compile Include="Oripathy\HediffComp_DynamicSeverityRange.cs" />
-    <Compile Include="Oripathy\HediffComp_Suppressible.cs" />
-    <Compile Include="Oripathy\HediffDefOf.cs" />
-    <Compile Include="Oripathy\Hediff_OriginiumBuildup.cs" />
+    <Compile Include="Comps\HediffComps\HediffCompProperties_DynamicSeverityRange.cs" />
+    <Compile Include="Comps\HediffComps\HediffCompProperties_Suppressible.cs" />
+    <Compile Include="Comps\HediffComps\HediffComp_DynamicSeverityRange.cs" />
+    <Compile Include="Comps\HediffComps\HediffComp_Suppressible.cs" />
+    <Compile Include="DefOf\HediffDefOf.cs" />
+    <Compile Include="HediffClass\Hediff_OriginiumBuildup.cs" />
     <Compile Include="Utilities\ModSettings.cs" />
-    <Compile Include="Originium\Building_OriginiumCluster.cs" />
+    <Compile Include="ThingClass_Buildings\Building_OriginiumCluster.cs" />
     <Compile Include="Utilities\GameConditionExtension.cs" />
     <Compile Include="Utilities\OriginiumUtility.cs" />
     <Compile Include="Utilities\OriMod.cs" />
     <Compile Include="DefOf\StatDefOf.cs" />
     <Compile Include="DefOf\ThingDefOf.cs" />
     <Compile Include="DefOf\DamageDefOf.cs" />
-    <Compile Include="Oripathy\HediffCompProperties_HediffDependentSeverityPerDay.cs" />
-    <Compile Include="Oripathy\HediffComp_HediffDependentSeverityPerDay.cs" />
-    <Compile Include="Oripathy\Hediff_Oripathy.cs" />
+    <Compile Include="Comps\HediffComps\HediffCompProperties_HediffDependentSeverityPerDay.cs" />
+    <Compile Include="Comps\HediffComps\HediffComp_HediffDependentSeverityPerDay.cs" />
+    <Compile Include="HediffClass\Hediff_Oripathy.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utilities\ApplyHarmony.cs" />
-    <Compile Include="ThoughtWorkers\ThoughtWorker_Precept_IsNotOripathic.cs" />
-    <Compile Include="ThoughtWorkers\ThoughtWorker_Precept_IsNotOripathic_Social.cs" />
-    <Compile Include="ThoughtWorkers\ThoughtWorker_Precept_IsOripathic.cs" />
-    <Compile Include="ThoughtWorkers\ThoughtWorker_Precept_IsOripathic_Social.cs" />
+    <Compile Include="WorkerClass\ThoughtWorkers\ThoughtWorker_Precept_IsNotOripathic.cs" />
+    <Compile Include="WorkerClass\ThoughtWorkers\ThoughtWorker_Precept_IsNotOripathic_Social.cs" />
+    <Compile Include="WorkerClass\ThoughtWorkers\ThoughtWorker_Precept_IsOripathic.cs" />
+    <Compile Include="WorkerClass\ThoughtWorkers\ThoughtWorker_Precept_IsOripathic_Social.cs" />
     <Compile Include="GameConditions\WeatherEvent_OriginiumLightningStrike.cs" />
     <Compile Include="GameConditions\WeatherOverlay_OriginiumDust.cs" />
     <Compile Include="GameConditions\WeatherOverlay_OriginiumRain.cs" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="DefOfHelpers\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

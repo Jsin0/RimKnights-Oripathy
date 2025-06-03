@@ -26,9 +26,9 @@ namespace Originium
         public override void CompPostTick(ref float severityAdjustment)
         {
             base.CompPostTick(ref severityAdjustment);
-
             if (base.Pawn.IsHashIntervalTick(this.Props.updateInterval))
             {
+                //Log.Message("adjusting min/max severity");
                 CalculateLimits();
                 AdjustSeverity();
             }
@@ -42,13 +42,15 @@ namespace Originium
             float adjustment;
             if (severity < minSeverity)
             {
-                adjustment = (minSeverity - severity) / 60000f / this.Props.updateInterval;
+                adjustment = (minSeverity - severity) / 60000f * this.Props.updateInterval;
                 //Log.Message($"severity {severity} {adjustment}");
+                //Log.Message(adjustment);
                 this.parent.Severity += adjustment;
+                //Log.Message("new severity: " + this.parent.Severity);
             }
             else if (severity > maxSeverity)
             {
-                adjustment = (severity - maxSeverity) / 60000f / this.Props.updateInterval;
+                adjustment = (severity - maxSeverity) / 60000f * this.Props.updateInterval;
                 //Log.Message($"severity {severity} {adjustment}");
                 this.parent.Severity -= adjustment;
             }
@@ -57,33 +59,53 @@ namespace Originium
 
         public void CalculateLimits()
         {
-            Hediff hediff = this.Pawn.health.hediffSet.GetFirstHediffOfDef(this.Props.hediff);
-            float severity = ((hediff != null) ? hediff.Severity : 0f);
-
             float num;
 
-            if ((num = this.Props.CalculateMinSeverity(severity)) != -88)
+            if (CalculateSeverityCap(Props.minAffector, out num))
             {
                 minSeverity = num;
             }
             else
             {
-                //Log.Message("no min factor supplied");
                 minSeverity = this.parent.def.minSeverity;
             }
 
-            if ((num = this.Props.CalculateMaxSeverity(severity)) != -88)
+            if (CalculateSeverityCap(Props.maxAffector, out num))
             {
                 maxSeverity = num;
             }
             else
             {
-                //Log.Message("no max factor supplied");
                 maxSeverity = this.parent.def.maxSeverity;
             }
 
-
             if (maxSeverity < minSeverity) { maxSeverity = minSeverity; }
+
+            //Log.Message($"New Limits: {minSeverity} - {maxSeverity}");
+        }
+
+        private bool CalculateSeverityCap(AffectorHediff affector, out float cap)
+        {
+            if (affector?.hediff != null)
+            {
+                Hediff hediff = this.Pawn.health.hediffSet.GetFirstHediffOfDef(affector.hediff);
+                float severity = hediff?.Severity ?? 0f;
+
+                if (affector.curve != null)
+                {
+                    cap = affector.curve.Evaluate(severity);
+                }
+                else
+                {
+                    cap = severity * affector.severityFactor + affector.severityOffset;
+                }
+                return true;
+            }
+            else
+            {
+                cap = 0f;
+                return false;
+            }
         }
 
         public override void CompExposeData()

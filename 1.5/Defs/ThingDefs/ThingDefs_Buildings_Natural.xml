@@ -4,7 +4,6 @@
 		<thingClass>Originium.Building_OriginiumCluster</thingClass>
 		<altitudeLayer>Building</altitudeLayer>
 		<passability>Impassable</passability>
-		
 		<blockWind>true</blockWind>
 		<castEdgeShadows>true</castEdgeShadows>
 		<fillPercent>1</fillPercent>

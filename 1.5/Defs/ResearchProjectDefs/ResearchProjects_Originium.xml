@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
+	<!--========Medicine========-->
 	<ResearchProjectDef>
 		<defName>RK_SuppressantProduction</defName>
 		<label>oripathy suppressant production</label>
@@ -20,7 +21,7 @@
 		  <rulesStrings>
 			<li>subject->Suppressant production</li>
 
-			<li>subject_story->lectured to the United Planets about oripathy treatment</li>
+			<li>subject_story->lectured to the Summit of Nations about oripathy treatment</li>
 			<li>subject_story->was driven out of Ursus as a quack, for selling a medicine that "doesn't do anything"</li>
 			<li>subject_story->managed an outbreak of oripathy through careful distribution of suppressant</li>
 
@@ -30,26 +31,54 @@
 	</ResearchProjectDef>
 	
 	<ResearchProjectDef>
-    <defName>RK_FrostNovaDrug</defName>
-    <label>frostnova</label>
-    <description>Prepare herbal medicine into frostnova, a mild analgesic.</description>
-    <baseCost>500</baseCost>
-    <techLevel>Neolithic</techLevel>
-    <tags>
-      <li>TribalStart</li>
-    </tags>
-    <researchViewX>0.00</researchViewX>
-    <researchViewY>1.40</researchViewY>
-    <generalRules>
-      <rulesStrings>
-        <li>subject->frostnova</li>
+		<defName>RK_FrostNovaDrug</defName>
+		<label>frostnova</label>
+		<description>Prepare herbal medicine into frostnova, a mild analgesic.</description>
+		<baseCost>500</baseCost>
+		<techLevel>Neolithic</techLevel>
+		<tags>
+		  <li>TribalStart</li>
+		</tags>
+		<researchViewX>0.00</researchViewX>
+		<researchViewY>1.40</researchViewY>
+		<generalRules>
+		  <rulesStrings>
+			<li>subject->frostnova</li>
 
-        <li>subject_story->experimented with herbal medicine to help infected soldiers</li>
-        <li>subject_story->legalized frostnova for mass production across several coreworlds, when [ANYPAWN_pronoun] had the power to do so</li>
+			<li>subject_story->experimented with herbal medicine to help infected soldiers</li>
+			<li>subject_story->learned the recipe while traveling through the frozen wastes with a group of armed infected</li>
+			<li>subject_story->legalized frostnova for mass production across several coreworlds, when [ANYPAWN_pronoun] had the power to do so</li>
 
-        <li>subject_gerund->preparing frostnova</li>
-      </rulesStrings>
-    </generalRules>
-  </ResearchProjectDef>
+			<li>subject_gerund->preparing frostnova</li>
+		  </rulesStrings>
+		</generalRules>
+	</ResearchProjectDef>
 
+	<!--========Electricity========-->
+	
+	<ResearchProjectDef>
+		<defName>OriginiumPower</defName>
+		<label>originium power</label>
+		<description>Harness the power of originium to power your base.</description>
+		<baseCost>1600</baseCost>
+		<techLevel>Industrial</techLevel>
+		<tags>
+		  <li>ClassicStart</li>
+		</tags>
+		<researchViewX>5.00</researchViewX>
+		<researchViewY>2.90</researchViewY>
+		<discoveredLetterTitle>About: Originium</discoveredLetterTitle>
+		<discoveredLetterText>You've learned to harness the latent power inside originium to produce electricity.  This is only the beginning.</discoveredLetterText>
+		<generalRules>
+		  <rulesStrings>
+			<li>subject->originium power</li>
+
+			<li>subject_story->witnessed a catastrophe and became determined to tame its power</li>
+			<li>subject_story->created the first originium powered light bulb</li>
+			<li>subject_story->stole schematics from sarkaz engineers detailing a prototype originium power plant</li>
+
+			<li>subject_gerund->harnessing originium</li>
+		  </rulesStrings>
+		</generalRules>
+	</ResearchProjectDef>
 </Defs>

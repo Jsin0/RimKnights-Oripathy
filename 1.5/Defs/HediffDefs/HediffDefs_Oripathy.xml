@@ -66,11 +66,6 @@
 						<mtbDays>226</mtbDays>
 						<canAffectAnyLivePart>true</canAffectAnyLivePart>
 					</li>
-					<li Class="HediffGiver_AddSeverity">
-						<hediff>RK_OriginiumBuildup</hediff>
-						<severityAmount>0.001</severityAmount>
-						<mtbHours>12</mtbHours>
-					</li>
 				</hediffGivers>
 				<statOffsets>
 				  <PsychicSensitivity>0.3</PsychicSensitivity>
@@ -85,11 +80,6 @@
 						<hediff>RK_OripathyLesion</hediff>
 						<mtbDays>60</mtbDays>
 						<canAffectAnyLivePart>true</canAffectAnyLivePart>
-					</li>
-					<li Class="HediffGiver_AddSeverity">
-						<hediff>RK_OriginiumBuildup</hediff>
-						<severityAmount>0.001</severityAmount>
-						<mtbHours>12</mtbHours>
 					</li>
 				</hediffGivers>
 				<statOffsets>
@@ -106,11 +96,6 @@
 						<mtbDays>10</mtbDays>
 						<countToAffect>2</countToAffect>
 						<canAffectAnyLivePart>true</canAffectAnyLivePart>
-					</li>
-					<li Class="HediffGiver_AddSeverity">
-						<hediff>RK_OriginiumBuildup</hediff>
-						<severityAmount>0.001</severityAmount>
-						<mtbHours>12</mtbHours>
 					</li>
 				</hediffGivers>
 				<statOffsets>
@@ -237,15 +222,17 @@
 				<severityPerDayTended>-0.2</severityPerDayTended>
 			</li>
 			<li Class="Originium.HediffCompProperties_DynamicSeverityRange">
-				<hediff>RK_Oripathy</hediff>
-				<minSeverityCurve>
-				  <points>
-					<li>(0, 0.00)</li>
-					<li>(0.25, 0.1)</li>
-					<li>(0.6, 0.35)</li>
-					<li>(1.0, 0.50)</li>
-				  </points>
-				</minSeverityCurve>
+				<minAffector>
+					<hediff>RK_Oripathy</hediff>
+					<curve>
+					  <points>
+						<li>(0, 0.00)</li>
+						<li>(0.25, 0.1)</li>
+						<li>(0.6, 0.35)</li>
+						<li>(1.0, 0.50)</li>
+					  </points>
+					</curve>
+				</minAffector>
 				<updateInterval>60</updateInterval>
 			</li>
 		</comps>
@@ -359,15 +346,17 @@
 				<severityPerDayTended>-0.3</severityPerDayTended>
 			</li>
 			<li Class="Originium.HediffCompProperties_DynamicSeverityRange">
-				<hediff>RK_OripathySuppressed</hediff>
-				<minSeverityCurve>
-				  <points>
-					<li>(0, 0.00)</li>
-					<li>(0.25, 0.1)</li>
-					<li>(0.6, 0.35)</li>
-					<li>(1.0, 0.50)</li>
-				  </points>
-				</minSeverityCurve>
+				<minAffector>
+					<hediff>RK_OripathySuppressed</hediff>
+					<curve>
+					  <points>
+						<li>(0, 0.00)</li>
+						<li>(0.25, 0.1)</li>
+						<li>(0.6, 0.35)</li>
+						<li>(1.0, 0.50)</li>
+					  </points>
+					</curve>
+				</minAffector>
 				<updateInterval>250</updateInterval>
 			</li>
 		</comps>
@@ -472,7 +461,6 @@
 				<baseTendDurationHours>96</baseTendDurationHours>
 				<severityPerDayTended>-0.005</severityPerDayTended>
 			</li>
-			
 			<li Class="Originium.HediffCompProperties_HediffDependentSeverityPerDay">
 				<AffectorHediffs>
 					<li>
@@ -504,6 +492,50 @@
 						<inverseStatScaling>true</inverseStatScaling>
 					</li>
 				</AffectorHediffs>
+			</li>
+			<li Class="Originium.HediffCompProperties_Harvestable">
+				<resource>RK_OriginiumShard</resource>
+				<severityOffset>-0.30</severityOffset>
+				<miniumSeverity>0.60</miniumSeverity>
+			</li>
+		</comps>
+	</HediffDef>
+	<HediffDef>
+		<defName>RK_HarvestShock</defName>
+		<label>post-harvest pain</label>
+		<description>originium has recently been harvested from this person's lesions.</description>
+		<hediffClass>HediffWithComps</hediffClass>
+		<tendable>true</tendable>
+		<everCurableByItem>false</everCurableByItem>
+		<forceRemoveOnResurrection>true</forceRemoveOnResurrection>
+		<initialSeverity>0.35</initialSeverity>
+		<maxSeverity>1</maxSeverity>
+		<stages>
+			<li>
+				<minSeverity>0.01</minSeverity>
+				<painOffset>0.05</painOffset>
+			</li>
+			<li>
+				<minSeverity>0.15</minSeverity>
+				<painOffset>0.10</painOffset>
+			</li>
+			<li>
+				<minSeverity>0.35</minSeverity>
+				<painOffset>0.15</painOffset>
+			</li>
+			<li>
+				<minSeverity>0.65</minSeverity>
+				<painOffset>0.20</painOffset>
+			</li>
+			<li>
+				<minSeverity>0.85</minSeverity>
+				<painOffset>0.30</painOffset>
+			</li>
+		</stages>
+		<comps>
+			<li Class="HediffCompProperties_TendDuration">
+				<baseTendDurationHours>24</baseTendDurationHours>
+				<severityPerDayTended>-0.25</severityPerDayTended>
 			</li>
 		</comps>
 	</HediffDef>

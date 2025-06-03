@@ -9,9 +9,9 @@
 		<workAmount>8000</workAmount>
 		<removesHediff>RK_OripathyLesion</removesHediff>
 		<successfullyRemovedHediffMessage>{0} has successfully excised {1}'s lesion.</successfullyRemovedHediffMessage>
-		<deathOnFailedSurgeryChance>0.15</deathOnFailedSurgeryChance>
+		<deathOnFailedSurgeryChance>0.10</deathOnFailedSurgeryChance>
 		<skillRequirements>
-		  <Medicine>12</Medicine>
+		  <Medicine>8</Medicine>
 		</skillRequirements>
 		<ingredients>
 		  <li>
@@ -60,29 +60,33 @@
 	</RecipeDef>
 	  
 	<RecipeDef ParentName="SurgeryFlesh">
-		<defName>RK_BloodTransfusion</defName>
-		<label>originium purge</label>
-		<description>Use hemogen packs to temporarily reduce the target's blood originium buildup.</description>
-		<jobString>performing blood transfusion on TargetA.</jobString>
-		<workAmount>800</workAmount>
-		<hideBodyPartNames>true</hideBodyPartNames>
-		<targetsBodyPart>false</targetsBodyPart>
-		<anesthetize>false</anesthetize>
-		<workerClass>Recipe_BloodTransfusion</workerClass>
-		<surgeryOutcomeEffect IsNull="True" /> <!-- Always succeeds -->
+		<defName>RK_HarvestLesion</defName>
+		<label>harvest originium</label>
+		<description>Remove a body part.</description>
+		<workerClass>Originium.Recipe_HarvestHediff</workerClass>
+		<jobString>Harvesting originium.</jobString>
+		<isViolation>true</isViolation>
+		<workAmount>2000</workAmount>
+		<surgerySuccessChanceFactor>1.2</surgerySuccessChanceFactor>
+		<developmentalStageFilter>Child, Adult</developmentalStageFilter>
+		<deathOnFailedSurgeryChance>0.05</deathOnFailedSurgeryChance>
+		<skillRequirements>
+		  <Medicine>12</Medicine>
+		</skillRequirements>
 		<ingredients>
 		  <li>
 			<filter>
-			  <thingDefs>
-				<li>HemogenPack</li>
-			  </thingDefs>
+			  <categories>
+				<li>Medicine</li>
+			  </categories>
 			</filter>
+			<count>1</count>
 		  </li>
 		</ingredients>
 		<fixedIngredientFilter>
-		  <thingDefs>
-			<li>HemogenPack</li>
-		  </thingDefs>
+		  <categories>
+			<li>Medicine</li>
+		  </categories>
 		</fixedIngredientFilter>
 	</RecipeDef>
 
