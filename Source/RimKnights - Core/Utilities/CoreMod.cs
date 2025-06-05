@@ -7,9 +7,25 @@ namespace RimKnights
     public class CoreMod : Mod
     {
         internal static CoreModSettings settings;
+
+        public static bool baselinersImmune;
+
+        public static bool originiumSpawnsPollution;
+
+        public static bool infectionMonitor;
+
+        public static bool orifuel;
+
+        public static bool orundum;
         public CoreMod(ModContentPack content) : base(content)
         {
             settings = GetSettings<CoreModSettings>();
+
+            baselinersImmune = settings.baselinersImmune;
+            originiumSpawnsPollution = settings.originiumSpawnsPollution;
+            infectionMonitor = settings.infectionMonitor;
+            orifuel = settings.orifuel;
+            orundum = settings.orundum;
         }
         public override void DoSettingsWindowContents(Rect inRect)
         {

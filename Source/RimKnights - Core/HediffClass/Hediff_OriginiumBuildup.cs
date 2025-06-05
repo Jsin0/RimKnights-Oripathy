@@ -15,21 +15,6 @@ namespace RimKnights
             }
         }
 
-        public override void PostAdd(DamageInfo? dinfo)
-        {
-            if (!this.pawn.RaceProps.IsFlesh)
-            {
-                this.pawn.health.RemoveHediff(this);
-                return;
-            }
-            else if (GeneUtility.IsBaseliner(this.pawn) && CoreMod.settings.baselinersImmune)
-            {
-                this.pawn.health.RemoveHediff(this);
-                return;
-            }
-
-            base.PostAdd(dinfo);
-        }
 
         public override void ExposeData()
         {

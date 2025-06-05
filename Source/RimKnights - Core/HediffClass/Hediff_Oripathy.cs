@@ -11,21 +11,9 @@ namespace RimKnights
     {
         public override void PostAdd(DamageInfo? dinfo)
         {
-            if (!this.pawn.RaceProps.IsFlesh)
-            {
-                Log.Error("Tried giving oripathy to an inorganic pawn");
-                this.pawn.health.RemoveHediff(this);
-                return;
-            }
-            else if (GeneUtility.IsBaseliner(this.pawn) && CoreMod.settings.baselinersImmune)
-            {
-                this.pawn.health.RemoveHediff(this);
-                return;
-            }
+            base.PostAdd(dinfo);
 
             (this.pawn.health.GetOrAddHediff(HediffDefOf.RK_OriginiumBuildup) as Hediff_OriginiumBuildup).isOripathic = true;
-
-            base.PostAdd(dinfo);
 
         }
 

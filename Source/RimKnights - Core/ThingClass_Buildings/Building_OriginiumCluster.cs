@@ -8,9 +8,9 @@ namespace RimKnights
         public override void SpawnSetup(Map map, bool respawningAfterLoad)
         {
             base.SpawnSetup(map, respawningAfterLoad);
-            if (ModsConfig.BiotechActive && CoreMod.settings.originiumSpawnsPollution)
+            if (ModsConfig.BiotechActive && CoreMod.originiumSpawnsPollution)
             {
-                PollutionUtility.GrowPollutionAt(this.Position,map,0);
+                PollutionUtility.GrowPollutionAt(this.Position,map,1);
             }
         }
     }

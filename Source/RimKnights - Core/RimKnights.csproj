@@ -91,6 +91,7 @@
     <Compile Include="HediffClass\Hediff_Oripathy.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utilities\ApplyHarmony.cs" />
+    <Compile Include="WorkerClass\RitualOutcomeEffectWorking_Oripathy.cs" />
     <Compile Include="WorkerClass\ThoughtWorkers\ThoughtWorker_Precept_IsNotOripathic.cs" />
     <Compile Include="WorkerClass\ThoughtWorkers\ThoughtWorker_Precept_IsNotOripathic_Social.cs" />
     <Compile Include="WorkerClass\ThoughtWorkers\ThoughtWorker_Precept_IsOripathic.cs" />

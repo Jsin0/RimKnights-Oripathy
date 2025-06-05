@@ -27,11 +27,33 @@ namespace RimKnights
                 return (this.cachedSeverity / Mathf.Abs(this.def.lethalSeverity)).ToStringPercent("F0");
             }
         }
+        public override void PostAdd(DamageInfo? dinfo)
+        {
+            if (!this.pawn.RaceProps.IsFlesh)
+            {
+                this.pawn.health.RemoveHediff(this);
+                return;
+            }
+            else if (GeneUtility.IsBaseliner(this.pawn) && CoreMod.baselinersImmune)
+            {
+                this.pawn.health.RemoveHediff(this);
+                return;
+            }
+
+            base.PostAdd(dinfo);
+        }
         public override bool Visible
         {
             get
             {
-                return base.Visible && (!CoreMod.settings.infectionMonitor && (this.CurStage == null || this.CurStage.becomeVisible));
+                if (CoreMod.infectionMonitor)
+                {
+                    return shouldUpdate;
+                }
+                else
+                {
+                    return base.Visible;
+                }
             }
         }
         public override void Tick()

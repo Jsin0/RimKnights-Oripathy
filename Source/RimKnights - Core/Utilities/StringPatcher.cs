@@ -14,7 +14,7 @@ namespace RimKnights.Utilities
     {
         static StringPatcher()
         {
-            if(CoreMod.settings.orifuel || CoreMod.settings.orundum)
+            if((CoreMod.orifuel || CoreMod.orundum ) && LanguageDatabase.activeLanguage.folderName == "English")
             {
                 PatchText();
             }
@@ -81,19 +81,14 @@ namespace RimKnights.Utilities
         static List<(string,string)> GenerateStringPairs()
         {
             List<(string,string)> pairs = new List<(string,string)> ();
-            if (CoreMod.settings.orifuel)
+            if (CoreMod.orifuel)
             {
-                pairs.Add(("chemfuel", "orifuel"));
+                pairs.Add((RimWorld.ThingDefOf.Chemfuel.label, "orifuel"));
                 if(ModsConfig.ActiveModsInLoadOrder.Any((ModMetaData mod) => mod.Name =="Vanilla Chemfuel Expanded" || mod.PackageId == "vanillaexpanded.vchemfuele"))
                 {
-                    pairs.Add(("deepchem", "crude originium"));
+                    pairs.Add(("deepchem", "orisludge"));
                 }
             }
-            if (CoreMod.settings.orundum)
-            {
-                pairs.Add(("silver", "orundum"));
-            }
-            //Log.Message(pairs);
             return pairs;
         }
 
