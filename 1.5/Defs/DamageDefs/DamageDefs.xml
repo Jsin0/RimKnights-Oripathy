@@ -27,7 +27,6 @@
 	<DamageDef ParentName="Bomb">
 		<defName>RK_OriginiumBlast</defName>
 		<label>originium explosion</label>
-		<defaultDamage>100</defaultDamage>
 		<canInterruptJobs>true</canInterruptJobs>
 		<additionalHediffs>
 		  <li>

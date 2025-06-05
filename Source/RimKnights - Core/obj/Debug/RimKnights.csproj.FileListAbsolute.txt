@@ -1,0 +1,4 @@
+D:\SteamLibrary\steamapps\common\RimWorld\Mods\Rimknights - Core\Source\RimKnights - Core\obj\Debug\RimKnights.csproj.AssemblyReference.cache
+D:\SteamLibrary\steamapps\common\RimWorld\Mods\Rimknights - Core\Source\RimKnights - Core\obj\Debug\RimKnights.csproj.CoreCompileInputs.cache
+D:\SteamLibrary\steamapps\common\RimWorld\Mods\Rimknights - Core\1.5\Assemblies\RimKnights.dll
+D:\SteamLibrary\steamapps\common\RimWorld\Mods\Rimknights - Core\Source\RimKnights - Core\obj\Debug\RimKnights.dll

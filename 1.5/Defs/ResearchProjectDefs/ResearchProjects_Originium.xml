@@ -1,6 +1,31 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 	<!--========Medicine========-->
+	
+	<ResearchProjectDef>
+		<defName>RK_EarlyDiagnosis</defName>
+		<label>early oripathy diagnosis</label>
+		<description>Manufacture a device that can diagnose and track a person's oripathy.</description>
+		<baseCost>1000</baseCost>
+		<techLevel>Spacer</techLevel>
+		<requiredResearchFacilities>
+		  <li>MultiAnalyzer</li>
+		</requiredResearchFacilities>
+		<researchViewX>4.00</researchViewX>
+		<researchViewY>2.50</researchViewY>
+		<generalRules>
+		  <rulesStrings>
+			<li>subject->Early diagnosis</li>
+
+			<li>subject_story->lost a loved one too soon due to the late diagnosis of oripathy.</li>
+			<li>subject_story->secured a trade deal for materials used to manufacture infection monitors</li>
+			<li>subject_story->stole a crate of infection monitors to distribute to the poor</li>
+
+			<li>subject_gerund->prototyped an infection monitor</li>
+		  </rulesStrings>
+		</generalRules>
+	</ResearchProjectDef>
+	
 	<ResearchProjectDef>
 		<defName>RK_SuppressantProduction</defName>
 		<label>oripathy suppressant production</label>

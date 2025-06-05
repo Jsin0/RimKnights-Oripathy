@@ -1,9 +1,0 @@
-D:\SteamLibrary\steamapps\common\RimWorld\Mods\Rimknights - Oripathy\Source\RimKnights - Oripathy-SCGF\bin\Debug\RimKnights - Oripathy-SCGF.dll
-D:\SteamLibrary\steamapps\common\RimWorld\Mods\Rimknights - Oripathy\Source\RimKnights - Oripathy-SCGF\bin\Debug\RimKnights - Oripathy-SCGF.pdb
-D:\SteamLibrary\steamapps\common\RimWorld\Mods\Rimknights - Oripathy\Source\RimKnights - Oripathy-SCGF\obj\Debug\RimKnights - Oripathy-SCGF.csproj.AssemblyReference.cache
-D:\SteamLibrary\steamapps\common\RimWorld\Mods\Rimknights - Oripathy\Source\RimKnights - Oripathy-SCGF\obj\Debug\RimKnights - Oripathy-SCGF.csproj.CoreCompileInputs.cache
-D:\SteamLibrary\steamapps\common\RimWorld\Mods\Rimknights - Oripathy\Source\RimKnights - Oripathy-SCGF\obj\Debug\RimKnights - Oripathy-SCGF.dll
-D:\SteamLibrary\steamapps\common\RimWorld\Mods\Rimknights - Oripathy\Source\RimKnights - Oripathy-SCGF\obj\Debug\RimKnights - Oripathy-SCGF.pdb
-D:\SteamLibrary\steamapps\common\RimWorld\Mods\Rimknights - Oripathy\Source\RimKnights - Oripathy-SCGF\bin\Debug\0Harmony.dll
-D:\SteamLibrary\steamapps\common\RimWorld\Mods\Rimknights - Oripathy\Source\RimKnights - Oripathy-SCGF\bin\Debug\Originium.dll
-D:\SteamLibrary\steamapps\common\RimWorld\Mods\Rimknights - Oripathy\Source\RimKnights - Oripathy-SCGF\obj\Debug\RimKnigh.A8C2155B.Up2Date

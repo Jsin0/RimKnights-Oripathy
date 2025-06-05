@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+	<BaselinersImmuneLabel>Baseliners Immune</BaselinersImmuneLabel>
+	<BaselinersImmuneDesc>Baseliners cannot get oripathy or blood originium buildup.\n\n<i>Originium will never harm you.<i></BaselinersImmuneDesc>
+	
+	<OriginiumPollutionLabel>Originium clusters spread pollution</OriginiumPollutionLabel>
+	<OriginiumPollutionDesc>Originium clusters will pollute the ground when they spawn.</OriginiumPollutionDesc>
+	
+	<OrifuelLabel>Chemfuel is now orifuel</OrifuelLabel>
+	<OrifuelDesc>Replaces 'chemfuel' from all def labels and descriptions with 'orifuel' (defName is unchanged)</OrifuelDesc>
+
+	<OrundumLabel>Silver is now orundum</OrundumLabel>
+	<OrundumDesc>Replaces 'silver' from all def labels and descriptions with 'orundum' (does not affect trade)</OrundumDesc>
+</LanguageData>

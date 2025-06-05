@@ -8,6 +8,7 @@
 		<taleOnVisible>ToxicityRevealed</taleOnVisible>
 		<scenarioCanAdd>true</scenarioCanAdd>
 		<maxSeverity>1</maxSeverity>
+		<alwaysShowSeverity>true</alwaysShowSeverity>
 		<comps>
 			<li Class="RimKnights.HediffCompProperties_Suppressible">
 				<suppressor>RK_SuppressantHigh</suppressor>
@@ -37,14 +38,11 @@
 			</li>
 		</comps>
 		<stages>
-			  <li>
-				<label>initial</label>
-				<becomeVisible>false</becomeVisible>
-			  </li>
 			<li>
 				<label>minor</label>
 				<minSeverity>0.01</minSeverity>
 				<painOffset>0.05</painOffset>
+				<becomeVisible>true</becomeVisible>
 				<hediffGivers>
 					<li Class="HediffGiver_Random">
 						<hediff>RK_OripathyLesion</hediff>
@@ -198,6 +196,7 @@
 		<scenarioCanAdd>true</scenarioCanAdd>
 		<maxSeverity>1</maxSeverity>
 		<initialSeverity>0.0</initialSeverity>
+		<alwaysShowSeverity>true</alwaysShowSeverity>
 		<comps>
 			<li Class="RimKnights.HediffCompProperties_Suppressible">
 				<suppressor>RK_SuppressantHigh</suppressor>
@@ -239,12 +238,9 @@
 		<stages>
 		  <li>
 			<label>initial</label>
-			<becomeVisible>false</becomeVisible>
-		  </li>
-		  <li>
-			<label>initial</label>
-			<minSeverity>0.04</minSeverity>
+			<minSeverity>0.01</minSeverity>
 			<painOffset>0.01</painOffset>
+			<becomeVisible>true</becomeVisible>
 			<capMods>
 			  <li>
 				<capacity>BloodFiltration</capacity>
@@ -362,10 +358,6 @@
 		</comps>
 		<stages>
 		  <li>
-			<label>initial</label>
-			<becomeVisible>false</becomeVisible>
-		  </li>
-		  <li>
 			<label>low</label>
 			<minSeverity>0.01</minSeverity>
 			<painOffset>0.01</painOffset>
@@ -422,6 +414,7 @@
 		  <li>
 			<label>minor</label>
 			<partEfficiencyOffset>-0.1</partEfficiencyOffset>
+			<becomeVisible>false</becomeVisible>
 			<painOffset>0.01</painOffset>
 		  </li>
 		  <li>
@@ -457,6 +450,9 @@
 		  </li>
 		</stages>
 		<comps>
+			<li Class="HediffCompProperties_SurgeryInspectable">
+				<surgicalDetectionDesc>{PAWN_nameDef} has originium crystals growing on their body.</surgicalDetectionDesc>
+			</li>
 			<li Class="HediffCompProperties_TendDuration">
 				<baseTendDurationHours>96</baseTendDurationHours>
 				<severityPerDayTended>-0.005</severityPerDayTended>
