@@ -42,52 +42,19 @@
 		<workAmount>200</workAmount>
 		<hideBodyPartNames>true</hideBodyPartNames>
 		<isViolation>true</isViolation>
-		<!--
 		<ingredients>
 		  <li>
 			<filter>
-			  <categories>
+			  <thingDefs>
 				<li>RK_OriginiumShard</li>
-			  </categories>
+			  </thingDefs>
 			</filter>
 			<count>1</count>
 		  </li>
-		</ingredients>-->
+		</ingredients>
 		<targetsBodyPart>false</targetsBodyPart>
 		<addsHediff>RK_Oripathy</addsHediff>
 		<successfullyRemovedHediffMessage>{0} has successfully infected {1}.</successfullyRemovedHediffMessage>
 		<surgeryIgnoreEnvironment>true</surgeryIgnoreEnvironment>
 	</RecipeDef>
-	  
-	<RecipeDef ParentName="SurgeryFlesh">
-		<defName>RK_HarvestLesion</defName>
-		<label>harvest originium</label>
-		<description>Remove a body part.</description>
-		<workerClass>RimKnights.Recipe_HarvestHediff</workerClass>
-		<jobString>Harvesting originium.</jobString>
-		<isViolation>true</isViolation>
-		<workAmount>2000</workAmount>
-		<surgerySuccessChanceFactor>1.2</surgerySuccessChanceFactor>
-		<developmentalStageFilter>Child, Adult</developmentalStageFilter>
-		<deathOnFailedSurgeryChance>0.05</deathOnFailedSurgeryChance>
-		<skillRequirements>
-		  <Medicine>12</Medicine>
-		</skillRequirements>
-		<ingredients>
-		  <li>
-			<filter>
-			  <categories>
-				<li>Medicine</li>
-			  </categories>
-			</filter>
-			<count>1</count>
-		  </li>
-		</ingredients>
-		<fixedIngredientFilter>
-		  <categories>
-			<li>Medicine</li>
-		  </categories>
-		</fixedIngredientFilter>
-	</RecipeDef>
-
 </Defs>

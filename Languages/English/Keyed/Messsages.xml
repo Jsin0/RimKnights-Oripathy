@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+	<MessageShatteringCorpse>Corpse of {PAWN} is starting to shatter.</MessageShatteringCorpse>
+	<MessageShatteredCorpse>Corpse of {PAWN} has shattered.</MessageShatteredCorpse>
+	<MessagePawnAlreadyOripathic>{PAWN} already has oripathy.</MessagePawnAlreadyOripathic>
+	<MessagePawnNowOripathic>{PAWN} now has oripathy.</MessagePawnNowOripathic>
+</LanguageData>

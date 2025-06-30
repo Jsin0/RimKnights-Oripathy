@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <InteractionDef>
+    <defName>Speech_Infection</defName>
+    <label>infection speech</label>
+    <workerClass>InteractionWorker</workerClass>
+    <ignoreTimeSinceLastInteraction>True</ignoreTimeSinceLastInteraction>
+    <symbol>Things/Mote/SpeechSymbols/Speech</symbol>
+    <logRulesInitiator>
+      <include><li>SpeechUtility</li></include>
+      <rulesStrings>
+        <li>r_logentry->[INITIATOR_nameDef] [spokeof] [speechtopic].</li>
+
+        <li>speechtopic->becoming one through originium</li>
+        <li>speechtopic->experiencing true equality</li>
+        <li>speechtopic->the assimilated world</li>
+        <li>speechtopic->the warm embrace of originium</li>
+        <li>speechtopic->life after death in originium</li>
+        <li>speechtopic->assimilation</li>
+        <li>speechtopic->a painless existence</li>
+        <li>speechtopic->returning to dust</li>
+
+      </rulesStrings>
+    </logRulesInitiator>
+  </InteractionDef>
+  
+</Defs>

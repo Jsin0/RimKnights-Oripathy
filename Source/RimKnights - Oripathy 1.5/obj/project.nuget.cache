@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "YMv+9Lry7sE=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Josh\\Documents\\Rimworld Mods In Progress\\Rimknights - Oripathy\\Source\\RimKnights - Oripathy 1.5\\RimKnights - Oripathy.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Josh\\.nuget\\packages\\krafs.rimworld.ref\\1.5.4409\\krafs.rimworld.ref.1.5.4409.nupkg.sha512",
+    "C:\\Users\\Josh\\.nuget\\packages\\lib.harmony\\2.3.6\\lib.harmony.2.3.6.nupkg.sha512"
+  ],
+  "logs": []
+}

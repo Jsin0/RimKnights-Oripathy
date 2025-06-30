@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <RitualOutcomeEffectDef MayRequire="Ludeon.RimWorld.Ideology">
+    <defName>InfectionCeremony</defName>
+    <description>Depending on ritual quality, participants will get between {MINMOOD} and {MAXMOOD} mood for {MOODDAYS} days.</description>
+    <workerClass>RimKnights.Oripathy.RitualOutcomeEffectWorker_Oripathy</workerClass>
+    <extraPredictedOutcomeDescriptions MayRequire="Ludeon.RimWorld.Royalty">
+      <li>If the {0} is satisfying, the infected person might get a psylink upgrade or unlock new psychic powers.</li>
+    </extraPredictedOutcomeDescriptions>
+    <allowAttachableOutcome>false</allowAttachableOutcome>
+    <comps>
+      <li Class="RitualOutcomeComp_BuildingOfDefUsed">
+        <def>Lectern</def>
+        <qualityOffset>0.15</qualityOffset>
+        <maxHorDistFromTarget>5</maxHorDistFromTarget>
+      </li>
+      <li Class="RitualOutcomeComp_RitualSeatPresent">
+        <qualityOffset>0.2</qualityOffset>
+      </li>
+      <li Class="RitualOutcomeComp_RolePresentNotSubstituted">
+        <roleId>doer</roleId>
+        <label>moral guide present</label>
+        <qualityOffset>0.2</qualityOffset>
+      </li>
+      <li Class="RitualOutcomeComp_ParticipantCount">
+        <label>participant count</label>
+        <curve>
+          <points>
+            <li>(1,  0.0)</li>
+            <li>(5,  0.17)</li>
+            <li>(10, 0.25)</li>
+          </points>
+        </curve>
+      </li>
+      <li Class="RitualOutcomeComp_RitualTargetDefs">
+        <allowAltars>true</allowAltars>
+        <label>started at altar</label>
+        <expectedThingLabelTip>an altar</expectedThingLabelTip>
+        <qualityOffset>0.2</qualityOffset>
+      </li>
+    </comps>
+    <outcomeChances>
+      <li>
+        <label>Terrible</label>
+        <chance>0.05</chance>
+        <memory>TerribleInfection</memory>
+        <description>The {0} was terrible! The speech was stuttering and incoherent. The cutting technique was botched. Everyone was waiting for it to end.</description>
+        <positivityIndex>-2</positivityIndex>
+      </li>
+      <li>
+        <label>Boring</label>
+        <chance>0.15</chance>
+        <memory>BoringInfection</memory>
+        <description>The {0} was boring. The speech was repetitive and the cutting technique was noticeably flawed. It just didn't feel dignified.</description>
+        <positivityIndex>-1</positivityIndex>
+      </li>
+      <li>
+        <label>Satisfying</label>
+        <chance>0.6</chance>
+        <memory>SatisfyingInfection</memory>
+        <description>The {0} was satisfying. The speech felt meaningful, and the cutting technique was precise and dignified.</description>
+        <potentialExtraOutcomeDesc>The blinded person will get a psylink upgrade or unlock a new psychic power.</potentialExtraOutcomeDesc>
+        <positivityIndex>1</positivityIndex>
+      </li>
+      <li>
+        <label>Spectacular</label>
+        <chance>0.2</chance>
+        <memory>SpectacularInfection</memory>
+        <description>The {0} was spectacular! The speech brought everyone to the edge of a frenzy just as the originium dust activated, showering the participants in a golden shower.</description>
+        <potentialExtraOutcomeDesc>The infected person will get a psylink upgrade or unlock a new psychic power.</potentialExtraOutcomeDesc>
+        <positivityIndex>2</positivityIndex>
+      </li>
+    </outcomeChances>
+  </RitualOutcomeEffectDef>
+
+</Defs>

@@ -1,0 +1,10 @@
+C:\Users\Josh\Documents\Rimworld Mods In Progress\Rimknights - Oripathy\Source\RimKnights - Oripathy\obj\Debug\RimKnights - Oripathy.csproj.AssemblyReference.cache
+C:\Users\Josh\Documents\Rimworld Mods In Progress\Rimknights - Oripathy\Source\RimKnights - Oripathy\obj\Debug\RimKnights - Oripathy.csproj.CoreCompileInputs.cache
+C:\Users\Josh\Documents\Rimworld Mods In Progress\Rimknights - Oripathy\1.5\Assemblies\RimKnights - Oripathy.dll
+C:\Users\Josh\Documents\Rimworld Mods In Progress\Rimknights - Oripathy\Source\RimKnights - Oripathy\obj\Debug\RimKnigh.D1DCD313.Up2Date
+C:\Users\Josh\Documents\Rimworld Mods In Progress\Rimknights - Oripathy\Source\RimKnights - Oripathy\obj\Debug\RimKnights - Oripathy.dll
+C:\Users\Josh\Documents\Rimworld Mods In Progress\Rimknights - Oripathy\1.6\Assemblies\RimKnights - Oripathy.dll
+C:\Users\Josh\Documents\Rimworld Mods In Progress\Rimknights - Oripathy\Source\RimKnights - Oripathy 1.6\obj\Debug\RimKnights - Oripathy.csproj.AssemblyReference.cache
+C:\Users\Josh\Documents\Rimworld Mods In Progress\Rimknights - Oripathy\Source\RimKnights - Oripathy 1.6\obj\Debug\RimKnights - Oripathy.csproj.CoreCompileInputs.cache
+C:\Users\Josh\Documents\Rimworld Mods In Progress\Rimknights - Oripathy\Source\RimKnights - Oripathy 1.6\obj\Debug\RimKnigh.D1DCD313.Up2Date
+C:\Users\Josh\Documents\Rimworld Mods In Progress\Rimknights - Oripathy\Source\RimKnights - Oripathy 1.6\obj\Debug\RimKnights - Oripathy.dll

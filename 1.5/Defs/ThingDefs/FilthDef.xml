@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>		
+	<ThingDef>
+    <defName>RK_ShatterGlow</defName>
+    <label>glow</label>
+    <thingClass>ThingWithComps</thingClass>
+    <category>Filth</category>
+    <altitudeLayer>Filth</altitudeLayer>
+    <tickerType>Normal</tickerType>
+    <graphicData>
+      <graphicClass>Graphic_Flicker</graphicClass>
+      <shaderType>Transparent</shaderType>
+      <texPath>Things/Filth/Grainy</texPath>
+      <color>(91,75,65,97)</color>
+    </graphicData> 
+    <useHitPoints>false</useHitPoints>
+    <comps>
+	  <li Class="RimKnights.Core.CompProperties_Follower"/>
+      <li Class="CompProperties_Glower">
+        <glowRadius>3</glowRadius>
+        <glowColor>(184,136,83,0)</glowColor>
+      </li>
+    </comps>
+  </ThingDef>
+</Defs>

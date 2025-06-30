@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+	<RitualOutcomeExtraDesc_OripathicPsylink>Thanks to a satisfying infection ritual, {PAWN_labelShort} gained a psylink level!</RitualOutcomeExtraDesc_OripathicPsylink>
+	<RitualOutcomeExtraDesc_OripathicPsylinkAbility>With a new pyslink level {PAWN_pronoun} gained a {0} psycast.</RitualOutcomeExtraDesc_OripathicPsylinkAbility>
+	
+	<RitualOripathyTriggerExtraDesc>Oripathy is expected for {IDEOMEMBERPLURAL}.</RitualOripathyTriggerExtraDesc>
+	
+	<MessageRitualRoleMustNotHaveOripathy>{0} must not have oripathy</MessageRitualRoleMustNotHaveOripathy>
+	<MessageRitualRoleMustRequireInfection>{0_labelShort} does not require oripathy infection.</MessageRitualRoleMustRequireInfection>
+</LanguageData>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<HediffDef>
+		<defName>RK_HarvestShock</defName>
+		<label>post-harvest pain</label>
+		<description>Originium has recently been harvested from this person's lesions.</description>
+		<hediffClass>HediffWithComps</hediffClass>
+		<tendable>true</tendable>
+		<everCurableByItem>true</everCurableByItem>
+		<forceRemoveOnResurrection>true</forceRemoveOnResurrection>
+		<initialSeverity>0.35</initialSeverity>
+		<maxSeverity>1</maxSeverity>
+		<stages>
+			<li>
+				<minSeverity>0.01</minSeverity>
+				<painOffset>0.05</painOffset>
+			</li>
+			<li>
+				<minSeverity>0.15</minSeverity>
+				<painOffset>0.10</painOffset>
+			</li>
+			<li>
+				<minSeverity>0.35</minSeverity>
+				<painOffset>0.15</painOffset>
+			</li>
+			<li>
+				<minSeverity>0.65</minSeverity>
+				<painOffset>0.20</painOffset>
+			</li>
+			<li>
+				<minSeverity>0.85</minSeverity>
+				<painOffset>0.30</painOffset>
+			</li>
+		</stages>
+		<comps>
+			<li Class="HediffCompProperties_TendDuration">
+				<baseTendDurationHours>24</baseTendDurationHours>
+				<severityPerDayTended>-0.15</severityPerDayTended>
+			</li>
+		</comps>
+	</HediffDef>
+</Defs>

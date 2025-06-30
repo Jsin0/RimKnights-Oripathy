@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <RitualBehaviorDef MayRequire="Ludeon.RimWorld.Ideology">
+    <defName>InfectionCeremony</defName>
+    <workerClass>RitualBehaviorWorker_Mutilation</workerClass>
+    <roles>
+      <li Class="RimKnights.Oripathy.RitualRoleInfectionTarget">
+        <label>target</label>
+        <id>target</id>
+        <maxCount>1</maxCount>
+        <required>True</required>
+        <missingDesc>the person to infect</missingDesc>
+        <ignoreBleeding>true</ignoreBleeding>
+        <countsAsParticipant>False</countsAsParticipant>
+      </li>
+      <li Class="RitualRoleTag">
+        <label>cutter</label>
+        <id>doer</id>
+        <precept>IdeoRole_Moralist</precept>
+        <tag>Moralist</tag>
+        <maxCount>1</maxCount>
+        <substitutable>true</substitutable>
+        <required>true</required>
+        <missingDesc>the person who performs the infection</missingDesc>
+        <countsAsParticipant>False</countsAsParticipant>
+      </li>
+    </roles>
+    <stages>
+      <!-- Target is taken -->
+      <li Class="RitualStage_InteractWithRole">
+        <targets>
+          <li>
+            <pawnId>doer</pawnId>
+            <targetId>target</targetId>
+          </li>
+        </targets>
+        <defaultDuty>Spectate</defaultDuty>
+        <essential>True</essential>
+        <failTriggers>
+          <li Class="StageFailTrigger_TargetPawnUnreachable">
+            <takerId>doer</takerId>
+            <takeeId>target</takeeId>
+            <desc>Target is not reachable.</desc>
+          </li>
+          <li Class="StageFailTrigger_PawnAsleep">
+            <desc>escort asleep</desc>
+            <pawnId>doer</pawnId>
+          </li>
+        </failTriggers>
+        <endTriggers>
+          <li Class="StageEndTrigger_RolesArrived">
+            <roleIds>
+              <li>doer</li>
+            </roleIds>
+            <clearTag>true</clearTag>
+          </li>
+        </endTriggers>
+        <roleBehaviors>
+          <li>
+            <roleId>doer</roleId>
+            <dutyDef>DeliverPawnToCell</dutyDef>
+            <customPositions>
+              <li Class="RitualPosition_OnInteractionCell">
+                <offset>(-1,0,0)</offset>
+                <facing>South</facing>
+              </li>
+            </customPositions>
+          </li>
+          <li>
+            <roleId>target</roleId>
+            <dutyDef>Idle</dutyDef>
+          </li>
+        </roleBehaviors>
+      </li>
+      <li>
+        <defaultDuty>Spectate</defaultDuty>
+        <essential>True</essential>
+        <endTriggers>
+          <li Class="StageEndTrigger_RolesArrived">
+            <roleIds>
+              <li>doer</li>
+            </roleIds>
+            <clearTag>true</clearTag>
+          </li>
+        </endTriggers>
+        <roleBehaviors>
+          <li>
+            <roleId>doer</roleId>
+            <dutyDef>ArriveToCell</dutyDef>
+            <customPositions>
+              <li Class="RitualPosition_Lectern">
+                <maxDistanceToFocus>5</maxDistanceToFocus>
+              </li>
+              <li Class="RitualPosition_OnInteractionCell">
+                <facing>West</facing>
+              </li>
+            </customPositions>
+          </li>
+          <li>
+            <roleId>target</roleId>
+            <dutyDef>Idle</dutyDef>
+          </li>
+        </roleBehaviors>
+      </li>
+      <li>
+        <defaultDuty>Spectate</defaultDuty>
+        <endTriggers>
+          <li Class="StageEndTrigger_DurationPercentage">
+            <percentage>0.7</percentage>
+          </li>
+        </endTriggers>
+        <roleBehaviors>
+          <li>
+            <roleId>doer</roleId>
+            <dutyDef>SpeakOnCellFacingSpectators</dutyDef>
+            <speakerInteraction>Speech_Infection</speakerInteraction>
+            <customPositions>
+              <li Class="RitualPosition_Lectern">
+                <maxDistanceToFocus>5</maxDistanceToFocus>
+              </li>
+              <li Class="RitualPosition_OnInteractionCell">
+                <facing>West</facing>
+              </li>
+            </customPositions>
+          </li>
+          <li>
+            <roleId>target</roleId>
+            <dutyDef>Idle</dutyDef>
+            <customPositions>
+              <li Class="RitualPosition_OnInteractionCell">
+                <offset>(-1,0,0)</offset>
+                <facing>South</facing>
+              </li>
+            </customPositions>
+          </li>
+        </roleBehaviors>
+      </li>
+      <li Class="RitualStage_InteractWithRole">
+        <targetId>target</targetId>
+        <defaultDuty>Spectate</defaultDuty>
+        <essential>True</essential>
+        <endTriggers>
+          <li Class="StageEndTrigger_MutilatedRole">
+            <roleId>target</roleId>
+          </li>
+        </endTriggers>
+        <roleBehaviors>
+          <li>
+            <roleId>doer</roleId>
+            <dutyDef>Infect</dutyDef>
+          </li>
+          <li>
+            <roleId>target</roleId>
+            <dutyDef>Idle</dutyDef>
+            <customPositions>
+              <li Class="RitualPosition_OnInteractionCell">
+                <offset>(-1,0,0)</offset>
+                <facing>South</facing>
+              </li>
+            </customPositions>
+          </li>
+        </roleBehaviors>
+      </li>
+      <li>
+        <defaultDuty>Spectate</defaultDuty>
+        <endTriggers>
+          <li Class="StageEndTrigger_DurationPercentage">
+            <percentage>0.3</percentage>
+          </li>
+        </endTriggers>
+        <postAction Class="RitualStageAction_ClearTag">
+          <roleId>doer</roleId>
+          <tag>Arrived</tag>
+        </postAction>
+        <roleBehaviors>
+          <li>
+            <roleId>doer</roleId>
+            <dutyDef>SpeakOnCellFacingSpectators</dutyDef>
+            <speakerInteraction>Speech_Infection</speakerInteraction>
+            <customPositions>
+              <li Class="RitualPosition_Lectern">
+                <maxDistanceToFocus>5</maxDistanceToFocus>
+              </li>
+              <li Class="RitualPosition_OnInteractionCell">
+                <facing>West</facing>
+              </li>
+            </customPositions>
+          </li>
+          <li>
+            <roleId>target</roleId>
+            <dutyDef>Idle</dutyDef>
+            <customPositions>
+              <li Class="RitualPosition_OnInteractionCell">
+                <offset>(-1,0,0)</offset>
+                <facing>South</facing>
+              </li>
+            </customPositions>
+          </li>
+        </roleBehaviors>
+      </li>
+      <!-- Target is brought to bed -->
+      <li Class="RitualStage_InteractWithRole">
+        <targets>
+          <li>
+            <pawnId>doer</pawnId>
+            <targetId>target</targetId>
+          </li>
+        </targets>
+        <defaultDuty>Spectate</defaultDuty>
+        <endTriggers>
+          <li Class="StageEndTrigger_RolesArrived">
+            <roleIds>
+              <li>doer</li>
+            </roleIds>
+          </li>
+        </endTriggers>
+        <roleBehaviors>
+          <li>
+            <roleId>doer</roleId>
+            <dutyDef>DeliverPawnToBedIfAliveThenIdle</dutyDef>
+          </li>
+        </roleBehaviors>
+      </li>
+    </stages>
+  </RitualBehaviorDef>
+
+</Defs>

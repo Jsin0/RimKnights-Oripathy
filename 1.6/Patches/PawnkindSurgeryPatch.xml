@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+	<Operation Class="PatchOperationAdd">
+	  <xpath>Defs/ThingDef[@Name="Human" or @Name="AnimalThingBase"]/recipes</xpath>
+	  <value>
+		<li>RK_ExciseLesion</li>
+		<li>RK_Infect</li>
+		<li MayRequire="rimknights.industry">RK_HarvestLesion</li>
+	  </value>
+	</Operation>
+</Patch>

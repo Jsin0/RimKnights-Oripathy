@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <PreceptDef MayRequire="Ludeon.RimWorld.Ideology">
+    <defName>RK_InfectionCeremony</defName>
+    <label>infection</label>
+    <description>A solemn ritual where a volunteer is given a small cut with a ritual blade made of originium or coated in active originium dust.  This cut becomes the first location where crystals grow from.</description>
+    <issue>Ritual</issue>
+    <impact>Medium</impact>
+    <iconPath>UI/Icons/Rituals/RitualScarification</iconPath>
+    <preceptClass>Precept_Ritual</preceptClass>
+    <ritualPatternBase>RK_InfectionCeremony</ritualPatternBase>
+    <allowDuplicates>true</allowDuplicates>
+    <countsTowardsPreceptLimit>false</countsTowardsPreceptLimit>
+    <selectionWeight>1.0</selectionWeight>
+    <displayOrderInImpact>100</displayOrderInImpact>
+    <ignoreLimitsInEditMode>false</ignoreLimitsInEditMode>
+    <receivesExpectationsQualityOffset>true</receivesExpectationsQualityOffset>
+    <canGenerateAsSpecialPrecept>false</canGenerateAsSpecialPrecept>
+    <notifyPlayerOnOpportunity>false</notifyPlayerOnOpportunity>
+    <exclusionTags>
+      <li>OripathyBad</li>
+    </exclusionTags>
+    <associatedMemes>
+      <li>OriginiumSupremacy</li>
+    </associatedMemes>
+  </PreceptDef>
+</Defs>

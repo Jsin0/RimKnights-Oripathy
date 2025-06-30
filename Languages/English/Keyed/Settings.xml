@@ -1,14 +1,9 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <LanguageData>
 	<BaselinersImmuneLabel>Baseliners Immune</BaselinersImmuneLabel>
-	<BaselinersImmuneDesc>Baseliners cannot get oripathy or blood originium buildup.\n\n<i>Originium will never harm you.<i></BaselinersImmuneDesc>
-	
-	<OriginiumPollutionLabel>Originium clusters spread pollution</OriginiumPollutionLabel>
-	<OriginiumPollutionDesc>Originium clusters will pollute the ground when they spawn.</OriginiumPollutionDesc>
-	
-	<OrifuelLabel>Chemfuel is now orifuel</OrifuelLabel>
-	<OrifuelDesc>Replaces 'chemfuel' from all def labels and descriptions with 'orifuel' (defName is unchanged)</OrifuelDesc>
-
-	<OrundumLabel>Silver is now orundum</OrundumLabel>
-	<OrundumDesc>Replaces 'silver' from all def labels and descriptions with 'orundum' (does not affect trade)</OrundumDesc>
+	<BaselinersImmuneDesc>Baseliners cannot get oripathy or blood originium buildup.\n\nOriginium will never harm you.</BaselinersImmuneDesc>
+	<InfectionMonitorLabel>Infection Monitor Required for Tracking</InfectionMonitorLabel>
+	<InfectionMonitorDesc>Infection monitors are required to show oripathy and originium buildup severities.</InfectionMonitorDesc>
+	<AbandonOripathicCorpsesLabel>Autoabandon oripathic corpses</AbandonOripathicCorpsesLabel>
+	<AbandonOripathicCorpsesDesc>Automatically abandon oripathic corpses when an infected dies in a caravan. Avoids infecting other caravan members.</AbandonOripathicCorpsesDesc>
 </LanguageData>

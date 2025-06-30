@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>		
+	<ThingDef ParentName="ApparelBase">
+		<defName>RK_InfectionMonitor</defName>
+		<label>infection monitor</label>
+		<description>A multi-functional monitoring device whose function includes Oripathy diagnosis, vital sign monitoring and condition tracking.</description>
+		<graphicData>
+		  <texPath>Things/Apparel/RK_InfectionMonitor</texPath>
+		  <graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<techLevel>Spacer</techLevel>
+		<costList>
+		  <ComponentIndustrial>2</ComponentIndustrial>
+		  <Steel>50</Steel>
+		  <Plasteel>20</Plasteel>
+		</costList>
+		<tradeability>Sellable</tradeability>
+		<statBases>
+		  <MaxHitPoints>20</MaxHitPoints>
+		  <WorkToMake>5000</WorkToMake>
+		  <Mass>0.1</Mass>
+		</statBases>
+		<recipeMaker>
+		  <unfinishedThingDef>UnfinishedBelt</unfinishedThingDef>
+		  <researchPrerequisite>RK_EarlyDiagnosis</researchPrerequisite>
+		  <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+		  <workSkill>Crafting</workSkill>
+		  <effectWorking>Smith</effectWorking>
+		  <soundWorking>Recipe_Machining</soundWorking>
+		  <recipeUsers>
+			<li>TableMachining</li>
+		  </recipeUsers>
+		  <useIngredientsForColor>false</useIngredientsForColor>
+		  <skillRequirements>
+			<Crafting>6</Crafting>
+		  </skillRequirements>
+		  <displayPriority>300</displayPriority>
+		</recipeMaker>
+		<thingCategories>
+		  <li>ApparelMisc</li>
+		</thingCategories>
+		<apparel>
+		  <countsAsClothingForNudity>false</countsAsClothingForNudity>
+		  <careIfWornByCorpse>false</careIfWornByCorpse>
+		  <careIfDamaged>false</careIfDamaged>
+		  <wearPerDay>0</wearPerDay>
+		  <bodyPartGroups>
+			<li>Hands</li>
+		  </bodyPartGroups>
+		  <layers>
+			<li>OnSkin</li>
+		  </layers>
+		  <tags>
+			<li>Spacer</li>
+		  </tags>
+		  <canBeDesiredForIdeo>false</canBeDesiredForIdeo>
+		</apparel>
+		<tradeTags>
+		  <li>Utility</li>
+		  <li>Medical</li>
+		  <li>Implant</li>
+		</tradeTags>
+		<comps>
+			<li Class="RimKnights.Oripathy.CompProperties_InfectionMonitor"/>
+		</comps>
+	</ThingDef>
+
+	
+	<ThingDef ParentName="BodyPartProstheticMakeableBase">
+		<defName>RK_InfectionMonitorImplant</defName>
+		<label>infection monitor implant</label>
+		<description>An infection monitor, meant to be installed subdermally.</description>
+		<descriptionHyperlinks><RecipeDef>RK_InstallInfectionMonitor</RecipeDef></descriptionHyperlinks>
+		<costList>
+		  <Steel>5</Steel>
+		  <Gold>5</Gold>
+		  <ComponentIndustrial>10</ComponentIndustrial>
+		</costList>
+		<statBases>
+		  <Mass>0.5</Mass>
+		</statBases>
+		<techHediffsTags>
+		  <li>Advanced</li>
+		</techHediffsTags>
+	</ThingDef>
+
+	<RecipeDef ParentName="SurgeryInstallBodyPartProstheticBase">
+		<defName>RK_InstallInfectionMonitor</defName>
+		<label>install an infection monitor</label>
+		<description>Install an infection monitor.</description>
+		<descriptionHyperlinks>
+		  <ThingDef>RK_InfectionMonitorImplant</ThingDef>
+		  <HediffDef>RK_InfectionMonitorImplant</HediffDef>
+		</descriptionHyperlinks>
+		<jobString>Installing an infection monitor.</jobString>
+		<deathOnFailedSurgeryChance>0.01</deathOnFailedSurgeryChance>
+		<ingredients>
+		  <li>
+			<filter>
+			  <thingDefs>
+				<li>RK_InfectionMonitorImplant</li>
+			  </thingDefs>
+			</filter>
+			<count>1</count>
+		  </li>
+		</ingredients>
+		<fixedIngredientFilter>
+		  <thingDefs>
+			<li>RK_InfectionMonitorImplant</li>
+		  </thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+		  <li>Torso</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>RK_InfectionMonitorImplant</addsHediff>
+	</RecipeDef>
+
+	<HediffDef>
+		<defName>RK_InfectionMonitorWorn</defName>
+		<label>infection monitor</label>
+		<description>Infection monitoring provided by worn equipment.</description>
+		<scenarioCanAdd>false</scenarioCanAdd>
+		<defaultLabelColor>(0.6, 0.6, 1.0)</defaultLabelColor>
+		<isBad>false</isBad>
+		<allowMothballIfLowPriorityWorldPawn>true</allowMothballIfLowPriorityWorldPawn>
+		<stages>
+		<li>
+			<statOffsets>
+			  <RK_OriginiumResistance>0.10</RK_OriginiumResistance>
+			</statOffsets>
+		</li>
+		</stages>
+	</HediffDef>
+
+	<HediffDef ParentName="ImplantHediffBase">
+		<defName>RK_InfectionMonitorImplant</defName>
+		<label>infection monitor</label>
+		<description>Infection monitoring provided by an implant.</description>
+		<scenarioCanAdd>false</scenarioCanAdd>
+		<spawnThingOnRemoved>RK_InfectionMonitorImplant</spawnThingOnRemoved>
+		<stages>
+		<li>
+			<statOffsets>
+			  <RK_OriginiumResistance>0.10</RK_OriginiumResistance>
+			</statOffsets>
+		</li>
+		</stages>
+	</HediffDef>
+</Defs>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <JobDef MayRequire="Ludeon.RimWorld.Ideology">
+    <defName>RK_Infect</defName>
+    <driverClass>RimKnights.Oripathy.JobDriver_Infect</driverClass>
+    <reportString>Infecting TargetA.</reportString>
+    <casualInterruptible>false</casualInterruptible>
+  </JobDef>
+</Defs>

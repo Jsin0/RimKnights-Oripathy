@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<!-- Issue -->
+
+  <IssueDef>
+    <defName>RK_Oripathy</defName>
+    <label>Oripathy</label>
+    <iconPath>UI/Issues/Oripathy</iconPath>
+  </IssueDef>
+  
+  <HistoryEventDef>
+    <defName>RK_BecameOripathic</defName>
+    <label>became infected with oripathy</label>
+  </HistoryEventDef>
+  
+  <!-- Precept-->
+  <PreceptDef>
+    <defName>Oripathy_Disapproved</defName>
+    <issue>RK_Oripathy</issue>
+    <classic>true</classic>
+    <impact>Medium</impact>
+    <visible>false</visible>
+    <comps>
+      <li Class="PreceptComp_SituationalThought">
+        <thought>Oripathy_Disapproved_Infected</thought>
+      </li>
+      <li Class="PreceptComp_SituationalThought">
+        <thought>Oripathy_Disapproved_Infected_Social</thought>
+      </li>
+	  <li Class="PreceptComp_SelfTookMemoryThought">
+		<eventDef>RK_BecameOripathic</eventDef>
+		<thought>Oripathy_Disapproved_BecameOripathic</thought>
+		<description>someone became an infected</description>
+	  </li>
+    </comps>
+  </PreceptDef>
+
+  <!-- Thoughts - Disapproved-->
+  
+  <ThoughtDef>
+    <defName>Oripathy_Disapproved_Infected</defName>
+    <workerClass>RimKnights.Oripathy.ThoughtWorker_Oripathic</workerClass>
+    <validWhileDespawned>true</validWhileDespawned>
+    <stages>
+      <li>
+        <label>infected</label>
+        <description>I am infected with oripathy.</description>
+        <baseMoodEffect>-10</baseMoodEffect>
+      </li>
+    </stages>
+    <nullifyingPrecepts>
+      <li MayRequire="Ludeon.RimWorld.Ideology">Oripathy_Abhorrent</li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">Oripathy_Respected</li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">Oripathy_Exalted</li>
+    </nullifyingPrecepts>
+  </ThoughtDef>
+  
+  <ThoughtDef>
+    <defName>Oripathy_Disapproved_Infected_Social</defName>
+    <thoughtClass>Thought_SituationalSocial</thoughtClass>
+    <workerClass>RimKnights.Oripathy.ThoughtWorker_Oripathic_Social</workerClass>
+    <nullifyingTraits>
+      <li>Kind</li>
+    </nullifyingTraits>
+    <validWhileDespawned>true</validWhileDespawned>
+    <developmentalStageFilter>Child, Adult</developmentalStageFilter>
+    <stages>
+      <li>
+        <label>infected</label>
+        <description>This person is infected with oripathy.</description>
+        <baseOpinionOffset>-10</baseOpinionOffset>
+      </li>
+    </stages>
+    <nullifyingPrecepts>
+      <li MayRequire="Ludeon.RimWorld.Ideology">Oripathy_Abhorrent</li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">Oripathy_Respected</li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">Oripathy_Exalted</li>
+    </nullifyingPrecepts>
+  </ThoughtDef>
+  
+  <ThoughtDef>
+	  <defName>Oripathy_Disapproved_BecameOripathic</defName>
+	  <durationDays>5</durationDays>
+	  <stackLimit>1</stackLimit>
+	  <stages>
+	  <li>
+		<label>became infected</label>
+		<description>I discovered I am infected with oripathy.</description>
+		<baseMoodEffect>-10</baseMoodEffect>
+	  </li>
+	</stages>
+    <nullifyingPrecepts>
+      <li MayRequire="Ludeon.RimWorld.Ideology">Oripathy_Abhorrent</li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">Oripathy_Respected</li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">Oripathy_Exalted</li>
+    </nullifyingPrecepts>
+  </ThoughtDef>
+  
+</Defs>

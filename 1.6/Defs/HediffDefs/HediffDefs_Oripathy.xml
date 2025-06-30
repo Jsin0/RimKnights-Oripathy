@@ -1,0 +1,319 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<HediffDef ParentName="ChronicDiseaseBase">
+		<defName>RK_Oripathy</defName>
+		<label>oripathy</label>
+		<description>Also known as stone disease, oripathy an incurable disease due to the assimilation of originium into the body's cells.  It is characterized by crystalline growths that can cause pain and interfere with bodily functions.</description>
+		<hediffClass>RimKnights.Oripathy.Hediff_Oripathy</hediffClass>
+		<everCurableByItem>false</everCurableByItem>
+		<taleOnVisible>ToxicityRevealed</taleOnVisible>
+		<scenarioCanAdd>true</scenarioCanAdd>
+		<maxSeverity>1</maxSeverity>
+		<alwaysShowSeverity>true</alwaysShowSeverity>
+		<allowMothballIfLowPriorityWorldPawn>true</allowMothballIfLowPriorityWorldPawn>
+		<comps>
+			<li Class="RimKnights.Core.HediffCompProperties_DynamicSeverityPerDay">
+				<AffectorHediffs>
+					<li>
+						<hediff>RK_OriginiumBuildup</hediff>
+						<curve>
+							<points>
+							  <li>(0.0, 0.002)</li>
+							  <li>(0.25, 0.01)</li>
+							  <li>(0.5, 0.02)</li>
+							  <li>(0.75, 0.15)</li>
+							  <li>(1.0, 0.5)</li>
+							</points>
+						</curve>
+						<severityPerDayRange>0~0.002</severityPerDayRange>
+						<severityScalingStat>RK_OriginiumResistance</severityScalingStat>
+						<inverseStatScaling>true</inverseStatScaling>
+					</li>
+				</AffectorHediffs>
+			</li>
+			<li Class="HediffCompProperties_SurgeryInspectable">
+				<surgicalDetectionDesc>{PAWN_nameDef} is showing early signs of oripathy. Keep {PAWN_objective} away from sources of originium.</surgicalDetectionDesc>
+			</li>
+		</comps>
+		<stages>
+			<li>
+				<label>minor</label>
+				<painOffset>0.05</painOffset>
+				<becomeVisible>false</becomeVisible>
+				<hediffGivers>
+					<li Class="HediffGiver_Random">
+						<hediff>RK_OripathyLesion</hediff>
+						<mtbDays>438</mtbDays>
+						<canAffectAnyLivePart>true</canAffectAnyLivePart>
+					</li>
+				</hediffGivers>
+				<statOffsets>
+				  <PsychicSensitivity>0.1</PsychicSensitivity>
+				</statOffsets>
+			</li>
+			<li>
+				<minSeverity>0.35</minSeverity>
+				<label>moderate</label>
+				<painOffset>0.10</painOffset>
+				<becomeVisible>true</becomeVisible>
+				<hediffGivers>
+					<li Class="HediffGiver_Random">
+						<hediff>RK_OripathyLesion</hediff>
+						<mtbDays>226</mtbDays>
+						<canAffectAnyLivePart>true</canAffectAnyLivePart>
+					</li>
+				</hediffGivers>
+				<statOffsets>
+				  <PsychicSensitivity>0.3</PsychicSensitivity>
+				</statOffsets>
+			</li>
+			<li>
+				<minSeverity>0.70</minSeverity>
+				<label>major</label>
+				<painOffset>0.15</painOffset>
+				<hediffGivers>
+					<li Class="HediffGiver_Random">
+						<hediff>RK_OripathyLesion</hediff>
+						<mtbDays>60</mtbDays>
+						<canAffectAnyLivePart>true</canAffectAnyLivePart>
+					</li>
+				</hediffGivers>
+				<statOffsets>
+				  <PsychicSensitivity>0.5</PsychicSensitivity>
+				</statOffsets>
+			</li>
+			<li>
+				<minSeverity>0.90</minSeverity>
+				<label>extreme</label>
+				<painOffset>0.25</painOffset>
+				<hediffGivers>
+					<li Class="HediffGiver_Random">
+						<hediff>RK_OripathyLesion</hediff>
+						<mtbDays>10</mtbDays>
+						<countToAffect>2</countToAffect>
+						<canAffectAnyLivePart>true</canAffectAnyLivePart>
+					</li>
+				</hediffGivers>
+				<statOffsets>
+				  <PsychicSensitivity>1.00</PsychicSensitivity>
+				</statOffsets>
+			</li>
+		</stages>
+	</HediffDef>
+	
+	<HediffDef>
+		<defName>RK_OriginiumBuildup</defName>
+		<label>blood originium buildup</label>
+		<description>Originium crystals present in the bloodstream. \nOriginium is always present in the blood stream at low levels but at higher levels, may lead to a condition known as Oripathy.</description>
+		<hediffClass>RimKnights.Oripathy.Hediff_OriginiumBuildup</hediffClass>
+		<tendable>true</tendable>
+		<defaultLabelColor>(1.0, 0.5, 0.0)</defaultLabelColor>
+		<scenarioCanAdd>true</scenarioCanAdd>
+		<maxSeverity>1</maxSeverity>
+		<initialSeverity>0.01</initialSeverity>
+		<alwaysShowSeverity>true</alwaysShowSeverity>
+		<allowMothballIfLowPriorityWorldPawn>true</allowMothballIfLowPriorityWorldPawn>
+		<comps>
+			<li Class="HediffCompProperties_Pollution" MayRequire="Ludeon.RimWorld.Biotech">
+				<pollutedSeverity>0.0003</pollutedSeverity>
+				<unpollutedSeverity>0</unpollutedSeverity>
+				<interval>60</interval>
+			</li>
+			<li Class="HediffCompProperties_TendDuration">
+				<baseTendDurationHours>24</baseTendDurationHours>
+				<severityPerDayTended>-0.2</severityPerDayTended>
+			</li>
+			<li Class="RimKnights.Core.HediffCompProperties_DynamicSeverityRange">
+				<minAffector>
+					<hediff>RK_Oripathy</hediff>
+					<curve>
+					  <points>
+						<li>(0, 0.00)</li>
+						<li>(0.25, 0.1)</li>
+						<li>(0.6, 0.35)</li>
+						<li>(0.8, 0.35)</li>
+						<li>(1.0, 0.50)</li>
+					  </points>
+					</curve>
+				</minAffector>
+				<updateInterval>60</updateInterval>
+			</li>
+		</comps>
+		<stages>
+		  <li>
+			<label>initial</label>
+			<minSeverity>0.01</minSeverity>
+			<painOffset>0.01</painOffset>
+			<becomeVisible>false</becomeVisible>
+			<capMods>
+			  <li>
+				<capacity>BloodFiltration</capacity>
+				<offset>-0.01</offset>
+			  </li>
+			</capMods>
+		  </li>
+		  <li>
+			<label>low</label>
+			<minSeverity>0.2</minSeverity>
+			<painOffset>0.03</painOffset>
+			<becomeVisible>true</becomeVisible>
+			<capMods>
+				<li>
+					<capacity>BloodFiltration</capacity>
+					<offset>-0.03</offset>
+				</li>
+			</capMods>
+		  </li>
+		  <li>
+			<label>moderate</label>
+			<minSeverity>0.40</minSeverity>
+			<painOffset>0.05</painOffset>
+			<vomitMtbDays>10</vomitMtbDays>
+			<capMods>
+			  <li>
+				<capacity>BloodFiltration</capacity>
+				<offset>-0.05</offset>
+			  </li>
+				<li>
+					<capacity>Breathing</capacity>
+					<offset>-0.05</offset>
+				</li>
+			</capMods>
+			<hediffGivers>
+			  <li Class="HediffGiver_Random">
+				<hediff>RK_Oripathy</hediff>
+				<mtbDays>60</mtbDays>
+			  </li>
+			</hediffGivers>
+		  </li>
+		  <li>
+				<label>serious</label>
+				<minSeverity>0.60</minSeverity>
+				<painOffset>0.07</painOffset>
+				<vomitMtbDays>5</vomitMtbDays>
+				<capMods>
+				  <li>
+					<capacity>BloodFiltration</capacity>
+					<offset>-0.07</offset>
+				  </li>
+					<li>
+						<capacity>Breathing</capacity>
+						<offset>-0.10</offset>
+					</li>
+				</capMods>
+				<hediffGivers>
+				  <li Class="HediffGiver_Random">
+					<hediff>RK_Oripathy</hediff>
+					<mtbDays>20</mtbDays>
+				  </li>
+				</hediffGivers>
+			</li>
+			<li>
+				<label>extreme</label>
+				<minSeverity>0.90</minSeverity>
+				<painOffset>0.10</painOffset>
+				<capMods>
+				  <li>
+					<capacity>BloodFiltration</capacity>
+					<offset>-0.10</offset>
+				  </li>
+				<li>
+					<capacity>Breathing</capacity>
+					<offset>-0.15</offset>
+				</li>
+				</capMods>
+				<hediffGivers>
+				  <li Class="HediffGiver_Random">
+					<hediff>RK_Oripathy</hediff>
+					<mtbDays>1</mtbDays>
+				  </li>
+				</hediffGivers>
+			</li>
+		</stages>
+	</HediffDef>
+	  
+	<HediffDef ParentName="ChronicDiseaseBase">
+		<defName>RK_OripathyLesion</defName>
+		<label>oripathy lesion</label>
+		<labelNoun>an oripathy lesion</labelNoun>
+		<description>A lump of originium crystals. Without treatment, the lesion will grow over time, causing worsening symptoms and eventually destroying the affected body part. \nA skilled doctor can excise the lesion. An unskilled doctor may be able to simply amputate the body part which contains the lesion.</description>
+		<hediffClass>RimKnights.Oripathy.Hediff_OripathyLesion</hediffClass>
+		<displayWound>true</displayWound>
+		<initialSeverity>0.01</initialSeverity>
+		<chanceToCauseNoPain>0.15</chanceToCauseNoPain>
+		<allowMothballIfLowPriorityWorldPawn>true</allowMothballIfLowPriorityWorldPawn>
+		<tendable>true</tendable>
+		<spawnThingOnRemoved>RK_OriginiumShard</spawnThingOnRemoved>
+		<stages>
+		  <li>
+			<label>minor</label>
+			<partEfficiencyOffset>-0.1</partEfficiencyOffset>
+			<becomeVisible>false</becomeVisible>
+			<painOffset>0.01</painOffset>
+		  </li>
+		  <li>
+			<minSeverity>0.15</minSeverity>
+			<label>minor</label>
+			<partEfficiencyOffset>-0.25</partEfficiencyOffset>
+			<painOffset>0.05</painOffset>
+		  </li>
+		  <li>
+			<minSeverity>0.4</minSeverity>
+			<label>major</label>
+			<partEfficiencyOffset>-0.5</partEfficiencyOffset>
+			<painOffset>0.1</painOffset>
+		  </li>
+		  <li>
+			<minSeverity>0.6</minSeverity>
+			<label>major</label>
+			<partEfficiencyOffset>-0.8</partEfficiencyOffset>
+			<painOffset>0.2</painOffset>
+		  </li>
+		  <li>
+			<minSeverity>0.8</minSeverity>
+			<label>extreme</label>
+			<partEfficiencyOffset>-0.9</partEfficiencyOffset>
+			<painOffset>0.4</painOffset>
+		  </li>
+		  <li>
+			<minSeverity>1</minSeverity>
+			<label>extreme</label>
+			<partEfficiencyOffset>-1.0</partEfficiencyOffset>
+			<painOffset>0.6</painOffset>
+			<destroyPart>true</destroyPart>
+		  </li>
+		</stages>
+		<comps>
+			<li Class="HediffCompProperties_SurgeryInspectable">
+				<surgicalDetectionDesc>{PAWN_nameDef} has originium crystals growing on their body.</surgicalDetectionDesc>
+			</li>
+			<li Class="HediffCompProperties_TendDuration">
+				<baseTendDurationHours>96</baseTendDurationHours>
+				<severityPerDayTended>-0.005</severityPerDayTended>
+			</li>
+			<li Class="RimKnights.Core.HediffCompProperties_DynamicSeverityPerDay">
+				<AffectorHediffs>
+					<li>
+						<hediff>RK_OriginiumBuildup</hediff>
+						<curve>
+							  <points>
+								<li>(0, 0.026)</li>
+								<li>(0.30, 0.04)</li>
+								<li>(0.60, 0.08)</li>
+								<li>(0.90, 0.32)</li>
+								<li>(1, 0.64)</li>
+							  </points>
+						</curve>
+						<severityScalingStat>RK_OriginiumResistance</severityScalingStat>
+						<inverseStatScaling>true</inverseStatScaling>
+					</li>
+				</AffectorHediffs>
+			</li>
+			<li Class="RimKnights.Core.HediffCompProperties_Harvestable">
+				<resource>RK_OriginiumShard</resource>
+				<severityOffset>-0.30</severityOffset>
+				<miniumSeverity>0.60</miniumSeverity>
+			</li>
+		</comps>
+	</HediffDef>
+</Defs>

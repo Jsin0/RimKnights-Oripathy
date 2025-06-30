@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <RitualPatternDef ParentName="MutilationBase" MayRequire="Ludeon.RimWorld.Ideology">
+    <defName>RK_InfectionCeremony</defName>
+    <ritualBehavior>InfectionCeremony</ritualBehavior>
+    <ritualObligationTargetFilter>RitualSpotOrAltar_Infection</ritualObligationTargetFilter>
+    <ritualOutcomeEffect>InfectionCeremony</ritualOutcomeEffect>
+    <tags>
+      <li>InfectionCeremony</li>
+    </tags>
+    <patternGroupTag>InfectionCeremony</patternGroupTag>
+    <ritualObligationTriggers>
+      <li Class="RimKnights.Oripathy.RitualObligationTrigger_InfectionProperties">
+        <mustBePlayerIdeo>true</mustBePlayerIdeo>
+      </li>
+    </ritualObligationTriggers>
+    <mergeGizmosForObligations>true</mergeGizmosForObligations>
+  </RitualPatternDef>
+</Defs>

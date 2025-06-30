@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <RitualObligationTargetFilterDef MayRequire="Ludeon.RimWorld.Ideology">
+    <defName>RitualSpotOrAltar_Infection</defName>
+    <workerClass>RimKnights.Oripathy.RitualObligationTargetWorker_AnyRitualSpotOrAltar_Infection</workerClass>
+  </RitualObligationTargetFilterDef>
+</Defs>
