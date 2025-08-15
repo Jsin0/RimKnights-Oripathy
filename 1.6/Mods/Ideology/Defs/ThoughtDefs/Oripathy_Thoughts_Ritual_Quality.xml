@@ -7,8 +7,8 @@
     <stackLimit>3</stackLimit>
     <stages>
       <li>
-        <label>terrible infection</label>
-        <description>That infection was botched and the mood was way off. What an awkward ceremony.</description>
+        <label>terrible blessing</label>
+        <description>That blessing was botched and the mood was way off. What an awkward ceremony.</description>
         <baseMoodEffect>-2</baseMoodEffect>
       </li>
     </stages>
@@ -21,8 +21,8 @@
     <stackLimit>3</stackLimit>
     <stages>
       <li>
-        <label>boring infection</label>
-        <description>That infection lacked passion and the originium blade was unpolished.</description>
+        <label>boring blessing</label>
+        <description>That blessing lacked passion and the originium blade was unpolished.</description>
         <baseMoodEffect>-1</baseMoodEffect>
       </li>
     </stages>
@@ -35,8 +35,8 @@
     <stackLimit>3</stackLimit>
     <stages>
       <li>
-        <label>satisfying infection</label>
-        <description>That infection was satisfying. The cut was deep and glittering.</description>
+        <label>satisfying blessing</label>
+        <description>That blessing was satisfying. The cut was deep and glittering.</description>
         <baseMoodEffect>1</baseMoodEffect>
       </li>
     </stages>
@@ -49,7 +49,7 @@
     <stackLimit>3</stackLimit>
     <stages>
       <li>
-        <label>spectacular infection</label>
+        <label>spectacular blessing</label>
         <description>The intoned voices, the gleaming originium blade, the painful shivering and cutting - That infection ceremony was sublime!</description>
         <baseMoodEffect>3</baseMoodEffect>
       </li>

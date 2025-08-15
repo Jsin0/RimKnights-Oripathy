@@ -6,7 +6,7 @@
     <description>Depending on ritual quality, participants will get between {MINMOOD} and {MAXMOOD} mood for {MOODDAYS} days.</description>
     <workerClass>RimKnights.Oripathy.RitualOutcomeEffectWorker_Oripathy</workerClass>
     <extraPredictedOutcomeDescriptions MayRequire="Ludeon.RimWorld.Royalty">
-      <li>If the {0} is satisfying, the infected person might get a psylink upgrade or unlock new psychic powers.</li>
+      <li>If the {0} is spectacular, the infected person might get a psylink upgrade or unlock new psychic powers.</li>
     </extraPredictedOutcomeDescriptions>
     <allowAttachableOutcome>false</allowAttachableOutcome>
     <comps>
@@ -60,15 +60,14 @@
         <chance>0.6</chance>
         <memory>SatisfyingInfection</memory>
         <description>The {0} was satisfying. The speech felt meaningful, and the cutting technique was precise and dignified.</description>
-        <potentialExtraOutcomeDesc>The blinded person will get a psylink upgrade or unlock a new psychic power.</potentialExtraOutcomeDesc>
         <positivityIndex>1</positivityIndex>
       </li>
       <li>
         <label>Spectacular</label>
         <chance>0.2</chance>
         <memory>SpectacularInfection</memory>
-        <description>The {0} was spectacular! The speech brought everyone to the edge of a frenzy just as the originium dust activated, showering the participants in a golden shower.</description>
-        <potentialExtraOutcomeDesc>The infected person will get a psylink upgrade or unlock a new psychic power.</potentialExtraOutcomeDesc>
+        <description>The {0} was spectacular! The speech brought everyone to the edge of a frenzy just as the originium dust activated, covering the participants in a golden shower.</description>
+        <potentialExtraOutcomeDesc>The infected person may get a psylink upgrade or unlock a new psychic power.</potentialExtraOutcomeDesc>
         <positivityIndex>2</positivityIndex>
       </li>
     </outcomeChances>

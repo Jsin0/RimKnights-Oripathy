@@ -159,6 +159,7 @@ namespace RimKnights.Oripathy.Utilities
                     }
 
                     pawn.health.hediffSet.GetFirstHediffOfDef(HediffDefOf.RK_Oripathy).Severity = new FloatRange(0.1f, 0.15f).RandomInRange;
+                    pawn.health.hediffSet.GetFirstHediffOfDef(HediffDefOf.RK_OripathyLesion).Severity = new FloatRange(0.1f, 0.25f).RandomInRange;
 
                 }
             }

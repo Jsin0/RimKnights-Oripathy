@@ -15,17 +15,20 @@ namespace RimKnights.Oripathy
         {
             get
             {
-                if (!this.def.alwaysShowSeverity || this.displayedSeverity <= 0f)
-                {
-                    return null;
-                }
                 if (OripathyMod.infectionMonitor)
                 {
-                    return this.displayedSeverity.ToStringPercent("F0") + (shouldUpdate ? null : "*");
+                    if (this.displayedSeverity <= 0f)
+                    {
+                        return null;
+                    }
+                    else
+                    {
+                        return this.displayedSeverity.ToStringPercent("F0") + (shouldUpdate ? null : "*");
+                    }
                 }
                 else
                 {
-                    return this.Severity.ToStringPercent("F0");
+                    return base.SeverityLabel;
                 }
             }
         }

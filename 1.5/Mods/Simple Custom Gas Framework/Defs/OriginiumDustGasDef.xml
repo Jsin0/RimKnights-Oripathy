@@ -32,7 +32,7 @@
 			<impactedByStat>ToxicEnvironmentResistance</impactedByStat>
 
 			<!-- With that stat value being multiplied by 2. -->
-			<statImpactFactor>2</statImpactFactor>
+			<statImpactFactor>1</statImpactFactor>
 
 			<!-- If at the final stage of the hediff (sedated), severity increase should be multiplied by 0.25. -->
 			<finalStageFactor>0.25</finalStageFactor>

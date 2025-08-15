@@ -242,8 +242,8 @@
 		<initialSeverity>0.01</initialSeverity>
 		<chanceToCauseNoPain>0.15</chanceToCauseNoPain>
 		<allowMothballIfLowPriorityWorldPawn>true</allowMothballIfLowPriorityWorldPawn>
+		<alwaysShowSeverity>true</alwaysShowSeverity>
 		<tendable>true</tendable>
-		<spawnThingOnRemoved>RK_OriginiumShard</spawnThingOnRemoved>
 		<stages>
 		  <li>
 			<label>minor</label>
@@ -254,12 +254,14 @@
 		  <li>
 			<minSeverity>0.15</minSeverity>
 			<label>minor</label>
+			<becomeVisible>true</becomeVisible>
 			<partEfficiencyOffset>-0.25</partEfficiencyOffset>
 			<painOffset>0.05</painOffset>
 		  </li>
 		  <li>
 			<minSeverity>0.4</minSeverity>
 			<label>major</label>
+			<becomeVisible>true</becomeVisible>
 			<partEfficiencyOffset>-0.5</partEfficiencyOffset>
 			<painOffset>0.1</painOffset>
 		  </li>
@@ -312,7 +314,7 @@
 			<li Class="RimKnights.Core.HediffCompProperties_Harvestable">
 				<resource>RK_OriginiumShard</resource>
 				<severityOffset>-0.30</severityOffset>
-				<miniumSeverity>0.60</miniumSeverity>
+				<miniumSeverity>0.40</miniumSeverity>
 			</li>
 		</comps>
 	</HediffDef>

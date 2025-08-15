@@ -17,7 +17,7 @@ namespace RimKnights.Oripathy
         protected override void ApplyExtraOutcome(Dictionary<Pawn, int> totalPresence, LordJob_Ritual jobRitual, RitualOutcomePossibility outcome, out string extraOutcomeDesc, ref LookTargets letterLookTargets)
         {
             extraOutcomeDesc = null;
-            if (ModsConfig.RoyaltyActive && outcome.Positive && (outcome.BestPositiveOutcome(jobRitual) || Rand.Chance(0.5f)))
+            if (ModsConfig.RoyaltyActive && outcome.Positive && (outcome.BestPositiveOutcome(jobRitual) && Rand.Chance(0.5f)))
             {
                 Pawn pawn = ((LordJob_Ritual_Mutilation)jobRitual).mutilatedPawns[0];
                 extraOutcomeDesc = "RitualOutcomeExtraDesc_OripathicPsylink".Translate(pawn.Named("PAWN"));

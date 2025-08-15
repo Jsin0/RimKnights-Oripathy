@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <IssueDef>
+    <defName>RK_OriginiumResistance</defName>
+    <label>originium resistance</label>
+    <iconPath>UI/Issues/Oripathy</iconPath>
+  </IssueDef>
+  
+  <!-- Precept-->
+  
+  <PreceptDef>
+    <defName>MiningYield_High</defName>
+    <issue>MiningYield</issue>
+    <label>high</label>
+    <description>Mining is so important that we do it with great focus and respect, and we get more resources because of that.</description>
+    <impact>Medium</impact>
+    <associatedMemes>
+      <li>OriginiumSupremacy</li>
+    </associatedMemes>
+    <requiredMemes>
+      <li>OriginiumSupremacy</li>
+    </requiredMemes>
+    <statOffsets>
+      <RK_OriginiumResistance>0.1</RK_OriginiumResistance>
+    </statOffsets>
+  </PreceptDef>
+  
+</Defs>

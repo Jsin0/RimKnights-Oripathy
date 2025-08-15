@@ -3,7 +3,7 @@
 	<RecipeDef ParentName="SurgeryFlesh">
 		<defName>RK_ExciseLesion</defName>
 		<label>excise oripathic lesion</label>
-		<description>Excise an oripathic lesion.</description>
+		<description>Excise an oripathic lesion. To prevent re-emergence, the lesion must be totally obliterated, yielding no usable originium.</description>
 		<workerClass>Recipe_RemoveHediff</workerClass>
 		<jobString>Excising lesion.</jobString>
 		<workAmount>8000</workAmount>

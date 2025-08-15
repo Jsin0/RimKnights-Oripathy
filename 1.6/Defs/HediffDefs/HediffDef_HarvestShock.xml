@@ -3,7 +3,7 @@
 	<HediffDef>
 		<defName>RK_HarvestShock</defName>
 		<label>post-harvest pain</label>
-		<description>Originium has recently been harvested from this person's lesions.</description>
+		<description>originium has recently been harvested from this person's lesions.</description>
 		<hediffClass>HediffWithComps</hediffClass>
 		<tendable>true</tendable>
 		<everCurableByItem>true</everCurableByItem>

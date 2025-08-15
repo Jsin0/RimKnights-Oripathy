@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <LanguageData>
 	<AlertOripathicCorpse>Oripathic corpse</AlertOripathicCorpse>
+	<AlertOripathicLesion>Advanced oripathic lesion</AlertOripathicLesion>
+	<AlertOripathicLesionDesc>People are at risk of losing body parts due to advanced oripathic lesions. \n{0}\n\nMake sure that they get the best medical care possible.</AlertOripathicLesionDesc>
+	<AlertOripathicLesionAmputationDesc>People are at risk of losing body parts due to advanced oripathic lesions. \n{0}\n\nIf the body part is critical, it can lead to death. If possible, consider amputating or replacing infected limps to keep colonists alive. </AlertOripathicLesionAmputationDesc>
 </LanguageData>

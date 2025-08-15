@@ -2,7 +2,7 @@
 <Defs>
   <PreceptDef MayRequire="Ludeon.RimWorld.Ideology">
     <defName>RK_InfectionCeremony</defName>
-    <label>infection</label>
+    <label>oripathic blessing</label>
     <description>A solemn ritual where a volunteer is given a small cut with a ritual blade made of originium or coated in active originium dust.  This cut becomes the first location where crystals grow from.</description>
     <issue>Ritual</issue>
     <impact>Medium</impact>

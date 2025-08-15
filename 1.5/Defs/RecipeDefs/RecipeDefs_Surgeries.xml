@@ -3,7 +3,7 @@
 	<RecipeDef ParentName="SurgeryFlesh">
 		<defName>RK_ExciseLesion</defName>
 		<label>excise oripathic lesion</label>
-		<description>Excise an oripathic lesion.</description>
+		<description>Excise an oripathic lesion. To prevent re-emergence, the lesion must be totally obliterated, yielding no usable originium.</description>
 		<workerClass>Recipe_RemoveHediff</workerClass>
 		<jobString>Excising lesion.</jobString>
 		<workAmount>8000</workAmount>
@@ -56,5 +56,36 @@
 		<addsHediff>RK_Oripathy</addsHediff>
 		<successfullyRemovedHediffMessage>{0} has successfully infected {1}.</successfullyRemovedHediffMessage>
 		<surgeryIgnoreEnvironment>true</surgeryIgnoreEnvironment>
+	</RecipeDef>
+	
+	<RecipeDef ParentName="SurgeryFlesh">
+		<defName>RK_HarvestLesion</defName>
+		<label>harvest originium</label>
+		<description>Harvest an originium shard from a lesion without completely removing it, allowing it to regrow.</description>
+		<workerClass>RimKnights.Core.Recipe_HarvestHediff</workerClass>
+		<jobString>Harvesting originium.</jobString>
+		<isViolation>true</isViolation>
+		<workAmount>2000</workAmount>
+		<surgerySuccessChanceFactor>1.2</surgerySuccessChanceFactor>
+		<developmentalStageFilter>Child, Adult</developmentalStageFilter>
+		<deathOnFailedSurgeryChance>0.05</deathOnFailedSurgeryChance>
+		<skillRequirements>
+		  <Medicine>8</Medicine>
+		</skillRequirements>
+		<ingredients>
+		  <li>
+			<filter>
+			  <categories>
+				<li>Medicine</li>
+			  </categories>
+			</filter>
+			<count>1</count>
+		  </li>
+		</ingredients>
+		<fixedIngredientFilter>
+		  <categories>
+			<li>Medicine</li>
+		  </categories>
+		</fixedIngredientFilter>
 	</RecipeDef>
 </Defs>

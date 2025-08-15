@@ -10,7 +10,7 @@
         <id>target</id>
         <maxCount>1</maxCount>
         <required>True</required>
-        <missingDesc>the person to infect</missingDesc>
+        <missingDesc>the person to bless</missingDesc>
         <ignoreBleeding>true</ignoreBleeding>
         <countsAsParticipant>False</countsAsParticipant>
       </li>
@@ -22,7 +22,7 @@
         <maxCount>1</maxCount>
         <substitutable>true</substitutable>
         <required>true</required>
-        <missingDesc>the person who performs the infection</missingDesc>
+        <missingDesc>the person who performs the blessing</missingDesc>
         <countsAsParticipant>False</countsAsParticipant>
       </li>
     </roles>

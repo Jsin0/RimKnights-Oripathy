@@ -236,7 +236,88 @@
     </comps>
   </PreceptDef>
   
-  
+  <PreceptDef>
+    <defName>Oripathy_Required</defName>
+    <issue>RK_Oripathy</issue>
+    <label>required</label>
+    <description>Oripathy is a blessing and the infected were chosen to carry this blessing.</description>
+    <impact>High</impact>
+    <displayOrderInIssue>0</displayOrderInIssue>
+    <displayOrderInImpact>100</displayOrderInImpact>
+    <requiredMemes>
+      <li>OriginiumSupremacy</li>
+    </requiredMemes>
+	<modExtensions>
+		<li Class="RimKnights.Oripathy.Utilities.PreceptOripathyExtension">
+			<oripathicPawnChance>0.95</oripathicPawnChance>
+		</li>
+	</modExtensions>
+	<comps>
+	  <li Class="PreceptComp_UnwillingToDo">
+		<eventDef>RK_RemovedLesion</eventDef>
+		<description>removing someone's lesions</description>
+	  </li>
+	  <li Class="PreceptComp_KnowsMemoryThought">
+		<eventDef>RK_RemovedLesion</eventDef>
+		<thought>Oripathy_Required_RemovedLesion_Know_Mood</thought>
+		<description>Someone removed an oripathy lesion</description>
+	  </li>
+	  <li Class="PreceptComp_KnowsMemoryThought">
+		<eventDef>RK_RemovedLesion</eventDef>
+		<thought>Oripathy_Required_RemovedLesion_Know</thought>
+		<description>Someone removed an oripathy lesion</description>
+	  </li>
+	  <li Class="PreceptComp_SelfTookMemoryThought">
+		<eventDef>RK_BecameOripathic_Ritual</eventDef>
+		<thought>Oripathy_Required_BecameOripathic</thought>
+		<description>someone became an infected through a ritual</description>
+	  </li>
+	  <li Class="PreceptComp_SelfTookMemoryThought">
+		<eventDef>RK_BecameOripathic</eventDef>
+		<thought>Oripathy_Required_NewlyInfected</thought>
+		<description>someone recently became an infected</description>
+	  </li>
+      <li Class="PreceptComp_SituationalThought">
+        <thought>Oripathy_Required_Infected</thought>
+		<thoughtStageDescriptions>
+		  <li>uninfected</li>
+		  <li>mildly oripathic</li>
+		  <li>moderately oripathic</li>
+		  <li>extensively oripathic</li>
+		</thoughtStageDescriptions>
+      </li>
+      <li Class="PreceptComp_SituationalThought">
+        <thought>Oripathy_Required_Infected_Social</thought>
+		<thoughtStageDescriptions>
+		  <li>uninfected</li>
+		  <li>mildly oripathic</li>
+		  <li>moderately oripathic</li>
+		  <li>extensively oripathic</li>
+		</thoughtStageDescriptions>
+      </li>
+      <li Class="PreceptComp_SituationalThought">
+        <thought>Oripathy_Required_HasLesions</thought>
+		<thoughtStageDescriptions>
+		  <li>no crystals</li>
+		  <li>few crystals</li>
+		  <li>many crystals</li>
+		</thoughtStageDescriptions>
+      </li>
+      <li Class="PreceptComp_SituationalThought">
+        <thought>Oripathy_Required_HasLesions_Social</thought>
+		<thoughtStageDescriptions>
+		  <li>no crystals</li>
+		  <li>few crystals</li>
+		  <li>many crystals</li>
+		</thoughtStageDescriptions>
+      </li>
+      <li Class="PreceptComp_DevelopmentPoints">
+        <eventDef>RK_BecameOripathic_Ritual</eventDef>
+        <eventLabel>infected someone</eventLabel>
+        <points>1</points>
+      </li>
+    </comps>
+  </PreceptDef>
   <!-- Thoughts - Abhorrent-->
   
   <ThoughtDef>
@@ -719,6 +800,179 @@
 		  <li>
 			<label>removed lesion</label>
 			<baseOpinionOffset>-15</baseOpinionOffset>
+		  </li>
+		</stages>
+	</ThoughtDef>
+
+  <!-- Thoughts - Required -->
+  
+  <ThoughtDef>
+    <defName>Oripathy_Required_Infected_Social</defName>
+    <thoughtClass>Thought_SituationalSocial</thoughtClass>
+    <workerClass>RimKnights.Oripathy.ThoughtWorker_Precept_Oripathic_Social</workerClass>
+    <validWhileDespawned>true</validWhileDespawned>
+    <developmentalStageFilter>Child, Adult</developmentalStageFilter>
+    <stages>
+      <li>
+        <label>untouched</label>
+        <description>This person does not know or refuses to know the touch of originium.</description>
+        <baseOpinionOffset>-70</baseOpinionOffset>
+      </li>
+      <li>
+        <label>mild oripathy</label>
+        <description>This person may have oripathy but they have yet to experience true assimilation</description>
+        <baseOpinionOffset>5</baseOpinionOffset>
+      </li>
+      <li>
+        <label>moderate oripathy</label>
+        <description>This person has a taste of the true enlightenment in originium</description>
+        <baseOpinionOffset>20</baseOpinionOffset>
+      </li>
+      <li>
+        <label>extensive oripathy</label>
+        <description>This person knows the love found in originium and feels it with every granule in their blood.</description>
+        <baseOpinionOffset>30</baseOpinionOffset>
+      </li>
+    </stages>
+  </ThoughtDef>
+  
+  <ThoughtDef>
+    <defName>Oripathy_Required_Infected</defName>
+    <workerClass>RimKnights.Oripathy.ThoughtWorker_Precept_Oripathic</workerClass>
+    <validWhileDespawned>true</validWhileDespawned>
+    <stages>
+      <li>
+        <label>untouched</label>
+        <description>I remain untouched by originium and do not know the unity found in the shards.</description>
+        <baseMoodEffect>-10</baseMoodEffect>
+      </li>
+      <li>
+        <label>mild oripathy</label>
+        <description>The crystals take root in my body. Originium courses through my blood.</description>
+        <baseMoodEffect>5</baseMoodEffect>
+      </li>
+      <li>
+        <label>moderate oripathy</label>
+        <description>Originium spreads further into my body. I can hear its will. I am close to ascention.</description>
+        <baseMoodEffect>10</baseMoodEffect>
+      </li>
+      <li>
+        <label>severe infection</label>
+        <description>My body nourishes originium and soon I will ascend and assimilate.</description>
+        <baseMoodEffect>20</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  
+  <ThoughtDef>
+    <defName>Oripathy_Required_HasLesions</defName>
+    <workerClass>RimKnights.Oripathy.ThoughtWorker_Precept_OripathicLesions</workerClass>
+    <validWhileDespawned>true</validWhileDespawned>
+    <stages>
+      <li>
+        <label>no crystals</label>
+        <description>I'm oripathic but I have nothing to show for it</description>
+        <baseMoodEffect>-10</baseMoodEffect>
+      </li>
+      <li>
+        <label>few crystals</label>
+        <description>Shards of originium has taken root and peek through my skin: a sign that I am chosen.</description>
+        <baseMoodEffect>10</baseMoodEffect>
+      </li>
+      <li>
+        <label>many crystals</label>
+        <description>Originium adorns me, displaying my moral superiority to all who look upon me.</description>
+        <baseMoodEffect>10</baseMoodEffect>
+      </li>
+      <li>
+        <label>covered in crystals</label>
+        <description>My form is sublime. I am more than flesh, I am one with originium.</description>
+        <baseMoodEffect>20</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  
+  <ThoughtDef>
+    <defName>Oripathy_Required_HasLesions_Social</defName>
+    <thoughtClass>Thought_SituationalSocial</thoughtClass>
+    <workerClass>RimKnights.Oripathy.ThoughtWorker_Precept_OripathicLesions_Social</workerClass>
+    <validWhileDespawned>true</validWhileDespawned>
+    <stages>
+      <li>
+        <label>no crystals</label>
+        <description>This one bears no signs crystals. They remain blind to the peace and unity in originium.</description>
+        <baseOpinionOffset>-30</baseOpinionOffset>
+      </li>
+      <li>
+        <label>few crystals</label>
+        <description>The signs have begun to show. They walk the first steps towards enlightenment.</description>
+        <baseOpinionOffset>10</baseOpinionOffset>
+      </li>
+      <li>
+        <label>many crystals</label>
+        <description>Their body glimmers with every crystal. A fine example of assimilation.</description>
+        <baseOpinionOffset>25</baseOpinionOffset>
+      </li>
+      <li>
+        <label>covered in crystals</label>
+        <description>They are almost fully realized. A living shrine of unity and perserverance.</description>
+        <baseOpinionOffset>60</baseOpinionOffset>
+      </li>
+    </stages>
+  </ThoughtDef>
+  
+  <ThoughtDef>
+	  <defName>Oripathy_Required_BecameOripathic</defName>
+	  <durationDays>2</durationDays>
+	  <stackLimit>1</stackLimit>
+	  <stages>
+	  <li>
+		<label>became infected</label>
+		<description>I was infected with oripathy in a righteous ceremony. Finally, I can become one with the truth in universe.</description>
+		<baseMoodEffect>10</baseMoodEffect>
+	  </li>
+	</stages>
+  </ThoughtDef>
+  
+  <ThoughtDef>
+	  <defName>Oripathy_Required_NewlyInfected</defName>
+	  <durationDays>3</durationDays>
+	  <stackLimit>1</stackLimit>
+	  <stages>
+	  <li>
+		<label>newly infected</label>
+		<description>I recently discovered that originium has chosen me to become a host.</description>
+		<baseMoodEffect>10</baseMoodEffect>
+	  </li>
+	</stages>
+  </ThoughtDef>
+	
+	<ThoughtDef>
+		<defName>Oripathy_Required_RemovedLesion_Know_Mood</defName>
+		<thoughtClass>Thought_Memory</thoughtClass>
+		<durationDays>2</durationDays>
+		<stackLimit>5</stackLimit>
+		<stackedEffectMultiplier>0.75</stackedEffectMultiplier>
+		<doNotApplyToQuestLodgers>true</doNotApplyToQuestLodgers>
+		<stages>
+		  <li>
+			<label>removed lesion</label>
+			<description>We ripped out a pristine originium crystal out of a chosen's sacred flesh.</description>
+			<baseMoodEffect>-20</baseMoodEffect>
+		  </li>
+		</stages>
+	</ThoughtDef>
+	
+	<ThoughtDef>
+		<defName>Oripathy_Required_RemovedLesion_Know</defName>
+		<thoughtClass>Thought_MemorySocial</thoughtClass>
+		<durationDays>4</durationDays>
+		<stackLimit>100</stackLimit>
+		<stackLimitForSameOtherPawn>1</stackLimitForSameOtherPawn>
+		<stages>
+		  <li>
+			<label>removed lesion</label>
+			<baseOpinionOffset>-25</baseOpinionOffset>
 		  </li>
 		</stages>
 	</ThoughtDef>

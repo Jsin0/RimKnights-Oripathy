@@ -52,6 +52,7 @@
       <li MayRequire="Ludeon.RimWorld.Ideology">Oripathy_Abhorrent</li>
       <li MayRequire="Ludeon.RimWorld.Ideology">Oripathy_Respected</li>
       <li MayRequire="Ludeon.RimWorld.Ideology">Oripathy_Exalted</li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">Oripathy_Required</li>
     </nullifyingPrecepts>
   </ThoughtDef>
   
@@ -75,6 +76,7 @@
       <li MayRequire="Ludeon.RimWorld.Ideology">Oripathy_Abhorrent</li>
       <li MayRequire="Ludeon.RimWorld.Ideology">Oripathy_Respected</li>
       <li MayRequire="Ludeon.RimWorld.Ideology">Oripathy_Exalted</li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">Oripathy_Required</li>
     </nullifyingPrecepts>
   </ThoughtDef>
   
@@ -93,6 +95,7 @@
       <li MayRequire="Ludeon.RimWorld.Ideology">Oripathy_Abhorrent</li>
       <li MayRequire="Ludeon.RimWorld.Ideology">Oripathy_Respected</li>
       <li MayRequire="Ludeon.RimWorld.Ideology">Oripathy_Exalted</li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">Oripathy_Required</li>
     </nullifyingPrecepts>
   </ThoughtDef>
   

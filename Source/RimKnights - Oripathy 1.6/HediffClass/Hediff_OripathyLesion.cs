@@ -12,7 +12,7 @@ namespace RimKnights.Oripathy
         public override void PostAdd(DamageInfo? dinfo)
         {
             base.PostAdd(dinfo);
-            if(this.Part.depth == BodyPartDepth.Outside)
+            if(this.Part.depth == BodyPartDepth.Outside || this.Visible)
             {
                 pawn.health.hediffSet.GetFirstHediffOfDef(HediffDefOf.RK_Oripathy)?.SetVisible();
                 this.SetVisible();

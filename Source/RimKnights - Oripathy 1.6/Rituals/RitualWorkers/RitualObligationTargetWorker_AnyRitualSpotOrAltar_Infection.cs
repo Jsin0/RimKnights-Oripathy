@@ -25,7 +25,7 @@ namespace RimKnights.Oripathy
             {
                 return false;
             }
-            return pawn.Ideo != null && !pawn.health.hediffSet.HasHediff(HediffDefOf.RK_Oripathy);
+            return pawn.Ideo != null && !pawn.health.hediffSet.HasHediff(HediffDefOf.RK_Oripathy, true);
         }
         public override string LabelExtraPart(RitualObligation obligation)
         {

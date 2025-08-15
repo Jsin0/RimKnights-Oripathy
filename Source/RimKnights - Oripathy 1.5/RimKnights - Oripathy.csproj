@@ -44,12 +44,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Alerts\Alert_LesionExtreme.cs" />
     <Compile Include="Comps\ThingComps\CompInfectionMonitor.cs" />
     <Compile Include="Comps\ThingComps\CompProperties_InfectionMonitor.cs" />
     <Compile Include="DefOf\HediffDefOf.cs" />
     <Compile Include="DefOf\HistoryEventDefOf.cs" />
     <Compile Include="DefOf\IssueDefOf.cs" />
     <Compile Include="DefOf\JobDefOf.cs" />
+    <Compile Include="DefOf\PreceptDefOf.cs" />
     <Compile Include="DefOf\RecipeDefOf.cs" />
     <Compile Include="DefOf\ThingDefOf.cs" />
     <Compile Include="HediffClass\Hediff_OriginiumBase.cs" />

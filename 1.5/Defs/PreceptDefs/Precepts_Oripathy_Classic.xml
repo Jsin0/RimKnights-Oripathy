@@ -13,11 +13,6 @@
     <label>became infected with oripathy</label>
   </HistoryEventDef>
   
-  <HistoryEventDef>
-    <defName>RK_RemovedLesion</defName>
-    <label>removed someone's lesion</label>
-  </HistoryEventDef>
-  
   <!-- Precept-->
   <PreceptDef>
     <defName>Oripathy_Disapproved</defName>
@@ -57,6 +52,7 @@
       <li MayRequire="Ludeon.RimWorld.Ideology">Oripathy_Abhorrent</li>
       <li MayRequire="Ludeon.RimWorld.Ideology">Oripathy_Respected</li>
       <li MayRequire="Ludeon.RimWorld.Ideology">Oripathy_Exalted</li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">Oripathy_Required</li>
     </nullifyingPrecepts>
   </ThoughtDef>
   
@@ -80,6 +76,7 @@
       <li MayRequire="Ludeon.RimWorld.Ideology">Oripathy_Abhorrent</li>
       <li MayRequire="Ludeon.RimWorld.Ideology">Oripathy_Respected</li>
       <li MayRequire="Ludeon.RimWorld.Ideology">Oripathy_Exalted</li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">Oripathy_Required</li>
     </nullifyingPrecepts>
   </ThoughtDef>
   
@@ -98,6 +95,7 @@
       <li MayRequire="Ludeon.RimWorld.Ideology">Oripathy_Abhorrent</li>
       <li MayRequire="Ludeon.RimWorld.Ideology">Oripathy_Respected</li>
       <li MayRequire="Ludeon.RimWorld.Ideology">Oripathy_Exalted</li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">Oripathy_Required</li>
     </nullifyingPrecepts>
   </ThoughtDef>
   
