@@ -20,14 +20,14 @@ namespace RimKnights.Oripathy
 
         public override void Notify_Equipped(Pawn pawn)
         {
-            if (!pawn.health?.hediffSet.HasHediff(Core.HediffDefOf.RK_InfectionMonitorImplant) ?? false)
+            if (!pawn.health?.hediffSet.HasHediff(HediffDefOf.RK_InfectionMonitorImplant) ?? false)
             {
-                pawn.health.AddHediff(Core.HediffDefOf.RK_InfectionMonitorWorn);
+                pawn.health.AddHediff(HediffDefOf.RK_InfectionMonitorWorn);
             }
         }
         public override void Notify_Unequipped(Pawn pawn)
         {
-            Hediff hediff = pawn.health?.hediffSet.GetFirstHediffOfDef(Core.HediffDefOf.RK_InfectionMonitorWorn);
+            Hediff hediff = pawn.health?.hediffSet.GetFirstHediffOfDef(HediffDefOf.RK_InfectionMonitorWorn);
             if (hediff != null) pawn.health.RemoveHediff(hediff);
         }
     }

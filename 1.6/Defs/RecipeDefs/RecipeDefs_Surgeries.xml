@@ -43,7 +43,7 @@
 		<hideBodyPartNames>true</hideBodyPartNames>
 		<isViolation>true</isViolation>
 		<ingredients>
-		  <li>
+		  <li MayRequire="rimknights.core">
 			<filter>
 			  <thingDefs>
 				<li>RK_OriginiumShard</li>
@@ -62,7 +62,7 @@
 		<defName>RK_HarvestLesion</defName>
 		<label>harvest originium</label>
 		<description>Harvest an originium shard from a lesion without completely removing it, allowing it to regrow.</description>
-		<workerClass>RimKnights.Core.Recipe_HarvestHediff</workerClass>
+		<workerClass>RimKnights.Oripathy.Recipe_HarvestHediff</workerClass>
 		<jobString>Harvesting originium.</jobString>
 		<isViolation>true</isViolation>
 		<workAmount>2000</workAmount>

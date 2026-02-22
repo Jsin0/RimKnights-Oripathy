@@ -11,12 +11,15 @@ namespace RimKnights.Oripathy
         public bool infectionMonitor = false;
 
         public bool abandonOripathicCorpses = false;
+
+        public bool debugMode = false;
         public override void ExposeData()
         {
             base.ExposeData();
             Scribe_Values.Look(ref baselinersImmune, "baselinersImmune", false);
             Scribe_Values.Look(ref infectionMonitor, "infectionMonitor", false);
             Scribe_Values.Look(ref abandonOripathicCorpses, "abandonOripathicCorpses", false);
+            Scribe_Values.Look(ref debugMode, "debugMode", false);
         }
     }
 

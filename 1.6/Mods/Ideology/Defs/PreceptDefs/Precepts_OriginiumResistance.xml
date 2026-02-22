@@ -10,16 +10,16 @@
   <!-- Precept-->
   
   <PreceptDef>
-    <defName>MiningYield_High</defName>
-    <issue>MiningYield</issue>
+    <defName>RK_OriginiumResistanceMeme</defName>
+    <issue>RK_OriginiumResistance</issue>
     <label>high</label>
-    <description>Mining is so important that we do it with great focus and respect, and we get more resources because of that.</description>
+    <description>Careful management of originium in our bodies is critical for our beliefs.</description>
     <impact>Medium</impact>
     <associatedMemes>
-      <li>OriginiumSupremacy</li>
+      <li MayRequire="rimknights.core">OriginiumSupremacy</li>
     </associatedMemes>
     <requiredMemes>
-      <li>OriginiumSupremacy</li>
+      <li MayRequire="rimknights.core">OriginiumSupremacy</li>
     </requiredMemes>
     <statOffsets>
       <RK_OriginiumResistance>0.1</RK_OriginiumResistance>

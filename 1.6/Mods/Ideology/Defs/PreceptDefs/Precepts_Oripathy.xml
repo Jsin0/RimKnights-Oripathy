@@ -162,7 +162,7 @@
     <displayOrderInIssue>0</displayOrderInIssue>
     <displayOrderInImpact>100</displayOrderInImpact>
     <requiredMemes>
-      <li>OriginiumSupremacy</li>
+      <li MayRequire="rimknights.core">OriginiumSupremacy</li>
     </requiredMemes>
 	<modExtensions>
 		<li Class="RimKnights.Oripathy.Utilities.PreceptOripathyExtension">
@@ -245,7 +245,7 @@
     <displayOrderInIssue>0</displayOrderInIssue>
     <displayOrderInImpact>100</displayOrderInImpact>
     <requiredMemes>
-      <li>OriginiumSupremacy</li>
+      <li MayRequire="rimknights.core">OriginiumSupremacy</li>
     </requiredMemes>
 	<modExtensions>
 		<li Class="RimKnights.Oripathy.Utilities.PreceptOripathyExtension">

@@ -23,7 +23,7 @@ namespace RimKnights.Oripathy
         {
             base.PostAdd(dinfo);
 
-            (this.pawn.health.GetOrAddHediff(Core.HediffDefOf.RK_OriginiumBuildup) as Hediff_OriginiumBuildup).isOripathic = true;
+            (this.pawn.health.GetOrAddHediff(HediffDefOf.RK_OriginiumBuildup) as Hediff_OriginiumBuildup).isOripathic = true;
 
         }
         public override void Notify_PawnDied(DamageInfo? dinfo, Hediff culprit = null)
@@ -65,7 +65,7 @@ namespace RimKnights.Oripathy
                 currentPhase = ShatterPhase.Warmup;
                 if(this.warmupTimer == null) this.warmupTimer = new TickTimer();
                 this.warmupTimer.Start(GenTicks.TicksGame, this.finalDelay, new Action(this.TryTriggerShatter));
-                if (Core.CoreMod.settings.debugMode) Log.Message($"[RimKnights - Oripathy] ShatterWarmup started for {corpse} of {this.pawn.Name}.");
+                if (OripathyMod.settings.debugMode) Log.Message("DebugShatterWarmupStarted".Translate("pawn", pawn.NameFullColored));
             }
         }
         private void TryTriggerWarmupEffect()
@@ -75,7 +75,7 @@ namespace RimKnights.Oripathy
             {
                 if (this.warmupEffecter == null)
                 {
-                    EffecterDef effecter = ModsConfig.BiotechActive ? RimWorld.EffecterDefOf.CellPollution : Core.EffecterDefOf.RK_ShatterWarmup;
+                    EffecterDef effecter = ModsConfig.BiotechActive ? RimWorld.EffecterDefOf.CellPollution : EffecterDefOf.RK_ShatterWarmup;
                     this.warmupEffecter = effecter.Spawn(corpse, corpse.MapHeld, Vector3.zero);
                     corpse.MapHeld.effecterMaintainer.AddEffecterToMaintain(this.warmupEffecter, corpse, 250);
                 }
@@ -92,7 +92,7 @@ namespace RimKnights.Oripathy
             Corpse corpse = pawn?.Corpse;
             if (corpse.DestroyedOrNull())
             {
-                if(Core.CoreMod.settings.debugMode) Log.Error("[RimKnights - Oripathy] corpse cannot shatter as it has already been destroyed.");
+                if(OripathyMod.settings.debugMode) Log.Error("DebugAlreadyDestroyedCorpse".Translate());
                 return;
             }
 
@@ -107,7 +107,7 @@ namespace RimKnights.Oripathy
             }
 
             Messages.Message("MessageShatteringCorpse".Translate(pawn.Named("PAWN")), corpse, MessageTypeDefOf.NegativeEvent);
-            if (Core.CoreMod.settings.debugMode) Log.Message($"[RimKnights - Oripathy] Shattering started for {corpse} of {this.pawn.Name}.");
+            if (OripathyMod.settings.debugMode) Log.Message("DebugShatteringStart".Translate(pawn.Named("PAWN")));
         }
 
         private void TryTriggerShatterEffect()
@@ -117,14 +117,14 @@ namespace RimKnights.Oripathy
             {
                 Thing glower = ThingMaker.MakeThing(ThingDefOf.RK_ShatterGlow);
 
-                Core.CompFollower compFollower;
+                CompFollower compFollower;
                 if(glower.TryGetComp(out compFollower))
                 {
                     compFollower.SetTarget(corpse);
                     GenSpawn.Spawn(glower, corpse.Position, corpse.MapHeld);
                 }
 
-                this.shatterEffecter = Core.EffecterDefOf.RK_Shattering.Spawn(corpse, corpse.MapHeld, Vector3.zero);
+                this.shatterEffecter = EffecterDefOf.RK_Shattering.Spawn(corpse, corpse.MapHeld, Vector3.zero);
                 corpse.MapHeld.effecterMaintainer.AddEffecterToMaintain(this.shatterEffecter, corpse, 250);
             }
         }
@@ -209,10 +209,16 @@ namespace RimKnights.Oripathy
                     if (!corpse.IsDessicated() && TryDamageContainer(corpse))
                     {
                         float radius = Mathf.Max(this.pawn.BodySize, 0.5f) * 2f;
-                        GenExplosion.DoExplosion(center, map, radius, RimKnights.Core.DamageDefOf.RK_ActiveOriginium, corpse, -1, -1f, null, null, null, null, Core.ThingDefOf.RK_OriginiumCluster, 0.20f, 1, null, null,255, false, null, 0f, 1, 0.2f, true, null, null, null, true, 1f, 0f, true, null, 1f, null, null);
+                        DamageDef damageDef = DamageDefOf.RK_ActiveOriginium;
+                        ThingDef spawnedThingDef = null;
+                        if (OripathyMod.originiumModActive)
+                        {
+                            spawnedThingDef = RimKnights.Core.ThingDefOf.RK_OriginiumCluster;
+                        }
+                        GenExplosion.DoExplosion(center, map, radius, damageDef, corpse, -1, -1f, null, null, null, null, spawnedThingDef, 0.20f, 1, null, null,255, false, null, 0f, 1, 0.2f, true, null, null, null, true, 1f, 0f, true, null, 1f, null, null);
                     }
 
-                    GenSpawn.Spawn(RimKnights.Core.ThingDefOf.RK_OriginiumCluster, center, map, WipeMode.FullRefund);
+                    if (OripathyMod.originiumModActive) GenSpawn.Spawn(RimKnights.Core.ThingDefOf.RK_OriginiumCluster, center, map, WipeMode.FullRefund);
                 }
                 else
                 {
@@ -249,7 +255,7 @@ namespace RimKnights.Oripathy
         {
             if (caravan != null)
             {
-                if (Core.CoreMod.settings.debugMode) Log.Message($"[RimKnights - Oripathy] corpse of {this.pawn.Name} in {caravan.Name} has shattered.");
+                if (OripathyMod.settings.debugMode) Log.Message("DebugShatterInCaravan".Translate("pawn", this.pawn.NameShortColored, "caravan", caravan.Name));
 
                 FloatRange randSeverity = new FloatRange(0f, 1f);
                 foreach (Pawn p in caravan.pawns)
@@ -257,7 +263,7 @@ namespace RimKnights.Oripathy
                     if (p != null)
                     {
                         p.health.GetOrAddHediff(HediffDefOf.RK_OriginiumBuildup).Severity += randSeverity.RandomInRange;
-                        if (Core.CoreMod.settings.debugMode) Log.Message($"[RimKnights - Oripathy] {p.Name}'s BOB = {p.health.hediffSet.GetFirstHediffOfDef(HediffDefOf.RK_OriginiumBuildup).Severity}.");
+                        if (OripathyMod.settings.debugMode) Log.Message("DebugCaravanBobSeverity".Translate("pawn", p.NameFullColored, "severity", p.health.hediffSet.GetFirstHediffOfDef(HediffDefOf.RK_OriginiumBuildup).Severity));
 
                     }
                 }
@@ -286,7 +292,7 @@ namespace RimKnights.Oripathy
             {
                 if (building.def.useHitPoints)
                 {
-                    DamageInfo damageInfo = new DamageInfo(Core.DamageDefOf.RK_OriginiumBlast, 200f);
+                    DamageInfo damageInfo = new DamageInfo(DamageDefOf.RK_OriginiumBlast, 200f);
 
                     building.TakeDamage(damageInfo);
                     if (building.Destroyed)

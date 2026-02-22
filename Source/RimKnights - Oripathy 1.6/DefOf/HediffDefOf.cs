@@ -18,10 +18,10 @@ namespace RimKnights.Oripathy
 
         public static HediffDef RK_OriginiumBuildup;
 
-        public static HediffDef RK_HarvestShock;
-
         public static HediffDef RK_InfectionMonitorWorn;
 
         public static HediffDef RK_InfectionMonitorImplant;
+
+        public static HediffDef RK_HarvestShock;
     }
 }

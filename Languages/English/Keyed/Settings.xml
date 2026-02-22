@@ -2,6 +2,8 @@
 <LanguageData>
 	<BaselinersImmuneLabel>Baseliners Immune</BaselinersImmuneLabel>
 	<BaselinersImmuneDesc>Baseliners cannot get oripathy or blood originium buildup.\n\nOriginium will never harm you.</BaselinersImmuneDesc>
+	<DebugModeLable>Debug Mode</DebugModeLable>
+	<DebugModeDesc>Enables more logging for debugging purposes</DebugModeDesc>
 	<InfectionMonitorLabel>Infection Monitor Required for Tracking</InfectionMonitorLabel>
 	<InfectionMonitorDesc>Infection monitors are required to show oripathy and originium buildup severities.</InfectionMonitorDesc>
 	<AbandonOripathicCorpsesLabel>Autoabandon oripathic corpses</AbandonOripathicCorpsesLabel>

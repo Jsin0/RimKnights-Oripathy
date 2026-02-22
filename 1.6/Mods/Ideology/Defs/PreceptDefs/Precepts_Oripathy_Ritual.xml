@@ -21,7 +21,7 @@
       <li>OripathyBad</li>
     </exclusionTags>
     <associatedMemes>
-      <li>OriginiumSupremacy</li>
+      <li MayRequire="rimknights.core">OriginiumSupremacy</li>
     </associatedMemes>
   </PreceptDef>
 </Defs>

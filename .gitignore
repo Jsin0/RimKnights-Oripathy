@@ -1,1 +1,4 @@
 *.bat
+Directory.Build.props
+.vs/
+.user

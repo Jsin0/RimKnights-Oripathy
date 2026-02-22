@@ -13,17 +13,17 @@ namespace RimKnights.Oripathy
         {
             if (p != null)
             {
-                if (p.health.hediffSet.HasHediff(Core.HediffDefOf.RK_Oripathy))
+                if (p.health.hediffSet.HasHediff(HediffDefOf.RK_Oripathy))
                 {
                     Messages.Message("MessagePawnAlreadyOripathic".Translate(p.Named("PAWN")), MessageTypeDefOf.NegativeEvent);
                 }
                 else
                 {
-                    p.health.AddHediff(Core.HediffDefOf.RK_Oripathy);
+                    p.health.AddHediff(HediffDefOf.RK_Oripathy);
                     Messages.Message("MessagePawnNowOripathic".Translate(p.Named("PAWN")), MessageTypeDefOf.NegativeEvent);
                 }
                 //p.health.GetOrAddHediff(HediffDefOf.RK_Oripathy).Severity = 1f;
-                p.health.hediffSet.GetFirstHediffOfDef(Core.HediffDefOf.RK_Oripathy).Severity = 1f;
+                p.health.hediffSet.GetFirstHediffOfDef(HediffDefOf.RK_Oripathy).Severity = 1f;
             }
         }
 
@@ -36,7 +36,7 @@ namespace RimKnights.Oripathy
                 IReadOnlyList<Pawn> allPawnsSpawned = map.mapPawns.AllPawnsSpawned;
                 for (int i = 0; i < allPawnsSpawned.Count; i++)
                 {
-                    allPawnsSpawned[i].health.GetOrAddHediff(Core.HediffDefOf.RK_Oripathy).Severity = 1f;
+                    allPawnsSpawned[i].health.GetOrAddHediff(HediffDefOf.RK_Oripathy).Severity = 1f;
                 }
             }
         }
@@ -44,7 +44,8 @@ namespace RimKnights.Oripathy
         [DebugAction("Oripathy", "Do Shatter Explosion", actionType = DebugActionType.ToolMap, allowedGameStates = AllowedGameStates.PlayingOnMap)]
         public static void DoShatterExplosion()
         {
-            GenExplosion.DoExplosion(UI.MouseCell(), Find.CurrentMap, 3f, Core.DamageDefOf.RK_ActiveOriginium, null);
+            DamageDef damageDef = DamageDefOf.RK_ActiveOriginium;
+            GenExplosion.DoExplosion(UI.MouseCell(), Find.CurrentMap, 3f, damageDef, null);
         }
 
         [DebugAction("Oripathy", "Start Shattering", actionType = DebugActionType.ToolMapForPawns, allowedGameStates = AllowedGameStates.PlayingOnMap)]
@@ -66,8 +67,8 @@ namespace RimKnights.Oripathy
                 IReadOnlyList<Pawn> allPawnsSpawned = map.mapPawns.AllPawnsSpawned;
                 for (int i = 0; i < allPawnsSpawned.Count; i++)
                 {
-                    allPawnsSpawned[i].health.GetOrAddHediff(Core.HediffDefOf.RK_Oripathy);
-                    allPawnsSpawned[i].health.hediffSet.GetFirstHediffOfDef(Core.HediffDefOf.RK_Oripathy).Severity = 1f;
+                    allPawnsSpawned[i].health.GetOrAddHediff(HediffDefOf.RK_Oripathy);
+                    allPawnsSpawned[i].health.hediffSet.GetFirstHediffOfDef(HediffDefOf.RK_Oripathy).Severity = 1f;
                     allPawnsSpawned[i].Kill(null, null);
                 }
             }

@@ -3,28 +3,104 @@
   "WorkspaceRootPath": "C:\\Users\\Josh\\Documents\\Rimworld Mods In Progress\\Rimknights - Oripathy\\Source\\RimKnights - Oripathy 1.6\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{E29E61F4-4FFC-4FE5-BFEA-C85CA58E9A2C}|RimKnights - Oripathy.csproj|c:\\users\\josh\\documents\\rimworld mods in progress\\rimknights - oripathy\\source\\rimknights - oripathy 1.6\\alerts\\alert_lesionextreme.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E29E61F4-4FFC-4FE5-BFEA-C85CA58E9A2C}|RimKnights - Oripathy.csproj|solutionrelative:alerts\\alert_lesionextreme.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E29E61F4-4FFC-4FE5-BFEA-C85CA58E9A2C}|RimKnights - Oripathy.csproj|c:\\users\\josh\\documents\\rimworld mods in progress\\rimknights - oripathy\\source\\rimknights - oripathy 1.6\\defof\\preceptdefof.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E29E61F4-4FFC-4FE5-BFEA-C85CA58E9A2C}|RimKnights - Oripathy.csproj|solutionrelative:defof\\preceptdefof.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E29E61F4-4FFC-4FE5-BFEA-C85CA58E9A2C}|RimKnights - Oripathy.csproj|c:\\users\\josh\\documents\\rimworld mods in progress\\rimknights - oripathy\\source\\rimknights - oripathy 1.6\\defof\\hediffdefof.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E29E61F4-4FFC-4FE5-BFEA-C85CA58E9A2C}|RimKnights - Oripathy.csproj|solutionrelative:defof\\hediffdefof.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E29E61F4-4FFC-4FE5-BFEA-C85CA58E9A2C}|RimKnights - Oripathy.csproj|c:\\users\\josh\\documents\\rimworld mods in progress\\rimknights - oripathy\\source\\rimknights - oripathy 1.6\\hediffclass\\hediff_oripathy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E29E61F4-4FFC-4FE5-BFEA-C85CA58E9A2C}|RimKnights - Oripathy.csproj|solutionrelative:hediffclass\\hediff_oripathy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{E29E61F4-4FFC-4FE5-BFEA-C85CA58E9A2C}|RimKnights - Oripathy.csproj|C:\\Users\\Josh\\Documents\\Rimworld Mods In Progress\\Rimknights - Oripathy\\Source\\RimKnights - Oripathy 1.6\\utilities\\applyharmony.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E29E61F4-4FFC-4FE5-BFEA-C85CA58E9A2C}|RimKnights - Oripathy.csproj|solutionrelative:utilities\\applyharmony.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E29E61F4-4FFC-4FE5-BFEA-C85CA58E9A2C}|RimKnights - Oripathy.csproj|C:\\Users\\Josh\\Documents\\Rimworld Mods In Progress\\Rimknights - Oripathy\\Source\\RimKnights - Oripathy 1.6\\hediffclass\\hediff_originiumbase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E29E61F4-4FFC-4FE5-BFEA-C85CA58E9A2C}|RimKnights - Oripathy.csproj|solutionrelative:hediffclass\\hediff_originiumbase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E29E61F4-4FFC-4FE5-BFEA-C85CA58E9A2C}|RimKnights - Oripathy.csproj|C:\\Users\\Josh\\Documents\\Rimworld Mods In Progress\\Rimknights - Oripathy\\Source\\RimKnights - Oripathy 1.6\\utilities\\debugactions_oripathy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E29E61F4-4FFC-4FE5-BFEA-C85CA58E9A2C}|RimKnights - Oripathy.csproj|solutionrelative:utilities\\debugactions_oripathy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E29E61F4-4FFC-4FE5-BFEA-C85CA58E9A2C}|RimKnights - Oripathy.csproj|C:\\Users\\Josh\\Documents\\Rimworld Mods In Progress\\Rimknights - Oripathy\\Source\\RimKnights - Oripathy 1.6\\defof\\damagedefof.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E29E61F4-4FFC-4FE5-BFEA-C85CA58E9A2C}|RimKnights - Oripathy.csproj|solutionrelative:defof\\damagedefof.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E29E61F4-4FFC-4FE5-BFEA-C85CA58E9A2C}|RimKnights - Oripathy.csproj|C:\\Users\\Josh\\Documents\\Rimworld Mods In Progress\\Rimknights - Oripathy\\Source\\RimKnights - Oripathy 1.6\\workerclass\\damageworker\\damageworker_applyhediff.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E29E61F4-4FFC-4FE5-BFEA-C85CA58E9A2C}|RimKnights - Oripathy.csproj|solutionrelative:workerclass\\damageworker\\damageworker_applyhediff.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E29E61F4-4FFC-4FE5-BFEA-C85CA58E9A2C}|RimKnights - Oripathy.csproj|C:\\Users\\Josh\\Documents\\Rimworld Mods In Progress\\Rimknights - Oripathy\\Source\\RimKnights - Oripathy 1.6\\utilities\\modsettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E29E61F4-4FFC-4FE5-BFEA-C85CA58E9A2C}|RimKnights - Oripathy.csproj|solutionrelative:utilities\\modsettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E29E61F4-4FFC-4FE5-BFEA-C85CA58E9A2C}|RimKnights - Oripathy.csproj|C:\\Users\\Josh\\Documents\\Rimworld Mods In Progress\\Rimknights - Oripathy\\Source\\RimKnights - Oripathy 1.6\\defof\\recipedefof.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E29E61F4-4FFC-4FE5-BFEA-C85CA58E9A2C}|RimKnights - Oripathy.csproj|solutionrelative:defof\\recipedefof.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E29E61F4-4FFC-4FE5-BFEA-C85CA58E9A2C}|RimKnights - Oripathy.csproj|C:\\Users\\Josh\\Documents\\Rimworld Mods In Progress\\Rimknights - Oripathy\\Source\\RimKnights - Oripathy 1.6\\comps\\hediffcomps\\hediffcomp_dynamicseverityrange.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E29E61F4-4FFC-4FE5-BFEA-C85CA58E9A2C}|RimKnights - Oripathy.csproj|solutionrelative:comps\\hediffcomps\\hediffcomp_dynamicseverityrange.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E29E61F4-4FFC-4FE5-BFEA-C85CA58E9A2C}|RimKnights - Oripathy.csproj|C:\\Users\\Josh\\Documents\\Rimworld Mods In Progress\\Rimknights - Oripathy\\Source\\RimKnights - Oripathy 1.6\\comps\\hediffcomps\\hediffcompproperties_dynamicseverityperday.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E29E61F4-4FFC-4FE5-BFEA-C85CA58E9A2C}|RimKnights - Oripathy.csproj|solutionrelative:comps\\hediffcomps\\hediffcompproperties_dynamicseverityperday.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E29E61F4-4FFC-4FE5-BFEA-C85CA58E9A2C}|RimKnights - Oripathy.csproj|C:\\Users\\Josh\\Documents\\Rimworld Mods In Progress\\Rimknights - Oripathy\\Source\\RimKnights - Oripathy 1.6\\comps\\hediffcomps\\hediffcompproperties_dynamicseverityrange.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E29E61F4-4FFC-4FE5-BFEA-C85CA58E9A2C}|RimKnights - Oripathy.csproj|solutionrelative:comps\\hediffcomps\\hediffcompproperties_dynamicseverityrange.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E29E61F4-4FFC-4FE5-BFEA-C85CA58E9A2C}|RimKnights - Oripathy.csproj|C:\\Users\\Josh\\Documents\\Rimworld Mods In Progress\\Rimknights - Oripathy\\Source\\RimKnights - Oripathy 1.6\\comps\\hediffcomps\\hediffcomp_suppressible.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E29E61F4-4FFC-4FE5-BFEA-C85CA58E9A2C}|RimKnights - Oripathy.csproj|solutionrelative:comps\\hediffcomps\\hediffcomp_suppressible.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E29E61F4-4FFC-4FE5-BFEA-C85CA58E9A2C}|RimKnights - Oripathy.csproj|C:\\Users\\Josh\\Documents\\Rimworld Mods In Progress\\Rimknights - Oripathy\\Source\\RimKnights - Oripathy 1.6\\helperclasses\\affectorhediff.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E29E61F4-4FFC-4FE5-BFEA-C85CA58E9A2C}|RimKnights - Oripathy.csproj|solutionrelative:helperclasses\\affectorhediff.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E29E61F4-4FFC-4FE5-BFEA-C85CA58E9A2C}|RimKnights - Oripathy.csproj|C:\\Users\\Josh\\Documents\\Rimworld Mods In Progress\\Rimknights - Oripathy\\Source\\RimKnights - Oripathy 1.6\\utilities\\oripathymod.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E29E61F4-4FFC-4FE5-BFEA-C85CA58E9A2C}|RimKnights - Oripathy.csproj|solutionrelative:utilities\\oripathymod.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E29E61F4-4FFC-4FE5-BFEA-C85CA58E9A2C}|RimKnights - Oripathy.csproj|C:\\Users\\Josh\\Documents\\Rimworld Mods In Progress\\Rimknights - Oripathy\\Source\\RimKnights - Oripathy 1.6\\workerclass\\recipeworker\\recipe_harvesthediff.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E29E61F4-4FFC-4FE5-BFEA-C85CA58E9A2C}|RimKnights - Oripathy.csproj|solutionrelative:workerclass\\recipeworker\\recipe_harvesthediff.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E29E61F4-4FFC-4FE5-BFEA-C85CA58E9A2C}|RimKnights - Oripathy.csproj|C:\\Users\\Josh\\Documents\\Rimworld Mods In Progress\\Rimknights - Oripathy\\Source\\RimKnights - Oripathy 1.6\\defof\\hediffdefof.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E29E61F4-4FFC-4FE5-BFEA-C85CA58E9A2C}|RimKnights - Oripathy.csproj|solutionrelative:defof\\hediffdefof.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E29E61F4-4FFC-4FE5-BFEA-C85CA58E9A2C}|RimKnights - Oripathy.csproj|C:\\Users\\Josh\\Documents\\Rimworld Mods In Progress\\Rimknights - Oripathy\\Source\\RimKnights - Oripathy 1.6\\defof\\statdefof.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E29E61F4-4FFC-4FE5-BFEA-C85CA58E9A2C}|RimKnights - Oripathy.csproj|solutionrelative:defof\\statdefof.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E29E61F4-4FFC-4FE5-BFEA-C85CA58E9A2C}|RimKnights - Oripathy.csproj|C:\\Users\\Josh\\Documents\\Rimworld Mods In Progress\\Rimknights - Oripathy\\Source\\RimKnights - Oripathy 1.6\\comps\\hediffcomps\\hediffcomp_harvestable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E29E61F4-4FFC-4FE5-BFEA-C85CA58E9A2C}|RimKnights - Oripathy.csproj|solutionrelative:comps\\hediffcomps\\hediffcomp_harvestable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E29E61F4-4FFC-4FE5-BFEA-C85CA58E9A2C}|RimKnights - Oripathy.csproj|C:\\Users\\Josh\\Documents\\Rimworld Mods In Progress\\Rimknights - Oripathy\\Source\\RimKnights - Oripathy 1.6\\comps\\hediffcomps\\hediffcompproperties_harvestable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E29E61F4-4FFC-4FE5-BFEA-C85CA58E9A2C}|RimKnights - Oripathy.csproj|solutionrelative:comps\\hediffcomps\\hediffcompproperties_harvestable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E29E61F4-4FFC-4FE5-BFEA-C85CA58E9A2C}|RimKnights - Oripathy.csproj|C:\\Users\\Josh\\Documents\\Rimworld Mods In Progress\\Rimknights - Oripathy\\Source\\RimKnights - Oripathy 1.6\\comps\\hediffcomps\\hediffcomp_dynamicseverityperday.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E29E61F4-4FFC-4FE5-BFEA-C85CA58E9A2C}|RimKnights - Oripathy.csproj|solutionrelative:comps\\hediffcomps\\hediffcomp_dynamicseverityperday.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E29E61F4-4FFC-4FE5-BFEA-C85CA58E9A2C}|RimKnights - Oripathy.csproj|C:\\Users\\Josh\\Documents\\Rimworld Mods In Progress\\Rimknights - Oripathy\\Source\\RimKnights - Oripathy 1.6\\comps\\hediffcomps\\hediffcompproperties_suppressible.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E29E61F4-4FFC-4FE5-BFEA-C85CA58E9A2C}|RimKnights - Oripathy.csproj|solutionrelative:comps\\hediffcomps\\hediffcompproperties_suppressible.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{E29E61F4-4FFC-4FE5-BFEA-C85CA58E9A2C}|RimKnights - Oripathy.csproj|C:\\Users\\Josh\\Documents\\Rimworld Mods In Progress\\Rimknights - Oripathy\\Source\\RimKnights - Oripathy 1.6\\hediffclass\\hediff_oripathylesion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E29E61F4-4FFC-4FE5-BFEA-C85CA58E9A2C}|RimKnights - Oripathy.csproj|solutionrelative:hediffclass\\hediff_oripathylesion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E29E61F4-4FFC-4FE5-BFEA-C85CA58E9A2C}|RimKnights - Oripathy.csproj|C:\\Users\\Josh\\Documents\\Rimworld Mods In Progress\\Rimknights - Oripathy\\Source\\RimKnights - Oripathy 1.6\\comps\\thingcomps\\compfollower.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E29E61F4-4FFC-4FE5-BFEA-C85CA58E9A2C}|RimKnights - Oripathy.csproj|solutionrelative:comps\\thingcomps\\compfollower.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E29E61F4-4FFC-4FE5-BFEA-C85CA58E9A2C}|RimKnights - Oripathy.csproj|C:\\Users\\Josh\\Documents\\Rimworld Mods In Progress\\Rimknights - Oripathy\\Source\\RimKnights - Oripathy 1.6\\comps\\thingcomps\\compproperties_follower.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E29E61F4-4FFC-4FE5-BFEA-C85CA58E9A2C}|RimKnights - Oripathy.csproj|solutionrelative:comps\\thingcomps\\compproperties_follower.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E29E61F4-4FFC-4FE5-BFEA-C85CA58E9A2C}|RimKnights - Oripathy.csproj|C:\\Users\\Josh\\Documents\\Rimworld Mods In Progress\\Rimknights - Oripathy\\Source\\RimKnights - Oripathy 1.6\\comps\\thingcomps\\compinfectionmonitor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E29E61F4-4FFC-4FE5-BFEA-C85CA58E9A2C}|RimKnights - Oripathy.csproj|solutionrelative:comps\\thingcomps\\compinfectionmonitor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E29E61F4-4FFC-4FE5-BFEA-C85CA58E9A2C}|RimKnights - Oripathy.csproj|C:\\Users\\Josh\\Documents\\Rimworld Mods In Progress\\Rimknights - Oripathy\\Source\\RimKnights - Oripathy 1.6\\defof\\effecterdefof.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E29E61F4-4FFC-4FE5-BFEA-C85CA58E9A2C}|RimKnights - Oripathy.csproj|solutionrelative:defof\\effecterdefof.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -34,88 +110,7 @@
       "DocumentGroups": [
         {
           "DockedHeight": 315,
-          "SelectedChildIndex": 2,
-          "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "PreceptDefOf.cs",
-              "DocumentMoniker": "C:\\Users\\Josh\\Documents\\Rimworld Mods In Progress\\Rimknights - Oripathy\\Source\\RimKnights - Oripathy 1.6\\DefOf\\PreceptDefOf.cs",
-              "RelativeDocumentMoniker": "DefOf\\PreceptDefOf.cs",
-              "ToolTip": "C:\\Users\\Josh\\Documents\\Rimworld Mods In Progress\\Rimknights - Oripathy\\Source\\RimKnights - Oripathy 1.6\\DefOf\\PreceptDefOf.cs",
-              "RelativeToolTip": "DefOf\\PreceptDefOf.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-10T07:45:07.339Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "HediffDefOf.cs",
-              "DocumentMoniker": "C:\\Users\\Josh\\Documents\\Rimworld Mods In Progress\\Rimknights - Oripathy\\Source\\RimKnights - Oripathy 1.6\\DefOf\\HediffDefOf.cs",
-              "RelativeDocumentMoniker": "DefOf\\HediffDefOf.cs",
-              "ToolTip": "C:\\Users\\Josh\\Documents\\Rimworld Mods In Progress\\Rimknights - Oripathy\\Source\\RimKnights - Oripathy 1.6\\DefOf\\HediffDefOf.cs",
-              "RelativeToolTip": "DefOf\\HediffDefOf.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAwAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-10T07:42:19.872Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Alert_LesionExtreme.cs",
-              "DocumentMoniker": "C:\\Users\\Josh\\Documents\\Rimworld Mods In Progress\\Rimknights - Oripathy\\Source\\RimKnights - Oripathy 1.6\\Alerts\\Alert_LesionExtreme.cs",
-              "RelativeDocumentMoniker": "Alerts\\Alert_LesionExtreme.cs",
-              "ToolTip": "C:\\Users\\Josh\\Documents\\Rimworld Mods In Progress\\Rimknights - Oripathy\\Source\\RimKnights - Oripathy 1.6\\Alerts\\Alert_LesionExtreme.cs*",
-              "RelativeToolTip": "Alerts\\Alert_LesionExtreme.cs*",
-              "ViewState": "AgIAAB8AAAAAAAAAAAAgwC4AAAAUAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-10T06:38:43.956Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Hediff_OriginiumBase.cs",
-              "DocumentMoniker": "C:\\Users\\Josh\\Documents\\Rimworld Mods In Progress\\Rimknights - Oripathy\\Source\\RimKnights - Oripathy 1.6\\HediffClass\\Hediff_OriginiumBase.cs",
-              "RelativeDocumentMoniker": "HediffClass\\Hediff_OriginiumBase.cs",
-              "ToolTip": "C:\\Users\\Josh\\Documents\\Rimworld Mods In Progress\\Rimknights - Oripathy\\Source\\RimKnights - Oripathy 1.6\\HediffClass\\Hediff_OriginiumBase.cs",
-              "RelativeToolTip": "HediffClass\\Hediff_OriginiumBase.cs",
-              "ViewState": "AgIAAAUAAAAAAAAAAAAAAAwAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-08T08:22:02.982Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Hediff_OripathyLesion.cs",
-              "DocumentMoniker": "C:\\Users\\Josh\\Documents\\Rimworld Mods In Progress\\Rimknights - Oripathy\\Source\\RimKnights - Oripathy 1.6\\HediffClass\\Hediff_OripathyLesion.cs",
-              "RelativeDocumentMoniker": "HediffClass\\Hediff_OripathyLesion.cs",
-              "ToolTip": "C:\\Users\\Josh\\Documents\\Rimworld Mods In Progress\\Rimknights - Oripathy\\Source\\RimKnights - Oripathy 1.6\\HediffClass\\Hediff_OripathyLesion.cs",
-              "RelativeToolTip": "HediffClass\\Hediff_OripathyLesion.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAASAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-08T07:41:22.795Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "ApplyHarmony.cs",
-              "DocumentMoniker": "C:\\Users\\Josh\\Documents\\Rimworld Mods In Progress\\Rimknights - Oripathy\\Source\\RimKnights - Oripathy 1.6\\Utilities\\ApplyHarmony.cs",
-              "RelativeDocumentMoniker": "Utilities\\ApplyHarmony.cs",
-              "ToolTip": "C:\\Users\\Josh\\Documents\\Rimworld Mods In Progress\\Rimknights - Oripathy\\Source\\RimKnights - Oripathy 1.6\\Utilities\\ApplyHarmony.cs",
-              "RelativeToolTip": "Utilities\\ApplyHarmony.cs",
-              "ViewState": "AgIAAIgAAAAAAAAAAAAAAJAAAAANAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-06T02:43:26.153Z"
-            }
-          ]
-        },
-        {
-          "DockedHeight": 315,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 10,
           "Children": [
             {
               "$type": "Bookmark",
@@ -124,6 +119,331 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ModSettings.cs",
+              "DocumentMoniker": "C:\\Users\\Josh\\Documents\\Rimworld Mods In Progress\\Rimknights - Oripathy\\Source\\RimKnights - Oripathy 1.6\\Utilities\\ModSettings.cs",
+              "RelativeDocumentMoniker": "Utilities\\ModSettings.cs",
+              "ToolTip": "C:\\Users\\Josh\\Documents\\Rimworld Mods In Progress\\Rimknights - Oripathy\\Source\\RimKnights - Oripathy 1.6\\Utilities\\ModSettings.cs",
+              "RelativeToolTip": "Utilities\\ModSettings.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-26T01:26:16.107Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "RecipeDefOf.cs",
+              "DocumentMoniker": "C:\\Users\\Josh\\Documents\\Rimworld Mods In Progress\\Rimknights - Oripathy\\Source\\RimKnights - Oripathy 1.6\\DefOf\\RecipeDefOf.cs",
+              "RelativeDocumentMoniker": "DefOf\\RecipeDefOf.cs",
+              "ToolTip": "C:\\Users\\Josh\\Documents\\Rimworld Mods In Progress\\Rimknights - Oripathy\\Source\\RimKnights - Oripathy 1.6\\DefOf\\RecipeDefOf.cs",
+              "RelativeToolTip": "DefOf\\RecipeDefOf.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAiwBQAAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-26T00:21:36.716Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "HediffComp_DynamicSeverityRange.cs",
+              "DocumentMoniker": "C:\\Users\\Josh\\Documents\\Rimworld Mods In Progress\\Rimknights - Oripathy\\Source\\RimKnights - Oripathy 1.6\\Comps\\HediffComps\\HediffComp_DynamicSeverityRange.cs",
+              "RelativeDocumentMoniker": "Comps\\HediffComps\\HediffComp_DynamicSeverityRange.cs",
+              "ToolTip": "C:\\Users\\Josh\\Documents\\Rimworld Mods In Progress\\Rimknights - Oripathy\\Source\\RimKnights - Oripathy 1.6\\Comps\\HediffComps\\HediffComp_DynamicSeverityRange.cs",
+              "RelativeToolTip": "Comps\\HediffComps\\HediffComp_DynamicSeverityRange.cs",
+              "ViewState": "AgIAADsAAAAAAAAAAAAUwFEAAACsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-25T03:12:58.231Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "HediffCompProperties_DynamicSeverityRange.cs",
+              "DocumentMoniker": "C:\\Users\\Josh\\Documents\\Rimworld Mods In Progress\\Rimknights - Oripathy\\Source\\RimKnights - Oripathy 1.6\\Comps\\HediffComps\\HediffCompProperties_DynamicSeverityRange.cs",
+              "RelativeDocumentMoniker": "Comps\\HediffComps\\HediffCompProperties_DynamicSeverityRange.cs",
+              "ToolTip": "C:\\Users\\Josh\\Documents\\Rimworld Mods In Progress\\Rimknights - Oripathy\\Source\\RimKnights - Oripathy 1.6\\Comps\\HediffComps\\HediffCompProperties_DynamicSeverityRange.cs",
+              "RelativeToolTip": "Comps\\HediffComps\\HediffCompProperties_DynamicSeverityRange.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAswA0AAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-25T03:12:53.592Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "HediffCompProperties_DynamicSeverityPerDay.cs",
+              "DocumentMoniker": "C:\\Users\\Josh\\Documents\\Rimworld Mods In Progress\\Rimknights - Oripathy\\Source\\RimKnights - Oripathy 1.6\\Comps\\HediffComps\\HediffCompProperties_DynamicSeverityPerDay.cs",
+              "RelativeDocumentMoniker": "Comps\\HediffComps\\HediffCompProperties_DynamicSeverityPerDay.cs",
+              "ToolTip": "C:\\Users\\Josh\\Documents\\Rimworld Mods In Progress\\Rimknights - Oripathy\\Source\\RimKnights - Oripathy 1.6\\Comps\\HediffComps\\HediffCompProperties_DynamicSeverityPerDay.cs",
+              "RelativeToolTip": "Comps\\HediffComps\\HediffCompProperties_DynamicSeverityPerDay.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAswA4AAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-25T03:12:50.361Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ApplyHarmony.cs",
+              "DocumentMoniker": "C:\\Users\\Josh\\Documents\\Rimworld Mods In Progress\\Rimknights - Oripathy\\Source\\RimKnights - Oripathy 1.6\\Utilities\\ApplyHarmony.cs",
+              "RelativeDocumentMoniker": "Utilities\\ApplyHarmony.cs",
+              "ToolTip": "C:\\Users\\Josh\\Documents\\Rimworld Mods In Progress\\Rimknights - Oripathy\\Source\\RimKnights - Oripathy 1.6\\Utilities\\ApplyHarmony.cs",
+              "RelativeToolTip": "Utilities\\ApplyHarmony.cs",
+              "ViewState": "AgIAAMAAAAAAAAAAAAAAAMgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-25T02:58:07.181Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "DebugActions_Oripathy.cs",
+              "DocumentMoniker": "C:\\Users\\Josh\\Documents\\Rimworld Mods In Progress\\Rimknights - Oripathy\\Source\\RimKnights - Oripathy 1.6\\Utilities\\DebugActions_Oripathy.cs",
+              "RelativeDocumentMoniker": "Utilities\\DebugActions_Oripathy.cs",
+              "ToolTip": "C:\\Users\\Josh\\Documents\\Rimworld Mods In Progress\\Rimknights - Oripathy\\Source\\RimKnights - Oripathy 1.6\\Utilities\\DebugActions_Oripathy.cs",
+              "RelativeToolTip": "Utilities\\DebugActions_Oripathy.cs",
+              "ViewState": "AgIAAB4AAAAAAAAAAAA2wDUAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-25T02:58:20.404Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "DamageDefOf.cs",
+              "DocumentMoniker": "C:\\Users\\Josh\\Documents\\Rimworld Mods In Progress\\Rimknights - Oripathy\\Source\\RimKnights - Oripathy 1.6\\DefOf\\DamageDefOf.cs",
+              "RelativeDocumentMoniker": "DefOf\\DamageDefOf.cs",
+              "ToolTip": "C:\\Users\\Josh\\Documents\\Rimworld Mods In Progress\\Rimknights - Oripathy\\Source\\RimKnights - Oripathy 1.6\\DefOf\\DamageDefOf.cs",
+              "RelativeToolTip": "DefOf\\DamageDefOf.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAawBIAAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-25T03:17:08.642Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Hediff_Oripathy.cs",
+              "DocumentMoniker": "C:\\Users\\Josh\\Documents\\Rimworld Mods In Progress\\Rimknights - Oripathy\\Source\\RimKnights - Oripathy 1.6\\HediffClass\\Hediff_Oripathy.cs",
+              "RelativeDocumentMoniker": "HediffClass\\Hediff_Oripathy.cs",
+              "ToolTip": "C:\\Users\\Josh\\Documents\\Rimworld Mods In Progress\\Rimknights - Oripathy\\Source\\RimKnights - Oripathy 1.6\\HediffClass\\Hediff_Oripathy.cs",
+              "RelativeToolTip": "HediffClass\\Hediff_Oripathy.cs",
+              "ViewState": "AgIAAMgAAAAAAAAAAAAYwNgAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-25T02:58:46.146Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "DamageWorker_ApplyHediff.cs",
+              "DocumentMoniker": "C:\\Users\\Josh\\Documents\\Rimworld Mods In Progress\\Rimknights - Oripathy\\Source\\RimKnights - Oripathy 1.6\\WorkerClass\\DamageWorker\\DamageWorker_ApplyHediff.cs",
+              "RelativeDocumentMoniker": "WorkerClass\\DamageWorker\\DamageWorker_ApplyHediff.cs",
+              "ToolTip": "C:\\Users\\Josh\\Documents\\Rimworld Mods In Progress\\Rimknights - Oripathy\\Source\\RimKnights - Oripathy 1.6\\WorkerClass\\DamageWorker\\DamageWorker_ApplyHediff.cs",
+              "RelativeToolTip": "WorkerClass\\DamageWorker\\DamageWorker_ApplyHediff.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAAgwB4AAABSAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-26T03:24:47.787Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "HediffComp_Suppressible.cs",
+              "DocumentMoniker": "C:\\Users\\Josh\\Documents\\Rimworld Mods In Progress\\Rimknights - Oripathy\\Source\\RimKnights - Oripathy 1.6\\Comps\\HediffComps\\HediffComp_Suppressible.cs",
+              "RelativeDocumentMoniker": "Comps\\HediffComps\\HediffComp_Suppressible.cs",
+              "ToolTip": "C:\\Users\\Josh\\Documents\\Rimworld Mods In Progress\\Rimknights - Oripathy\\Source\\RimKnights - Oripathy 1.6\\Comps\\HediffComps\\HediffComp_Suppressible.cs",
+              "RelativeToolTip": "Comps\\HediffComps\\HediffComp_Suppressible.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-25T03:13:01.543Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "AffectorHediff.cs",
+              "DocumentMoniker": "C:\\Users\\Josh\\Documents\\Rimworld Mods In Progress\\Rimknights - Oripathy\\Source\\RimKnights - Oripathy 1.6\\HelperClasses\\AffectorHediff.cs",
+              "RelativeDocumentMoniker": "HelperClasses\\AffectorHediff.cs",
+              "ToolTip": "C:\\Users\\Josh\\Documents\\Rimworld Mods In Progress\\Rimknights - Oripathy\\Source\\RimKnights - Oripathy 1.6\\HelperClasses\\AffectorHediff.cs",
+              "RelativeToolTip": "HelperClasses\\AffectorHediff.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-25T03:14:08.949Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "OripathyMod.cs",
+              "DocumentMoniker": "C:\\Users\\Josh\\Documents\\Rimworld Mods In Progress\\Rimknights - Oripathy\\Source\\RimKnights - Oripathy 1.6\\Utilities\\OripathyMod.cs",
+              "RelativeDocumentMoniker": "Utilities\\OripathyMod.cs",
+              "ToolTip": "C:\\Users\\Josh\\Documents\\Rimworld Mods In Progress\\Rimknights - Oripathy\\Source\\RimKnights - Oripathy 1.6\\Utilities\\OripathyMod.cs",
+              "RelativeToolTip": "Utilities\\OripathyMod.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-26T01:26:16.728Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "Recipe_HarvestHediff.cs",
+              "DocumentMoniker": "C:\\Users\\Josh\\Documents\\Rimworld Mods In Progress\\Rimknights - Oripathy\\Source\\RimKnights - Oripathy 1.6\\WorkerClass\\RecipeWorker\\Recipe_HarvestHediff.cs",
+              "RelativeDocumentMoniker": "WorkerClass\\RecipeWorker\\Recipe_HarvestHediff.cs",
+              "ToolTip": "C:\\Users\\Josh\\Documents\\Rimworld Mods In Progress\\Rimknights - Oripathy\\Source\\RimKnights - Oripathy 1.6\\WorkerClass\\RecipeWorker\\Recipe_HarvestHediff.cs",
+              "RelativeToolTip": "WorkerClass\\RecipeWorker\\Recipe_HarvestHediff.cs",
+              "ViewState": "AgIAAB8AAAAAAAAAAAAgwCsAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-25T04:39:10.343Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "StatDefOf.cs",
+              "DocumentMoniker": "C:\\Users\\Josh\\Documents\\Rimworld Mods In Progress\\Rimknights - Oripathy\\Source\\RimKnights - Oripathy 1.6\\DefOf\\StatDefOf.cs",
+              "RelativeDocumentMoniker": "DefOf\\StatDefOf.cs",
+              "ToolTip": "C:\\Users\\Josh\\Documents\\Rimworld Mods In Progress\\Rimknights - Oripathy\\Source\\RimKnights - Oripathy 1.6\\DefOf\\StatDefOf.cs",
+              "RelativeToolTip": "DefOf\\StatDefOf.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-25T05:03:36.917Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "HediffDefOf.cs",
+              "DocumentMoniker": "C:\\Users\\Josh\\Documents\\Rimworld Mods In Progress\\Rimknights - Oripathy\\Source\\RimKnights - Oripathy 1.6\\DefOf\\HediffDefOf.cs",
+              "RelativeDocumentMoniker": "DefOf\\HediffDefOf.cs",
+              "ToolTip": "C:\\Users\\Josh\\Documents\\Rimworld Mods In Progress\\Rimknights - Oripathy\\Source\\RimKnights - Oripathy 1.6\\DefOf\\HediffDefOf.cs",
+              "RelativeToolTip": "DefOf\\HediffDefOf.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAABgAAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-25T02:57:18.031Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "HediffComp_Harvestable.cs",
+              "DocumentMoniker": "C:\\Users\\Josh\\Documents\\Rimworld Mods In Progress\\Rimknights - Oripathy\\Source\\RimKnights - Oripathy 1.6\\Comps\\HediffComps\\HediffComp_Harvestable.cs",
+              "RelativeDocumentMoniker": "Comps\\HediffComps\\HediffComp_Harvestable.cs",
+              "ToolTip": "C:\\Users\\Josh\\Documents\\Rimworld Mods In Progress\\Rimknights - Oripathy\\Source\\RimKnights - Oripathy 1.6\\Comps\\HediffComps\\HediffComp_Harvestable.cs",
+              "RelativeToolTip": "Comps\\HediffComps\\HediffComp_Harvestable.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-25T03:27:57.098Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "HediffCompProperties_Harvestable.cs",
+              "DocumentMoniker": "C:\\Users\\Josh\\Documents\\Rimworld Mods In Progress\\Rimknights - Oripathy\\Source\\RimKnights - Oripathy 1.6\\Comps\\HediffComps\\HediffCompProperties_Harvestable.cs",
+              "RelativeDocumentMoniker": "Comps\\HediffComps\\HediffCompProperties_Harvestable.cs",
+              "ToolTip": "C:\\Users\\Josh\\Documents\\Rimworld Mods In Progress\\Rimknights - Oripathy\\Source\\RimKnights - Oripathy 1.6\\Comps\\HediffComps\\HediffCompProperties_Harvestable.cs",
+              "RelativeToolTip": "Comps\\HediffComps\\HediffCompProperties_Harvestable.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-25T03:28:26.265Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "HediffCompProperties_Suppressible.cs",
+              "DocumentMoniker": "C:\\Users\\Josh\\Documents\\Rimworld Mods In Progress\\Rimknights - Oripathy\\Source\\RimKnights - Oripathy 1.6\\Comps\\HediffComps\\HediffCompProperties_Suppressible.cs",
+              "RelativeDocumentMoniker": "Comps\\HediffComps\\HediffCompProperties_Suppressible.cs",
+              "ToolTip": "C:\\Users\\Josh\\Documents\\Rimworld Mods In Progress\\Rimknights - Oripathy\\Source\\RimKnights - Oripathy 1.6\\Comps\\HediffComps\\HediffCompProperties_Suppressible.cs",
+              "RelativeToolTip": "Comps\\HediffComps\\HediffCompProperties_Suppressible.cs",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAAAAQAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-25T03:12:56.949Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "HediffComp_DynamicSeverityPerDay.cs",
+              "DocumentMoniker": "C:\\Users\\Josh\\Documents\\Rimworld Mods In Progress\\Rimknights - Oripathy\\Source\\RimKnights - Oripathy 1.6\\Comps\\HediffComps\\HediffComp_DynamicSeverityPerDay.cs",
+              "RelativeDocumentMoniker": "Comps\\HediffComps\\HediffComp_DynamicSeverityPerDay.cs",
+              "ToolTip": "C:\\Users\\Josh\\Documents\\Rimworld Mods In Progress\\Rimknights - Oripathy\\Source\\RimKnights - Oripathy 1.6\\Comps\\HediffComps\\HediffComp_DynamicSeverityPerDay.cs",
+              "RelativeToolTip": "Comps\\HediffComps\\HediffComp_DynamicSeverityPerDay.cs",
+              "ViewState": "AgIAABEAAAAAAAAAAAAUwBoAAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-25T03:12:24.378Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "Hediff_OripathyLesion.cs",
+              "DocumentMoniker": "C:\\Users\\Josh\\Documents\\Rimworld Mods In Progress\\Rimknights - Oripathy\\Source\\RimKnights - Oripathy 1.6\\HediffClass\\Hediff_OripathyLesion.cs",
+              "RelativeDocumentMoniker": "HediffClass\\Hediff_OripathyLesion.cs",
+              "ToolTip": "C:\\Users\\Josh\\Documents\\Rimworld Mods In Progress\\Rimknights - Oripathy\\Source\\RimKnights - Oripathy 1.6\\HediffClass\\Hediff_OripathyLesion.cs",
+              "RelativeToolTip": "HediffClass\\Hediff_OripathyLesion.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-25T03:12:07.395Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "CompProperties_Follower.cs",
+              "DocumentMoniker": "C:\\Users\\Josh\\Documents\\Rimworld Mods In Progress\\Rimknights - Oripathy\\Source\\RimKnights - Oripathy 1.6\\Comps\\ThingComps\\CompProperties_Follower.cs",
+              "RelativeDocumentMoniker": "Comps\\ThingComps\\CompProperties_Follower.cs",
+              "ToolTip": "C:\\Users\\Josh\\Documents\\Rimworld Mods In Progress\\Rimknights - Oripathy\\Source\\RimKnights - Oripathy 1.6\\Comps\\ThingComps\\CompProperties_Follower.cs",
+              "RelativeToolTip": "Comps\\ThingComps\\CompProperties_Follower.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-25T03:01:45.983Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "CompFollower.cs",
+              "DocumentMoniker": "C:\\Users\\Josh\\Documents\\Rimworld Mods In Progress\\Rimknights - Oripathy\\Source\\RimKnights - Oripathy 1.6\\Comps\\ThingComps\\CompFollower.cs",
+              "RelativeDocumentMoniker": "Comps\\ThingComps\\CompFollower.cs",
+              "ToolTip": "C:\\Users\\Josh\\Documents\\Rimworld Mods In Progress\\Rimknights - Oripathy\\Source\\RimKnights - Oripathy 1.6\\Comps\\ThingComps\\CompFollower.cs",
+              "RelativeToolTip": "Comps\\ThingComps\\CompFollower.cs",
+              "ViewState": "AgIAABsAAAAAAAAAAAAowAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-25T03:01:32.61Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "EffecterDefOf.cs",
+              "DocumentMoniker": "C:\\Users\\Josh\\Documents\\Rimworld Mods In Progress\\Rimknights - Oripathy\\Source\\RimKnights - Oripathy 1.6\\DefOf\\EffecterDefOf.cs",
+              "RelativeDocumentMoniker": "DefOf\\EffecterDefOf.cs",
+              "ToolTip": "C:\\Users\\Josh\\Documents\\Rimworld Mods In Progress\\Rimknights - Oripathy\\Source\\RimKnights - Oripathy 1.6\\DefOf\\EffecterDefOf.cs",
+              "RelativeToolTip": "DefOf\\EffecterDefOf.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-25T02:59:40.783Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "CompInfectionMonitor.cs",
+              "DocumentMoniker": "C:\\Users\\Josh\\Documents\\Rimworld Mods In Progress\\Rimknights - Oripathy\\Source\\RimKnights - Oripathy 1.6\\Comps\\ThingComps\\CompInfectionMonitor.cs",
+              "RelativeDocumentMoniker": "Comps\\ThingComps\\CompInfectionMonitor.cs",
+              "ToolTip": "C:\\Users\\Josh\\Documents\\Rimworld Mods In Progress\\Rimknights - Oripathy\\Source\\RimKnights - Oripathy 1.6\\Comps\\ThingComps\\CompInfectionMonitor.cs",
+              "RelativeToolTip": "Comps\\ThingComps\\CompInfectionMonitor.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABYAAAA9AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-25T02:57:11.695Z",
+              "EditorCaption": ""
             }
           ]
         }

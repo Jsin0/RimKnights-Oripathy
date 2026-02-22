@@ -13,10 +13,10 @@ namespace RimKnights.Oripathy.Utilities
         static ApplyHarmony()
         {
 
-            if (Core.CoreMod.settings.debugMode) Log.Message("RimKnights - Oripathy loaded.");
+            Log.Message("DebugOripathyLoaded".Translate());
             Harmony harmony = new Harmony("Jsin.RK_Oripathy.Harmony");
             harmony.PatchAll();
-            if (Core.CoreMod.settings.debugMode) Log.Message("RK_Oripathy patches applied");
+            if (OripathyMod.settings.debugMode) Log.Message("DebugOripathyPatchesLoaded".Translate());
         }
         [HarmonyPatch(typeof(Corpse))]
         [HarmonyPatch("TickRare", 0)]
@@ -78,7 +78,7 @@ namespace RimKnights.Oripathy.Utilities
             [HarmonyPostfix]
             static void PostFix(Pawn surgeryTarget, ref bool __result)
             {
-               __result = __result || surgeryTarget.health.hediffSet.HasHediff(Core.HediffDefOf.RK_OriginiumBuildup);
+               __result = __result || surgeryTarget.health.hediffSet.HasHediff(HediffDefOf.RK_OriginiumBuildup);
             }
         }
 
@@ -103,7 +103,7 @@ namespace RimKnights.Oripathy.Utilities
             static void PreFix(Pawn pawn, BodyPartRecord part, Pawn billDoer, List<Thing> ingredients, Bill bill)
             {
                 if (!ModsConfig.BiotechActive) return;
-                Hediff firstHediffOfDef = pawn.health.hediffSet.GetFirstHediffOfDef(Core.HediffDefOf.RK_OriginiumBuildup);
+                Hediff firstHediffOfDef = pawn.health.hediffSet.GetFirstHediffOfDef(HediffDefOf.RK_OriginiumBuildup);
                 if(firstHediffOfDef != null)
                 {
                     float num = 0f ;

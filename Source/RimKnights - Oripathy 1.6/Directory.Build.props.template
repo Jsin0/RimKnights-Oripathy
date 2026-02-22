@@ -1,0 +1,6 @@
+<Project>
+  <PropertyGroup>
+    <!-- Path to RimKnights - Core 1.6 Assemblies folder -->
+    <RimKnightsCoreAssemblies>FILL_IN_YOUR_PATH_HERE</RimKnightsCoreAssemblies>
+  </PropertyGroup>
+</Project>

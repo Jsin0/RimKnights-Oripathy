@@ -1,44 +1,49 @@
 <?xml version="1.0" encoding="utf-8" ?>
 	<!--Patch flesh typedef for hediffWounds-->
 <Patch>
-	<Operation Class="PatchOperationSequence">
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>RimKnights - Originium</li>
+		</mods>
+	<nomatch Class="PatchOperationSequence">
 	  <operations>
-			<li Class="PatchOperationAdd">
-				<xpath>Defs/DamageDef[defName="RK_ActiveOriginium"]/additionalHediffs</xpath>
+			<li Class="PatchOperationAdd" MayRequire="rimknights.core">
+				<xpath>Defs/DamageDef[defName="ScratchToxic"]/additionalHediffs</xpath>
 				<value>
 					  <li>
-						<hediff>ToxicBuildup</hediff>
+						<hediff>RK_OriginiumBuildup</hediff>
 						<severityPerDamageDealt>0.01</severityPerDamageDealt>
-						<victimSeverityScaling>ToxicResistance</victimSeverityScaling>
+						<victimSeverityScaling>RK_OriginiumResistance</victimSeverityScaling>
 						<inverseStatScaling>true</inverseStatScaling>
 						<victimSeverityScalingByInvBodySize>true</victimSeverityScalingByInvBodySize>
 					  </li>
 				</value>
 			</li>
 			<li Class="PatchOperationAdd">
-				<xpath>Defs/DamageDef[defName="RK_OriginiumBlast"]/additionalHediffs</xpath>
+				<xpath>Defs/DamageDef[defName="ToxicBite"]/additionalHediffs</xpath>
 				<value>
 					  <li>
-						<hediff>ToxicBuildup</hediff>
+						<hediff>RK_OriginiumBuildup</hediff>
 						<severityPerDamageDealt>0.01</severityPerDamageDealt>
-						<victimSeverityScaling>ToxicResistance</victimSeverityScaling>
+						<victimSeverityScaling>RK_OriginiumResistance</victimSeverityScaling>
 						<inverseStatScaling>true</inverseStatScaling>
 						<victimSeverityScalingByInvBodySize>true</victimSeverityScalingByInvBodySize>
 					  </li>
 				</value>
 			</li>
-			<li Class="PatchOperationAdd">
-				<xpath>Defs/DamageDef[defName="RK_OriginiumCut"]/additionalHediffs</xpath>
+			<li Class="PatchOperationAdd" MayRequire="Ludeon.RimWorld.Biotech">
+				<xpath>Defs/DamageDef[defName="BulletToxic"]/additionalHediffs</xpath>
 				<value>
 					  <li>
-						<hediff>ToxicBuildup</hediff>
+						<hediff>RK_OriginiumBuildup</hediff>
 						<severityPerDamageDealt>0.02</severityPerDamageDealt>
-						<victimSeverityScaling>ToxicResistance</victimSeverityScaling>
+						<victimSeverityScaling>RK_OriginiumResistance</victimSeverityScaling>
 						<inverseStatScaling>true</inverseStatScaling>
 						<victimSeverityScalingByInvBodySize>true</victimSeverityScalingByInvBodySize>
 					  </li>
 				</value>
 			</li>
 	  </operations>
+		</nomatch>
 	</Operation>
 </Patch>

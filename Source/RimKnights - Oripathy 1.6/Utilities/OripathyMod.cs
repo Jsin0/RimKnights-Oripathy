@@ -14,6 +14,8 @@ namespace RimKnights.Oripathy
 
         public static bool abandonOripathicCorpses;
 
+        public static readonly bool originiumModActive = ModLister.HasActiveModWithName("RimKnights - Originium");
+
         public OripathyMod(ModContentPack content) : base(content)
         {
             settings = GetSettings<OripathyModSettings>();
@@ -28,6 +30,7 @@ namespace RimKnights.Oripathy
 
             listingStandard.Begin(inRect);
             listingStandard.CheckboxLabeled("BaselinersImmuneLabel".Translate(), ref settings.baselinersImmune, "BaselinersImmuneDesc".Translate());
+            listingStandard.CheckboxLabeled("DebugModeLable".Translate(), ref settings.debugMode, "DebugModeDesc".Translate());
             listingStandard.CheckboxLabeled("InfectionMonitorLabel".Translate(), ref settings.infectionMonitor, "InfectionMonitorDesc".Translate());
             listingStandard.CheckboxLabeled("AbandonOripathicCorpsesLabel".Translate(), ref settings.abandonOripathicCorpses, "AbandonOripathicCorpsesDesc".Translate());
             listingStandard.End();

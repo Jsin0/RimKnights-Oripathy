@@ -12,7 +12,7 @@
 		<alwaysShowSeverity>true</alwaysShowSeverity>
 		<allowMothballIfLowPriorityWorldPawn>true</allowMothballIfLowPriorityWorldPawn>
 		<comps>
-			<li Class="RimKnights.Core.HediffCompProperties_DynamicSeverityPerDay">
+			<li Class="RimKnights.Oripathy.HediffCompProperties_DynamicSeverityPerDay">
 				<AffectorHediffs>
 					<li>
 						<hediff>RK_OriginiumBuildup</hediff>
@@ -123,7 +123,7 @@
 				<baseTendDurationHours>24</baseTendDurationHours>
 				<severityPerDayTended>-0.2</severityPerDayTended>
 			</li>
-			<li Class="RimKnights.Core.HediffCompProperties_DynamicSeverityRange">
+			<li Class="RimKnights.Oripathy.HediffCompProperties_DynamicSeverityRange">
 				<minAffector>
 					<hediff>RK_Oripathy</hediff>
 					<curve>
@@ -293,7 +293,7 @@
 				<baseTendDurationHours>96</baseTendDurationHours>
 				<severityPerDayTended>-0.005</severityPerDayTended>
 			</li>
-			<li Class="RimKnights.Core.HediffCompProperties_DynamicSeverityPerDay">
+			<li Class="RimKnights.Oripathy.HediffCompProperties_DynamicSeverityPerDay">
 				<AffectorHediffs>
 					<li>
 						<hediff>RK_OriginiumBuildup</hediff>
@@ -311,7 +311,7 @@
 					</li>
 				</AffectorHediffs>
 			</li>
-			<li Class="RimKnights.Core.HediffCompProperties_Harvestable">
+			<li Class="RimKnights.Oripathy.HediffCompProperties_Harvestable" MayRequire="rimknights.core">
 				<resource>RK_OriginiumShard</resource>
 				<severityOffset>-0.30</severityOffset>
 				<miniumSeverity>0.40</miniumSeverity>
