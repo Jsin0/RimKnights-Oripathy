@@ -58,6 +58,7 @@
     <Compile Include="Comps\ThingComps\CompInfectionMonitor.cs" />
     <Compile Include="Comps\ThingComps\CompProperties_Follower.cs" />
     <Compile Include="Comps\ThingComps\CompProperties_InfectionMonitor.cs" />
+    <Compile Include="DefExtensions\GameConditionExtension.cs" />
     <Compile Include="DefOf\DamageDefOf.cs" />
     <Compile Include="DefOf\EffecterDefOf.cs" />
     <Compile Include="DefOf\HediffDefOf.cs" />
@@ -68,6 +69,9 @@
     <Compile Include="DefOf\RecipeDefOf.cs" />
     <Compile Include="DefOf\StatDefOf.cs" />
     <Compile Include="DefOf\ThingDefOf.cs" />
+    <Compile Include="GameConditions\GameCondition_OriginiumRain.cs" />
+    <Compile Include="Weather\WeatherOverlay\WeatherOverlay_OriginiumDust.cs" />
+    <Compile Include="Weather\WeatherOverlay\WeatherOverlay_OriginiumRain.cs" />
     <Compile Include="HediffClass\Hediff_OriginiumBase.cs" />
     <Compile Include="HediffClass\Hediff_OripathyLesion.cs" />
     <Compile Include="HelperClasses\AffectorHediff.cs" />
