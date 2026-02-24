@@ -213,12 +213,12 @@ namespace RimKnights.Oripathy
                         ThingDef spawnedThingDef = null;
                         if (OripathyMod.originiumModActive)
                         {
-                            spawnedThingDef = RimKnights.Core.ThingDefOf.RK_OriginiumCluster;
+                            spawnedThingDef = RimKnights.Originium.ThingDefOf.RK_OriginiumCluster;
                         }
                         GenExplosion.DoExplosion(center, map, radius, damageDef, corpse, -1, -1f, null, null, null, null, spawnedThingDef, 0.20f, 1, null, null,255, false, null, 0f, 1, 0.2f, true, null, null, null, true, 1f, 0f, true, null, 1f, null, null);
                     }
 
-                    if (OripathyMod.originiumModActive) GenSpawn.Spawn(RimKnights.Core.ThingDefOf.RK_OriginiumCluster, center, map, WipeMode.FullRefund);
+                    if (OripathyMod.originiumModActive) GenSpawn.Spawn(RimKnights.Originium.ThingDefOf.RK_OriginiumCluster, center, map, WipeMode.FullRefund);
                 }
                 else
                 {

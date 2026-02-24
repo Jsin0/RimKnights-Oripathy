@@ -3,3 +3,7 @@ C:\Users\Josh\Documents\Rimworld Mods In Progress\Rimknights - Oripathy\Source\R
 C:\Users\Josh\Documents\Rimworld Mods In Progress\Rimknights - Oripathy\Source\RimKnights - Oripathy 1.6\obj\Debug\RimKnights - Oripathy.csproj.CoreCompileInputs.cache
 C:\Users\Josh\Documents\Rimworld Mods In Progress\Rimknights - Oripathy\Source\RimKnights - Oripathy 1.6\obj\Debug\RimKnigh.D1DCD313.Up2Date
 C:\Users\Josh\Documents\Rimworld Mods In Progress\Rimknights - Oripathy\Source\RimKnights - Oripathy 1.6\obj\Debug\RimKnights - Oripathy.dll
+D:\SteamLibrary\steamapps\common\RimWorld\Mods\RimKnights - Oripathy\1.6\Assemblies\RimKnights - Oripathy.dll
+D:\SteamLibrary\steamapps\common\RimWorld\Mods\RimKnights - Oripathy\Source\RimKnights - Oripathy 1.6\obj\Debug\RimKnights - Oripathy.csproj.AssemblyReference.cache
+D:\SteamLibrary\steamapps\common\RimWorld\Mods\RimKnights - Oripathy\Source\RimKnights - Oripathy 1.6\obj\Debug\RimKnights - Oripathy.csproj.CoreCompileInputs.cache
+D:\SteamLibrary\steamapps\common\RimWorld\Mods\RimKnights - Oripathy\Source\RimKnights - Oripathy 1.6\obj\Debug\RimKnights - Oripathy.dll

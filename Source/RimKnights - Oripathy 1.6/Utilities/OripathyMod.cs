@@ -14,7 +14,7 @@ namespace RimKnights.Oripathy
 
         public static bool abandonOripathicCorpses;
 
-        public static readonly bool originiumModActive = ModLister.HasActiveModWithName("RimKnights - Originium");
+        public static readonly bool originiumModActive = ModsConfig.IsActive("RimKnights.Core");
 
         public OripathyMod(ModContentPack content) : base(content)
         {
