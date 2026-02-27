@@ -15,7 +15,7 @@ namespace RimKnights.Oripathy
 
         public int cooldownHours = 96;
 
-        public float miniumSeverity = 50f;
+        public float minimumSeverity = 50f;
 
         public float severityOffset = 0f;
     }

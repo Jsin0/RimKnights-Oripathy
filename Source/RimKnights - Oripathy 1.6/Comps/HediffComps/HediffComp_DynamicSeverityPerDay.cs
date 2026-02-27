@@ -8,13 +8,7 @@ namespace RimKnights.Oripathy
 {
     public class HediffComp_DynamicSeverityPerDay : HediffComp_SeverityModifierBase
     {
-        private HediffCompProperties_DynamicSeverityPerDay Props
-        {
-            get
-            {
-                return (HediffCompProperties_DynamicSeverityPerDay)this.props;
-            }
-        }
+        private HediffCompProperties_DynamicSeverityPerDay Props => (HediffCompProperties_DynamicSeverityPerDay)this.props;
 
         public override float SeverityChangePerDay()
         {
@@ -24,7 +18,7 @@ namespace RimKnights.Oripathy
             }
 
             float num = CalculateSeverityPerDay();
-            if (OripathyMod.settings.debugMode) Log.Message($"SeverityGainPerDay".Translate(Pawn.Name.ToStringShort, parent.def.label, num));
+            if (OripathyMod.settings.debugMode) Log.Message("SeverityGainPerDay".Translate(Pawn.Name.ToStringShort, parent.def.label, num));
             
             HediffStage curStage = this.parent.CurStage;
 
@@ -37,34 +31,36 @@ namespace RimKnights.Oripathy
         {
             List<AffectorHediff> affectorHediffs = Props.AffectorHediffs;
 
-            if(affectorHediffs.NullOrEmpty()) { return 0f;}
+            float totalChange = 0f;
+            if(affectorHediffs.NullOrEmpty()) { return totalChange;}
 
+            //Only looks for the first affector in a priority list manner
             for(int i = 0; i < affectorHediffs.Count; i++)
             {
-                Hediff hediff = Pawn.health.hediffSet.GetFirstHediffOfDef(affectorHediffs[i]?.hediff);
+                AffectorHediff affector = affectorHediffs[i];
+                Hediff hediff = Pawn.health.hediffSet.GetFirstHediffOfDef(affector.hediff);
                 if (hediff != null)
                 {
-                    AffectorHediff affector = affectorHediffs[i];
-                    float severity;
+                    float change;
                     if(affector.curve != null)
                     {
-                        severity = affector.curve.Evaluate(hediff.Severity);
+                        change = affector.curve.Evaluate(hediff.Severity);
                     }
                     else
                     {
-                        severity = affector.severityFactor * hediff.Severity + affector.severityOffset;
+                        change = affector.severityFactor * hediff.Severity + affector.severityOffset;
                     }
 
-                    if(affector.severityScalingStat != null)
+                    if (affector.severityScalingStat != null)
                     {
-                        severity *= (affector.inverseStatScaling ? Mathf.Max(1f - Pawn.GetStatValue(affector.severityScalingStat, true, -1), 0f) : Pawn.GetStatValue(affector.severityScalingStat, true, -1));
+                        change *= (affector.inverseStatScaling ? Mathf.Max(1f - Pawn.GetStatValue(affector.severityScalingStat, true, -1), 0f) : Pawn.GetStatValue(affector.severityScalingStat, true, -1));
                     }
-
-                    return severity + affector.severityPerDayRange.RandomInRange;
+                    totalChange += change;
+                    if (!Props.cumulative) return totalChange;
                 }
 
             }
-            return 0f;
+            return totalChange;
         }
     }
 }

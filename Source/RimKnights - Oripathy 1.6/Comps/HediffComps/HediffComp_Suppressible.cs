@@ -6,18 +6,15 @@ namespace RimKnights.Oripathy
 {
     public class HediffComp_Suppressible : HediffComp
     {
-        private HediffCompProperties_Suppressible Props
-        {
-            get
-            {
-                return (HediffCompProperties_Suppressible)this.props;
-            }
-        }
+        private HediffCompProperties_Suppressible Props => (HediffCompProperties_Suppressible)props;
+        
         public override void CompPostPostAdd(DamageInfo? dinfo)
         {
             if(Props.suppressor == null || Props.suppressedHediff == null || Props.unsuppressedHediff == null)
             {
                 Log.Error("CompSuppresibleConfigError".Translate());
+                Pawn.health.RemoveHediff(parent);
+                return;
             }
             DoSuppression();
         }
@@ -25,7 +22,7 @@ namespace RimKnights.Oripathy
         public override void CompPostTickInterval(ref float severityAdjustment, int delta)
         {
             base.CompPostTickInterval(ref severityAdjustment, delta);
-            if (base.Pawn.IsHashIntervalTick(this.Props.checkInterval, delta))
+            if (Pawn.IsHashIntervalTick(this.Props.checkInterval, delta))
             {
                 DoSuppression();
             }
@@ -41,7 +38,7 @@ namespace RimKnights.Oripathy
 
             HediffDef hediffDef = ((this.IsSuppressed) ? this.Props.suppressedHediff : this.Props.unsuppressedHediff);
 
-            Hediff hediff = base.Pawn.health.hediffSet.GetFirstHediffOfDef(hediffDef, false);
+            Hediff hediff = Pawn.health.hediffSet.GetFirstHediffOfDef(hediffDef, false);
 
             if (hediff != null)
             {
@@ -50,13 +47,12 @@ namespace RimKnights.Oripathy
             }
             else
             {
-                hediff = base.Pawn.health.GetOrAddHediff(hediffDef);
+                hediff = Pawn.health.GetOrAddHediff(hediffDef);
                 hediff.Severity = this.parent.Severity;
             }
-            parent.pawn.health.RemoveHediff(this.parent);
+            Pawn.health.RemoveHediff(this.parent);
 
         }
-
-        private bool IsSuppressed => parent.pawn.health.hediffSet.GetFirstHediffOfDef(this.Props.suppressor) != null;
+        private bool IsSuppressed => Pawn.health.hediffSet.GetFirstHediffOfDef(this.Props.suppressor) != null; 
     }
 }

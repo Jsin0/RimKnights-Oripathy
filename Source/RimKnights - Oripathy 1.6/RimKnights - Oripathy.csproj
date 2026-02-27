@@ -73,7 +73,6 @@
     <Compile Include="Rituals\RitualObligationTriggers\RitualObligationTrigger_InfectionProperties.cs" />
     <Compile Include="Rituals\Roles\RitualRoleInfectionTarget.cs" />
     <Compile Include="Utilities\DebugActions_Oripathy.cs" />
-    <Compile Include="HediffClass\Hediff_OriginiumBuildup.cs" />
     <Compile Include="Utilities\IdeoExtension.cs" />
     <Compile Include="Utilities\ModSettings.cs" />
     <Compile Include="Utilities\DefModExtension.cs" />

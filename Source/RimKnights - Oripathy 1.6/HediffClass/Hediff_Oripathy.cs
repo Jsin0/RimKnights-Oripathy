@@ -1,7 +1,7 @@
-﻿using RimWorld;
-using RimWorld.Planet;
-using System;
+﻿using System;
 using System.Collections.Generic;
+using RimWorld;
+using RimWorld.Planet;
 using UnityEngine;
 using Verse;
 using Verse.Noise;
@@ -18,14 +18,19 @@ namespace RimKnights.Oripathy
             Shatter,
             Complete
         }
-
-        public override void PostAdd(DamageInfo? dinfo)
-        {
-            base.PostAdd(dinfo);
-
-            (this.pawn.health.GetOrAddHediff(HediffDefOf.RK_OriginiumBuildup) as Hediff_OriginiumBuildup).isOripathic = true;
-
-        }
+        
+        private bool notified = false;
+        private ShatterPhase currentPhase = ShatterPhase.None;
+        private TickTimer warmupTimer;
+        private TickTimer shatterTimer;
+        private static readonly FloatRange shatterDurationSeconds = new FloatRange(45f, 75f);
+        private Effecter warmupEffecter;
+        private Sustainer warmupSustainer;
+        private Effecter shatterEffecter;
+        private Sustainer shatterSustainer;
+        private static readonly FloatRange randDayDelay = new FloatRange(-0.2f, 0.5f);
+        private int finalDelay => (int)((this.Severity * (-0.70) + 1 + Hediff_Oripathy.randDayDelay.RandomInRange) * 60000); //60000 converts from days to ticks
+        
         public override void Notify_PawnDied(DamageInfo? dinfo, Hediff culprit = null)
         {
             base.Notify_PawnDied(dinfo, culprit);
@@ -136,6 +141,10 @@ namespace RimKnights.Oripathy
             {
                 Find.HistoryEventsManager.RecordEvent(new HistoryEvent(HistoryEventDefOf.RK_BecameOripathic, pawn.Named(HistoryEventArgsNames.Doer)), true);
                 notified = true;
+            }
+            if (pawn.IsHashIntervalTick(60000)) //once a day)
+            {
+                pawn.health.GetOrAddHediff(RimWorld.HediffDefOf.ToxicBuildup);
             }
         }
         public void TickRare()
@@ -262,8 +271,9 @@ namespace RimKnights.Oripathy
                 {
                     if (p != null)
                     {
-                        p.health.GetOrAddHediff(HediffDefOf.RK_OriginiumBuildup).Severity += randSeverity.RandomInRange;
-                        if (OripathyMod.settings.debugMode) Log.Message("DebugCaravanBobSeverity".Translate("pawn", p.NameFullColored, "severity", p.health.hediffSet.GetFirstHediffOfDef(HediffDefOf.RK_OriginiumBuildup).Severity));
+                        Hediff buildupHediff = p.health.GetOrAddHediff(RimWorld.HediffDefOf.ToxicBuildup);
+                        buildupHediff.Severity += randSeverity.RandomInRange;
+                        if (OripathyMod.settings.debugMode) Log.Message("DebugCaravanBobSeverity".Translate("pawn", p.NameFullColored, "severity", buildupHediff.Severity));
 
                     }
                 }
@@ -336,29 +346,6 @@ namespace RimKnights.Oripathy
                 if(this.shatterTimer != null) this.shatterTimer.OnFinish = new Action(this.DoShatterCorpse);
             }
         }
-
-        private bool notified = false;
-
-        private ShatterPhase currentPhase = ShatterPhase.None;
-        private int finalDelay => (int)((this.Severity * (-0.70) + 1 + Hediff_Oripathy.randDayDelay.RandomInRange) * 60000); //60000 converts from days to ticks
-
-        private TickTimer warmupTimer;
-
-        private TickTimer shatterTimer;
-
-        private static readonly FloatRange
-            shatterDurationSeconds = new FloatRange(45f, 75f);
-
-        private Effecter warmupEffecter;
-
-        private Sustainer warmupSustainer;
-
-        private Effecter shatterEffecter;
-
-        private Sustainer shatterSustainer;
-
-        private static readonly FloatRange
-            randDayDelay = new FloatRange(-0.2f, 0.5f);
 
     }
 }

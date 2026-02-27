@@ -16,8 +16,6 @@ namespace RimKnights.Oripathy
         
         public static HediffDef RK_Oripathy;
 
-        public static HediffDef RK_OriginiumBuildup;
-
         public static HediffDef RK_InfectionMonitorWorn;
 
         public static HediffDef RK_InfectionMonitorImplant;

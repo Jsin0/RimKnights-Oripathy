@@ -53,23 +53,6 @@ namespace RimKnights.Oripathy.Utilities
             }
         }
 
-        [HarmonyPatch(typeof(PollutionUtility))]
-        [HarmonyPatch("PawnPollutionTickInterval")]
-        static class PawnPollutionTickInterval_Patch
-        {
-            [HarmonyPostfix]
-            static void PostFix(Pawn pawn, int delta)
-            {
-                if (pawn.Spawned)
-                {
-                    if (pawn.IsHashIntervalTick(60, delta) && pawn.Position.IsPolluted(pawn.Map) && !pawn.health.hediffSet.HasHediff(HediffDefOf.RK_OriginiumBuildup, false))
-                    {
-                        pawn.health.AddHediff(HediffDefOf.RK_OriginiumBuildup, null, null, null);
-                    }
-                }
-            }
-        }
-
         //Recipe_BloodTransfusion Patches
         [HarmonyPatch(typeof(Recipe_BloodTransfusion))]
         [HarmonyPatch("CompletableEver")]
@@ -78,7 +61,7 @@ namespace RimKnights.Oripathy.Utilities
             [HarmonyPostfix]
             static void PostFix(Pawn surgeryTarget, ref bool __result)
             {
-               __result = __result || surgeryTarget.health.hediffSet.HasHediff(HediffDefOf.RK_OriginiumBuildup);
+               __result = __result || surgeryTarget.health.hediffSet.HasHediff(RimWorld.HediffDefOf.ToxicBuildup);
             }
         }
 
@@ -90,7 +73,7 @@ namespace RimKnights.Oripathy.Utilities
             static void PostFix(Thing thing, ref bool __result)
             {
                 Pawn pawn = thing as Pawn;
-                __result = __result || (pawn.health?.hediffSet.GetFirstHediffOfDef(HediffDefOf.RK_OriginiumBuildup)?.Severity ?? 0f) > 0.01f;
+                __result = __result || (pawn.health?.hediffSet.GetFirstHediffOfDef(RimWorld.HediffDefOf.ToxicBuildup)?.Severity ?? 0f) > 0.01f;
             }
         }
 
@@ -103,7 +86,7 @@ namespace RimKnights.Oripathy.Utilities
             static void PreFix(Pawn pawn, BodyPartRecord part, Pawn billDoer, List<Thing> ingredients, Bill bill)
             {
                 if (!ModsConfig.BiotechActive) return;
-                Hediff firstHediffOfDef = pawn.health.hediffSet.GetFirstHediffOfDef(HediffDefOf.RK_OriginiumBuildup);
+                Hediff firstHediffOfDef = pawn.health.hediffSet.GetFirstHediffOfDef(RimWorld.HediffDefOf.ToxicBuildup);
                 if(firstHediffOfDef != null)
                 {
                     float num = 0f ;

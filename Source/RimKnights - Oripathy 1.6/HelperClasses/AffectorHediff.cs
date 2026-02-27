@@ -9,7 +9,7 @@ namespace RimKnights.Oripathy
 
         public SimpleCurve curve;
 
-        public float severityFactor = 1f;
+        public float severityFactor = 0f;
 
         public float severityOffset = 0f;
 

@@ -50,6 +50,7 @@ namespace RimKnights.Oripathy
         }
         public override void PostAdd(DamageInfo? dinfo)
         {
+            base.PostAdd(dinfo);
             if (!this.pawn.RaceProps.IsFlesh)
             {
                 this.pawn.health.RemoveHediff(this);
@@ -61,30 +62,29 @@ namespace RimKnights.Oripathy
                 return;
             }
             displayedSeverity = this.Severity;
-            base.PostAdd(dinfo);
         }
         public override bool Visible
         {
             get
             {
-                if (!OripathyMod.infectionMonitor || base.Visible)
+                if (!OripathyMod.infectionMonitor)
                 {
                     return base.Visible;
                 }
-                return shouldUpdate;
+                return base.Visible || shouldUpdate;
             }
         }
         public override void Tick()
         {
+            base.Tick();
             if (OripathyMod.infectionMonitor)
             {
-                if(shouldUpdate) this.displayedSeverity = this.Severity;
-                if(pawn.IsHashIntervalTick(100))
+                if(pawn.IsHashIntervalTick(60))
                 {
                     shouldUpdate = pawnIsWearingMonitor;
+                    if (shouldUpdate) this.displayedSeverity = this.Severity;
                 }
             }
-            base.Tick();
         }
         private bool pawnIsWearingMonitor
         {

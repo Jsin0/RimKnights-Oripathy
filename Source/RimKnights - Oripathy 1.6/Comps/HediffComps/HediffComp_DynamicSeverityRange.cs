@@ -48,6 +48,7 @@ namespace RimKnights.Oripathy
             }
             else { return; }
 
+            //Slow convergence so it takes about a day to reach the target
             parent.Severity = Mathf.MoveTowards(severity, target, 0.02f);
 
         }

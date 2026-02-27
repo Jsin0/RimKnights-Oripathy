@@ -5,6 +5,8 @@ namespace RimKnights.Oripathy
 {
     public class HediffComp_Harvestable : HediffComp
     {
+        private int cooldownTicksLeft = 0;
+        private bool ready = true;
         public HediffCompProperties_Harvestable Props
         {
             get
@@ -20,9 +22,9 @@ namespace RimKnights.Oripathy
                 {
                     return $"recovering: {GenDate.ToStringTicksToPeriod(cooldownTicksLeft)} left.";
                 }
-                else if (parent.Severity < Props.miniumSeverity)
+                else if (parent.Severity < Props.minimumSeverity)
                 {
-                    return $"Hediff severity still below minium ({Props.miniumSeverity}).";
+                    return $"Hediff severity still below minimum ({Props.minimumSeverity}).";
                 }
                 else
                 {
@@ -42,7 +44,7 @@ namespace RimKnights.Oripathy
         {
             get
             {
-                return Props.resource != null && ready && parent.Severity >= Props.miniumSeverity && parent.Visible;
+                return Props.resource != null && ready && parent.Severity >= Props.minimumSeverity && parent.Visible;
             }
         }
         public override void CompPostTickInterval(ref float severityAdjustment, int delta)
@@ -73,8 +75,5 @@ namespace RimKnights.Oripathy
 
         }
 
-        private int cooldownTicksLeft = 0;
-
-        public bool ready = true;
     }
 }
