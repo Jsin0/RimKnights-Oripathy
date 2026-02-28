@@ -79,7 +79,7 @@
     <Compile Include="Utilities\OripathyMod.cs" />
     <Compile Include="HediffClass\Hediff_Oripathy.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Utilities\ApplyHarmony.cs" />
+    <Compile Include="Harmony Patches\ApplyHarmony.cs" />
     <Compile Include="Rituals\RitualWorkers\RitualObligationTargetWorker_AnyRitualSpotOrAltar_Infection.cs" />
     <Compile Include="Rituals\RitualWorkers\RitualOutcomeEffectWorker_Oripathy.cs" />
     <Compile Include="WorkerClass\RecipeWorker\Recipe_HarvestHediff.cs" />

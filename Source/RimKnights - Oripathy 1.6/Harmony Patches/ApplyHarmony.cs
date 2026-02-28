@@ -28,7 +28,7 @@ namespace RimKnights.Oripathy.Utilities
                 //Log.Message("PostFix Start");
                 if(__instance.DestroyedOrNull() || __instance.InnerPawn == null || __instance.InnerPawn.health == null ||!__instance.InnerPawn.Dead) return;
                 
-                Hediff_Oripathy hediff = __instance.InnerPawn?.health?.hediffSet.GetFirstHediffOfDef(HediffDefOf.RK_Oripathy) as Hediff_Oripathy;
+                Hediff_Oripathy hediff = __instance.InnerPawn.health.hediffSet.GetFirstHediffOfDef(HediffDefOf.RK_Oripathy) as Hediff_Oripathy;
                 if(hediff != null)
                 {
                     //Log.Message("Ticking hediff");
@@ -73,7 +73,7 @@ namespace RimKnights.Oripathy.Utilities
             static void PostFix(Thing thing, ref bool __result)
             {
                 Pawn pawn = thing as Pawn;
-                __result = __result || (pawn.health?.hediffSet.GetFirstHediffOfDef(RimWorld.HediffDefOf.ToxicBuildup)?.Severity ?? 0f) > 0.01f;
+                __result = __result || (pawn?.health?.hediffSet.GetFirstHediffOfDef(RimWorld.HediffDefOf.ToxicBuildup)?.Severity ?? 0f) > 0.01f;
             }
         }
 
@@ -131,7 +131,10 @@ namespace RimKnights.Oripathy.Utilities
                 {
                     return;
                 }
-                if (Rand.Chance(pawn.ideo.Ideo.GetOripathicPawnChance()))
+                float oripathyChance = pawn.ideo.Ideo.GetOripathicPawnChance();
+                if (oripathyChance == -1) { oripathyChance = OripathyMod.oripathyChance; }
+
+                if (Rand.Chance(oripathyChance))
                 {
                     IEnumerable<BodyPartRecord> partsToApplyOn = JobDriver_Infect.GetPartsToApplyOn(pawn);
                     List<BodyPartRecord> list = partsToApplyOn.ToList();
@@ -141,8 +144,11 @@ namespace RimKnights.Oripathy.Utilities
                         JobDriver_Infect.Infect(pawn, list.RandomElement<BodyPartRecord>());
                     }
 
-                    pawn.health.hediffSet.GetFirstHediffOfDef(HediffDefOf.RK_Oripathy).Severity = new FloatRange(0.1f, 0.15f).RandomInRange;
-                    pawn.health.hediffSet.GetFirstHediffOfDef(HediffDefOf.RK_OripathyLesion).Severity = new FloatRange(0.1f, 0.25f).RandomInRange;
+                    Hediff oripathy = pawn.health.hediffSet.GetFirstHediffOfDef(HediffDefOf.RK_Oripathy);
+                    Hediff lesion = pawn.health.hediffSet.GetFirstHediffOfDef(HediffDefOf.RK_OripathyLesion);
+
+                    if (oripathy != null) oripathy.Severity = new FloatRange(0.1f, 0.15f).RandomInRange;
+                    if (lesion != null) lesion.Severity = new FloatRange(0.1f, 0.25f).RandomInRange;
 
                 }
             }
@@ -165,6 +171,8 @@ namespace RimKnights.Oripathy.Utilities
                 }
 
                 float chance = 0f;
+                //Higher tech factions have higher chance of having an infection monitor and favor having the implant over the apparel
+                //Chance is reused as both the chance to get something to measure oripathy and the chance that thing is an implant
                 switch(pawn.Faction.def.techLevel)
                 {
                     case TechLevel.Archotech:

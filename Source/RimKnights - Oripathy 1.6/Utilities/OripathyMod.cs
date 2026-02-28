@@ -14,7 +14,9 @@ namespace RimKnights.Oripathy
 
         public static bool abandonOripathicCorpses;
 
-        public static readonly bool originiumModActive = ModsConfig.IsActive("RimKnights.Core");
+        public static readonly bool originiumModActive = ModsConfig.IsActive("RimKnights.Originium");
+        
+        public static float oripathyChance;
 
         public OripathyMod(ModContentPack content) : base(content)
         {
@@ -23,6 +25,7 @@ namespace RimKnights.Oripathy
             baselinersImmune = settings.baselinersImmune;
             infectionMonitor = settings.infectionMonitor;
             abandonOripathicCorpses = settings.abandonOripathicCorpses;
+            oripathyChance = settings.oripathyChance;
         }
         public override void DoSettingsWindowContents(Rect inRect)
         {

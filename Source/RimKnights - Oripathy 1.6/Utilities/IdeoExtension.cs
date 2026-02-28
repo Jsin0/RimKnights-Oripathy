@@ -28,9 +28,9 @@ namespace RimKnights.Oripathy.Utilities
                     preceptCount++;
                 }
             }
-            if (preceptCount <= 0)
+            if (preceptCount == 0)
             {
-                return 0f;
+                return -1;
             }
             return totalChance / (float)preceptCount;
         }

@@ -10,6 +10,6 @@ namespace RimKnights.Oripathy.Utilities
 {
     public class PreceptOripathyExtension : DefModExtension
     {
-        public float oripathicPawnChance = 0f;
+        public float oripathicPawnChance;
     }
 }
