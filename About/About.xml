@@ -15,12 +15,6 @@
 			<steamWorkshopUrl>steam://url/CommunityFilePage/2009463077</steamWorkshopUrl>
 			<downloadUrl>https://github.com/pardeike/HarmonyRimWorld/releases/latest</downloadUrl>
 		</li>
-		<li>
-			<packageId>RimKnights.Core</packageId>
-			<displayName>RimKnights - Core</displayName>
-			<steamWorkshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=3512567054</steamWorkshopUrl>
-			<downloadUrl>https://github.com/Jsin0/RimKnights-Core/releases</downloadUrl>
-		</li>
 	</modDependencies>
 	<loadAfter>
 		<li>nachotoast.scgf</li>

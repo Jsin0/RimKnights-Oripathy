@@ -11,8 +11,10 @@ namespace RimKnights.Oripathy
             DefOfHelper.EnsureInitializedInCtor(typeof(PreceptDefOf));
         }
 
+        [MayRequireIdeology]
         public static PreceptDef Oripathy_Exalted;
 
+        [MayRequireIdeology]
         public static PreceptDef Oripathy_Required;
     }
 }

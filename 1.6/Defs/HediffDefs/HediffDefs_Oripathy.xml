@@ -29,7 +29,7 @@
 						<severityScalingStat>RK_OriginiumResistance</severityScalingStat>
 						<inverseStatScaling>true</inverseStatScaling>
 					</li>
-					<li>
+					<li MayRequire="ludeon.rimworld.biotech">
 						<hediff>ToxGasExposure</hediff>
 						<curve>
 							<points>

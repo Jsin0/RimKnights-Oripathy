@@ -50,7 +50,12 @@
 				  </li>
 				</value>
 			</li>
-			
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/FleckDef[defName="Fleck_ToxGasSmall"]/graphicData/color</xpath>
+				<value>
+					<color>(215,215,24,64)</color>
+				</value>
+			</li>
 	  </operations>
 	</Operation>
 </Patch>

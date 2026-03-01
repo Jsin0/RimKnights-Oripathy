@@ -44,7 +44,7 @@ namespace RimKnights.Oripathy
         [DebugAction("Oripathy", "Do Shatter Explosion", actionType = DebugActionType.ToolMap, allowedGameStates = AllowedGameStates.PlayingOnMap)]
         public static void DoShatterExplosion()
         {
-            DamageDef damageDef = DamageDefOf.RK_ActiveOriginium;
+            DamageDef damageDef = OripathyMod.originiumModActive ? Originium.DamageDefOf.RK_ActiveOriginium : RimWorld.DamageDefOf.ToxGas;
             GenExplosion.DoExplosion(UI.MouseCell(), Find.CurrentMap, 3f, damageDef, null);
         }
 

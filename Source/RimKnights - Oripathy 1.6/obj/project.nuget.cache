@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "2RmWH9c6DB0=",
+  "dgSpecHash": "yDcKN9MDB30=",
   "success": true,
-  "projectFilePath": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\RimKnights - Oripathy\\Source\\RimKnights - Oripathy 1.6\\RimKnights - Oripathy.csproj",
+  "projectFilePath": "D:\\SteamLibrary\\steamapps\\common\\RimWorld\\Mods\\RimKnights - Oripathy\\Source\\RimKnights - Oripathy 1.6\\RimKnights - Oripathy.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\52jsi\\.nuget\\packages\\krafs.rimworld.ref\\1.6.4633\\krafs.rimworld.ref.1.6.4633.nupkg.sha512",
     "C:\\Users\\52jsi\\.nuget\\packages\\lib.harmony\\2.4.2\\lib.harmony.2.4.2.nupkg.sha512"

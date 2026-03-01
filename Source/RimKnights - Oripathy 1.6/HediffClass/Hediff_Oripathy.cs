@@ -214,7 +214,7 @@ namespace RimKnights.Oripathy
                     if (!corpse.IsDessicated() && TryDamageContainer(corpse))
                     {
                         float radius = Mathf.Max(this.pawn.BodySize, 0.5f) * 2f;
-                        DamageDef damageDef = DamageDefOf.RK_ActiveOriginium;
+                        DamageDef damageDef = OripathyMod.originiumModActive ? damageDef = Originium.DamageDefOf.RK_ActiveOriginium : RimWorld.DamageDefOf.ToxGas;
                         ThingDef spawnedThingDef = null;
                         if (OripathyMod.originiumModActive) spawnedThingDef  = OriginiumInterOp.GetClusterDef();
                         GenExplosion.DoExplosion(center, map, radius, damageDef, corpse, -1, -1f, null, null, null, null, spawnedThingDef, 0.20f, 1, null, null,255, false, null, 0f, 1, 0.2f, true, null, null, null, true, 1f, 0f, true, null, 1f, null, null);
@@ -295,7 +295,8 @@ namespace RimKnights.Oripathy
             {
                 if (building.def.useHitPoints)
                 {
-                    DamageInfo damageInfo = new DamageInfo(DamageDefOf.RK_OriginiumBlast, 200f);
+                    DamageDef damageDef = RimWorld.DamageDefOf.Bomb; //OripathyMod.originiumModActive ? Originium.DamageDefOf.OriginiumBlast : RimWorld.DamageDefOf.Bomb;
+                    DamageInfo damageInfo = new DamageInfo(damageDef, 200f);
 
                     building.TakeDamage(damageInfo);
                     if (building.Destroyed)

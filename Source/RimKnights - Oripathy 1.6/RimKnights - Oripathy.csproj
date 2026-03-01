@@ -54,7 +54,6 @@
     <Compile Include="Comps\ThingComps\CompInfectionMonitor.cs" />
     <Compile Include="Comps\ThingComps\CompProperties_Follower.cs" />
     <Compile Include="Comps\ThingComps\CompProperties_InfectionMonitor.cs" />
-    <Compile Include="DefOf\DamageDefOf.cs" />
     <Compile Include="DefOf\EffecterDefOf.cs" />
     <Compile Include="DefOf\HediffDefOf.cs" />
     <Compile Include="DefOf\HistoryEventDefOf.cs" />

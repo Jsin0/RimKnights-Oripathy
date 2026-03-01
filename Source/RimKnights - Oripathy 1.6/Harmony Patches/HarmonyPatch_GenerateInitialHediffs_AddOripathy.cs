@@ -9,17 +9,13 @@ using Verse;
 namespace RimKnights.Oripathy
 {
     [HarmonyPatch(typeof(PawnGenerator))]
-    internal class HarmonyPatch_GenerateInitialHediffs_AddOripathy
+    [HarmonyPatch("AddBlindness")]
+    static class AddBlindness_AddOripathy
     {
-
-        [HarmonyPatch("AddBlindness")]
-        static class AddBlindness_AddOripathy
+        [HarmonyPostfix]
+        static void Postfix(Pawn pawn)
         {
-            [HarmonyPostfix]
-            static void Postfix(Pawn pawn)
-            {
-                PawnGeneration.AddOripathy(pawn);
-            }
+            PawnGeneration.AddOripathy(pawn);
         }
     }
 }

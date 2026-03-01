@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--Adds oripathy chance to toxic buildup-->
+<Patch>
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/FleckDef[defName="Fleck_ToxGasSmall"]/graphicData/color</xpath>
+		<value>
+			<color>(215,215,24,64)</color>
+		</value>
+	</Operation>
+</Patch>
