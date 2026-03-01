@@ -126,7 +126,7 @@
 		<stages>
 		<li>
 			<statOffsets>
-			  <RK_OriginiumResistance>0.10</RK_OriginiumResistance>
+			  <RK_OriginiumResistance>0.05</RK_OriginiumResistance>
 			</statOffsets>
 		</li>
 		</stages>
@@ -141,7 +141,7 @@
 		<stages>
 		<li>
 			<statOffsets>
-			  <RK_OriginiumResistance>0.10</RK_OriginiumResistance>
+			  <RK_OriginiumResistance>0.05</RK_OriginiumResistance>
 			</statOffsets>
 		</li>
 		</stages>

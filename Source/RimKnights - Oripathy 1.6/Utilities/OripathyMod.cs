@@ -9,14 +9,10 @@ namespace RimKnights.Oripathy
         internal static OripathyModSettings settings;
 
         public static bool baselinersImmune;
-
         public static bool infectionMonitor;
-
         public static bool abandonOripathicCorpses;
-
-        public static readonly bool originiumModActive = ModsConfig.IsActive("RimKnights.Originium");
-        
         public static float oripathyChance;
+        public static readonly bool originiumModActive = ModsConfig.IsActive("RimKnights.Originium");
 
         public OripathyMod(ModContentPack content) : base(content)
         {

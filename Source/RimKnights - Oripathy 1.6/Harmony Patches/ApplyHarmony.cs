@@ -5,7 +5,7 @@ using HarmonyLib;
 using RimWorld;
 using Verse;
 
-namespace RimKnights.Oripathy.Utilities
+namespace RimKnights.Oripathy
 {
     [StaticConstructorOnStartup]
     internal static class ApplyHarmony
@@ -119,40 +119,6 @@ namespace RimKnights.Oripathy.Utilities
             }
         }
 
-        [HarmonyPatch(typeof(PawnGenerator))]
-        [HarmonyPatch("AddBlindness")]
-        static class AddBlindness_AddOripathy
-        {
-            [HarmonyPostfix]
-            static void Postfix(Pawn pawn)
-            {
-
-                if (pawn.ideo == null || pawn.ideo.Ideo == null || pawn.health == null || pawn.health.hediffSet.HasHediff(HediffDefOf.RK_Oripathy))
-                {
-                    return;
-                }
-                float oripathyChance = pawn.ideo.Ideo.GetOripathicPawnChance();
-                if (oripathyChance == -1) { oripathyChance = OripathyMod.oripathyChance; }
-
-                if (Rand.Chance(oripathyChance))
-                {
-                    IEnumerable<BodyPartRecord> partsToApplyOn = JobDriver_Infect.GetPartsToApplyOn(pawn);
-                    List<BodyPartRecord> list = partsToApplyOn.ToList();
-
-                    if (list.Count > 0)
-                    {
-                        JobDriver_Infect.Infect(pawn, list.RandomElement<BodyPartRecord>());
-                    }
-
-                    Hediff oripathy = pawn.health.hediffSet.GetFirstHediffOfDef(HediffDefOf.RK_Oripathy);
-                    Hediff lesion = pawn.health.hediffSet.GetFirstHediffOfDef(HediffDefOf.RK_OripathyLesion);
-
-                    if (oripathy != null) oripathy.Severity = new FloatRange(0.1f, 0.15f).RandomInRange;
-                    if (lesion != null) lesion.Severity = new FloatRange(0.1f, 0.25f).RandomInRange;
-
-                }
-            }
-        }
 
         [HarmonyPatch(typeof(PawnApparelGenerator))]
         [HarmonyPatch("GenerateStartingApparelFor")]

@@ -64,19 +64,15 @@ namespace RimKnights.Oripathy
         }
         private void TryTriggerWarmupTimer()
         {
-            Corpse corpse = pawn?.Corpse;
-            if (!corpse.DestroyedOrNull())
-            {
-                currentPhase = ShatterPhase.Warmup;
-                if(this.warmupTimer == null) this.warmupTimer = new TickTimer();
-                this.warmupTimer.Start(GenTicks.TicksGame, this.finalDelay, new Action(this.TryTriggerShatter));
-                if (OripathyMod.settings.debugMode) Log.Message("DebugShatterWarmupStarted".Translate("pawn", pawn.NameFullColored));
-            }
+            currentPhase = ShatterPhase.Warmup;
+            if(this.warmupTimer == null) this.warmupTimer = new TickTimer();
+            this.warmupTimer.Start(GenTicks.TicksGame, this.finalDelay, new Action(this.TryTriggerShatter));
+            if (OripathyMod.settings.debugMode) Log.Message("DebugShatterWarmupStarted".Translate("pawn", pawn.NameFullColored));
         }
         private void TryTriggerWarmupEffect()
         {
-            Corpse corpse = pawn?.Corpse;
-            if(corpse.MapHeld != null && !corpse.DestroyedOrNull() && !corpse.IsDessicated())
+            Corpse corpse = pawn.Corpse;
+            if(corpse.MapHeld != null && !corpse.IsDessicated())
             {
                 if (this.warmupEffecter == null)
                 {
@@ -137,7 +133,7 @@ namespace RimKnights.Oripathy
         public override void Tick()
         {
             base.Tick();
-            if (Visible && !notified)
+            if (!notified && Visible)
             {
                 Find.HistoryEventsManager.RecordEvent(new HistoryEvent(HistoryEventDefOf.RK_BecameOripathic, pawn.Named(HistoryEventArgsNames.Doer)), true);
                 notified = true;
@@ -220,14 +216,11 @@ namespace RimKnights.Oripathy
                         float radius = Mathf.Max(this.pawn.BodySize, 0.5f) * 2f;
                         DamageDef damageDef = DamageDefOf.RK_ActiveOriginium;
                         ThingDef spawnedThingDef = null;
-                        if (OripathyMod.originiumModActive)
-                        {
-                            spawnedThingDef = RimKnights.Originium.ThingDefOf.RK_OriginiumCluster;
-                        }
+                        if (OripathyMod.originiumModActive) spawnedThingDef  = OriginiumInterOp.GetClusterDef();
                         GenExplosion.DoExplosion(center, map, radius, damageDef, corpse, -1, -1f, null, null, null, null, spawnedThingDef, 0.20f, 1, null, null,255, false, null, 0f, 1, 0.2f, true, null, null, null, true, 1f, 0f, true, null, 1f, null, null);
                     }
 
-                    if (OripathyMod.originiumModActive) GenSpawn.Spawn(RimKnights.Originium.ThingDefOf.RK_OriginiumCluster, center, map, WipeMode.FullRefund);
+                    if (OripathyMod.originiumModActive) OriginiumInterOp.SpawnCluster(center, map);
                 }
                 else
                 {
@@ -266,7 +259,7 @@ namespace RimKnights.Oripathy
             {
                 if (OripathyMod.settings.debugMode) Log.Message("DebugShatterInCaravan".Translate("pawn", this.pawn.NameShortColored, "caravan", caravan.Name));
 
-                FloatRange randSeverity = new FloatRange(0f, 1f);
+                FloatRange randSeverity = new FloatRange(0f, 0.4f);
                 foreach (Pawn p in caravan.pawns)
                 {
                     if (p != null)

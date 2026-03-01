@@ -1,27 +1,33 @@
 {
   "format": 1,
   "restore": {
-    "D:\\SteamLibrary\\steamapps\\common\\RimWorld\\Mods\\RimKnights - Oripathy\\Source\\RimKnights - Oripathy 1.6\\RimKnights - Oripathy.csproj": {}
+    "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\RimKnights - Oripathy\\Source\\RimKnights - Oripathy 1.6\\RimKnights - Oripathy.csproj": {}
   },
   "projects": {
-    "D:\\SteamLibrary\\steamapps\\common\\RimWorld\\Mods\\RimKnights - Oripathy\\Source\\RimKnights - Oripathy 1.6\\RimKnights - Oripathy.csproj": {
+    "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\RimKnights - Oripathy\\Source\\RimKnights - Oripathy 1.6\\RimKnights - Oripathy.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\SteamLibrary\\steamapps\\common\\RimWorld\\Mods\\RimKnights - Oripathy\\Source\\RimKnights - Oripathy 1.6\\RimKnights - Oripathy.csproj",
+        "projectUniqueName": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\RimKnights - Oripathy\\Source\\RimKnights - Oripathy 1.6\\RimKnights - Oripathy.csproj",
         "projectName": "RimKnights - Oripathy",
-        "projectPath": "D:\\SteamLibrary\\steamapps\\common\\RimWorld\\Mods\\RimKnights - Oripathy\\Source\\RimKnights - Oripathy 1.6\\RimKnights - Oripathy.csproj",
+        "projectPath": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\RimKnights - Oripathy\\Source\\RimKnights - Oripathy 1.6\\RimKnights - Oripathy.csproj",
         "packagesPath": "C:\\Users\\52jsi\\.nuget\\packages\\",
-        "outputPath": "D:\\SteamLibrary\\steamapps\\common\\RimWorld\\Mods\\RimKnights - Oripathy\\Source\\RimKnights - Oripathy 1.6\\obj\\",
+        "outputPath": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\RimKnights - Oripathy\\Source\\RimKnights - Oripathy 1.6\\obj\\",
         "projectStyle": "PackageReference",
         "skipContentFileWrite": true,
         "UsingMicrosoftNETSdk": false,
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\52jsi\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\52jsi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net472"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {

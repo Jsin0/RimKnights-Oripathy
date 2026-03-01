@@ -13,13 +13,7 @@ namespace RimKnights.Oripathy
 {
     public class JobDriver_Infect : JobDriver
     {
-        protected Pawn Target
-        {
-            get
-            {
-                return (Pawn)this.job.GetTarget(TargetIndex.A).Thing;
-            }
-        }
+        protected Pawn Target => (Pawn)this.job.GetTarget(TargetIndex.A).Thing;
         public static bool AvailableOnNow(Pawn pawn, BodyPartRecord part = null)
         {
             return pawn.RaceProps.Humanlike && (Faction.OfPlayerSilentFail == null) && (part == null) && !pawn.health.hediffSet.HasHediff(HediffDefOf.RK_Oripathy);
@@ -51,8 +45,14 @@ namespace RimKnights.Oripathy
             {
                 lordJob_Ritual_Mutilation.mutilatedPawns.Add(pawn);
             }
-            pawn.health.AddHediff(HediffDefOf.RK_Oripathy, null, null, null);
-            pawn.health.AddHediff(HediffDefOf.RK_OripathyLesion, part, null, null);
+
+            GiveLesion(pawn, part);
+        }
+
+        private static void GiveLesion(Pawn pawn, BodyPartRecord bodyPartRecord)
+        {
+            pawn.health.GetOrAddHediff(HediffDefOf.RK_Oripathy);
+            pawn.health.AddHediff(HediffDefOf.RK_OripathyLesion, bodyPartRecord, null, null);
         }
         public static void CreateHistoryEventDef(Pawn pawn)
         {

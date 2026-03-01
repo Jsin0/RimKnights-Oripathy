@@ -18,12 +18,12 @@
 					<li>
 						<hediff>ToxicBuildup</hediff>
 						<curve>
-							<points>				  
-								<li>(0.0, 0.0)</li>
-								<li>(0.25, 0.008)</li>
-								<li>(0.5, 0.025)</li>
-								<li>(0.75, 0.10)</li>
-								<li>(1.0, 0.35)</li>
+							<points>		
+								<li>(0.0, 0.001)</li>
+								<li>(0.25, 0.005)</li>
+								<li>(0.5, 0.013)</li>
+								<li>(0.75, 0.065)</li>
+								<li>(1.0, 0.20)</li>
 							</points>
 						</curve>
 						<severityScalingStat>RK_OriginiumResistance</severityScalingStat>

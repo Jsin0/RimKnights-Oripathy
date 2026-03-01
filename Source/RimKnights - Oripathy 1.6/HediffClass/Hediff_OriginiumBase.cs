@@ -50,7 +50,6 @@ namespace RimKnights.Oripathy
         }
         public override void PostAdd(DamageInfo? dinfo)
         {
-            base.PostAdd(dinfo);
             if (!this.pawn.RaceProps.IsFlesh)
             {
                 this.pawn.health.RemoveHediff(this);
@@ -61,6 +60,7 @@ namespace RimKnights.Oripathy
                 this.pawn.health.RemoveHediff(this);
                 return;
             }
+            base.PostAdd(dinfo);
             displayedSeverity = this.Severity;
         }
         public override bool Visible

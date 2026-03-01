@@ -2,7 +2,7 @@
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <Reference Include="RimKnights - Originium">
-      <HintPath>..\..\..\RimKnights-Core\1.6\Assemblies\RimKnights - Originium.dll</HintPath>
+      <HintPath>..\..\..\RimKnights - Core\1.6\Assemblies\RimKnights - Originium.dll</HintPath>
 	  <Private>false</Private>
     </Reference>
   </ItemGroup>

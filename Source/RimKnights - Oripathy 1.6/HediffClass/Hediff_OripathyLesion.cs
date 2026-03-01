@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Verse;
+﻿using Verse;
 
 namespace RimKnights.Oripathy
 {
@@ -12,9 +7,11 @@ namespace RimKnights.Oripathy
         public override void PostAdd(DamageInfo? dinfo)
         {
             base.PostAdd(dinfo);
-            if(this.Part.depth == BodyPartDepth.Outside || this.Visible)
+            //Guarantees that pawns with a lesion always have oripathy
+            Hediff oripathy = pawn.health.GetOrAddHediff(HediffDefOf.RK_Oripathy);
+            if (this.Part.depth == BodyPartDepth.Outside || this.Visible)
             {
-                pawn.health.hediffSet.GetFirstHediffOfDef(HediffDefOf.RK_Oripathy)?.SetVisible();
+                oripathy.SetVisible();
                 this.SetVisible();
             }
         }

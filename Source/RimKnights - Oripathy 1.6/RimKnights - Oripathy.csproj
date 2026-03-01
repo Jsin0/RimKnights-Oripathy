@@ -64,9 +64,11 @@
     <Compile Include="DefOf\RecipeDefOf.cs" />
     <Compile Include="DefOf\StatDefOf.cs" />
     <Compile Include="DefOf\ThingDefOf.cs" />
+    <Compile Include="Harmony Patches\HarmonyPatch_GenerateInitialHediffs_AddOripathy.cs" />
     <Compile Include="HediffClass\Hediff_OriginiumBase.cs" />
     <Compile Include="HediffClass\Hediff_OripathyLesion.cs" />
     <Compile Include="HelperClasses\AffectorHediff.cs" />
+    <Compile Include="PawnGeneration\PawnGeneration.cs" />
     <Compile Include="Rituals\Jobs\JobDriver_Infect.cs" />
     <Compile Include="Rituals\Jobs\JobGiver_Infect.cs" />
     <Compile Include="Rituals\RitualObligationTriggers\RitualObligationTrigger_Infection.cs" />
@@ -76,6 +78,7 @@
     <Compile Include="Utilities\IdeoExtension.cs" />
     <Compile Include="Utilities\ModSettings.cs" />
     <Compile Include="Utilities\DefModExtension.cs" />
+    <Compile Include="Utilities\OriginiumInterOp.cs" />
     <Compile Include="Utilities\OripathyMod.cs" />
     <Compile Include="HediffClass\Hediff_Oripathy.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -93,9 +96,7 @@
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="NewFolder1\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <PackageReference Include="Krafs.Rimworld.Ref">
       <Version>1.6.4633</Version>

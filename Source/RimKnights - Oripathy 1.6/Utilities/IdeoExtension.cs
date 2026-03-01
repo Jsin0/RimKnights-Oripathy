@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Verse;
 
-namespace RimKnights.Oripathy.Utilities
+namespace RimKnights.Oripathy
 {
     public static class IdeoExtension
     {

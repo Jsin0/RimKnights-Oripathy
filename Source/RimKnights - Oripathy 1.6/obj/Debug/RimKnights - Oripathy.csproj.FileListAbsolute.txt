@@ -7,3 +7,7 @@ D:\SteamLibrary\steamapps\common\RimWorld\Mods\RimKnights - Oripathy\1.6\Assembl
 D:\SteamLibrary\steamapps\common\RimWorld\Mods\RimKnights - Oripathy\Source\RimKnights - Oripathy 1.6\obj\Debug\RimKnights - Oripathy.csproj.AssemblyReference.cache
 D:\SteamLibrary\steamapps\common\RimWorld\Mods\RimKnights - Oripathy\Source\RimKnights - Oripathy 1.6\obj\Debug\RimKnights - Oripathy.csproj.CoreCompileInputs.cache
 D:\SteamLibrary\steamapps\common\RimWorld\Mods\RimKnights - Oripathy\Source\RimKnights - Oripathy 1.6\obj\Debug\RimKnights - Oripathy.dll
+C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\RimKnights - Oripathy\Source\RimKnights - Oripathy 1.6\obj\Debug\RimKnights - Oripathy.csproj.AssemblyReference.cache
+C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\RimKnights - Oripathy\Source\RimKnights - Oripathy 1.6\obj\Debug\RimKnights - Oripathy.csproj.CoreCompileInputs.cache
+C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\RimKnights - Oripathy\Source\RimKnights - Oripathy 1.6\obj\Debug\RimKnights - Oripathy.dll
+C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\RimKnights - Oripathy\1.6\Assemblies\RimKnights - Oripathy.dll
