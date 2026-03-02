@@ -67,8 +67,7 @@ namespace RimKnights.Oripathy
                 IReadOnlyList<Pawn> allPawnsSpawned = map.mapPawns.AllPawnsSpawned;
                 for (int i = 0; i < allPawnsSpawned.Count; i++)
                 {
-                    allPawnsSpawned[i].health.GetOrAddHediff(HediffDefOf.RK_Oripathy);
-                    allPawnsSpawned[i].health.hediffSet.GetFirstHediffOfDef(HediffDefOf.RK_Oripathy).Severity = 1f;
+                    allPawnsSpawned[i].health.GetOrAddHediff(HediffDefOf.RK_Oripathy).Severity = 1f;
                     allPawnsSpawned[i].Kill(null, null);
                 }
             }

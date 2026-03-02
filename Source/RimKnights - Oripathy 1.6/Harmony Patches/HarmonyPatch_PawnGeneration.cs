@@ -1,9 +1,10 @@
-﻿using HarmonyLib;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using HarmonyLib;
+using RimWorld;
 using Verse;
 
 namespace RimKnights.Oripathy
@@ -16,6 +17,17 @@ namespace RimKnights.Oripathy
         static void Postfix(Pawn pawn)
         {
             PawnGeneration.AddOripathy(pawn);
+        }
+    }
+
+    [HarmonyPatch(typeof(PawnApparelGenerator))]
+    [HarmonyPatch("GenerateStartingApparelFor")]
+    static class GenerateStartingApparel_GiveInfectionMonitor
+    {
+        [HarmonyPostfix]
+        static void Postfix(Pawn pawn, PawnGenerationRequest request)
+        {
+            PawnGeneration.GiveInfectionMonitor(pawn, request);
         }
     }
 }

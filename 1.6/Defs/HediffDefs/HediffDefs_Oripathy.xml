@@ -50,9 +50,14 @@
 		</comps>
 		<stages>
 			<li>
-				<label>minor</label>
-				<painOffset>0.00</painOffset>
+				<label>initial</label>
 				<becomeVisible>false</becomeVisible>
+			</li>
+			<li>
+				<label>minor</label>
+				<minSeverity>0.01</minSeverity>
+				<painOffset>0.00</painOffset>
+				<becomeVisible>true</becomeVisible>
 				<hediffGivers>
 					<li Class="HediffGiver_Random">
 						<hediff>RK_OripathyLesion</hediff>

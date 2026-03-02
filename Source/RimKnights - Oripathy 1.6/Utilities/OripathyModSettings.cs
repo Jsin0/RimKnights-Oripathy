@@ -14,7 +14,7 @@ namespace RimKnights.Oripathy
         public float oripathyChance;
 
         public const bool DefaultBaselinersImmune = false;
-        public const bool DefaultInfectionMonitor = false;
+        public const bool DefaultInfectionMonitor = true;
         public const bool DefaultAbandonOripathicCorpses = true;
         public const bool DefaultDebugMode = false;
         public const float DefaultOripathyChance = 0.05f;

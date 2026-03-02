@@ -11,11 +11,13 @@ namespace RimKnights.Oripathy
 {
     public abstract class Hediff_OriginiumBase : HediffWithComps
     {
+        private bool shouldUpdate;
+        private bool revealed;
         public override string SeverityLabel
         {
             get
             {
-                if (OripathyMod.infectionMonitor)
+                if (OripathyMod.settings.infectionMonitor)
                 {
                     if (this.displayedSeverity <= 0f)
                     {
@@ -36,7 +38,7 @@ namespace RimKnights.Oripathy
         {
             get
             {
-                if(!OripathyMod.infectionMonitor || shouldUpdate)
+                if(!OripathyMod.settings.infectionMonitor || shouldUpdate)
                 {
                     return base.LabelInBrackets;
                 }
@@ -55,7 +57,7 @@ namespace RimKnights.Oripathy
                 this.pawn.health.RemoveHediff(this);
                 return;
             }
-            else if (OripathyMod.baselinersImmune && GeneUtility.IsBaseliner(this.pawn))
+            else if (OripathyMod.settings.baselinersImmune && GeneUtility.IsBaseliner(this.pawn))
             {
                 this.pawn.health.RemoveHediff(this);
                 return;
@@ -67,34 +69,48 @@ namespace RimKnights.Oripathy
         {
             get
             {
-                if (!OripathyMod.infectionMonitor)
+                if (!OripathyMod.settings.infectionMonitor)
                 {
                     return base.Visible;
                 }
-                return base.Visible || shouldUpdate;
+
+                if (revealed) return true;
+
+                if (base.Visible || shouldUpdate)
+                {
+                    revealed = true;
+                    return true;
+                }
+
+                return false;
             }
         }
         public override void Tick()
         {
             base.Tick();
-            if (OripathyMod.infectionMonitor)
+            if (OripathyMod.settings.infectionMonitor)
             {
                 if(pawn.IsHashIntervalTick(60))
                 {
                     shouldUpdate = pawnIsWearingMonitor;
-                    if (shouldUpdate) this.displayedSeverity = this.Severity;
+                    if (shouldUpdate) RefreshDisplayedSeverity();
                 }
             }
         }
-        private bool pawnIsWearingMonitor
+        private bool pawnIsWearingMonitor => pawn.health.hediffSet.HasHediff(HediffDefOf.RK_InfectionMonitorImplant) || pawn.health.hediffSet.HasHediff(HediffDefOf.RK_InfectionMonitorWorn);
+        public void RefreshDisplayedSeverity()
         {
-            get 
+            this.displayedSeverity = this.Severity;
+        }
+        public override void ExposeData()
+        {
+            base.ExposeData();
+            Scribe_Values.Look(ref revealed, "revealed", false);
+            if(Scribe.mode == LoadSaveMode.PostLoadInit)
             {
-                return pawn.health.hediffSet.HasHediff(HediffDefOf.RK_InfectionMonitorImplant) || pawn.health.hediffSet.HasHediff(HediffDefOf.RK_InfectionMonitorWorn);
+                displayedSeverity = this.Severity;
+                shouldUpdate = pawnIsWearingMonitor;
             }
         }
-
-        private bool shouldUpdate;
-
     }
 }

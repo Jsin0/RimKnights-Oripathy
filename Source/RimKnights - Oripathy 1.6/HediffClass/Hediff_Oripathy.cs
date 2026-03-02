@@ -39,14 +39,14 @@ namespace RimKnights.Oripathy
             
             if (this.pawn.Faction == Faction.OfPlayer)
             {
-                if (OripathyMod.infectionMonitor && !this.Visible) return;
+                if (OripathyMod.settings.infectionMonitor && !this.Visible) return;
                 String name = this.pawn.Name.ToStringShort;
                 Find.LetterStack.ReceiveLetter("RK_LetterLabelOripathicDeath".Translate(name), "RK_LetterOripathicDeath".Translate(name), LetterDefOf.NegativeEvent, corpse, null, null, null, null, 0, true);
             }
             if(corpse.MapHeld == null)
             {
                 Caravan caravan = GetCaravanHoldingCorpse(corpse);
-                if (caravan != null && OripathyMod.abandonOripathicCorpses) 
+                if (caravan != null && OripathyMod.settings.infectionMonitor) 
                 {
                     RimWorld.Planet.CaravanAbandonOrBanishUtility.TryAbandonOrBanishViaInterface(corpse, caravan);
                 }

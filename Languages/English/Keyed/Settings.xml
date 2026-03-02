@@ -8,4 +8,7 @@
 	<InfectionMonitorDesc>Infection monitors are required to show oripathy and originium buildup severities.</InfectionMonitorDesc>
 	<AbandonOripathicCorpsesLabel>Autoabandon oripathic corpses</AbandonOripathicCorpsesLabel>
 	<AbandonOripathicCorpsesDesc>Automatically abandon oripathic corpses when an infected dies in a caravan. Avoids infecting other caravan members.</AbandonOripathicCorpsesDesc>
+	<GlobalOripathyChanceLabel>Global Oripathy chance</GlobalOripathyChanceLabel>
+	<GlobalOripathyChanceDesc>Base chance that any generated pawn has oripathy. Overriden by Ideo Oripathic chance when set</GlobalOripathyChanceDesc>
+	<ResetSettings>Reset Settings</ResetSettings>
 </LanguageData>

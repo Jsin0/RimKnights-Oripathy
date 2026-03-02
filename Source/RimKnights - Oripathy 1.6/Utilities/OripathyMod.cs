@@ -1,4 +1,6 @@
 ﻿
+using System;
+using RimKnights.Originium;
 using UnityEngine;
 using Verse;
 
@@ -8,20 +10,11 @@ namespace RimKnights.Oripathy
     {
         internal static OripathyModSettings settings;
 
-        public static bool baselinersImmune;
-        public static bool infectionMonitor;
-        public static bool abandonOripathicCorpses;
-        public static float oripathyChance;
         public static readonly bool originiumModActive = ModsConfig.IsActive("RimKnights.Originium");
 
         public OripathyMod(ModContentPack content) : base(content)
         {
             settings = GetSettings<OripathyModSettings>();
-
-            baselinersImmune = settings.baselinersImmune;
-            infectionMonitor = settings.infectionMonitor;
-            abandonOripathicCorpses = settings.abandonOripathicCorpses;
-            oripathyChance = settings.oripathyChance;
         }
         public override void DoSettingsWindowContents(Rect inRect)
         {
@@ -32,6 +25,9 @@ namespace RimKnights.Oripathy
             listingStandard.CheckboxLabeled("DebugModeLable".Translate(), ref settings.debugMode, "DebugModeDesc".Translate());
             listingStandard.CheckboxLabeled("InfectionMonitorLabel".Translate(), ref settings.infectionMonitor, "InfectionMonitorDesc".Translate());
             listingStandard.CheckboxLabeled("AbandonOripathicCorpsesLabel".Translate(), ref settings.abandonOripathicCorpses, "AbandonOripathicCorpsesDesc".Translate());
+            settings.oripathyChance = (float)Math.Round(listingStandard.SliderLabeled($"{"GlobalOripathyChanceLabel".Translate()} : {settings.oripathyChance * 100}%", settings.oripathyChance, 0f, 1.0f, 0.3f, "GlobalOripathyChanceDesc".Translate()),2);
+
+            if (listingStandard.ButtonText("ResetSettings".Translate(), null, 1f)) OripathyMod.settings.Reset();
             listingStandard.End();
             base.DoSettingsWindowContents(inRect);
         }
