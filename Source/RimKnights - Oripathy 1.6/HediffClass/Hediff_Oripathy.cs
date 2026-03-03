@@ -40,7 +40,7 @@ namespace RimKnights.Oripathy
             if (this.pawn.Faction == Faction.OfPlayer)
             {
                 if (OripathyMod.settings.infectionMonitor && !this.Visible) return;
-                String name = this.pawn.Name.ToStringShort;
+                String name = this.pawn.LabelShort;
                 Find.LetterStack.ReceiveLetter("RK_LetterLabelOripathicDeath".Translate(name), "RK_LetterOripathicDeath".Translate(name), LetterDefOf.NegativeEvent, corpse, null, null, null, null, 0, true);
             }
             if(corpse.MapHeld == null)
@@ -67,7 +67,7 @@ namespace RimKnights.Oripathy
             currentPhase = ShatterPhase.Warmup;
             if(this.warmupTimer == null) this.warmupTimer = new TickTimer();
             this.warmupTimer.Start(GenTicks.TicksGame, this.finalDelay, new Action(this.TryTriggerShatter));
-            if (OripathyMod.settings.debugMode) Log.Message("DebugShatterWarmupStarted".Translate("pawn", pawn.NameFullColored));
+            if (OripathyMod.settings.debugMode) Log.Message("DebugShatterWarmupStarted".Translate(pawn.LabelShort.Named("pawn")));
         }
         private void TryTriggerWarmupEffect()
         {
@@ -103,7 +103,7 @@ namespace RimKnights.Oripathy
             
             if (this.pawn.Faction == Faction.OfPlayer)
             {
-                String name = this.pawn.Name.ToStringShort;
+                String name = this.pawn.LabelShort;
                 Find.LetterStack.ReceiveLetter("RK_LetterLabelShattering".Translate(name), "RK_LetterShattering".Translate(name), LetterDefOf.NegativeEvent, corpse, null, null, null, null, 0, true);
             }
 
@@ -257,7 +257,7 @@ namespace RimKnights.Oripathy
         {
             if (caravan != null)
             {
-                if (OripathyMod.settings.debugMode) Log.Message("DebugShatterInCaravan".Translate("pawn", this.pawn.NameShortColored, "caravan", caravan.Name));
+                if (OripathyMod.settings.debugMode) Log.Message("DebugShatterInCaravan".Translate(this.pawn.LabelShort.Named("pawn"), caravan.Name.Named("caravan")));
 
                 FloatRange randSeverity = new FloatRange(0f, 0.4f);
                 foreach (Pawn p in caravan.pawns)
@@ -266,7 +266,7 @@ namespace RimKnights.Oripathy
                     {
                         Hediff buildupHediff = p.health.GetOrAddHediff(RimWorld.HediffDefOf.ToxicBuildup);
                         buildupHediff.Severity += randSeverity.RandomInRange;
-                        if (OripathyMod.settings.debugMode) Log.Message("DebugCaravanBobSeverity".Translate("pawn", p.NameFullColored, "severity", buildupHediff.Severity));
+                        if (OripathyMod.settings.debugMode) Log.Message("DebugCaravanBobSeverity".Translate(p.LabelShort.Named("pawn"), buildupHediff.Severity.Named("severity")));
 
                     }
                 }

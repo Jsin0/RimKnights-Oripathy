@@ -13,19 +13,32 @@ namespace RimKnights.Oripathy
     {
         public static void AddOripathy(Pawn pawn)
         {
-            if (pawn.health == null || pawn.health.hediffSet.HasHediff(HediffDefOf.RK_Oripathy))
+            if (pawn.health == null || !pawn.RaceProps.IsFlesh || pawn.health.hediffSet.HasHediff(HediffDefOf.RK_Oripathy))
             {
                 return;
             }
-            float ritualOripathyChance = GetRitualOripathyChance(pawn);
-            float baseOripathyChance = OripathyMod.settings.oripathyChance;
+            bool isAnimal = false;
+            bool isRitual = false;
+            bool isBaseline = false;
 
-            //First rolls if the pawn would've gotten a ritual
-            bool isRitual = ritualOripathyChance >= 0f && Rand.Chance(ritualOripathyChance);
-            //Otherwise rolls if the pawn is just someone who got oripathy by chance
-            bool isBaseline = !isRitual && Rand.Chance(baseOripathyChance);
+            if (pawn.RaceProps.Humanlike)
+            {
+                float ritualOripathyChance = GetRitualOripathyChance(pawn);
+                float baseOripathyChance = OripathyMod.settings.oripathyChance;
 
-            if (!isBaseline && !isRitual) return;
+                //First rolls if the pawn would've gotten a ritual
+                isRitual = ritualOripathyChance >= 0f && Rand.Chance(ritualOripathyChance);
+                //Otherwise rolls if the pawn is just someone who got oripathy by chance
+                isBaseline = !isRitual && Rand.Chance(baseOripathyChance);
+            }
+            else
+            {
+                const float animalOripathyChance = 0.005f;
+
+                isAnimal = Rand.Chance(animalOripathyChance);
+            }
+
+            if (!isAnimal && !isBaseline && !isRitual) return;
 
             List<BodyPartRecord> validParts;
             if (isRitual)
@@ -42,7 +55,7 @@ namespace RimKnights.Oripathy
             if (isRitual) JobDriver_Infect.Infect(pawn, validParts.RandomElement<BodyPartRecord>());
             else pawn.health.GetOrAddHediff(HediffDefOf.RK_Oripathy);
 
-            AdjustOripathyToAge(pawn);
+            if(!isAnimal) AdjustOripathyToAge(pawn);
 
         }
         private static IEnumerable<BodyPartRecord> GetValidLesionTargets(Pawn pawn)

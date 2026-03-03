@@ -18,7 +18,7 @@ namespace RimKnights.Oripathy
             }
 
             float num = CalculateSeverityPerDay();
-            if (OripathyMod.settings.debugMode) Log.Message("SeverityGainPerDay".Translate(Pawn.Name.ToStringShort, parent.def.label, num));
+            if (OripathyMod.settings.debugMode) Log.Message("DebugSeverityGainPerDay".Translate(Pawn.LabelShort.Named("pawn"), parent.def.label.Named("hediff"), num));
             
             HediffStage curStage = this.parent.CurStage;
 
