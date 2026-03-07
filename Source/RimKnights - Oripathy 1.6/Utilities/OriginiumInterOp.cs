@@ -14,6 +14,10 @@ namespace RimKnights.Oripathy
             return RimKnights.Originium.ThingDefOf.RK_OriginiumCluster;
         }
 
+        public static DamageDef GetDamageDef()
+        {
+            return Originium.DamageDefOf.RK_ActiveOriginium;
+        }
         public static void SpawnCluster(IntVec3 pos, Map map)
         {
             GenSpawn.Spawn(

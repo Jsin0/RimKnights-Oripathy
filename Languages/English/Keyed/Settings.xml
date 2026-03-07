@@ -11,4 +11,6 @@
 	<GlobalOripathyChanceLabel>Global Oripathy chance</GlobalOripathyChanceLabel>
 	<GlobalOripathyChanceDesc>Base chance that any generated pawn has oripathy. Overriden by Ideo Oripathic chance when set</GlobalOripathyChanceDesc>
 	<ResetSettings>Reset Settings</ResetSettings>
+	<VerboseLoggingLable>Verbose Logging</VerboseLoggingLable>
+	<VerboseLoggingDesc>Allow extended logging of repeating information such as SeverityGainPerDay</VerboseLoggingDesc>
 </LanguageData>

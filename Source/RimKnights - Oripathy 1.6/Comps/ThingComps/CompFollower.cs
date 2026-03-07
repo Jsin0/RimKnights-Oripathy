@@ -1,4 +1,5 @@
 ﻿using Verse;
+using RimWorld;
 
 namespace RimKnights.Oripathy
 {
@@ -15,17 +16,31 @@ namespace RimKnights.Oripathy
         public override void CompTick()
         {
             base.CompTick();
-            if (followTarget == null || followTarget.Destroyed || !followTarget.Spawned)
+            if (currentTarget == null || currentTarget.Destroyed)
             {
-                this.parent.Destroy();
+                parent.Destroy();
+                return;
             }
 
-            if (followTarget.Spawned)
+            if (!parent.IsHashIntervalTick(30)) return;
+
+            if (currentTarget.Spawned)
             {
-                if(parent.Position != followTarget.Position)
+                if(parent.Position != currentTarget.Position)
                 {
-                    this.parent.Position = followTarget.Position;
+                    parent.Position = currentTarget.Position;
                 }
+            }else if(currentTarget.ParentHolder is Pawn_CarryTracker carrier)
+            {
+                if(parent.Position != carrier.pawn.Position)
+                {
+                    parent.Position = carrier.pawn.Position;
+                }
+            }
+            else
+            {
+                parent.Destroy();
+                return;
             }
         }
 
@@ -37,9 +52,15 @@ namespace RimKnights.Oripathy
                 return;
             }
 
-            followTarget = target;
+            currentTarget = target;
         }
 
-        private Thing followTarget;
+        public override void PostExposeData()
+        {
+            base.PostExposeData();
+            Scribe_References.Look(ref currentTarget, "currentTarget");
+        }
+
+        private Thing currentTarget;
     }
 }

@@ -42,18 +42,19 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Alerts\Alert_LesionExtreme.cs" />
-    <Compile Include="Comps\HediffComps\HediffCompProperties_DynamicSeverityPerDay.cs" />
-    <Compile Include="Comps\HediffComps\HediffCompProperties_DynamicSeverityRange.cs" />
-    <Compile Include="Comps\HediffComps\HediffCompProperties_Harvestable.cs" />
-    <Compile Include="Comps\HediffComps\HediffCompProperties_Suppressible.cs" />
-    <Compile Include="Comps\HediffComps\HediffComp_DynamicSeverityPerDay.cs" />
-    <Compile Include="Comps\HediffComps\HediffComp_DynamicSeverityRange.cs" />
-    <Compile Include="Comps\HediffComps\HediffComp_Harvestable.cs" />
-    <Compile Include="Comps\HediffComps\HediffComp_Suppressible.cs" />
+    <Compile Include="Comps\HediffComps\CompProperties\HediffCompProperties_DynamicSeverityPerDay.cs" />
+    <Compile Include="Comps\HediffComps\CompProperties\HediffCompProperties_DynamicSeverityRange.cs" />
+    <Compile Include="Comps\HediffComps\CompProperties\HediffCompProperties_Harvestable.cs" />
+    <Compile Include="Comps\HediffComps\CompProperties\HediffCompProperties_Suppressible.cs" />
+    <Compile Include="Comps\HediffComps\Comps\HediffComp_DynamicSeverityPerDay.cs" />
+    <Compile Include="Comps\HediffComps\Comps\HediffComp_DynamicSeverityRange.cs" />
+    <Compile Include="Comps\HediffComps\Comps\HediffComp_Harvestable.cs" />
+    <Compile Include="Comps\HediffComps\Comps\HediffComp_Suppressible.cs" />
     <Compile Include="Comps\ThingComps\CompFollower.cs" />
     <Compile Include="Comps\ThingComps\CompInfectionMonitor.cs" />
     <Compile Include="Comps\ThingComps\CompProperties_Follower.cs" />
     <Compile Include="Comps\ThingComps\CompProperties_InfectionMonitor.cs" />
+    <Compile Include="DefOf\DamageDefOf.cs" />
     <Compile Include="DefOf\EffecterDefOf.cs" />
     <Compile Include="DefOf\HediffDefOf.cs" />
     <Compile Include="DefOf\HistoryEventDefOf.cs" />
@@ -65,6 +66,7 @@
     <Compile Include="DefOf\ThingDefOf.cs" />
     <Compile Include="Harmony Patches\HarmonyPatch_OripathyHediff.cs" />
     <Compile Include="Harmony Patches\HarmonyPatch_PawnGeneration.cs" />
+    <Compile Include="Harmony Patches\HarmonyPatch_PawnToxicTickInterval.cs" />
     <Compile Include="Harmony Patches\HarmonyPatch_TransfusionRelated.cs" />
     <Compile Include="HediffClass\Hediff_OriginiumBase.cs" />
     <Compile Include="HediffClass\Hediff_OripathyLesion.cs" />
@@ -75,6 +77,7 @@
     <Compile Include="Rituals\RitualObligationTriggers\RitualObligationTrigger_Infection.cs" />
     <Compile Include="Rituals\RitualObligationTriggers\RitualObligationTrigger_InfectionProperties.cs" />
     <Compile Include="Rituals\Roles\RitualRoleInfectionTarget.cs" />
+    <Compile Include="Utilities\Constants.cs" />
     <Compile Include="Utilities\DebugActions_Oripathy.cs" />
     <Compile Include="Utilities\IdeoExtension.cs" />
     <Compile Include="Utilities\OripathyModSettings.cs" />
@@ -86,6 +89,8 @@
     <Compile Include="Harmony Patches\ApplyHarmony.cs" />
     <Compile Include="Rituals\RitualWorkers\RitualObligationTargetWorker_AnyRitualSpotOrAltar_Infection.cs" />
     <Compile Include="Rituals\RitualWorkers\RitualOutcomeEffectWorker_Oripathy.cs" />
+    <Compile Include="Utilities\OripathyUtility.cs" />
+    <Compile Include="WorkerClass\DamageWorker\DamageWorker_ApplyHediff.cs" />
     <Compile Include="WorkerClass\RecipeWorker\Recipe_HarvestHediff.cs" />
     <Compile Include="WorkerClass\ThoughtWorkers\ThoughtWorker_Oripathic_Social.cs" />
     <Compile Include="WorkerClass\ThoughtWorkers\ThoughtWorker_Oripathic.cs" />

@@ -18,13 +18,19 @@ namespace RimKnights.Oripathy
             }
 
             float num = CalculateSeverityPerDay();
-            if (OripathyMod.settings.debugMode) Log.Message("DebugSeverityGainPerDay".Translate(Pawn.LabelShort.Named("pawn"), parent.def.label.Named("hediff"), num));
             
             HediffStage curStage = this.parent.CurStage;
 
             num *= ((curStage != null) ? curStage.severityGainFactor : 1f);
 
             return num;
+        }
+
+        public override void CompPostTick(ref float severityAdjustment)
+        {
+            base.CompPostTick(ref severityAdjustment);
+            if (OripathyMod.settings.debugMode && OripathyMod.settings.verboseLogging && Pawn.Spawned && Pawn.IsHashIntervalTick(60)) Log.Message("DebugSeverityGainPerDay".Translate(Pawn.LabelShort.Named("pawn"), parent.def.label.Named("hediff"), severityAdjustment.Named("severity")));
+
         }
 
         private float CalculateSeverityPerDay()

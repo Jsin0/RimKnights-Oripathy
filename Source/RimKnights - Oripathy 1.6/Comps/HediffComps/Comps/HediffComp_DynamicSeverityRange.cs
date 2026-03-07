@@ -26,17 +26,29 @@ namespace RimKnights.Oripathy
         public override void CompPostTickInterval(ref float severityAdjustment, int delta)
         {
             base.CompPostTickInterval(ref severityAdjustment, delta);
-            if (base.Pawn.IsHashIntervalTick(this.Props.updateInterval, delta))
+            if (Pawn.IsHashIntervalTick(Props.updateInterval, delta))
             {
                 CalculateLimits();
                 AdjustSeverity();
             }
+            if (OripathyMod.settings.debugMode && OripathyMod.settings.verboseLogging && Pawn.Spawned && Pawn.IsHashIntervalTick(60)) Log.Message("DynamicSeverityRangeLimits".Translate(Pawn.Named("PAWN"), parent.LabelCap.Named("HEDIFF"), minSeverity.Named("MIN"), maxSeverity.Named("MAX")));
 
+        }
+
+        public override void CompPostTick(ref float severityAdjustment)
+        {
+            base.CompPostTick(ref severityAdjustment);
+            if (Pawn.IsHashIntervalTick(Props.updateInterval))
+            {
+                CalculateLimits();
+                AdjustSeverity();
+            }
+            if (OripathyMod.settings.debugMode && OripathyMod.settings.verboseLogging && Pawn.Spawned && Pawn.IsHashIntervalTick(60)) Log.Message("DynamicSeverityRangeLimits".Translate(Pawn.Named("PAWN"), parent.LabelCap.Named("HEDIFF"), minSeverity.Named("MIN"), maxSeverity.Named("MAX")));
         }
 
         private void AdjustSeverity()
         {
-            float severity = this.parent.Severity;
+            float severity = parent.Severity;
             float target;
             if (severity < minSeverity)
             {
@@ -56,31 +68,30 @@ namespace RimKnights.Oripathy
         public void CalculateLimits()
         {
 
-            if (CalculateSeverityCap(Props.minAffector, out float num))
+            if (CalculateSeverityCap(Props.minAffector, out float minCap))
             {
-                minSeverity = num;
+                minSeverity = minCap;
             }
             else
             {
-                minSeverity = this.parent.def.minSeverity;
+                minSeverity = parent.def.minSeverity;
             }
 
-            if (CalculateSeverityCap(Props.maxAffector, out num))
+            if (CalculateSeverityCap(Props.maxAffector, out float maxCap))
             {
-                maxSeverity = num;
+                maxSeverity = maxCap;
             }
             else
             {
-                maxSeverity = this.parent.def.maxSeverity;
+                maxSeverity = parent.def.maxSeverity;
             }
 
             if (maxSeverity < minSeverity) 
             {
-                if (OripathyMod.settings.debugMode) Log.Warning("MaxSeverityLessThanMin".Translate());
+                //if (OripathyMod.settings.debugMode && Pawn.Spawned && Pawn.IsHashIntervalTick(60)) Log.Warning("MaxSeverityLessThanMin".Translate());
                 maxSeverity = minSeverity; 
             }
 
-            if(OripathyMod.settings.debugMode) Log.Message("DynamicSeverityRangeLimits".Translate(Pawn.Named("PAWN"),parent.LabelCap.Named("HEDIFF"),minSeverity.Named("MIN"), maxSeverity.Named("MAX")));
         }
 
         private bool CalculateSeverityCap(AffectorHediff affector, out float cap)

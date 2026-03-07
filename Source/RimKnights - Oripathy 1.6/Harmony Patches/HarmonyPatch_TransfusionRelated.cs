@@ -17,7 +17,7 @@ namespace RimKnights.Oripathy
         [HarmonyPostfix]
         static void PostFix(Pawn surgeryTarget, ref bool __result)
         {
-            __result = __result || surgeryTarget.health.hediffSet.HasHediff(RimWorld.HediffDefOf.ToxicBuildup);
+            __result = __result || surgeryTarget.health.hediffSet.HasHediff(HediffDefOf.RK_OriginiumBuildup);
         }
     }
 
@@ -29,7 +29,7 @@ namespace RimKnights.Oripathy
         static void PostFix(Thing thing, ref bool __result)
         {
             Pawn pawn = thing as Pawn;
-            __result = __result || (pawn?.health?.hediffSet.GetFirstHediffOfDef(RimWorld.HediffDefOf.ToxicBuildup)?.Severity ?? 0f) > 0.01f;
+            __result = __result || (pawn?.health?.hediffSet.GetFirstHediffOfDef(HediffDefOf.RK_OriginiumBuildup)?.Severity ?? 0f) > 0.01f;
         }
     }
 
@@ -42,7 +42,7 @@ namespace RimKnights.Oripathy
         static void PreFix(Pawn pawn, BodyPartRecord part, Pawn billDoer, List<Thing> ingredients, Bill bill)
         {
             if (!ModsConfig.BiotechActive) return;
-            Hediff firstHediffOfDef = pawn.health.hediffSet.GetFirstHediffOfDef(RimWorld.HediffDefOf.ToxicBuildup);
+            Hediff firstHediffOfDef = pawn.health.hediffSet.GetFirstHediffOfDef(HediffDefOf.RK_OriginiumBuildup);
             if (firstHediffOfDef != null)
             {
                 float num = 0f;

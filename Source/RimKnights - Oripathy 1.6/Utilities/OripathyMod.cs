@@ -23,6 +23,10 @@ namespace RimKnights.Oripathy
             listingStandard.Begin(inRect);
             listingStandard.CheckboxLabeled("BaselinersImmuneLabel".Translate(), ref settings.baselinersImmune, "BaselinersImmuneDesc".Translate());
             listingStandard.CheckboxLabeled("DebugModeLable".Translate(), ref settings.debugMode, "DebugModeDesc".Translate());
+            if (settings.debugMode)
+            {
+                listingStandard.CheckboxLabeled("VerboseLoggingLable".Translate(), ref settings.verboseLogging, "VerboseLoggingDesc".Translate());
+            }
             listingStandard.CheckboxLabeled("InfectionMonitorLabel".Translate(), ref settings.infectionMonitor, "InfectionMonitorDesc".Translate());
             listingStandard.CheckboxLabeled("AbandonOripathicCorpsesLabel".Translate(), ref settings.abandonOripathicCorpses, "AbandonOripathicCorpsesDesc".Translate());
             settings.oripathyChance = (float)Math.Round(listingStandard.SliderLabeled($"{"GlobalOripathyChanceLabel".Translate()} : {settings.oripathyChance * 100}%", settings.oripathyChance, 0f, 1.0f, 0.3f, "GlobalOripathyChanceDesc".Translate()),2);

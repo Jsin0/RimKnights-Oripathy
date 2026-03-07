@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading;
 using RimWorld;
 using RimWorld.Planet;
 using UnityEngine;
@@ -35,18 +36,20 @@ namespace RimKnights.Oripathy
         {
             base.Notify_PawnDied(dinfo, culprit);
             Corpse corpse = pawn?.Corpse;
-            if(!corpse.DestroyedOrNull()) TryTriggerWarmup();
+            if (corpse.DestroyedOrNull()) return;
+                
+            TryTriggerWarmup();
             
             if (this.pawn.Faction == Faction.OfPlayer)
             {
-                if (OripathyMod.settings.infectionMonitor && !this.Visible) return;
-                String name = this.pawn.LabelShort;
+                if (OripathyMod.settings.infectionMonitor && !Visible) return;
+                string name = this.pawn.LabelShort;
                 Find.LetterStack.ReceiveLetter("RK_LetterLabelOripathicDeath".Translate(name), "RK_LetterOripathicDeath".Translate(name), LetterDefOf.NegativeEvent, corpse, null, null, null, null, 0, true);
             }
             if(corpse.MapHeld == null)
             {
-                Caravan caravan = GetCaravanHoldingCorpse(corpse);
-                if (caravan != null && OripathyMod.settings.infectionMonitor) 
+                Caravan caravan = OripathyUtility.GetCaravanHoldingCorpse(corpse);
+                if (caravan != null && Visible && OripathyMod.settings.abandonOripathicCorpses) 
                 {
                     RimWorld.Planet.CaravanAbandonOrBanishUtility.TryAbandonOrBanishViaInterface(corpse, caravan);
                 }
@@ -83,7 +86,7 @@ namespace RimKnights.Oripathy
                 if(this.warmupSustainer == null)
                 {
                     SoundInfo soundInfo = SoundInfo.InMap(corpse, MaintenanceType.PerTickRare);
-                    this.shatterSustainer = SoundDefOf.FireBurning.TrySpawnSustainer(soundInfo);
+                    this.warmupSustainer = SoundDefOf.Tunnel.TrySpawnSustainer(soundInfo);
                 }
             }
                 
@@ -103,12 +106,13 @@ namespace RimKnights.Oripathy
             
             if (this.pawn.Faction == Faction.OfPlayer)
             {
-                String name = this.pawn.LabelShort;
+                string name = this.pawn.LabelShort;
                 Find.LetterStack.ReceiveLetter("RK_LetterLabelShattering".Translate(name), "RK_LetterShattering".Translate(name), LetterDefOf.NegativeEvent, corpse, null, null, null, null, 0, true);
             }
 
             Messages.Message("MessageShatteringCorpse".Translate(pawn.Named("PAWN")), corpse, MessageTypeDefOf.NegativeEvent);
             if (OripathyMod.settings.debugMode) Log.Message("DebugShatteringStart".Translate(pawn.Named("PAWN")));
+            corpse.SetForbidden(true);
         }
 
         private void TryTriggerShatterEffect()
@@ -125,8 +129,17 @@ namespace RimKnights.Oripathy
                     GenSpawn.Spawn(glower, corpse.Position, corpse.MapHeld);
                 }
 
-                this.shatterEffecter = EffecterDefOf.RK_Shattering.Spawn(corpse, corpse.MapHeld, Vector3.zero);
-                corpse.MapHeld.effecterMaintainer.AddEffecterToMaintain(this.shatterEffecter, corpse, 250);
+                if (shatterEffecter == null)
+                {
+                    shatterEffecter = EffecterDefOf.RK_Shattering.Spawn(corpse, corpse.MapHeld, Vector3.zero);
+                    corpse.MapHeld.effecterMaintainer.AddEffecterToMaintain(this.shatterEffecter, corpse, 250);
+                }
+                if (shatterSustainer == null)
+                {
+                    SoundInfo soundInfo = SoundInfo.InMap(corpse, MaintenanceType.PerTickRare);
+                    shatterSustainer = SoundDefOf.FireBurning.TrySpawnSustainer(soundInfo);
+
+                }
             }
         }
 
@@ -140,7 +153,7 @@ namespace RimKnights.Oripathy
             }
             if (pawn.IsHashIntervalTick(60000)) //once a day)
             {
-                pawn.health.GetOrAddHediff(RimWorld.HediffDefOf.ToxicBuildup);
+                pawn.health.GetOrAddHediff(HediffDefOf.RK_OriginiumBuildup);
             }
         }
         public void TickRare()
@@ -211,20 +224,68 @@ namespace RimKnights.Oripathy
                     IntVec3 center = corpse.PositionHeld;
                     Map map = corpse.MapHeld;
 
-                    if (!corpse.IsDessicated() && TryDamageContainer(corpse))
+                    if (!corpse.IsDessicated() && OripathyUtility.TryDamageContainer(corpse))
                     {
                         float radius = Mathf.Max(this.pawn.BodySize, 0.5f) * 2f;
-                        DamageDef damageDef = OripathyMod.originiumModActive ? damageDef = Originium.DamageDefOf.RK_ActiveOriginium : RimWorld.DamageDefOf.ToxGas;
+
+                        GasType gasType = GasType.BlindSmoke;
                         ThingDef spawnedThingDef = null;
-                        if (OripathyMod.originiumModActive) spawnedThingDef  = OriginiumInterOp.GetClusterDef();
-                        GenExplosion.DoExplosion(center, map, radius, damageDef, corpse, -1, -1f, null, null, null, null, spawnedThingDef, 0.20f, 1, null, null,255, false, null, 0f, 1, 0.2f, true, null, null, null, true, 1f, 0f, true, null, 1f, null, null);
+                        float spawnThingChance = 0;
+                        
+                        if (OripathyMod.originiumModActive) {
+                            spawnedThingDef = OriginiumInterOp.GetClusterDef();
+                            spawnThingChance = 0.2f;
+                        }
+                        if (ModLister.BiotechInstalled) {
+                            gasType = GasType.ToxGas;
+                        }
+
+                        GenExplosion.DoExplosion(
+                            center: center,
+                            map: map,
+                            radius: radius,
+                            damType: DamageDefOf.RK_ActiveOriginium,
+                            instigator: corpse,
+                            damAmount: -1,
+                            armorPenetration: -1f,
+                            explosionSound: null,
+                            weapon: null,
+                            projectile: null,
+                            intendedTarget: null,
+                            postExplosionSpawnThingDef: spawnedThingDef,
+                            postExplosionSpawnChance: spawnThingChance,
+                            postExplosionSpawnThingCount: 0,
+                            postExplosionGasType: gasType,
+                            postExplosionGasRadiusOverride: null,
+                            postExplosionGasAmount: 100,
+                            applyDamageToExplosionCellsNeighbors: false,
+                            preExplosionSpawnThingDef: null,
+                            preExplosionSpawnChance: 0,
+                            preExplosionSpawnThingCount: 1,
+                            chanceToStartFire: 0.05f,
+                            damageFalloff: true,
+                            direction: null,
+                            ignoredThings: null,
+                            affectedAngle: null,
+                            doVisualEffects: true,
+                            propagationSpeed: 1f,
+                            excludeRadius: 0,
+                            doSoundEffects: true,
+                            postExplosionSpawnThingDefWater: null,
+                            screenShakeFactor: 1f,
+                            flammabilityChanceCurve: null,
+                            overrideCells: null,
+                            postExplosionSpawnSingleThingDef: null,
+                            preExplosionSpawnSingleThingDef: null
+                            );
+
                     }
 
                     if (OripathyMod.originiumModActive) OriginiumInterOp.SpawnCluster(center, map);
                 }
                 else
                 {
-                    TryInfectCaravan(GetCaravanHoldingCorpse(corpse));
+                    OripathyUtility.TryInfectCaravan(pawn, OripathyUtility.GetCaravanHoldingCorpse(corpse));
                 }
 
                 if (!corpse.DestroyedOrNull())
@@ -234,88 +295,7 @@ namespace RimKnights.Oripathy
                 }
             }
         }
-        private Caravan GetCaravanHoldingCorpse(Corpse corpse)
-        {
-            IThingHolder holder = corpse as IThingHolder;
-            HashSet<IThingHolder> visited = new HashSet<IThingHolder>();
 
-            while(holder != null)
-            {
-                if(holder is Caravan caravan) return caravan;
-
-                if (!visited.Add(holder))
-                {
-                    //ThingHolder already checked. Stuck in a loop for some reason.
-                    break;
-                }
-
-                holder = holder.ParentHolder;
-            }
-            return null;
-        }
-        private void TryInfectCaravan(Caravan caravan)
-        {
-            if (caravan != null)
-            {
-                if (OripathyMod.settings.debugMode) Log.Message("DebugShatterInCaravan".Translate(this.pawn.LabelShort.Named("pawn"), caravan.Name.Named("caravan")));
-
-                FloatRange randSeverity = new FloatRange(0f, 0.4f);
-                foreach (Pawn p in caravan.pawns)
-                {
-                    if (p != null)
-                    {
-                        Hediff buildupHediff = p.health.GetOrAddHediff(RimWorld.HediffDefOf.ToxicBuildup);
-                        buildupHediff.Severity += randSeverity.RandomInRange;
-                        if (OripathyMod.settings.debugMode) Log.Message("DebugCaravanBobSeverity".Translate(p.LabelShort.Named("pawn"), buildupHediff.Severity.Named("severity")));
-
-                    }
-                }
-            }
-        }
-        private bool TryDamageContainer(Corpse corpse)
-        {
-            IThingHolder container = corpse.ParentHolder;
-            if (container is Pawn pawn)
-            {
-                if (pawn.carryTracker?.CarriedThing == corpse)
-                {
-                    pawn.carryTracker.TryDropCarriedThing(pawn.PositionHeld, ThingPlaceMode.Near, out Thing droppedCorpse);
-                    droppedCorpse.SetForbidden(true);
-                    return true;
-                }
-                if (pawn.inventory?.innerContainer.Contains(corpse) == true)
-                {
-                    pawn.inventory.innerContainer.TryDrop(corpse, ThingPlaceMode.Near, out Thing droppedCorpse);
-                    droppedCorpse.SetForbidden(true);
-                    return true;
-                }
-                return false;
-            }
-            else if (container is Building building)
-            {
-                if (building.def.useHitPoints)
-                {
-                    DamageDef damageDef = RimWorld.DamageDefOf.Bomb; //OripathyMod.originiumModActive ? Originium.DamageDefOf.OriginiumBlast : RimWorld.DamageDefOf.Bomb;
-                    DamageInfo damageInfo = new DamageInfo(damageDef, 200f);
-
-                    building.TakeDamage(damageInfo);
-                    if (building.Destroyed)
-                    {
-                        return true;
-                    }
-                    else
-                    {
-                        return false;
-                    }
-                }
-                else if (building is Building_Casket casket)
-                {
-                    casket.EjectContents();
-                    return true;
-                }
-            }
-            return true;
-        }
         public override void Notify_PawnCorpseDestroyed()
         {
             currentPhase = ShatterPhase.Complete;

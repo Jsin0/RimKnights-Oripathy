@@ -12,6 +12,8 @@ namespace RimKnights.Oripathy
             DefOfHelper.EnsureInitializedInCtor(typeof(HediffDefOf));
         }
 
+        public static HediffDef RK_OriginiumBuildup;
+
         public static HediffDef RK_OripathyLesion; 
         
         public static HediffDef RK_Oripathy;

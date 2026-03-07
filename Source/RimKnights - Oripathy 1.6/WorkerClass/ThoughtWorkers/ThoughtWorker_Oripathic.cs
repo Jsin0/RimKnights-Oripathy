@@ -30,7 +30,7 @@ namespace RimKnights.Oripathy
             {
                 severity = OripathyMod.settings.infectionMonitor ? hediff.displayedSeverity : hediff.Severity;
             }
-            if (OripathyMod.settings.debugMode) Log.Message("DebugHasOripathyDisplayedSeverity".Translate(p.NameFullColored.Named("pawn"), severity.Named("severity"))); 
+            if (OripathyMod.settings.debugMode && OripathyMod.settings.verboseLogging && p.Spawned) Log.Message("DebugHasOripathyDisplayedSeverity".Translate(p.NameFullColored.Named("pawn"), severity.Named("severity"))); 
             if (severity > 0.50f)
             {
                 return ThoughtState.ActiveAtStage(3);

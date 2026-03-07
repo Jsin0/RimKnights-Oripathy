@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<HediffDef>
+		<defName>RK_OriginiumBuildup</defName>
+		<label>blood originium buildup</label>
+		<description>Originium crystals present in the bloodstream. \nOriginium is always present in the blood stream at low levels but at higher levels, may lead to a condition known as Oripathy.</description>
+		<hediffClass>RimKnights.Oripathy.Hediff_OriginiumBase</hediffClass>
+		<tendable>true</tendable>
+		<defaultLabelColor>(1.0, 0.5, 0.0)</defaultLabelColor>
+		<scenarioCanAdd>true</scenarioCanAdd>
+		<maxSeverity>1</maxSeverity>
+		<initialSeverity>0.01</initialSeverity>
+		<alwaysShowSeverity>true</alwaysShowSeverity>
+		<allowMothballIfLowPriorityWorldPawn>true</allowMothballIfLowPriorityWorldPawn>
+		<comps>
+			<li Class="HediffCompProperties_Pollution" MayRequire="Ludeon.RimWorld.Biotech">
+				<pollutedSeverity>0.0003</pollutedSeverity>
+				<unpollutedSeverity>0</unpollutedSeverity>
+				<interval>60</interval>
+			</li>
+			<li Class="HediffCompProperties_SeverityPerDay">
+				<severityPerDay>-0.05</severityPerDay>
+			</li>
+			<li Class="HediffCompProperties_TendDuration">
+				<baseTendDurationHours>24</baseTendDurationHours>
+				<severityPerDayTended>-0.2</severityPerDayTended>
+			</li>
+			<li Class="RimKnights.Oripathy.HediffCompProperties_DynamicSeverityRange">
+				<minAffector>
+					<hediff>RK_Oripathy</hediff>
+					<curve>
+					  <points>
+						<li>(0, 0.00)</li>
+						<li>(0.25, 0.1)</li>
+						<li>(0.6, 0.35)</li>
+						<li>(0.8, 0.35)</li>
+						<li>(1.0, 0.50)</li>
+					  </points>
+					</curve>
+				</minAffector>
+				<updateInterval>60</updateInterval>
+			</li>
+		</comps>
+		<stages>
+		  <li>
+			<label>initial</label>
+			<minSeverity>0.01</minSeverity>
+			<painOffset>0.01</painOffset>
+			<becomeVisible>false</becomeVisible>
+			<capMods>
+			  <li>
+				<capacity>BloodFiltration</capacity>
+				<offset>-0.01</offset>
+			  </li>
+			</capMods>
+		  </li>
+		  <li>
+			<label>low</label>
+			<minSeverity>0.2</minSeverity>
+			<painOffset>0.03</painOffset>
+			<becomeVisible>true</becomeVisible>
+			<capMods>
+				<li>
+					<capacity>BloodFiltration</capacity>
+					<offset>-0.03</offset>
+				</li>
+			</capMods>
+		  </li>
+		  <li>
+			<label>moderate</label>
+			<minSeverity>0.40</minSeverity>
+			<painOffset>0.05</painOffset>
+			<vomitMtbDays>10</vomitMtbDays>
+			<capMods>
+			  <li>
+				<capacity>BloodFiltration</capacity>
+				<offset>-0.05</offset>
+			  </li>
+				<li>
+					<capacity>Breathing</capacity>
+					<offset>-0.3</offset>
+				</li>
+			</capMods>
+			<hediffGivers>
+			  <li Class="HediffGiver_Random">
+				<hediff>RK_Oripathy</hediff>
+				<mtbDays>60</mtbDays>
+			  </li>
+			</hediffGivers>
+		  </li>
+		  <li>
+				<label>serious</label>
+				<minSeverity>0.60</minSeverity>
+				<painOffset>0.07</painOffset>
+				<vomitMtbDays>5</vomitMtbDays>
+				<capMods>
+				  <li>
+					<capacity>BloodFiltration</capacity>
+					<offset>-0.07</offset>
+				  </li>
+					<li>
+						<capacity>Breathing</capacity>
+						<offset>-0.5</offset>
+					</li>
+					
+					<li>
+						<capacity>Moving</capacity>
+						<offset>-0.05</offset>
+					</li>
+				</capMods>
+				<hediffGivers>
+				  <li Class="HediffGiver_Random">
+					<hediff>RK_Oripathy</hediff>
+					<mtbDays>20</mtbDays>
+				  </li>
+				</hediffGivers>
+			</li>
+			<li>
+				<label>extreme</label>
+				<minSeverity>0.90</minSeverity>
+				<painOffset>0.10</painOffset>
+				<vomitMtbDays>5</vomitMtbDays>
+				<capMods>
+				  <li>
+					<capacity>BloodFiltration</capacity>
+					<offset>-0.10</offset>
+				  </li>
+				<li>
+					<capacity>Breathing</capacity>
+					<offset>-0.08</offset>
+				</li>
+				<li>
+					<capacity>Moving</capacity>
+					<offset>-0.10</offset>
+				</li>
+				<li>
+					<capacity>Consciousness</capacity>
+					<offset>-0.05</offset>
+				</li>
+				</capMods>
+				<hediffGivers>
+				  <li Class="HediffGiver_Random">
+					<hediff>RK_Oripathy</hediff>
+					<mtbDays>1</mtbDays>
+				  </li>
+				</hediffGivers>
+			</li>
+		</stages>
+	</HediffDef>
+</Defs>

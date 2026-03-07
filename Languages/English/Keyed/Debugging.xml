@@ -7,6 +7,8 @@
 	<DebugShatterInCaravan>[RimKnights - Oripathy] corpse of {pawn} in {caravan} has shattered.</DebugShatterInCaravan>
 	<DebugCaravanBobSeverity>[RimKnights - Oripathy] a corpse in {pawn}'s caravan shattered and their Blood Originium Buildup is now {severity}.</DebugCaravanBobSeverity>
 	<DebugShatterWarmupStarted>[RimKnights - Oripathy] ShatterWarmup started for {pawn}'s corpse.</DebugShatterWarmupStarted>
-	<DebugSeverityGainPerDay>[RimKnights - Oripathy] Severity gain per day for {pawn}'s {hediff}</DebugSeverityGainPerDay>
+	<DebugSeverityGainPerDay>[RimKnights - Oripathy] Severity gain per day for {pawn}'s {hediff} is {severity}</DebugSeverityGainPerDay>
 	<DebugHasOripathyDisplayedSeverity>[RimKnights - Oripathy] {pawn}'s displayedSeverity = {severity}</DebugHasOripathyDisplayedSeverity>
+	<DynamicSeverityRangeLimits>[RimKnights - Originium] HediffComp_DynamicSeverityRange: New Limits for {PAWN}'s {HEDIFF} = {MIN} - {MAX}</DynamicSeverityRangeLimits>
+	<MaxSeverityLessThanMin>[RimKnights - Originium] HediffComp_DynamicSeverityRange: maxSeverity is less than minSeverity.</MaxSeverityLessThanMin>
 </LanguageData>

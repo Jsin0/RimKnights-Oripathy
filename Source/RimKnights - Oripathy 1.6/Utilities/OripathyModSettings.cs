@@ -11,12 +11,14 @@ namespace RimKnights.Oripathy
         public bool infectionMonitor;
         public bool abandonOripathicCorpses;
         public bool debugMode;
+        public bool verboseLogging;
         public float oripathyChance;
 
         public const bool DefaultBaselinersImmune = false;
         public const bool DefaultInfectionMonitor = true;
         public const bool DefaultAbandonOripathicCorpses = true;
         public const bool DefaultDebugMode = false;
+        public const bool DefaultVerboseLogging = false;
         public const float DefaultOripathyChance = 0.05f;
         public override void ExposeData()
         {
@@ -25,6 +27,7 @@ namespace RimKnights.Oripathy
             Scribe_Values.Look(ref infectionMonitor, "infectionMonitor", DefaultInfectionMonitor);
             Scribe_Values.Look(ref abandonOripathicCorpses, "abandonOripathicCorpses", DefaultAbandonOripathicCorpses);
             Scribe_Values.Look(ref debugMode, "debugMode", DefaultDebugMode);
+            Scribe_Values.Look(ref verboseLogging, "verboseLogging", DefaultVerboseLogging);
             Scribe_Values.Look(ref oripathyChance, "oripathyChance", DefaultOripathyChance);
         }
 
@@ -34,6 +37,7 @@ namespace RimKnights.Oripathy
             infectionMonitor = DefaultInfectionMonitor;
             abandonOripathicCorpses = DefaultAbandonOripathicCorpses;
             debugMode = DefaultDebugMode;
+            verboseLogging = DefaultVerboseLogging;
             oripathyChance = DefaultOripathyChance;
         }
     }

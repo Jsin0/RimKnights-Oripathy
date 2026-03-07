@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<HediffDef ParentName="ChronicDiseaseBase">
+		<defName>RK_Oripathy</defName>
+		<label>oripathy</label>
+		<description>Also known as stone disease, oripathy an incurable disease due to the assimilation of originium into the body's cells.  It is characterized by crystalline growths that can cause pain and interfere with bodily functions.</description>
+		<hediffClass>RimKnights.Oripathy.Hediff_Oripathy</hediffClass>
+		<everCurableByItem>false</everCurableByItem>
+		<taleOnVisible>ToxicityRevealed</taleOnVisible>
+		<scenarioCanAdd>true</scenarioCanAdd>
+		<maxSeverity>1</maxSeverity>
+		<alwaysShowSeverity>true</alwaysShowSeverity>
+		<allowMothballIfLowPriorityWorldPawn>true</allowMothballIfLowPriorityWorldPawn>
+		<comps>
+			<li Class="RimKnights.Oripathy.HediffCompProperties_DynamicSeverityPerDay">
+				<cumulative>true</cumulative>
+				<AffectorHediffs>
+					<li>
+						<hediff>RK_OriginiumBuildup</hediff>
+						<curve>
+							<points>
+							  <li>(0.0, 0.002)</li>
+							  <li>(0.25, 0.01)</li>
+							  <li>(0.5, 0.02)</li>
+							  <li>(0.75, 0.15)</li>
+							  <li>(1.0, 0.5)</li>
+							</points>
+						</curve>
+						<severityPerDayRange>0~0.002</severityPerDayRange>
+						<severityScalingStat>RK_OriginiumResistance</severityScalingStat>
+						<inverseStatScaling>true</inverseStatScaling>
+					</li>
+				</AffectorHediffs>
+			</li>
+			<li Class="HediffCompProperties_SurgeryInspectable">
+				<surgicalDetectionDesc>{PAWN_nameDef} is showing early signs of oripathy. Keep {PAWN_objective} away from sources of originium.</surgicalDetectionDesc>
+			</li>
+		</comps>
+		<stages>
+			<li>
+				<label>initial</label>
+				<becomeVisible>false</becomeVisible>
+			</li>
+			<li>
+				<label>minor</label>
+				<minSeverity>0.10</minSeverity>
+				<becomeVisible>true</becomeVisible>
+				<hediffGivers>
+					<li Class="HediffGiver_Random">
+						<hediff>RK_OripathyLesion</hediff>
+						<mtbDays>438</mtbDays>
+						<canAffectAnyLivePart>true</canAffectAnyLivePart>
+					</li>
+				</hediffGivers>
+				<statOffsets>
+				  <PsychicSensitivity>0.1</PsychicSensitivity>
+				</statOffsets>
+			</li>
+			<li>
+				<minSeverity>0.35</minSeverity>
+				<label>moderate</label>
+				<hediffGivers>
+					<li Class="HediffGiver_Random">
+						<hediff>RK_OripathyLesion</hediff>
+						<mtbDays>226</mtbDays>
+						<canAffectAnyLivePart>true</canAffectAnyLivePart>
+					</li>
+				</hediffGivers>
+				<statOffsets>
+				  <PsychicSensitivity>0.3</PsychicSensitivity>
+				</statOffsets>
+			</li>
+			<li>
+				<minSeverity>0.70</minSeverity>
+				<label>major</label>
+				<painOffset>0.05</painOffset>
+				<hediffGivers>
+					<li Class="HediffGiver_Random">
+						<hediff>RK_OripathyLesion</hediff>
+						<mtbDays>60</mtbDays>
+						<canAffectAnyLivePart>true</canAffectAnyLivePart>
+					</li>
+				</hediffGivers>
+				<statOffsets>
+				  <PsychicSensitivity>0.5</PsychicSensitivity>
+				</statOffsets>
+			</li>
+			<li>
+				<minSeverity>0.90</minSeverity>
+				<label>extreme</label>
+				<painOffset>0.08</painOffset>
+				<hediffGivers>
+					<li Class="HediffGiver_Random">
+						<hediff>RK_OripathyLesion</hediff>
+						<mtbDays>10</mtbDays>
+						<countToAffect>2</countToAffect>
+						<canAffectAnyLivePart>true</canAffectAnyLivePart>
+					</li>
+				</hediffGivers>
+				<statOffsets>
+				  <PsychicSensitivity>1.00</PsychicSensitivity>
+				</statOffsets>
+			</li>
+		</stages>
+	</HediffDef>
+</Defs>
