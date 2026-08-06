@@ -54,6 +54,8 @@
     <Compile Include="Comps\ThingComps\CompInfectionMonitor.cs" />
     <Compile Include="Comps\ThingComps\CompProperties_Follower.cs" />
     <Compile Include="Comps\ThingComps\CompProperties_InfectionMonitor.cs" />
+    <Compile Include="Comps\ThingComps\CompProperties_DialysisMachine.cs" />
+    <Compile Include="Comps\ThingComps\CompDialysisMachine.cs" />
     <Compile Include="DefOf\DamageDefOf.cs" />
     <Compile Include="DefOf\EffecterDefOf.cs" />
     <Compile Include="DefOf\HediffDefOf.cs" />
@@ -69,14 +71,18 @@
     <Compile Include="Harmony Patches\HarmonyPatch_PawnToxicTickInterval.cs" />
     <Compile Include="Harmony Patches\HarmonyPatch_TransfusionRelated.cs" />
     <Compile Include="HediffClass\Hediff_OriginiumBase.cs" />
+    <Compile Include="HediffClass\Hediff_OriginiumBuildup.cs" />
     <Compile Include="HediffClass\Hediff_OripathyLesion.cs" />
     <Compile Include="HelperClasses\AffectorHediff.cs" />
+    <Compile Include="Jobs\JobDriver_GetDialysis.cs" />
+    <Compile Include="Jobs\JobDriver_TakeToDialysisMachine.cs" />
     <Compile Include="PawnGeneration\PawnGeneration.cs" />
-    <Compile Include="Rituals\Jobs\JobDriver_Infect.cs" />
-    <Compile Include="Rituals\Jobs\JobGiver_Infect.cs" />
-    <Compile Include="Rituals\RitualObligationTriggers\RitualObligationTrigger_Infection.cs" />
-    <Compile Include="Rituals\RitualObligationTriggers\RitualObligationTrigger_InfectionProperties.cs" />
-    <Compile Include="Rituals\Roles\RitualRoleInfectionTarget.cs" />
+    <Compile Include="Jobs\JobDriver_Infect.cs" />
+    <Compile Include="Jobs\JobGiver_Infect.cs" />
+    <Compile Include="RitualObligationTriggers\RitualObligationTrigger_Infection.cs" />
+    <Compile Include="RitualObligationTriggers\RitualObligationTrigger_InfectionProperties.cs" />
+    <Compile Include="Roles\RitualRoleInfectionTarget.cs" />
+    <Compile Include="Utilities\Command_SetDialysisMachineAutoUse.cs" />
     <Compile Include="Utilities\Constants.cs" />
     <Compile Include="Utilities\DebugActions_Oripathy.cs" />
     <Compile Include="Utilities\IdeoExtension.cs" />
@@ -87,8 +93,8 @@
     <Compile Include="HediffClass\Hediff_Oripathy.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Harmony Patches\ApplyHarmony.cs" />
-    <Compile Include="Rituals\RitualWorkers\RitualObligationTargetWorker_AnyRitualSpotOrAltar_Infection.cs" />
-    <Compile Include="Rituals\RitualWorkers\RitualOutcomeEffectWorker_Oripathy.cs" />
+    <Compile Include="RitualWorkers\RitualObligationTargetWorker_AnyRitualSpotOrAltar_Infection.cs" />
+    <Compile Include="RitualWorkers\RitualOutcomeEffectWorker_Oripathy.cs" />
     <Compile Include="Utilities\OripathyUtility.cs" />
     <Compile Include="WorkerClass\DamageWorker\DamageWorker_ApplyHediff.cs" />
     <Compile Include="WorkerClass\RecipeWorker\Recipe_HarvestHediff.cs" />
@@ -102,7 +108,9 @@
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Rituals\" />
+  </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Krafs.Rimworld.Ref">
       <Version>1.6.4633</Version>

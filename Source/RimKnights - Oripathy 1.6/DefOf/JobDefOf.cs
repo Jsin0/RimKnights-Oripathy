@@ -18,5 +18,7 @@ namespace RimKnights.Oripathy
 
         [MayRequireIdeology]
         public static JobDef RK_Infect;
+
+        public static JobDef RK_GetDialysis;
     }
 }

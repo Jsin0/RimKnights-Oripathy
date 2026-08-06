@@ -118,15 +118,22 @@ namespace RimKnights.Oripathy
         private void TryTriggerShatterEffect()
         {
             Corpse corpse = pawn?.Corpse;
-            if (!corpse.DestroyedOrNull() && corpse.MapHeld != null && this.shatterEffecter == null && !corpse.IsDessicated())
+            if (!corpse.DestroyedOrNull() && corpse.Spawned && this.shatterEffecter == null && !corpse.IsDessicated())
             {
                 Thing glower = ThingMaker.MakeThing(ThingDefOf.RK_ShatterGlow);
 
                 CompFollower compFollower;
                 if(glower.TryGetComp(out compFollower))
                 {
-                    compFollower.SetTarget(corpse);
-                    GenSpawn.Spawn(glower, corpse.Position, corpse.MapHeld);
+                    if (glower != null)
+                    {
+                        compFollower.SetTarget(corpse);
+                        GenSpawn.Spawn(glower, corpse.Position, corpse.Map);
+                    }
+                    else
+                    {
+                        glower.Destroy();
+                    }
                 }
 
                 if (shatterEffecter == null)
@@ -153,7 +160,12 @@ namespace RimKnights.Oripathy
             }
             if (pawn.IsHashIntervalTick(60000)) //once a day)
             {
-                pawn.health.GetOrAddHediff(HediffDefOf.RK_OriginiumBuildup);
+                if (!pawn.health.hediffSet.HasHediff(HediffDefOf.RK_OriginiumBuildup))
+                {
+                    Hediff hediff = HediffMaker.MakeHediff(HediffDefOf.RK_OriginiumBuildup, pawn);
+                    hediff.Severity = 0.01f;
+                    pawn.health.AddHediff(hediff);
+                }
             }
         }
         public void TickRare()

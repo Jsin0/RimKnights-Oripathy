@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+<ThingDef ParentName="BuildingBase">
+    <defName>RK_DialysisMachine</defName>
+    <label>dialysis machine</label>
+    <description>A neuron-sensitizing device that can deliver one neural supercharge each day. A person with a neural supercharge will think and learn faster, but will also consume more food. The effect wears off in one day. Neural superchargers consume a lot of electricity.</description>
+    <graphicData>
+      <texPath>Things/Building/Furniture/Bed/Bed</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <shaderType>CutoutComplex</shaderType>
+      <shadowData>
+        <volume>(0.85, 0.60, 2.5)</volume>
+      </shadowData>
+      <drawSize>(2, 1)</drawSize>
+    </graphicData>
+    <altitudeLayer>Building</altitudeLayer>
+    <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+    <passability>PassThroughOnly</passability>
+    <pathCost>42</pathCost>
+    <canOverlapZones>false</canOverlapZones>
+    <fillPercent>0.25</fillPercent>
+    <hasInteractionCell>True</hasInteractionCell>
+    <interactionCellOffset>(1, 0, 0)</interactionCellOffset>
+    <defaultPlacingRot>South</defaultPlacingRot>
+    <statBases>
+      <MaxHitPoints>100</MaxHitPoints>
+      <WorkToBuild>6000</WorkToBuild>
+      <Mass>20</Mass>
+      <Flammability>0.3</Flammability>
+    </statBases>
+    <size>(2, 1)</size>
+    <costList>
+      <Steel>50</Steel>
+      <ComponentIndustrial>4</ComponentIndustrial>
+    </costList>
+    <building>
+      <destroySound>BuildingDestroyed_Metal_Small</destroySound>
+	  <!--<fixedStorageSettings>
+        <filter>
+          <categories>
+            <li>Medicine</li>
+          </categories>
+        </filter>
+      </fixedStorageSettings>
+      <defaultStorageSettings>
+        <filter>
+          <categories>
+            <li>Medicine</li>
+          </categories>
+          <disallowedCategories>
+          </disallowedCategories>
+          <disallowedThingDefs>
+          </disallowedThingDefs>
+        </filter>
+      </defaultStorageSettings>-->
+    </building>
+    <designationCategory>Furniture</designationCategory>
+    <uiOrder>2520</uiOrder>
+    <minifiedDef>MinifiedThing</minifiedDef>
+    <thingCategories>
+      <li>BuildingsMisc</li>
+    </thingCategories>
+    <tickerType>Normal</tickerType>
+    <comps>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <basePowerConsumption>100</basePowerConsumption>
+        <idlePowerDraw>10</idlePowerDraw>
+      </li>
+      <li Class="CompProperties_Flickable"/>
+	  <li Class="RimKnights.Oripathy.CompProperties_DialysisMachine">
+		<jobString>Get dialysis</jobString>
+		<severityReductionPerHour>0.125</severityReductionPerHour>
+		<shareSeverityReduction>true</shareSeverityReduction>
+		<hediffs>
+			<li>RK_OriginiumBuildup</li>
+			<li>ToxicBuildup</li>
+		</hediffs>
+	  </li>
+  </comps>
+  </ThingDef>
+</Defs>

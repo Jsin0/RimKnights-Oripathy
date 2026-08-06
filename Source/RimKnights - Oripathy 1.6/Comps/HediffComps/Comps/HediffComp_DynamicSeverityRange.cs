@@ -49,19 +49,29 @@ namespace RimKnights.Oripathy
         private void AdjustSeverity()
         {
             float severity = parent.Severity;
+            if (severity >= minSeverity && severity <= maxSeverity) return;
+
             float target;
+            AffectorHediff affectorHediff;
             if (severity < minSeverity)
             {
                 target = minSeverity;
+                affectorHediff = Props.minAffector;
             }
-            else if (severity > maxSeverity)
+            else
             {
                 target = maxSeverity;
+                affectorHediff = Props.maxAffector;
             }
-            else { return; }
 
+            float maxDelta = 0.1f * Props.updateInterval / Utilities.Constants.TicksPerDay;
+            if (affectorHediff.severityScalingStat != null)
+            {
+                maxDelta *= (affectorHediff.inverseStatScaling ? Mathf.Max(1f - Pawn.GetStatValue(affectorHediff.severityScalingStat, true, -1), 0f) : Pawn.GetStatValue(affectorHediff.severityScalingStat, true, -1));
+            }
+            
             //Slow convergence so it takes about a day to reach the target
-            parent.Severity = Mathf.MoveTowards(severity, target, 0.02f);
+            parent.Severity = Mathf.MoveTowards(severity, target, maxDelta);
 
         }
 

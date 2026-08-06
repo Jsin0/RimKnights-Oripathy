@@ -82,7 +82,7 @@
     <displayOrderInIssue>0</displayOrderInIssue>
     <displayOrderInImpact>100</displayOrderInImpact>
 	<modExtensions>
-		<li Class="RimKnights.Oripathy.Utilities.PreceptOripathyExtension">
+		<li Class="RimKnights.Oripathy.PreceptOripathyExtension">
 			<oripathicPawnChance>0.1</oripathicPawnChance>
 		</li>
 	</modExtensions>
@@ -165,7 +165,7 @@
       <li MayRequire="rimknights.core">OriginiumSupremacy</li>
     </requiredMemes>
 	<modExtensions>
-		<li Class="RimKnights.Oripathy.Utilities.PreceptOripathyExtension">
+		<li Class="RimKnights.Oripathy.PreceptOripathyExtension">
 			<oripathicPawnChance>0.25</oripathicPawnChance>
 		</li>
 	</modExtensions>
@@ -248,7 +248,7 @@
       <li MayRequire="rimknights.core">OriginiumSupremacy</li>
     </requiredMemes>
 	<modExtensions>
-		<li Class="RimKnights.Oripathy.Utilities.PreceptOripathyExtension">
+		<li Class="RimKnights.Oripathy.PreceptOripathyExtension">
 			<oripathicPawnChance>0.95</oripathicPawnChance>
 		</li>
 	</modExtensions>

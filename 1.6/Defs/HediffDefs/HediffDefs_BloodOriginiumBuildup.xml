@@ -4,7 +4,7 @@
 		<defName>RK_OriginiumBuildup</defName>
 		<label>blood originium buildup</label>
 		<description>Originium crystals present in the bloodstream. \nOriginium is always present in the blood stream at low levels but at higher levels, may lead to a condition known as Oripathy.</description>
-		<hediffClass>RimKnights.Oripathy.Hediff_OriginiumBase</hediffClass>
+		<hediffClass>RimKnights.Oripathy.Hediff_OriginiumBuildup</hediffClass>
 		<tendable>true</tendable>
 		<defaultLabelColor>(1.0, 0.5, 0.0)</defaultLabelColor>
 		<scenarioCanAdd>true</scenarioCanAdd>
@@ -23,18 +23,19 @@
 			</li>
 			<li Class="HediffCompProperties_TendDuration">
 				<baseTendDurationHours>24</baseTendDurationHours>
-				<severityPerDayTended>-0.2</severityPerDayTended>
+				<severityPerDayTended>-0.08</severityPerDayTended>
 			</li>
 			<li Class="RimKnights.Oripathy.HediffCompProperties_DynamicSeverityRange">
 				<minAffector>
 					<hediff>RK_Oripathy</hediff>
 					<curve>
 					  <points>
-						<li>(0, 0.00)</li>
-						<li>(0.25, 0.1)</li>
-						<li>(0.6, 0.35)</li>
-						<li>(0.8, 0.35)</li>
-						<li>(1.0, 0.50)</li>
+						<li>(0.00, 0.00)</li>
+						<li>(0.05, 0.04)</li> 
+						<li>(0.25, 0.12)</li>
+						<li>(0.60, 0.35)</li>
+						<li>(0.80, 0.35)</li>
+						<li>(1.00, 0.50)</li>
 					  </points>
 					</curve>
 				</minAffector>
